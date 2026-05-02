@@ -1,0 +1,25 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "resolveJsonModule": true,
+    "forceConsistentCasingInFileNames": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noImplicitOverride": true,
+    "noFallthroughCasesInSwitch": true,
+    "outDir": "dist",
+    "baseUrl": ".",
+    "paths": {
+      "@pages/*": ["automation/pages/*"],
+      "@fixtures/*": ["automation/fixtures/*"],
+      "@support/*": ["automation/support/*"]
+    }
+  },
+  "include": ["automation/**/*", "playwright.config.ts"],
+  "exclude": ["node_modules", "dist", "build", "mcp-server"]
+}
