@@ -32,7 +32,7 @@ Formato: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/)
   - BUG-014 a11y button-name (Critical)
   - BUG-011 modal de partida finalizada sempre vazio (High)
   - BUG-018 Lighthouse Perf home = 41 (High)
-  - - 13 outros (Medium/Low)
+  - 13 outros bugs (Medium/Low) cobrindo SEO, calendário, navegação, modais, perf
 - 10 melhorias em `bug-reports/improvements/` (data-testid, accessible names, dark mode, i18n, LGPD, etc)
 - 7 charters de session-based testing
 - Evidências por bug em `bug-reports/evidence/`
