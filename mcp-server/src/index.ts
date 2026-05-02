@@ -5,10 +5,14 @@ import { ListToolsRequestSchema, CallToolRequestSchema } from '@modelcontextprot
 import { runTestCaseTool, runTestCase } from './tools/runTestCase.js';
 import { getElementStatusTool, getElementStatus } from './tools/getElementStatus.js';
 import { navigateToTool, navigateTo } from './tools/navigateTo.js';
+import { listTestCasesTool, listTestCases } from './tools/listTestCases.js';
+import { getTestHistoryTool, getTestHistory } from './tools/getTestHistory.js';
+import { extractDomSnapshotTool, extractDomSnapshot } from './tools/extractDomSnapshot.js';
+import { analyzeFailureTool, analyzeFailure } from './tools/analyzeFailure.js';
 import { attachResourceHandlers } from './resources/registry.js';
 
 const server = new Server(
-  { name: 'loomi-qa-mcp', version: '0.2.0' },
+  { name: 'loomi-qa-mcp', version: '0.6.0' },
   { capabilities: { tools: {}, resources: {} } },
 );
 
@@ -16,8 +20,20 @@ const tools = {
   run_test_case: runTestCase,
   get_element_status: getElementStatus,
   navigate_to: navigateTo,
+  list_test_cases: listTestCases,
+  get_test_history: getTestHistory,
+  extract_dom_snapshot: extractDomSnapshot,
+  analyze_failure: analyzeFailure,
 };
-const toolDefs = [runTestCaseTool, getElementStatusTool, navigateToTool];
+const toolDefs = [
+  runTestCaseTool,
+  getElementStatusTool,
+  navigateToTool,
+  listTestCasesTool,
+  getTestHistoryTool,
+  extractDomSnapshotTool,
+  analyzeFailureTool,
+];
 
 server.setRequestHandler(ListToolsRequestSchema, async () => ({ tools: toolDefs }));
 server.setRequestHandler(CallToolRequestSchema, async (req) => {

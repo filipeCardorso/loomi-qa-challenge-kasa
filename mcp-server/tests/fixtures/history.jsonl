@@ -1,0 +1,4 @@
+{"testId":"abc-1","name":"@smoke bootstrap","status":"passed","duration_ms":120,"timestamp":"2026-05-01T10:00:00.000Z"}
+{"testId":"abc-2","name":"@smoke bootstrap","status":"failed","duration_ms":3500,"timestamp":"2026-05-01T11:00:00.000Z"}
+{"testId":"abc-3","name":"@core busca","status":"passed","duration_ms":850,"timestamp":"2026-05-02T08:00:00.000Z"}
+{"testId":"abc-4","name":"@core busca","status":"timedOut","duration_ms":30000,"timestamp":"2026-05-02T09:00:00.000Z"}

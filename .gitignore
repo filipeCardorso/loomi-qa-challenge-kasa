@@ -13,6 +13,7 @@ allure-results/
 allure-report/
 reports/
 mcp-server/logs/
+mcp-server/data/
 .DS_Store
 .idea/
 .vscode/settings.json
