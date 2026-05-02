@@ -52,7 +52,7 @@ Legenda: `[x]` entregue · `[ ]` não entregue · `[~]` parcial (com nota).
   - Resources de erro acessíveis via `loomi://artifacts/{testId}/...` ✓
 - [x] **Resources de erro acessíveis após falha** (URI pattern + notification `notifications/resources/list_changed`)
 - [x] **Tutorial reproduzível** (avaliador roda em ≤5min) → `docs/mcp-tutorial.md`
-- [x] **Vídeo demo de 1min** do MCP em ação (incluso no vídeo geral)
+- [ ] ~~Vídeo demo do MCP~~ pulado (não exigido pelo PDF; tutorial escrito cobre)
 - [x] **Extras (bonus):** 4 tools adicionais (`list_test_cases`, `navigate_to`, `extract_dom_snapshot`, `analyze_failure`) + 31 testes Vitest com ≥80% coverage target
 
 ---
@@ -62,7 +62,7 @@ Legenda: `[x]` entregue · `[ ]` não entregue · `[~]` parcial (com nota).
 - [x] **Trello público com URL no README** (https://trello.com/b/jL2scQSj/loomi-qa-challenge-filipe-gabriel)
 - [x] **Allure publicado em GitHub Pages** (https://filipecardorso.github.io/loomi-qa-challenge-kasa/)
 - [x] **`progress-report.md` com 8 seções completas** → `docs/progress-report.md`
-- [x] **Vídeo demo geral de 3-5min**
+- [ ] ~~Vídeo demo geral~~ pulado (não exigido pelo PDF; documentação cobre comunicação)
 - [x] **README raiz com setup ≤5min** (Quick Start + links + inventário)
 - [x] **ZIP gerado por script**, sem `node_modules`, ≤50MB → `scripts/package.sh`
 

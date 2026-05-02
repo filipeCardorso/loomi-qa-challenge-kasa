@@ -28,7 +28,7 @@ Legenda: `[x]` ok · `[ ]` pendente.
   - URL: https://filipecardorso.github.io/loomi-qa-challenge-kasa/
 - [x] **GitHub repo acessível em janela anônima**
   - URL: https://github.com/filipeCardorso/loomi-qa-challenge-kasa
-- [x] **Vídeo demo (Loom/YouTube unlisted) com link no README e no relatório**
+- [ ] ~~Vídeo demo~~ **DECISÃO:** pulado (não exigido pelo PDF; documentação cobre comunicação assíncrona)
 
 ---
 
@@ -70,7 +70,7 @@ Legenda: `[x]` ok · `[ ]` pendente.
 - [ ] **Assunto:** `Desafio QA Abril 26 — Filipe Gabriel`
 - [ ] **Corpo (2 parágrafos curtos):**
   - Apresentação + escopo entregue (Pleno S1+ em todos os eixos)
-  - Links principais: Trello · Allure · Repo · Vídeo demo · Relatório de progresso
+  - Links principais: Trello · Allure · Repo · Relatório de progresso
 - [ ] **Anexo:** `loomi-qa-challenge-filipe-gabriel.zip`
 - [ ] **CC:** (eu mesmo, para confirmar entrega)
 - [ ] **Enviar antes do deadline:** 2026-05-04 15:00
