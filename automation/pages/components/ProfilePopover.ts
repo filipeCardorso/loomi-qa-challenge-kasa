@@ -13,9 +13,19 @@ import type { Locator, Page } from '@playwright/test';
 export class ProfilePopover {
   constructor(private readonly page: Page) {}
 
-  /** Avatar trigger no header (logado). */
+  /**
+   * Avatar trigger no header (logado).
+   *
+   * Validado em 2026-05-02: o accessible-name do botão é "avatar" (vem do
+   * `<img alt="avatar">` filho). Usamos `getByRole('button', { name: 'avatar' })`
+   * ao invés de `button[aria-label="avatar"]` porque o atributo `aria-label`
+   * pode não estar setado no botão (a label vem da imagem filha).
+   *
+   * O seletor antigo (`header button:has(img) ... .last()`) batia em
+   * `button[data-cy="btn-logout-profile"]` (hidden) e quebrava o click.
+   */
   private get avatarTrigger(): Locator {
-    return this.page.locator('header button:has(img), header [role="button"]:has(img)').last();
+    return this.page.getByRole('button', { name: 'avatar', exact: true }).first();
   }
 
   get root(): Locator {
