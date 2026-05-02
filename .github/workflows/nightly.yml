@@ -1,0 +1,51 @@
+name: Nightly Full Suite + Allure Publish
+on:
+  schedule: [{ cron: '0 3 * * *' }]
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  full:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    strategy:
+      fail-fast: false
+      matrix:
+        project: [chromium, firefox, webkit, mobile-chrome]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version-file: '.nvmrc', cache: 'npm' }
+      - run: npm ci
+      - run: npx playwright install --with-deps ${{ matrix.project == 'mobile-chrome' && 'chromium' || matrix.project }}
+      - run: npx playwright test --project=${{ matrix.project }}
+        env: { CI: 'true' }
+        continue-on-error: true
+      - uses: actions/upload-artifact@v4
+        with:
+          name: allure-results-${{ matrix.project }}
+          path: allure-results/
+  publish:
+    needs: full
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with: { ref: gh-pages, path: gh-pages }
+        continue-on-error: true
+      - uses: actions/download-artifact@v4
+        with: { path: ./all-results }
+      - name: Merge Allure results
+        run: |
+          mkdir -p allure-results
+          find ./all-results -type d -name 'allure-results-*' -exec cp -r {}/. allure-results/ \;
+      - name: Allure history
+        run: |
+          mkdir -p allure-results/history
+          if [ -d gh-pages/history ]; then cp -r gh-pages/history/* allure-results/history/; fi
+      - uses: simple-elf/allure-report-action@v1
+        with: { allure_results: allure-results, gh_pages: gh-pages, allure_report: allure-report }
+      - uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: gh-pages
+          publish_dir: allure-history

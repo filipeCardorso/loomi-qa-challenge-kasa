@@ -1,0 +1,26 @@
+name: Update Visual Baselines
+on:
+  workflow_dispatch:
+    inputs:
+      branch: { description: 'branch alvo', required: true, default: 'main' }
+permissions:
+  contents: write
+  pull-requests: write
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with: { ref: ${{ inputs.branch }} }
+      - uses: actions/setup-node@v4
+        with: { node-version-file: '.nvmrc', cache: 'npm' }
+      - run: npm ci
+      - run: npx playwright install --with-deps chromium
+      - run: npx playwright test --project=chromium automation/tests/visual --update-snapshots
+        continue-on-error: true
+      - uses: peter-evans/create-pull-request@v6
+        with:
+          branch: chore/update-visual-baselines
+          title: 'chore: atualizar baselines visuais'
+          commit-message: 'chore: atualizar baselines visuais'
+          body: 'PR automático gerado por workflow_dispatch.'
