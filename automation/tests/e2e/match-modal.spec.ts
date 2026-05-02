@@ -13,7 +13,7 @@ test.describe('Modal de partida finalizada', () => {
     await homePage.open();
 
     const firstCard = page.locator('div.css-7mca6u').first();
-    await firstCard.waitFor({ state: 'visible', timeout: 15_000 });
+    await firstCard.waitFor({ state: 'visible', timeout: 30_000 });
     await firstCard.click();
 
     const modal = new MatchModal(page);

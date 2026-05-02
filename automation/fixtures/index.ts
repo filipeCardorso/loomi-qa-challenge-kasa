@@ -82,11 +82,17 @@ async function performLogin(page: Page, email: string, password: string): Promis
     .click();
 
   // Aguarda modal sumir + network idle (Firebase auth pode demorar)
-  await page.waitForLoadState('networkidle', { timeout: 15_000 }).catch(() => undefined);
   await page
     .getByPlaceholder(/digite seu e-?mail/i)
-    .waitFor({ state: 'hidden', timeout: 10_000 })
+    .waitFor({ state: 'hidden', timeout: 15_000 })
     .catch(() => undefined);
+  await page.waitForLoadState('networkidle', { timeout: 15_000 }).catch(() => undefined);
+
+  // Garante que o header logado renderizou (tab Calendário só aparece logado)
+  await page
+    .locator('a[title="Calendário"], a[title="Calendario"]')
+    .first()
+    .waitFor({ state: 'visible', timeout: 15_000 });
 
   // Persiste storage state pra próximas runs
   await page.context().storageState({ path: AUTH_STATE_PATH });

@@ -8,9 +8,10 @@ test.describe('Lista de partidas finalizadas', () => {
   test('@smoke @core renderiza pelo menos 1 card de partida', async ({ homePage, page }) => {
     await homePage.open();
 
-    // espera primeiro card aparecer (network call /match/?status=ENDED)
+    // espera primeiro card aparecer (network call /match/?status=ENDED).
+    // API DEV pode ser lenta — damos 30s.
     const cardLocator = page.locator('div.css-7mca6u').first();
-    await cardLocator.waitFor({ state: 'visible', timeout: 15_000 });
+    await cardLocator.waitFor({ state: 'visible', timeout: 30_000 });
 
     const cards = await homePage.getMatchCards();
     expect(cards.length, 'esperado ao menos 1 card de partida finalizada').toBeGreaterThanOrEqual(

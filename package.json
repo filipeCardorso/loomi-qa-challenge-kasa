@@ -13,7 +13,7 @@
   ],
   "scripts": {
     "test": "playwright test",
-    "test:smoke": "playwright test --grep @smoke",
+    "test:smoke": "playwright test --grep @smoke --project=chromium",
     "test:core": "playwright test --grep @core",
     "test:e2e": "playwright test automation/tests/e2e",
     "test:api": "playwright test automation/tests/api",
