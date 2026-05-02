@@ -2,11 +2,35 @@
 
 Este servidor MCP **expõe a suíte de testes Playwright como tools que uma IA (LLM) pode invocar**. Reproduzível em ≤5min sem instalar nada além de Node 20+.
 
-## 🎬 Demo (GIF de terminal)
+## 🎬 Demos visuais
 
-![MCP Demo](site-snapshots/mcp/demo.gif)
+### Terminal demo — 7 tools MCP rodando (sem Claude Desktop)
 
-Esse GIF mostra `bash scripts/demo-mcp.sh` rodando — exercita os 7 tools end-to-end + Vitest. Pra reproduzir localmente: `bash scripts/demo-mcp.sh`. Pra regravar: `asciinema rec docs/site-snapshots/mcp/demo.cast --overwrite -c 'bash scripts/demo-mcp.sh' --rows 30 --cols 100`.
+![MCP Demo Terminal](site-snapshots/mcp/demo.gif)
+
+`bash scripts/demo-mcp.sh` exercita `tools/list`, `resources/list`, `list_test_cases`, `get_test_history` + Vitest (31 testes). Tudo via stdio JSON-RPC.
+
+### Browser demo — Playwright real navegando kasa.live (cliente do MCP)
+
+O servidor MCP usa Playwright como engine. Aqui o `run_test_case` em ação contra **https://www.kasa.live** (rede real, sem mocks):
+
+| Cenário                                                       | Vídeo                                                            |
+| ------------------------------------------------------------- | ---------------------------------------------------------------- |
+| **Click em card de partida → modal abre**                     | ![Match modal](site-snapshots/mcp/playwright-match-modal.gif)    |
+| **Filtro "Qual time?" → typeahead dispara `/team/?name=...`** | ![Busca typeahead](site-snapshots/mcp/playwright-busca-time.gif) |
+
+Vídeos `.webm` originais também em `docs/site-snapshots/mcp/playwright-*.webm` (qualidade superior, mesmo conteúdo). Esses vídeos foram capturados com `playwright test --config=temp-config-com-video=on` durante a execução real do smoke suite contra `kasa.live`.
+
+**Como reproduzir:**
+
+```bash
+# Terminal demo
+bash scripts/demo-mcp.sh
+
+# Browser demo (com video=on)
+npm run test:smoke -- --video=on
+# vídeos vão pra test-results/<test-name>/video.webm
+```
 
 ---
 

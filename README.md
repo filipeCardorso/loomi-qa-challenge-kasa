@@ -16,7 +16,7 @@ npm run report:allure
 - 📦 **Repositório:** https://github.com/filipeCardorso/loomi-qa-challenge-kasa
 - 📋 **Trello (board público):** https://trello.com/b/jL2scQSj/loomi-qa-challenge-filipe-gabriel
 - 📊 **Allure Report (publicado em GitHub Pages):** https://filipecardorso.github.io/loomi-qa-challenge-kasa/
-- 🎬 **Demo MCP (GIF):** [docs/site-snapshots/mcp/demo.gif](docs/site-snapshots/mcp/demo.gif) — 7 tools rodando end-to-end
+- 🎬 **Demos MCP em ação:** [Terminal](docs/site-snapshots/mcp/demo.gif) (7 tools via stdio) · [Browser - match modal](docs/site-snapshots/mcp/playwright-match-modal.gif) · [Browser - busca typeahead](docs/site-snapshots/mcp/playwright-busca-time.gif) (Playwright real contra kasa.live)
 - 📝 **Relatório de Progresso:** [docs/progress-report.md](docs/progress-report.md)
 
 ## Inventário de entregáveis
