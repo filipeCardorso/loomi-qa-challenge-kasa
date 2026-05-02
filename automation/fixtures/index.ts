@@ -28,13 +28,33 @@ type Fixtures = {
 };
 
 /**
- * Verifica se a page está logada (botão "Entrar" do header NÃO visível).
- * Heurística simples — não dispara navegação adicional.
+ * Verifica se a page está logada.
+ *
+ * Heurística robusta: espera até que UMA das duas condições estabilize:
+ *   - botão "Entrar" no header → anônimo (return false)
+ *   - tab "Calendário" presente OU outro indicador logado → logged in (return true)
+ *
+ * Isso evita falso-positivo quando a page ainda não renderizou o header.
  */
 async function isLoggedIn(page: Page): Promise<boolean> {
+  // Espera o header carregar (logo "home" sempre presente)
+  await page
+    .locator('a[href="/"]')
+    .first()
+    .waitFor({ state: 'visible', timeout: 10_000 })
+    .catch(() => undefined);
+
   const entrarHeader = page.getByRole('button', { name: /^entrar$/i }).first();
-  // Se o botão Entrar do header NÃO existe → estamos logados
-  return !(await entrarHeader.isVisible({ timeout: 3_000 }).catch(() => false));
+  const calendarTab = page.locator('a[title="Calendário"], a[title="Calendario"]').first();
+
+  // dá tempo do React montar UM dos dois
+  await Promise.race([
+    entrarHeader.waitFor({ state: 'visible', timeout: 8_000 }).catch(() => undefined),
+    calendarTab.waitFor({ state: 'visible', timeout: 8_000 }).catch(() => undefined),
+  ]);
+
+  const entrarVisible = await entrarHeader.isVisible().catch(() => false);
+  return !entrarVisible;
 }
 
 /**
