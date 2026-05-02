@@ -1,0 +1,319 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: e2e/navegacao.spec.ts >> Navegação — anônimo e logado >> @core fluxo Home → Melhores momentos → Home (anônimo)
+- Location: automation/tests/e2e/navegacao.spec.ts:14:7
+
+# Error details
+
+```
+TimeoutError: locator.click: Timeout 10000ms exceeded.
+Call log:
+  - waiting for locator('a[title="Melhores momentos"]').first()
+    - locator resolved to <a title="Melhores momentos" href="/melhores-momentos" class="chakra-link css-1ruz7og" data-cy="link/melhores-momentos">…</a>
+  - attempting click action
+    2 × waiting for element to be visible, enabled and stable
+      - element is not stable
+    - retrying click action
+    - waiting 20ms
+    2 × waiting for element to be visible, enabled and stable
+      - element is not stable
+    - retrying click action
+      - waiting 100ms
+    - waiting for element to be visible, enabled and stable
+
+```
+
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - generic [ref=e4]:
+    - banner [ref=e5]:
+      - generic [ref=e7]:
+        - link "home" [ref=e8] [cursor=pointer]:
+          - /url: /
+          - img "home" [ref=e9]
+        - generic [ref=e14]:
+          - generic [ref=e17]:
+            - textbox "Qual time?" [ref=e20]
+            - textbox "Qual campeonato?" [ref=e23]
+            - generic [ref=e28]:
+              - generic:
+                - img
+              - textbox "Apr 30, 2026" [ref=e29]: Hoje
+            - textbox "Onde quer ver?" [ref=e32]
+          - img [ref=e36] [cursor=pointer]
+        - generic [ref=e38]:
+          - button "Notificações" [ref=e40] [cursor=pointer]:
+            - img [ref=e41]
+          - button "Entrar" [ref=e42] [cursor=pointer]
+      - generic [ref=e46]:
+        - link "Partidas Partidas" [ref=e47] [cursor=pointer]:
+          - /url: /
+          - img "Partidas" [ref=e48]
+          - paragraph [ref=e49]: Partidas
+        - link "Melhores momentos Melhores momentos" [ref=e50] [cursor=pointer]:
+          - /url: /melhores-momentos
+          - img "Melhores momentos" [ref=e51]
+          - paragraph [ref=e52]: Melhores momentos
+    - main [ref=e54]:
+      - generic [ref=e55]:
+        - generic [ref=e56]:
+          - generic [ref=e59]:
+            - separator [ref=e63]
+            - separator [ref=e68]
+            - separator [ref=e73]
+            - separator [ref=e78]
+            - separator [ref=e83]
+            - separator [ref=e88]
+            - separator [ref=e93]
+            - separator [ref=e98]
+            - separator [ref=e103]
+            - separator [ref=e108]
+            - separator [ref=e113]
+            - separator [ref=e118]
+            - separator [ref=e123]
+            - separator [ref=e128]
+            - separator [ref=e133]
+            - separator [ref=e138]
+            - separator [ref=e143]
+            - separator [ref=e148]
+            - separator [ref=e153]
+            - separator [ref=e158]
+            - separator [ref=e163]
+            - separator [ref=e168]
+            - separator [ref=e173]
+            - separator [ref=e178]
+            - separator [ref=e183]
+            - separator [ref=e188]
+            - separator [ref=e193]
+            - separator [ref=e198]
+            - separator [ref=e203]
+            - separator [ref=e208]
+          - paragraph [ref=e211]: ...
+        - generic [ref=e212]:
+          - generic [ref=e215]:
+            - separator [ref=e219]
+            - separator [ref=e224]
+            - separator [ref=e229]
+            - separator [ref=e234]
+            - separator [ref=e239]
+            - separator [ref=e244]
+            - separator [ref=e249]
+            - separator [ref=e254]
+            - separator [ref=e259]
+            - separator [ref=e264]
+            - separator [ref=e269]
+            - separator [ref=e274]
+            - separator [ref=e279]
+            - separator [ref=e284]
+            - separator [ref=e289]
+            - separator [ref=e294]
+            - separator [ref=e299]
+            - separator [ref=e304]
+            - separator [ref=e309]
+            - separator [ref=e314]
+            - separator [ref=e319]
+            - separator [ref=e324]
+            - separator [ref=e329]
+            - separator [ref=e334]
+            - separator [ref=e339]
+            - separator [ref=e344]
+            - separator [ref=e349]
+            - separator [ref=e354]
+            - separator [ref=e359]
+            - separator [ref=e364]
+          - paragraph [ref=e367]: ...
+        - generic [ref=e368]:
+          - generic [ref=e371]:
+            - separator [ref=e375]
+            - separator [ref=e380]
+            - separator [ref=e385]
+            - separator [ref=e390]
+            - separator [ref=e395]
+            - separator [ref=e400]
+            - separator [ref=e405]
+            - separator [ref=e410]
+            - separator [ref=e415]
+            - separator [ref=e420]
+            - separator [ref=e425]
+            - separator [ref=e430]
+            - separator [ref=e435]
+            - separator [ref=e440]
+            - separator [ref=e445]
+            - separator [ref=e450]
+            - separator [ref=e455]
+            - separator [ref=e460]
+            - separator [ref=e465]
+            - separator [ref=e470]
+            - separator [ref=e475]
+            - separator [ref=e480]
+            - separator [ref=e485]
+            - separator [ref=e490]
+            - separator [ref=e495]
+            - separator [ref=e500]
+            - separator [ref=e505]
+            - separator [ref=e510]
+            - separator [ref=e515]
+            - separator [ref=e520]
+          - paragraph [ref=e523]: ...
+        - generic [ref=e524]:
+          - generic [ref=e527]:
+            - separator [ref=e531]
+            - separator [ref=e536]
+            - separator [ref=e541]
+            - separator [ref=e546]
+            - separator [ref=e551]
+            - separator [ref=e556]
+            - separator [ref=e561]
+            - separator [ref=e566]
+            - separator [ref=e571]
+            - separator [ref=e576]
+            - separator [ref=e581]
+            - separator [ref=e586]
+            - separator [ref=e591]
+            - separator [ref=e596]
+            - separator [ref=e601]
+            - separator [ref=e606]
+            - separator [ref=e611]
+            - separator [ref=e616]
+            - separator [ref=e621]
+            - separator [ref=e626]
+            - separator [ref=e631]
+            - separator [ref=e636]
+            - separator [ref=e641]
+            - separator [ref=e646]
+            - separator [ref=e651]
+            - separator [ref=e656]
+            - separator [ref=e661]
+            - separator [ref=e666]
+            - separator [ref=e671]
+            - separator [ref=e676]
+          - paragraph [ref=e679]: ...
+    - contentinfo [ref=e680]:
+      - paragraph [ref=e682]: Porque Deus amou o mundo de tal maneira, que deu o seu Filho Unigênito (Jesus), para que todo aquele que nele crê não pereça, mas tenha a vida eterna - João 3:16
+      - generic [ref=e683]:
+        - img "playStore" [ref=e685] [cursor=pointer]
+        - img "appStore" [ref=e687] [cursor=pointer]
+      - generic [ref=e688]:
+        - link [ref=e689] [cursor=pointer]:
+          - /url: https://www.tiktok.com/@kasa.live/
+          - img [ref=e690]
+        - link [ref=e692] [cursor=pointer]:
+          - /url: https://www.instagram.com/kasa.live/
+          - img [ref=e693]
+      - generic [ref=e695]:
+        - paragraph [ref=e696]: © 2022 Kasa.live, LTDA.
+        - link "Termos de Uso e Política de Privacidade" [ref=e697] [cursor=pointer]:
+          - /url: /termos-de-uso
+      - paragraph [ref=e698]: v3.1-Web
+  - alert [ref=e699]
+  - generic:
+    - region
+    - region
+    - region
+    - region
+    - region
+    - region
+  - iframe [ref=e700]:
+    
+```
+
+# Test source
+
+```ts
+  1  | import { test, expect } from '@fixtures/index';
+  2  | import { HomePage } from '@pages/HomePage';
+  3  | 
+  4  | /**
+  5  |  * @core
+  6  |  * Cobertura de navegação:
+  7  |  * 1. Home → Melhores momentos → Home (anônimo) — verificar URLs
+  8  |  * 2. Click logo retorna home a partir de qualquer página
+  9  |  * 3. Tabs anônimas: 2 visíveis (Partidas + Melhores momentos)
+  10 |  *    Favoritos/Calendário NÃO visíveis
+  11 |  * 4. Tabs LOGADO: 4 visíveis — usa loggedInPage
+  12 |  */
+  13 | test.describe('Navegação — anônimo e logado', () => {
+  14 |   test('@core fluxo Home → Melhores momentos → Home (anônimo)', async ({ homePage, page }) => {
+  15 |     await homePage.open();
+  16 |     expect(new URL(page.url()).pathname, 'inicial deve ser /').toBe('/');
+  17 | 
+> 18 |     await homePage.tabMelhoresMomentos.first().click();
+     |                                                ^ TimeoutError: locator.click: Timeout 10000ms exceeded.
+  19 |     await page.waitForURL(/\/melhores-momentos/i, { timeout: 10_000 });
+  20 |     expect(page.url()).toMatch(/\/melhores-momentos/);
+  21 | 
+  22 |     await homePage.tabPartidas.first().click();
+  23 |     await page.waitForURL((url) => url.pathname === '/' || url.pathname === '', {
+  24 |       timeout: 10_000,
+  25 |     });
+  26 |     expect(new URL(page.url()).pathname, 'voltou para /').toBe('/');
+  27 |   });
+  28 | 
+  29 |   test('@core click no logo a partir de /melhores-momentos retorna para /', async ({ page }) => {
+  30 |     await page.goto('/melhores-momentos', { waitUntil: 'domcontentloaded' });
+  31 |     expect(page.url()).toMatch(/\/melhores-momentos/);
+  32 | 
+  33 |     const logo = page.locator('a[href="/"]').first();
+  34 |     await logo.click();
+  35 |     await page.waitForURL((url) => url.pathname === '/' || url.pathname === '', {
+  36 |       timeout: 10_000,
+  37 |     });
+  38 |     expect(new URL(page.url()).pathname, 'logo deve levar pra /').toBe('/');
+  39 |   });
+  40 | 
+  41 |   test('@core tabs anônimas: Partidas + Melhores momentos visíveis; Favoritos/Calendário NÃO', async ({
+  42 |     homePage,
+  43 |   }) => {
+  44 |     await homePage.open();
+  45 | 
+  46 |     await expect(homePage.tabPartidas.first(), 'tab Partidas visível anônimo').toBeVisible();
+  47 |     await expect(
+  48 |       homePage.tabMelhoresMomentos.first(),
+  49 |       'tab Melhores momentos visível anônimo',
+  50 |     ).toBeVisible();
+  51 | 
+  52 |     expect(
+  53 |       await homePage.tabFavoritos
+  54 |         .first()
+  55 |         .isVisible({ timeout: 1_000 })
+  56 |         .catch(() => false),
+  57 |       'Favoritos NÃO deve estar visível anônimo',
+  58 |     ).toBe(false);
+  59 |     expect(
+  60 |       await homePage.tabCalendario
+  61 |         .first()
+  62 |         .isVisible({ timeout: 1_000 })
+  63 |         .catch(() => false),
+  64 |       'Calendário NÃO deve estar visível anônimo',
+  65 |     ).toBe(false);
+  66 |   });
+  67 | 
+  68 |   test.describe('logado', () => {
+  69 |     // Login fixture pode levar 30s+ sob contenção da DEV API; bumpamos o timeout.
+  70 |     test.describe.configure({ timeout: 90_000 });
+  71 | 
+  72 |     test('@core tabs LOGADO: contagem >=3 (Partidas/Melhores/Calendário no mínimo)', async ({
+  73 |       loggedInPage,
+  74 |     }) => {
+  75 |       const home = new HomePage(loggedInPage);
+  76 |       const count = await home.countNavTabs();
+  77 |       expect(
+  78 |         count,
+  79 |         `esperado >=3 tabs nav após login (4 ideal). Visíveis: ${count}`,
+  80 |       ).toBeGreaterThanOrEqual(3);
+  81 | 
+  82 |       await expect(home.tabMelhoresMomentos.first()).toBeVisible();
+  83 |       await expect(home.tabCalendario.first()).toBeVisible();
+  84 |     });
+  85 |   });
+  86 | });
+  87 | 
+```

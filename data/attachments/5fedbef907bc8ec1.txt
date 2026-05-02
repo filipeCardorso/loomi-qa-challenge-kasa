@@ -1,0 +1,153 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: api/endpoint-perf.spec.ts >> API perf — /match/?status=ENDED >> @api responde dentro do budget hard (<10s) e idealmente <2s
+- Location: automation/tests/api/endpoint-perf.spec.ts:16:7
+
+# Error details
+
+```
+TimeoutError: apiRequestContext.get: Timeout 10000ms exceeded.
+Call log:
+  - → GET https://kasa-live.api.dev.loomi.com.br/api/1.0/match/?status=ENDED&with_channel=true
+    - user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:148.0.2) Gecko/20100101 Firefox/148.0.2
+    - accept: */*
+    - accept-encoding: gzip,deflate,br
+
+```
+
+# Test source
+
+```ts
+  13  |  * mudança breaking no shape será detectada pelos `safeParse` dos specs.
+  14  |  */
+  15  | export const KASA_API_BASE_URL = 'https://kasa-live.api.dev.loomi.com.br/api/1.0';
+  16  | 
+  17  | /**
+  18  |  * Status enum textual — empiricamente a API retorna `Ended` capitalizado
+  19  |  * ("Ended" / "Not Started" / "In Play"), embora aceite o filtro em maiúsculas
+  20  |  * (`?status=ENDED`). Documentado como bug menor em `bug-reports/`.
+  21  |  */
+  22  | export const matchStatusSchema = z.string().min(1);
+  23  | 
+  24  | export const channelSchema = z
+  25  |   .object({
+  26  |     id: z.number(),
+  27  |     name: z.string(),
+  28  |     is_active: z.boolean().optional(),
+  29  |     watch_link: z.string().nullable().optional(),
+  30  |     badge: z.string().nullable().optional(),
+  31  |     custom_name: z.string().nullable().optional(),
+  32  |   })
+  33  |   .passthrough();
+  34  | 
+  35  | export const teamSchema = z
+  36  |   .object({
+  37  |     id: z.number(),
+  38  |     name: z.string(),
+  39  |     custom_name: z.string().nullable().optional(),
+  40  |     slug: z.string().nullable().optional(),
+  41  |     badge: z.string().nullable().optional(),
+  42  |     is_active: z.boolean().optional(),
+  43  |   })
+  44  |   .passthrough();
+  45  | 
+  46  | export const championshipSchema = z
+  47  |   .object({
+  48  |     id: z.number(),
+  49  |     name: z.string(),
+  50  |     custom_name: z.string().nullable().optional(),
+  51  |     badge: z.string().nullable().optional(),
+  52  |   })
+  53  |   .passthrough();
+  54  | 
+  55  | export const matchSchema = z
+  56  |   .object({
+  57  |     id: z.number(),
+  58  |     status: matchStatusSchema,
+  59  |     datetime: z.string().nullable().optional(),
+  60  |     team_a: teamSchema.nullable().optional(),
+  61  |     team_b: teamSchema.nullable().optional(),
+  62  |     championship: championshipSchema.nullable().optional(),
+  63  |     channels: z.array(channelSchema).optional(),
+  64  |     team_a_score: z.number().nullable().optional(),
+  65  |     team_b_score: z.number().nullable().optional(),
+  66  |     is_active: z.boolean().optional(),
+  67  |   })
+  68  |   .passthrough();
+  69  | 
+  70  | /**
+  71  |  * Envelope paginado padrão do DRF (Django REST Framework): `count`, `next`,
+  72  |  * `previous`, `results`. A API kasa.live também adiciona `current_page`.
+  73  |  */
+  74  | export const paginatedSchema = <T extends z.ZodTypeAny>(item: T) =>
+  75  |   z
+  76  |     .object({
+  77  |       count: z.number(),
+  78  |       next: z.string().nullable(),
+  79  |       previous: z.string().nullable(),
+  80  |       results: z.array(item),
+  81  |       current_page: z.number().optional(),
+  82  |     })
+  83  |     .passthrough();
+  84  | 
+  85  | export const matchListResponseSchema = paginatedSchema(matchSchema);
+  86  | export const teamListResponseSchema = paginatedSchema(teamSchema);
+  87  | 
+  88  | export type MatchStatus = 'ENDED' | 'NOTSTARTED' | 'INPLAY';
+  89  | 
+  90  | export interface GetMatchesParams {
+  91  |   status?: MatchStatus;
+  92  |   with_channel?: boolean;
+  93  |   page?: number;
+  94  |   ordering?: 'ASC' | 'DESC';
+  95  |   date_start?: string;
+  96  |   date?: string;
+  97  |   trending?: boolean;
+  98  | }
+  99  | 
+  100 | export class KasaApiClient {
+  101 |   constructor(
+  102 |     private readonly request: APIRequestContext,
+  103 |     private readonly baseURL: string = KASA_API_BASE_URL,
+  104 |   ) {}
+  105 | 
+  106 |   /**
+  107 |    * GET /match/ com query params arbitrários.
+  108 |    *
+  109 |    * Os params booleanos são serializados como `"true"` / `"false"` (string),
+  110 |    * porque é assim que o frontend kasa.live envia.
+  111 |    */
+  112 |   async getMatches(params: GetMatchesParams = {}): Promise<APIResponse> {
+> 113 |     return this.request.get(`${this.baseURL}/match/`, {
+      |                         ^ TimeoutError: apiRequestContext.get: Timeout 10000ms exceeded.
+  114 |       params: this.normalize(params),
+  115 |     });
+  116 |   }
+  117 | 
+  118 |   /**
+  119 |    * GET /team/?name=... typeahead descoberto na Phase 3.
+  120 |    * Disparado pelo input "Qual time?" da home (sem debounce visível).
+  121 |    */
+  122 |   async getTeams(name: string): Promise<APIResponse> {
+  123 |     return this.request.get(`${this.baseURL}/team/`, {
+  124 |       params: { name },
+  125 |     });
+  126 |   }
+  127 | 
+  128 |   private normalize(params: GetMatchesParams): Record<string, string> {
+  129 |     const out: Record<string, string> = {};
+  130 |     for (const [k, v] of Object.entries(params)) {
+  131 |       if (v === undefined || v === null) continue;
+  132 |       out[k] = typeof v === 'boolean' ? String(v) : String(v);
+  133 |     }
+  134 |     return out;
+  135 |   }
+  136 | }
+  137 | 
+```
