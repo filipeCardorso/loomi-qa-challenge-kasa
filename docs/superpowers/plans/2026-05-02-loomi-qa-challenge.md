@@ -162,7 +162,7 @@ TRELLO_BOARD_URL=
     "test:api": "playwright test automation/tests/api",
     "test:visual": "playwright test automation/tests/visual",
     "test:a11y": "playwright test automation/tests/a11y",
-    "test:perf": "playwright test automation/tests/performance",
+    "test:perf": "playwright test --project=perf",
     "test:full": "playwright test",
     "report:allure": "allure generate allure-results --clean -o allure-report && allure open allure-report",
     "lint": "eslint . && prettier --check .",
@@ -280,6 +280,7 @@ git add . && git commit -m "chore: estrutura de diretórios completa"
 - [ ] **Step 0.3.1 — Criar `playwright.config.ts`**
 
 ```typescript
+import 'dotenv/config'; // carrega .env.local automaticamente
 import { defineConfig, devices } from '@playwright/test';
 
 export default defineConfig({
@@ -307,6 +308,15 @@ export default defineConfig({
     { name: 'firefox', use: { ...devices['Desktop Firefox'] } },
     { name: 'webkit', use: { ...devices['Desktop Safari'] } },
     { name: 'mobile-chrome', use: { ...devices['Pixel 7'] } },
+    {
+      name: 'perf',
+      testDir: './automation/tests/performance',
+      use: {
+        ...devices['Desktop Chrome'],
+        // playwright-lighthouse exige porta CDP exposta
+        launchOptions: { args: ['--remote-debugging-port=9222'] },
+      },
+    },
   ],
   expect: {
     timeout: 5_000,
@@ -314,6 +324,8 @@ export default defineConfig({
   },
 });
 ```
+
+> **Nota:** `import 'dotenv/config'` no topo carrega `.env.local` automaticamente, e o project `perf` expõe a porta CDP 9222 que `playwright-lighthouse` requer (sem isso a Fase 11 trava).
 
 - [ ] **Step 0.3.2 — Criar `eslint.config.mjs`**
 
@@ -352,10 +364,29 @@ npm run typecheck
 ```
 Expected: sem erros (suite vazia).
 
-- [ ] **Step 0.3.4 — Commit configs**
+- [ ] **Step 0.3.4 — Sanity check de path aliases tsconfig**
+
+Antes de seguir, validar que `@pages/*`, `@fixtures/*`, `@support/*` resolvem em runtime. Criar `automation/tests/sanity.spec.ts` mínimo:
+
+```typescript
+import { test, expect } from '@playwright/test';
+// import só pra validar resolução do alias (vamos remover depois)
+test('@smoke sanity: tsconfig paths resolve', async () => {
+  expect(typeof process.versions.node).toBe('string');
+});
+```
 
 ```bash
-git add . && git commit -m "chore: playwright e eslint config"
+npx playwright test automation/tests/sanity.spec.ts --reporter=list
+```
+Expected: 1 passed. Se falhou por alias: revisar `tsconfig.json` paths.
+
+Após validado, deletar `automation/tests/sanity.spec.ts`.
+
+- [ ] **Step 0.3.5 — Commit configs**
+
+```bash
+git add . && git commit -m "chore: playwright e eslint config + sanity check"
 ```
 
 ### Task 0.4 — CI esqueleto
@@ -384,7 +415,7 @@ jobs:
         uses: actions/cache@v4
         with:
           path: ~/.cache/ms-playwright
-          key: playwright-${{ hashFiles('package-lock.json') }}
+          key: playwright-${{ runner.os }}-${{ hashFiles('package-lock.json') }}
       - run: npx playwright install --with-deps chromium
       - run: npm run lint
       - run: npm run typecheck
@@ -1325,6 +1356,7 @@ git push --follow-tags
   },
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.0.0",
+    "playwright": "^1.50.0",
     "zod": "^3.22.0"
   },
   "devDependencies": {
@@ -1420,8 +1452,11 @@ export type RunTestCaseOutput = z.infer<typeof RunTestCaseOutputSchema>;
 ```typescript
 import { spawn } from 'node:child_process';
 import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 
-const REPO_ROOT = path.resolve(import.meta.dirname, '../../..');
+// fileURLToPath compat com Node 20.0+ (import.meta.dirname só em 20.11+)
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const REPO_ROOT = path.resolve(__dirname, '../../..');
 
 export interface RunOptions {
   grep: string;
@@ -2031,6 +2066,8 @@ Login/cadastro fluxo, perfil, dark mode (existe?), notificações, idioma, cooki
 
 - [ ] **Step 8.4.1 — Documentar BUG-013..BUG-018 + IMP-001..IMP-010**
 
+> **Nota sobre contagem de melhorias:** as ondas explícitas geram +3 (Fase 5) +5 (Fase 8) = 8 melhorias. As 2 melhorias restantes para chegar a 10 vêm oportunisticamente de: (a) Fase 2 charters C1/C2 (se houver achados não-críticos), (b) Fase 9 violations a11y `moderate` (não bloqueiam mas viram IMP), (c) achados durante Fase 6/9 ao escrever automação. Se ao fim da Fase 8 ainda faltarem melhorias, fazer micro-charter de 30min em UX/cosméticos pra fechar a meta.
+
 - [ ] **Step 8.4.2 — Sincronizar Trello (todos)**
 
 - [ ] **Step 8.4.3 — Atualizar `bug-reports/README.md` com índice completo**
@@ -2488,31 +2525,41 @@ git push --follow-tags
 
 ### Task 13.1 — Trigger nightly + verificar publish
 
-- [ ] **Step 13.1.1 — Habilitar GitHub Pages**
+- [ ] **Step 13.1.1 — Trigger manual primeiro (cria branch `gh-pages`)**
 
-Settings do repo → Pages → Source = "Deploy from branch" → branch = `gh-pages` → folder = `/ (root)`.
+A branch `gh-pages` não existe ainda. O workflow `nightly.yml` cria ela na primeira execução via `peaceiris/actions-gh-pages`. Por isso: **rodar workflow ANTES de configurar Pages**.
 
-- [ ] **Step 13.1.2 — Trigger manual**
+```bash
+gh workflow run nightly.yml
+```
+
+Aguardar conclusão.
+
+- [ ] **Step 13.1.2 — Habilitar GitHub Pages (após branch existir)**
+
+Settings do repo → Pages → Source = "Deploy from branch" → branch = `gh-pages` → folder = `/ (root)` → Save.
+
+- [ ] **Step 13.1.3 — Trigger novamente para publicar com Pages habilitado**
 
 ```bash
 gh workflow run nightly.yml
 ```
 Ou: Actions tab → Nightly → Run workflow.
 
-- [ ] **Step 13.1.3 — Aguardar conclusão (~25min)**
+- [ ] **Step 13.1.4 — Aguardar conclusão (~25min)**
 
 Monitorar:
 ```bash
 gh run watch
 ```
 
-- [ ] **Step 13.1.4 — Verificar Allure no Pages**
+- [ ] **Step 13.1.5 — Verificar Allure no Pages**
 
 URL: `https://<user>.github.io/loomi-qa-challenge-kasa/`
 
 Abrir em janela anônima — deve carregar report navegável.
 
-- [ ] **Step 13.1.5 — Atualizar README com URL**
+- [ ] **Step 13.1.6 — Atualizar README com URL**
 
 ```bash
 sed -i '' 's|<preencher>|https://<user>.github.io/loomi-qa-challenge-kasa/|' README.md
