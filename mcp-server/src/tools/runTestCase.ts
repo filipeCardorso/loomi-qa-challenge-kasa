@@ -1,6 +1,7 @@
 import { RunTestCaseInputSchema } from '../types/mcp.js';
 import { runPlaywright } from '../runner/playwrightBridge.js';
 import { parseResult } from '../runner/resultParser.js';
+import { registerArtifact } from '../resources/registry.js';
 
 export const runTestCaseTool = {
   name: 'run_test_case',
@@ -17,6 +18,21 @@ export const runTestCaseTool = {
   },
 };
 
+interface PlaywrightAttachment {
+  name: string;
+  path?: string;
+  contentType: string;
+}
+
+function extractAttachments(stdout: string): PlaywrightAttachment[] {
+  try {
+    const report = JSON.parse(stdout);
+    return report?.suites?.[0]?.specs?.[0]?.tests?.[0]?.results?.[0]?.attachments ?? [];
+  } catch {
+    return [];
+  }
+}
+
 export async function runTestCase(rawInput: unknown) {
   const input = RunTestCaseInputSchema.parse(rawInput);
   const run = await runPlaywright({
@@ -25,5 +41,16 @@ export async function runTestCase(rawInput: unknown) {
     headed: input.headed,
   });
   const result = parseResult(run.stdout);
+
+  if (result.status === 'failed' || result.status === 'timedOut') {
+    const attachments = extractAttachments(run.stdout);
+    for (const att of attachments) {
+      if (!att.path) continue;
+      if (att.name === 'screenshot') registerArtifact(result.testId, 'screenshot', att.path);
+      else if (att.name === 'video') registerArtifact(result.testId, 'video', att.path);
+      else if (att.name === 'trace') registerArtifact(result.testId, 'trace', att.path);
+    }
+  }
+
   return { content: [{ type: 'text', text: JSON.stringify(result, null, 2) }] };
 }
