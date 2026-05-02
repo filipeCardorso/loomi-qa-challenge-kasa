@@ -123,6 +123,42 @@ trim_trailing_whitespace = false
 *.har binary
 ```
 
+- [ ] **Step 0.1.6.5 — Criar `.prettierignore`**
+
+Sem este arquivo, `prettier --check .` (rodado por `npm run lint`) tenta parsear `.github/workflows/*.yml` e crasha com `SyntaxError: Separator , missing in flow map` ao encontrar interpolações `${{ inputs.branch }}` em flow-mapping. Também evita reformatar lockfile, planos longos do superpowers e artefatos gerados.
+
+`.prettierignore`:
+```
+node_modules/
+*/node_modules/
+dist/
+build/
+*/dist/
+*/build/
+
+# Lockfiles (managed by npm)
+package-lock.json
+
+# Generated/runtime artifacts
+allure-results/
+allure-report/
+playwright-report/
+test-results/
+reports/
+
+# CI workflows (Prettier YAML parser chokes on ${{ }} interpolations)
+.github/workflows/
+
+# Long planning markdown (out of scope for formatting)
+docs/superpowers/
+
+# Misc
+*.log
+.DS_Store
+```
+
+Expected após criar: `npm run lint` exit 0.
+
 - [ ] **Step 0.1.7 — Criar `LICENSE` (MIT)**
 
 Padrão MIT 2026 Filipe Gabriel.
@@ -242,6 +278,22 @@ Expected: 3 browsers instalados.
 git add . && git commit -m "chore: foundation (deps, configs, ts, lint)"
 ```
 
+- [ ] **Step 0.1.14 — Stub `mcp-server/package.json`**
+
+`package.json` raiz declara `"workspaces": ["mcp-server"]`. Sem um `mcp-server/package.json` válido, `npm ci` (em CI) quebra com `Cannot read properties of undefined (workspace)`. Criar um stub mínimo agora — o conteúdo real entra na Fase 4.
+
+`mcp-server/package.json`:
+```json
+{
+  "name": "@loomi-qa/mcp-server",
+  "version": "0.0.0-stub",
+  "private": true,
+  "description": "Stub - será implementado na Fase 4"
+}
+```
+
+Expected: `npm ci` passa sem erro de workspace.
+
 ### Task 0.2 — Estrutura de diretórios
 
 - [ ] **Step 0.2.1 — Criar tree de pastas**
@@ -354,15 +406,36 @@ export default [
 
 - [ ] **Step 0.3.3 — Validar configs**
 
+Antes deste passo, criar o placeholder `automation/tests/bootstrap.smoke.spec.ts` (vide nota abaixo). Sem ele, `npx playwright test --grep @smoke` exit 1 com "No tests found" — quebraria `ci.yml` no primeiro push.
+
+`automation/tests/bootstrap.smoke.spec.ts`:
+```typescript
+import { test, expect } from '@playwright/test';
+
+// Placeholder @smoke ate Fase 3 substituir com smokes reais.
+// Existe pra que CI tenha algo a rodar e fique verde desde o primeiro push.
+test('@smoke bootstrap — runner saudavel', async () => {
+  expect(typeof process.versions.node).toBe('string');
+  expect(process.versions.node.startsWith('20')).toBe(true);
+});
+```
+
 ```bash
 npx playwright test --list 2>&1 | head -5
 ```
-Expected: lista vazia (sem testes ainda) sem erro de config.
+Expected: lista 1 teste (`bootstrap.smoke.spec.ts`) sem erro de config.
 
 ```bash
 npm run typecheck
 ```
-Expected: sem erros (suite vazia).
+Expected: sem erros.
+
+```bash
+npm run test:smoke
+```
+Expected: 1 passed.
+
+Nota: o placeholder `automation/tests/bootstrap.smoke.spec.ts` permanece até Fase 3 — é deletado/substituído quando os 8 smokes reais entrarem (vide Step 3.3.1).
 
 - [ ] **Step 0.3.4 — Sanity check de path aliases tsconfig**
 
@@ -381,7 +454,7 @@ npx playwright test automation/tests/sanity.spec.ts --reporter=list
 ```
 Expected: 1 passed. Se falhou por alias: revisar `tsconfig.json` paths.
 
-Após validado, deletar `automation/tests/sanity.spec.ts`.
+Após validado, deletar **apenas** `automation/tests/sanity.spec.ts`. **Não confundir com `automation/tests/bootstrap.smoke.spec.ts`** — o placeholder de smoke fica até Fase 3.
 
 - [ ] **Step 0.3.5 — Commit configs**
 
@@ -1191,6 +1264,8 @@ Para cada teste: escrever falhando → rodar e ver falha → ajustar POM/seletor
 **File:** Create: `automation/tests/e2e/home.spec.ts`, `favoritar-times.spec.ts`, `buscar-partidas.spec.ts`
 
 - [ ] **Step 3.3.1 — Teste 1: home carrega (smoke)**
+
+> **Nota:** deletar `automation/tests/bootstrap.smoke.spec.ts` antes de adicionar os smokes reais — ele foi criado na Fase 0 só pra CI ter algo a rodar e a partir daqui é substituído pelos 8 smokes reais desta task.
 
 `automation/tests/e2e/home.spec.ts`:
 ```typescript
@@ -2534,6 +2609,8 @@ gh workflow run nightly.yml
 ```
 
 Aguardar conclusão.
+
+> **Verificação no primeiro trigger:** o `nightly.yml` usa `publish_dir: allure-history` (path produzido por `simple-elf/allure-report-action@v1` na working dir do runner). Confirmar nos logs do step "Deploy" que `peaceiris/actions-gh-pages@v3` encontrou o diretório. Se acusar "directory not found", testar `./allure-history` ou inspecionar artefatos pra ver onde o action gravou. O README oficial do `simple-elf/allure-report-action` documenta `PUBLISH_DIR: allure-history` como padrão — então o caminho atual deve funcionar, mas vale verificar.
 
 - [ ] **Step 13.1.2 — Habilitar GitHub Pages (após branch existir)**
 

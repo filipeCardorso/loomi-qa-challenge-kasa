@@ -1,0 +1,26 @@
+node_modules/
+*/node_modules/
+dist/
+build/
+*/dist/
+*/build/
+
+# Lockfiles (managed by npm)
+package-lock.json
+
+# Generated/runtime artifacts
+allure-results/
+allure-report/
+playwright-report/
+test-results/
+reports/
+
+# CI workflows (Prettier YAML parser chokes on ${{ }} interpolations)
+.github/workflows/
+
+# Long planning markdown (out of scope for formatting)
+docs/superpowers/
+
+# Misc
+*.log
+.DS_Store

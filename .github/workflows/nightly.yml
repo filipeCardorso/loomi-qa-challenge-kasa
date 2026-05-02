@@ -44,6 +44,10 @@ jobs:
           if [ -d gh-pages/history ]; then cp -r gh-pages/history/* allure-results/history/; fi
       - uses: simple-elf/allure-report-action@v1
         with: { allure_results: allure-results, gh_pages: gh-pages, allure_report: allure-report }
+      # TODO: verify publish_dir on first run — simple-elf/allure-report-action@v1
+      # docs say `allure-history` (relative to runner workdir). If first publish
+      # errors with "directory not found", try `./allure-history` or inspect
+      # artifacts to see where the action wrote the report.
       - uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
