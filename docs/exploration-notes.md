@@ -307,3 +307,143 @@ Com base nesta exploração, a estratégia ótima:
 7. **Detalhe de partida (TBD após sessão humana):** se for modal → POM MatchDetailModal; se for rota → POM MatchDetailPage
 8. **OAuth Google:** apenas teste que valida click → redireciona para accounts.google.com (sem completar)
 9. **API tests:** usar diretamente `https://kasa-live.api.dev.loomi.com.br/api/1.0/match/` com `request` fixture do Playwright
+
+---
+
+## 15. Descobertas finais (sessões v3-v6)
+
+### 15.1 Cards de partida — anatomia técnica DOM
+
+```html
+<div class="css-7mca6u" cursor="pointer" onclick="...">
+  <!-- ESTE é o clickable -->
+  <div class="css-1eu8c2o">
+    <span>MLS</span>
+    <div><img /> Minnesota Utd. <span>0</span> <img /> Inter Miami CF <span>0</span></div>
+    <span>Finalizada</span>
+    <button><CameraIcon /></button>
+    <!-- vai pra video -->
+    <button><ArrowIcon /></button>
+    <!-- abre modal -->
+  </div>
+</div>
+```
+
+**Seletor confiável pra automação:**
+
+```ts
+page.locator('div.css-7mca6u').filter({ hasText: 'Minnesota Utd.' }).first();
+// OU mais robusto (se classes mudarem):
+page
+  .locator('div')
+  .filter({ has: page.locator('text=Finalizada') })
+  .filter({ hasText: 'Minnesota Utd.' })
+  .first();
+```
+
+⚠️ Click programático via `element.click()` em JS NÃO dispara React handler. Use `page.mouse.click(x, y)` no centro do bbox OU `page.locator(...).click()` (que dispara evento real).
+
+### 15.2 Modal de Detalhe da Partida (FINALIZADA)
+
+Click em card abre modal Chakra com `role="dialog" aria-labelledby="chakra-modal--header-:r6:"`:
+
+**Estrutura:**
+
+- Header: "Partida Finalizada" + data (DD/MM/YYYY)
+- Centro: campeonato + escudo+time + placar (X) + escudo+time + "Acompanhe a próxima"
+- Body (FINALIZADA): empty state "Nada por aqui — Ainda não temos os melhores momentos da partida"
+- Botão "Close" (X) topo direito
+
+**Modal de partida FUTURA:** não conseguimos capturar (não havia partidas futuras visíveis na home no momento). Hipótese: tem botão Favoritar + opção de adicionar ao Google Calendar ali.
+
+### 15.3 Tab "Calendário" → /calendario (página dedicada!)
+
+Diferente do que pensei antes. **Calendário NÃO é SPA-state — é rota real `/calendario`** quando logado.
+
+Layout:
+
+- **Side panel esquerdo:**
+  - Mini-calendar mensal (clicar dia filtra)
+  - Filtro "Times" (dropdown collapse)
+  - Filtro "Campeonatos" (dropdown collapse)
+  - **Switch "⭐ Partidas favoritas"** (Chakra Switch, verde quando ON)
+- **Painel principal direito:**
+  - Botão "Hoje" + setas ◀▶ + label mês ("Maio de 2026")
+  - **Vista semanal grade** (3 colunas: 01 Sex | 02 Sáb | 03 Dom)
+  - Empty state quando sem dados: "Nada por aqui — Sem informações das partidas, para esses filtros/datas"
+
+**Implicação:** essa página é onde o usuário ACOMPANHA suas partidas favoritas — funciona como "minha agenda do futebol".
+
+### 15.4 Avatar Popover — menu do usuário
+
+Click no avatar (canto direito header logado) abre **popover Chakra** com `role="dialog" aria-labelledby="popover-header-:r4:"`:
+
+- "Fechar perfil" (X)
+- **Nome:** "Edite seu perfil e escolha um nome"
+- **E-mail:** filipecardosogabriel@gmail.com (read-only)
+- Botão "Editar perfil"
+- Botão "Excluir conta" (destrutivo)
+- **🆕 Switch "Conectar com seu Google Calendar"** (Chakra Switch, ID: `switch-google-calendar`)
+- Botão "Sair"
+
+⚠️ **CRÍTICO:** O Google Calendar **NÃO É BOTÃO** — é Chakra Switch. Para clicá-lo:
+
+```ts
+// O label está visível mas o switch real é input hidden
+await page.locator('input#switch-google-calendar').check();
+// OU clicar no wrapper do switch (custom Chakra)
+await page
+  .locator('label[for="switch-google-calendar"]')
+  .locator('..')
+  .locator('span[role="checkbox"]')
+  .click();
+```
+
+Quando ligado → dispara OAuth Google e sincroniza partidas favoritas no Google Calendar real.
+
+### 15.5 Notifications Panel
+
+Click sino → popover `role="dialog"` com texto **"Você não tem notificações no momento."** (estado inicial conta nova). Layout simples, 399x183px.
+
+### 15.6 Tabs Nav LOGADA — confirmação
+
+Quando logado, nav central tem **4 elementos clicáveis**:
+| Texto | Tag | Comportamento |
+|---|---|---|
+| Partidas | link | Ativo na home `/` |
+| Favoritos | (não conseguimos clicar — talvez componente Chakra Tab interno) | Filtra partidas favoritas |
+| Melhores momentos | link | Vai pra `/melhores-momentos` |
+| Calendário | link | Vai pra **`/calendario`** (rota real!) |
+
+Tabs NÃO usam `<nav>` element — Chakra UI renderiza com `<a>` ou `<button>` em containers `<div>`.
+
+### 15.7 Bug confirmado adicional
+
+**S11:** Modal de partida finalizada SEMPRE mostra empty state "Ainda não temos os melhores momentos da partida" para todas finalizadas testadas (5/5). Improvável que TODAS não tenham highlights. Provável bug ou indexação atrasada no backend.
+
+**S12:** Calendário em `/calendario` mostra apenas 3 dias (01/02/03) na vista semanal — vista deveria ser semana completa (7 dias). UI cortada ou bug responsivo.
+
+### 15.8 Mapeamento DEFINITIVO das 4 funcionalidades core
+
+| Funcionalidade do desafio | Onde está                                                                              | Mecanismo                                                           |
+| ------------------------- | -------------------------------------------------------------------------------------- | ------------------------------------------------------------------- |
+| **Buscar partidas**       | Home `/`                                                                               | 4 inputs (time/campeonato/data/local) + busca por click no calendar |
+| **Melhores momentos**     | `/melhores-momentos`                                                                   | 4 filtros + 2 buscas textuais + lista de vídeos                     |
+| **Favoritar times**       | Filtro lateral em `/calendario` (Times → switch?) **OU** modal de partida futura (TBD) | Switch/toggle                                                       |
+| **Favoritar partidas**    | **Hipótese:** botão favoritar no modal da partida futura (TBD)                         | Click                                                               |
+| **Google Calendar**       | **Popover do perfil → Switch "Conectar com seu Google Calendar"**                      | Chakra Switch                                                       |
+
+### 15.9 Próximos passos pra Phase 3
+
+Já temos seletores 100% concretos pra construir:
+
+1. **POM `LoginModal`** — getByPlaceholder('Digite seu e-mail/senha') + button Entrar.last()
+2. **POM `HomePage`** — 4 filtros de placeholder + tabs nav
+3. **POM `MatchCard`** componente — `div.css-7mca6u` + filter por team name
+4. **POM `MatchModal`** — `[role="dialog"][aria-labelledby^="chakra-modal--header"]`
+5. **POM `HighlightsPage`** — `/melhores-momentos` (filtros + 2 search)
+6. **POM `CalendarPage`** — `/calendario` (mini-cal + filtros laterais + grade semanal)
+7. **POM `ProfilePopover`** — avatar click + items Editar/Excluir/Sair + Switch Google Calendar
+8. **POM `NotificationsPanel`** — sino click
+
+Pode disparar Phase 3 com **alta confiança** — seletores reais validados em sessão headless logada.

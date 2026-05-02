@@ -1,0 +1,459 @@
+{
+  "url": "https://www.kasa.live/",
+  "title": "Kasa.Live - Encontre o Jogo",
+  "headings": [
+    {
+      "tag": "H2",
+      "text": "maio 2026"
+    }
+  ],
+  "buttons": [
+    {
+      "text": "",
+      "aria": "Go to previous month",
+      "type": "button"
+    },
+    {
+      "text": "",
+      "aria": "Go to next month",
+      "type": "button"
+    },
+    {
+      "text": "11º maio (sexta-feira)",
+      "aria": null,
+      "type": "button"
+    },
+    {
+      "text": "22º maio (sábado)",
+      "aria": null,
+      "type": "button"
+    },
+    {
+      "text": "33º maio (domingo)",
+      "aria": null,
+      "type": "button"
+    },
+    {
+      "text": "44º maio (segunda-feira)",
+      "aria": null,
+      "type": "button"
+    },
+    {
+      "text": "55º maio (terça-feira)",
+      "aria": null,
+      "type": "button"
+    },
+    {
+      "text": "66º maio (quarta-feira)",
+      "aria": null,
+      "type": "button"
+    },
+    {
+      "text": "77º maio (quinta-feira)",
+      "aria": null,
+      "type": "button"
+    },
+    {
+      "text": "88º maio (sexta-feira)",
+      "aria": null,
+      "type": "button"
+    },
+    {
+      "text": "99º maio (sábado)",
+      "aria": null,
+      "type": "button"
+    },
+    {
+      "text": "1010º maio (domingo)",
+      "aria": null,
+      "type": "button"
+    },
+    {
+      "text": "1111º maio (segunda-feira)",
+      "aria": null,
+      "type": "button"
+    },
+    {
+      "text": "1212º maio (terça-feira)",
+      "aria": null,
+      "type": "button"
+    },
+    {
+      "text": "1313º maio (quarta-feira)",
+      "aria": null,
+      "type": "button"
+    },
+    {
+      "text": "1414º maio (quinta-feira)",
+      "aria": null,
+      "type": "button"
+    },
+    {
+      "text": "1515º maio (sexta-feira)",
+      "aria": null,
+      "type": "button"
+    },
+    {
+      "text": "1616º maio (sábado)",
+      "aria": null,
+      "type": "button"
+    },
+    {
+      "text": "1717º maio (domingo)",
+      "aria": null,
+      "type": "button"
+    },
+    {
+      "text": "1818º maio (segunda-feira)",
+      "aria": null,
+      "type": "button"
+    },
+    {
+      "text": "1919º maio (terça-feira)",
+      "aria": null,
+      "type": "button"
+    },
+    {
+      "text": "2020º maio (quarta-feira)",
+      "aria": null,
+      "type": "button"
+    },
+    {
+      "text": "2121º maio (quinta-feira)",
+      "aria": null,
+      "type": "button"
+    },
+    {
+      "text": "2222º maio (sexta-feira)",
+      "aria": null,
+      "type": "button"
+    },
+    {
+      "text": "2323º maio (sábado)",
+      "aria": null,
+      "type": "button"
+    },
+    {
+      "text": "2424º maio (domingo)",
+      "aria": null,
+      "type": "button"
+    },
+    {
+      "text": "2525º maio (segunda-feira)",
+      "aria": null,
+      "type": "button"
+    },
+    {
+      "text": "2626º maio (terça-feira)",
+      "aria": null,
+      "type": "button"
+    },
+    {
+      "text": "2727º maio (quarta-feira)",
+      "aria": null,
+      "type": "button"
+    },
+    {
+      "text": "2828º maio (quinta-feira)",
+      "aria": null,
+      "type": "button"
+    },
+    {
+      "text": "2929º maio (sexta-feira)",
+      "aria": null,
+      "type": "button"
+    },
+    {
+      "text": "3030º maio (sábado)",
+      "aria": null,
+      "type": "button"
+    },
+    {
+      "text": "3131º maio (domingo)",
+      "aria": null,
+      "type": "button"
+    },
+    {
+      "text": "",
+      "aria": "Notificações",
+      "type": "button"
+    },
+    {
+      "text": "Entrar",
+      "aria": null,
+      "type": "button"
+    },
+    {
+      "text": "Criar conta",
+      "aria": null,
+      "type": "button"
+    },
+    {
+      "text": "Entrar",
+      "aria": null,
+      "type": "button"
+    },
+    {
+      "text": "",
+      "aria": null,
+      "type": "button"
+    },
+    {
+      "text": "",
+      "aria": null,
+      "type": "button"
+    },
+    {
+      "text": "",
+      "aria": null,
+      "type": "button"
+    },
+    {
+      "text": "",
+      "aria": null,
+      "type": "button"
+    },
+    {
+      "text": "",
+      "aria": null,
+      "type": "button"
+    },
+    {
+      "text": "",
+      "aria": null,
+      "type": "button"
+    },
+    {
+      "text": "",
+      "aria": null,
+      "type": "button"
+    },
+    {
+      "text": "",
+      "aria": null,
+      "type": "button"
+    },
+    {
+      "text": "",
+      "aria": null,
+      "type": "button"
+    },
+    {
+      "text": "",
+      "aria": null,
+      "type": "button"
+    },
+    {
+      "text": "",
+      "aria": null,
+      "type": "button"
+    },
+    {
+      "text": "",
+      "aria": null,
+      "type": "button"
+    },
+    {
+      "text": "",
+      "aria": null,
+      "type": "button"
+    },
+    {
+      "text": "",
+      "aria": null,
+      "type": "button"
+    },
+    {
+      "text": "",
+      "aria": null,
+      "type": "button"
+    },
+    {
+      "text": "",
+      "aria": null,
+      "type": "button"
+    },
+    {
+      "text": "",
+      "aria": null,
+      "type": "button"
+    },
+    {
+      "text": "",
+      "aria": null,
+      "type": "button"
+    },
+    {
+      "text": "",
+      "aria": null,
+      "type": "button"
+    },
+    {
+      "text": "",
+      "aria": null,
+      "type": "button"
+    },
+    {
+      "text": "",
+      "aria": null,
+      "type": "button"
+    },
+    {
+      "text": "",
+      "aria": null,
+      "type": "button"
+    },
+    {
+      "text": "",
+      "aria": null,
+      "type": "button"
+    },
+    {
+      "text": "",
+      "aria": null,
+      "type": "button"
+    },
+    {
+      "text": "",
+      "aria": null,
+      "type": "button"
+    },
+    {
+      "text": "",
+      "aria": null,
+      "type": "button"
+    },
+    {
+      "text": "",
+      "aria": null,
+      "type": "button"
+    },
+    {
+      "text": "",
+      "aria": null,
+      "type": "button"
+    },
+    {
+      "text": "",
+      "aria": null,
+      "type": "button"
+    },
+    {
+      "text": "",
+      "aria": null,
+      "type": "button"
+    },
+    {
+      "text": "",
+      "aria": "página anterior",
+      "type": "button"
+    },
+    {
+      "text": "1",
+      "aria": null,
+      "type": "button"
+    },
+    {
+      "text": "2",
+      "aria": null,
+      "type": "button"
+    },
+    {
+      "text": "117",
+      "aria": null,
+      "type": "button"
+    },
+    {
+      "text": "",
+      "aria": "próxima página",
+      "type": "button"
+    }
+  ],
+  "links": [
+    {
+      "href": "https://www.kasa.live/",
+      "text": ""
+    },
+    {
+      "href": "https://www.kasa.live/",
+      "text": "Partidas"
+    },
+    {
+      "href": "https://www.kasa.live/melhores-momentos",
+      "text": "Melhores momentos"
+    },
+    {
+      "href": "https://www.tiktok.com/@kasa.live/",
+      "text": ""
+    },
+    {
+      "href": "https://www.instagram.com/kasa.live/",
+      "text": ""
+    },
+    {
+      "href": "https://www.kasa.live/termos-de-uso",
+      "text": "Termos de Uso e Política de Privacidade"
+    }
+  ],
+  "inputs": [
+    {
+      "tag": "INPUT",
+      "type": "text",
+      "placeholder": "Qual time?",
+      "aria": null,
+      "name": ""
+    },
+    {
+      "tag": "INPUT",
+      "type": "text",
+      "placeholder": "Qual campeonato?",
+      "aria": null,
+      "name": ""
+    },
+    {
+      "tag": "INPUT",
+      "type": "text",
+      "placeholder": "Apr 30, 2026",
+      "aria": null,
+      "name": ""
+    },
+    {
+      "tag": "INPUT",
+      "type": "text",
+      "placeholder": "Onde quer ver?",
+      "aria": null,
+      "name": ""
+    }
+  ],
+  "iframes": [],
+  "videos": [],
+  "ariaLabels": [
+    "Go to previous month",
+    "Go to next month",
+    "Notificações",
+    "página anterior",
+    "próxima página"
+  ],
+  "dialogs": [
+    {
+      "role": "dialog",
+      "text": "maio 2026domdomingosegsegunda-feiraterterça-feiraquaquarta-feiraquiquinta-feirasexsexta-feirasabsábado11º maio (sexta-feira)22º maio (sábado)33º maio (domingo)44º maio (segunda-feira)55º maio (terça-f"
+    },
+    {
+      "role": "dialog",
+      "text": ""
+    },
+    {
+      "role": "dialog",
+      "text": "NotificaçõesFavorite suas partidas e acompanhe cada detalhe em Kasa.live.Para continuar recebendo as notificações das partidas é necessário fazer o login ou cadastrar-se em nosso site.EntrarCriar cont"
+    }
+  ],
+  "hints": {
+    "favoritar": false,
+    "calendar": false,
+    "compartilhar": false,
+    "notificar": false,
+    "sair": false,
+    "perfil": false
+  }
+}

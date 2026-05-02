@@ -1,0 +1,511 @@
+{
+  "url": "https://www.kasa.live/",
+  "title": "Kasa.Live - Encontre o Jogo",
+  "navItems": [],
+  "headings": [
+    {
+      "tag": "H2",
+      "text": "maio 2026"
+    }
+  ],
+  "buttonsCount": 75,
+  "buttonsSample": [
+    {
+      "text": "",
+      "aria": "Go to previous month"
+    },
+    {
+      "text": "",
+      "aria": "Go to next month"
+    },
+    {
+      "text": "11º maio (sexta-feira)",
+      "aria": null
+    },
+    {
+      "text": "22º maio (sábado)",
+      "aria": null
+    },
+    {
+      "text": "33º maio (domingo)",
+      "aria": null
+    },
+    {
+      "text": "44º maio (segunda-feira)",
+      "aria": null
+    },
+    {
+      "text": "55º maio (terça-feira)",
+      "aria": null
+    },
+    {
+      "text": "66º maio (quarta-feira)",
+      "aria": null
+    },
+    {
+      "text": "77º maio (quinta-feira)",
+      "aria": null
+    },
+    {
+      "text": "88º maio (sexta-feira)",
+      "aria": null
+    },
+    {
+      "text": "99º maio (sábado)",
+      "aria": null
+    },
+    {
+      "text": "1010º maio (domingo)",
+      "aria": null
+    },
+    {
+      "text": "1111º maio (segunda-feira)",
+      "aria": null
+    },
+    {
+      "text": "1212º maio (terça-feira)",
+      "aria": null
+    },
+    {
+      "text": "1313º maio (quarta-feira)",
+      "aria": null
+    },
+    {
+      "text": "1414º maio (quinta-feira)",
+      "aria": null
+    },
+    {
+      "text": "1515º maio (sexta-feira)",
+      "aria": null
+    },
+    {
+      "text": "1616º maio (sábado)",
+      "aria": null
+    },
+    {
+      "text": "1717º maio (domingo)",
+      "aria": null
+    },
+    {
+      "text": "1818º maio (segunda-feira)",
+      "aria": null
+    },
+    {
+      "text": "1919º maio (terça-feira)",
+      "aria": null
+    },
+    {
+      "text": "2020º maio (quarta-feira)",
+      "aria": null
+    },
+    {
+      "text": "2121º maio (quinta-feira)",
+      "aria": null
+    },
+    {
+      "text": "2222º maio (sexta-feira)",
+      "aria": null
+    },
+    {
+      "text": "2323º maio (sábado)",
+      "aria": null
+    },
+    {
+      "text": "2424º maio (domingo)",
+      "aria": null
+    },
+    {
+      "text": "2525º maio (segunda-feira)",
+      "aria": null
+    },
+    {
+      "text": "2626º maio (terça-feira)",
+      "aria": null
+    },
+    {
+      "text": "2727º maio (quarta-feira)",
+      "aria": null
+    },
+    {
+      "text": "2828º maio (quinta-feira)",
+      "aria": null
+    },
+    {
+      "text": "2929º maio (sexta-feira)",
+      "aria": null
+    },
+    {
+      "text": "3030º maio (sábado)",
+      "aria": null
+    },
+    {
+      "text": "3131º maio (domingo)",
+      "aria": null
+    },
+    {
+      "text": "",
+      "aria": "Notificações"
+    },
+    {
+      "text": "",
+      "aria": null
+    },
+    {
+      "text": "",
+      "aria": null
+    },
+    {
+      "text": "Fechar perfil",
+      "aria": "Close"
+    },
+    {
+      "text": "Editar perfil",
+      "aria": null
+    },
+    {
+      "text": "Excluir conta",
+      "aria": null
+    },
+    {
+      "text": "Sair",
+      "aria": null
+    },
+    {
+      "text": "",
+      "aria": null
+    },
+    {
+      "text": "",
+      "aria": null
+    },
+    {
+      "text": "",
+      "aria": null
+    },
+    {
+      "text": "",
+      "aria": null
+    },
+    {
+      "text": "",
+      "aria": null
+    },
+    {
+      "text": "",
+      "aria": null
+    },
+    {
+      "text": "",
+      "aria": null
+    },
+    {
+      "text": "",
+      "aria": null
+    },
+    {
+      "text": "",
+      "aria": null
+    },
+    {
+      "text": "",
+      "aria": null
+    },
+    {
+      "text": "",
+      "aria": null
+    },
+    {
+      "text": "",
+      "aria": null
+    },
+    {
+      "text": "",
+      "aria": null
+    },
+    {
+      "text": "",
+      "aria": null
+    },
+    {
+      "text": "",
+      "aria": null
+    },
+    {
+      "text": "",
+      "aria": null
+    },
+    {
+      "text": "",
+      "aria": null
+    },
+    {
+      "text": "",
+      "aria": null
+    },
+    {
+      "text": "",
+      "aria": null
+    },
+    {
+      "text": "",
+      "aria": null
+    },
+    {
+      "text": "",
+      "aria": null
+    },
+    {
+      "text": "",
+      "aria": null
+    },
+    {
+      "text": "",
+      "aria": null
+    },
+    {
+      "text": "",
+      "aria": null
+    },
+    {
+      "text": "",
+      "aria": null
+    },
+    {
+      "text": "",
+      "aria": null
+    },
+    {
+      "text": "",
+      "aria": null
+    },
+    {
+      "text": "",
+      "aria": null
+    },
+    {
+      "text": "",
+      "aria": null
+    },
+    {
+      "text": "",
+      "aria": null
+    },
+    {
+      "text": "",
+      "aria": "página anterior"
+    },
+    {
+      "text": "1",
+      "aria": null
+    },
+    {
+      "text": "2",
+      "aria": null
+    },
+    {
+      "text": "117",
+      "aria": null
+    },
+    {
+      "text": "",
+      "aria": "próxima página"
+    }
+  ],
+  "links": [
+    {
+      "href": "https://www.kasa.live/",
+      "text": ""
+    },
+    {
+      "href": "https://www.kasa.live/",
+      "text": "Partidas"
+    },
+    {
+      "href": "https://www.kasa.live/favoritos",
+      "text": "Favoritos"
+    },
+    {
+      "href": "https://www.kasa.live/melhores-momentos",
+      "text": "Melhores momentos"
+    },
+    {
+      "href": "https://www.kasa.live/calendario",
+      "text": "Calendário"
+    },
+    {
+      "href": "https://www.tiktok.com/@kasa.live/",
+      "text": ""
+    },
+    {
+      "href": "https://www.instagram.com/kasa.live/",
+      "text": ""
+    },
+    {
+      "href": "https://www.kasa.live/termos-de-uso",
+      "text": "Termos de Uso e Política de Privacidade"
+    }
+  ],
+  "inputs": [
+    {
+      "type": "text",
+      "placeholder": "Qual time?",
+      "aria": null
+    },
+    {
+      "type": "text",
+      "placeholder": "Qual campeonato?",
+      "aria": null
+    },
+    {
+      "type": "text",
+      "placeholder": "Apr 30, 2026",
+      "aria": null
+    },
+    {
+      "type": "text",
+      "placeholder": "Onde quer ver?",
+      "aria": null
+    },
+    {
+      "type": "file",
+      "placeholder": "",
+      "aria": null
+    },
+    {
+      "type": "checkbox",
+      "placeholder": "",
+      "aria": null
+    }
+  ],
+  "iframes": [],
+  "images": [
+    {
+      "alt": "home",
+      "src": "https://www.kasa.live/_next/static/media/logo-home.e2a9b922.svg"
+    },
+    {
+      "alt": "",
+      "src": "data:image/svg+xml,%3csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20version=%271.1%27%20width=%2725"
+    },
+    {
+      "alt": "",
+      "src": "https://www.kasa.live/_next/static/media/bell.2a97ea4e.svg"
+    },
+    {
+      "alt": "",
+      "src": "https://www.kasa.live/_next/static/media/pen.fdc758fa.svg"
+    },
+    {
+      "alt": "",
+      "src": "https://www.kasa.live/_next/static/media/close-square.034e368e.svg"
+    },
+    {
+      "alt": "",
+      "src": "https://www.kasa.live/_next/static/media/exit.63175025.svg"
+    },
+    {
+      "alt": "Partidas",
+      "src": "https://www.kasa.live/_next/static/media/logoIcon-black.1d27c55c.svg"
+    },
+    {
+      "alt": "Favoritos",
+      "src": "https://www.kasa.live/_next/static/media/star-gray.0c9fe0ec.svg"
+    },
+    {
+      "alt": "Melhores momentos",
+      "src": "https://www.kasa.live/_next/static/media/highlights-regular.9f403edc.svg"
+    },
+    {
+      "alt": "Calendário",
+      "src": "https://www.kasa.live/_next/static/media/calendar.d7d2f3f2.svg"
+    },
+    {
+      "alt": "logo",
+      "src": "https://www.kasa.live/_next/static/media/whistle.503b46d2.svg"
+    },
+    {
+      "alt": "grid",
+      "src": "https://www.kasa.live/_next/static/media/grid-filled.a477e0a1.svg"
+    },
+    {
+      "alt": "lista",
+      "src": "https://www.kasa.live/_next/static/media/list.d0194b7c.svg"
+    },
+    {
+      "alt": "Escudo do time Minnesota Utd.",
+      "src": "https://kasalive-api-stage.s3.amazonaws.com/media/team/badge/3270.png"
+    },
+    {
+      "alt": "Escudo do time Inter Miami CF",
+      "src": "https://kasalive-api-stage.s3.amazonaws.com/media/team/badge/3268.png"
+    },
+    {
+      "alt": "",
+      "src": "https://www.kasa.live/_next/static/media/video-filled.a8c79a24.svg"
+    },
+    {
+      "alt": "Escudo do time Toronto FC",
+      "src": "https://kasalive-api-stage.s3.amazonaws.com/media/team/badge/3252.png"
+    },
+    {
+      "alt": "Escudo do time DC United",
+      "src": "https://kasalive-api-stage.s3.amazonaws.com/media/team/badge/3245.png"
+    },
+    {
+      "alt": "",
+      "src": "https://www.kasa.live/_next/static/media/video-filled.a8c79a24.svg"
+    },
+    {
+      "alt": "Escudo do time Chicago",
+      "src": "https://kasalive-api-stage.s3.amazonaws.com/media/team/badge/3266.png"
+    },
+    {
+      "alt": "Escudo do time Atlanta United",
+      "src": "https://kasalive-api-stage.s3.amazonaws.com/media/team/badge/3258.png"
+    },
+    {
+      "alt": "",
+      "src": "https://www.kasa.live/_next/static/media/video-filled.a8c79a24.svg"
+    },
+    {
+      "alt": "Escudo do time LA Galaxy",
+      "src": "https://kasalive-api-stage.s3.amazonaws.com/media/team/badge/3250.png"
+    },
+    {
+      "alt": "Escudo do time Portland Timbers",
+      "src": "https://kasalive-api-stage.s3.amazonaws.com/media/team/badge/3269.png"
+    },
+    {
+      "alt": "",
+      "src": "https://www.kasa.live/_next/static/media/video-filled.a8c79a24.svg"
+    },
+    {
+      "alt": "Escudo do time Mount Pleasant FC",
+      "src": "https://kasalive-api-stage.s3.amazonaws.com/media/team/badge/7393_V8yGVrE.png"
+    },
+    {
+      "alt": "Escudo do time Montego Bay Utd.",
+      "src": "https://kasalive-api-stage.s3.amazonaws.com/media/team/badge/14325_uoXVfGL.png"
+    },
+    {
+      "alt": "",
+      "src": "https://www.kasa.live/_next/static/media/video-filled.a8c79a24.svg"
+    },
+    {
+      "alt": "Escudo do time Portmore Utd",
+      "src": "https://kasalive-api-stage.s3.amazonaws.com/media/team/badge/3929.png"
+    },
+    {
+      "alt": "Escudo do time Waterhouse FC",
+      "src": "https://kasalive-api-stage.s3.amazonaws.com/media/team/badge/7395_04YxSXb.png"
+    }
+  ],
+  "hints": {
+    "favoritar": true,
+    "calendar": false,
+    "compartilhar": false,
+    "sair": false,
+    "meusFavoritos": false,
+    "meuPerfil": false
+  }
+}

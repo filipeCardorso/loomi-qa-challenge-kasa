@@ -1,0 +1,354 @@
+{
+  "url": "https://www.kasa.live/melhores-momentos",
+  "title": "Kasa.Live - Encontre o Jogo",
+  "navItems": [],
+  "headings": [
+    {
+      "tag": "H2",
+      "text": "maio 2026"
+    },
+    {
+      "tag": "H2",
+      "text": "Filtros"
+    },
+    {
+      "tag": "H2",
+      "text": "Melhores momentos das Partidas Finalizadas"
+    }
+  ],
+  "buttonsCount": 44,
+  "buttonsSample": [
+    {
+      "text": "",
+      "aria": "Go to previous month"
+    },
+    {
+      "text": "",
+      "aria": "Go to next month"
+    },
+    {
+      "text": "11º maio (sexta-feira)",
+      "aria": null
+    },
+    {
+      "text": "22º maio (sábado)",
+      "aria": null
+    },
+    {
+      "text": "33º maio (domingo)",
+      "aria": null
+    },
+    {
+      "text": "44º maio (segunda-feira)",
+      "aria": null
+    },
+    {
+      "text": "55º maio (terça-feira)",
+      "aria": null
+    },
+    {
+      "text": "66º maio (quarta-feira)",
+      "aria": null
+    },
+    {
+      "text": "77º maio (quinta-feira)",
+      "aria": null
+    },
+    {
+      "text": "88º maio (sexta-feira)",
+      "aria": null
+    },
+    {
+      "text": "99º maio (sábado)",
+      "aria": null
+    },
+    {
+      "text": "1010º maio (domingo)",
+      "aria": null
+    },
+    {
+      "text": "1111º maio (segunda-feira)",
+      "aria": null
+    },
+    {
+      "text": "1212º maio (terça-feira)",
+      "aria": null
+    },
+    {
+      "text": "1313º maio (quarta-feira)",
+      "aria": null
+    },
+    {
+      "text": "1414º maio (quinta-feira)",
+      "aria": null
+    },
+    {
+      "text": "1515º maio (sexta-feira)",
+      "aria": null
+    },
+    {
+      "text": "1616º maio (sábado)",
+      "aria": null
+    },
+    {
+      "text": "1717º maio (domingo)",
+      "aria": null
+    },
+    {
+      "text": "1818º maio (segunda-feira)",
+      "aria": null
+    },
+    {
+      "text": "1919º maio (terça-feira)",
+      "aria": null
+    },
+    {
+      "text": "2020º maio (quarta-feira)",
+      "aria": null
+    },
+    {
+      "text": "2121º maio (quinta-feira)",
+      "aria": null
+    },
+    {
+      "text": "2222º maio (sexta-feira)",
+      "aria": null
+    },
+    {
+      "text": "2323º maio (sábado)",
+      "aria": null
+    },
+    {
+      "text": "2424º maio (domingo)",
+      "aria": null
+    },
+    {
+      "text": "2525º maio (segunda-feira)",
+      "aria": null
+    },
+    {
+      "text": "2626º maio (terça-feira)",
+      "aria": null
+    },
+    {
+      "text": "2727º maio (quarta-feira)",
+      "aria": null
+    },
+    {
+      "text": "2828º maio (quinta-feira)",
+      "aria": null
+    },
+    {
+      "text": "2929º maio (sexta-feira)",
+      "aria": null
+    },
+    {
+      "text": "3030º maio (sábado)",
+      "aria": null
+    },
+    {
+      "text": "3131º maio (domingo)",
+      "aria": null
+    },
+    {
+      "text": "",
+      "aria": "Notificações"
+    },
+    {
+      "text": "",
+      "aria": null
+    },
+    {
+      "text": "",
+      "aria": null
+    },
+    {
+      "text": "Fechar perfil",
+      "aria": "Close"
+    },
+    {
+      "text": "Editar perfil",
+      "aria": null
+    },
+    {
+      "text": "Excluir conta",
+      "aria": null
+    },
+    {
+      "text": "Sair",
+      "aria": null
+    },
+    {
+      "text": "Times",
+      "aria": null
+    },
+    {
+      "text": "Campeonatos",
+      "aria": null
+    },
+    {
+      "text": "Limpar",
+      "aria": null
+    },
+    {
+      "text": "Filtros",
+      "aria": null
+    }
+  ],
+  "links": [
+    {
+      "href": "https://www.kasa.live/",
+      "text": ""
+    },
+    {
+      "href": "https://www.kasa.live/",
+      "text": "Partidas"
+    },
+    {
+      "href": "https://www.kasa.live/favoritos",
+      "text": "Favoritos"
+    },
+    {
+      "href": "https://www.kasa.live/melhores-momentos",
+      "text": "Melhores momentos"
+    },
+    {
+      "href": "https://www.kasa.live/calendario",
+      "text": "Calendário"
+    },
+    {
+      "href": "https://www.tiktok.com/@kasa.live/",
+      "text": ""
+    },
+    {
+      "href": "https://www.instagram.com/kasa.live/",
+      "text": ""
+    },
+    {
+      "href": "https://www.kasa.live/termos-de-uso",
+      "text": "Termos de Uso e Política de Privacidade"
+    }
+  ],
+  "inputs": [
+    {
+      "type": "text",
+      "placeholder": "Qual time?",
+      "aria": null
+    },
+    {
+      "type": "text",
+      "placeholder": "Qual campeonato?",
+      "aria": null
+    },
+    {
+      "type": "text",
+      "placeholder": "May 2, 2026",
+      "aria": null
+    },
+    {
+      "type": "text",
+      "placeholder": "Onde quer ver?",
+      "aria": null
+    },
+    {
+      "type": "file",
+      "placeholder": "",
+      "aria": null
+    },
+    {
+      "type": "checkbox",
+      "placeholder": "",
+      "aria": null
+    },
+    {
+      "type": "text",
+      "placeholder": "Pesquisar",
+      "aria": null
+    },
+    {
+      "type": "text",
+      "placeholder": "Pesquisar",
+      "aria": null
+    },
+    {
+      "type": "checkbox",
+      "placeholder": "",
+      "aria": null
+    }
+  ],
+  "iframes": [],
+  "images": [
+    {
+      "alt": "home",
+      "src": "https://www.kasa.live/_next/static/media/logo-home.e2a9b922.svg"
+    },
+    {
+      "alt": "",
+      "src": "data:image/svg+xml,%3csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20version=%271.1%27%20width=%2725"
+    },
+    {
+      "alt": "",
+      "src": "https://www.kasa.live/_next/static/media/bell.2a97ea4e.svg"
+    },
+    {
+      "alt": "",
+      "src": "https://www.kasa.live/_next/static/media/pen.fdc758fa.svg"
+    },
+    {
+      "alt": "",
+      "src": "https://www.kasa.live/_next/static/media/close-square.034e368e.svg"
+    },
+    {
+      "alt": "",
+      "src": "https://www.kasa.live/_next/static/media/exit.63175025.svg"
+    },
+    {
+      "alt": "Partidas",
+      "src": "https://www.kasa.live/_next/static/media/logoIcon-gray.5f7906a2.svg"
+    },
+    {
+      "alt": "Favoritos",
+      "src": "https://www.kasa.live/_next/static/media/star-gray.0c9fe0ec.svg"
+    },
+    {
+      "alt": "Melhores momentos",
+      "src": "https://www.kasa.live/_next/static/media/highlights-filled.683c7c7e.svg"
+    },
+    {
+      "alt": "Calendário",
+      "src": "https://www.kasa.live/_next/static/media/calendar.d7d2f3f2.svg"
+    },
+    {
+      "alt": "",
+      "src": "data:image/svg+xml,%3csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20version=%271.1%27%20width=%2720"
+    },
+    {
+      "alt": "",
+      "src": "https://www.kasa.live/_next/static/media/star-filled.700fc2a2.svg"
+    },
+    {
+      "alt": "",
+      "src": "https://img.youtube.com/vi/SIbyF-fuxp0&pp=ygUlbWVsaG9yZXMgbW9tZW50byBzYW8gcGF1bG8geCBjb3JpdGliYQ%3D%"
+    },
+    {
+      "alt": "",
+      "src": "https://img.youtube.com/vi/SIbyF-fuxp0&pp=ygUlbWVsaG9yZXMgbW9tZW50byBzYW8gcGF1bG8geCBjb3JpdGliYQ%3D%"
+    },
+    {
+      "alt": "playStore",
+      "src": "https://www.kasa.live/_next/static/media/playstore.6bc4fe22.svg"
+    },
+    {
+      "alt": "appStore",
+      "src": "https://www.kasa.live/_next/static/media/appstore.600dc286.svg"
+    }
+  ],
+  "hints": {
+    "favoritar": true,
+    "calendar": false,
+    "compartilhar": false,
+    "sair": false,
+    "meusFavoritos": false,
+    "meuPerfil": false
+  }
+}

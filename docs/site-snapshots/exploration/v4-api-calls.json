@@ -1,0 +1,172 @@
+[
+  {
+    "method": "GET",
+    "url": "https://kasa-live.api.dev.loomi.com.br/api/1.0/match/?status=INPLAY&with_channel=true&date_start=2026-05-02"
+  },
+  {
+    "method": "GET",
+    "url": "https://kasa-live.api.dev.loomi.com.br/api/1.0/match/?status=NOTSTARTED&date=2026-05-02&trending=true&with_channel=true"
+  },
+  {
+    "method": "GET",
+    "url": "https://kasa-live.api.dev.loomi.com.br/api/1.0/match/?page=1&status=NOTSTARTED&with_channel=true&date_start=2026-05-02"
+  },
+  {
+    "method": "GET",
+    "url": "https://kasa-live.api.dev.loomi.com.br/api/1.0/match/?page=1&ordering=DESC&status=ENDED&with_channel=true"
+  },
+  {
+    "method": "GET",
+    "url": "https://kasa-live.api.dev.loomi.com.br/api/1.0/user/profile/",
+    "headers": {
+      "auth": "present"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://kasa-live.api.dev.loomi.com.br/api/1.0/notification/",
+    "headers": {
+      "auth": "present"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://kasa-live.api.dev.loomi.com.br/api/1.0/user/favorite-matches/",
+    "headers": {
+      "auth": "present"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://kasa-live.api.dev.loomi.com.br/api/1.0/match/?status=INPLAY&with_channel=true&date_start=2026-05-02"
+  },
+  {
+    "method": "GET",
+    "url": "https://kasa-live.api.dev.loomi.com.br/api/1.0/match/?status=NOTSTARTED&date=2026-05-02&trending=true&with_channel=true"
+  },
+  {
+    "method": "GET",
+    "url": "https://kasa-live.api.dev.loomi.com.br/api/1.0/match/?page=1&status=NOTSTARTED&with_channel=true&date_start=2026-05-02"
+  },
+  {
+    "method": "GET",
+    "url": "https://kasa-live.api.dev.loomi.com.br/api/1.0/match/?page=1&ordering=DESC&status=ENDED&with_channel=true"
+  },
+  {
+    "method": "GET",
+    "url": "https://kasa-live.api.dev.loomi.com.br/api/1.0/user/profile/",
+    "headers": {
+      "auth": "present"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://kasa-live.api.dev.loomi.com.br/api/1.0/notification/",
+    "headers": {
+      "auth": "present"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://kasa-live.api.dev.loomi.com.br/api/1.0/user/favorite-matches/",
+    "headers": {
+      "auth": "present"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://kasa-live.api.dev.loomi.com.br/api/1.0/match/?status=INPLAY&with_channel=true&date_start=2026-05-02"
+  },
+  {
+    "method": "GET",
+    "url": "https://kasa-live.api.dev.loomi.com.br/api/1.0/match/?status=NOTSTARTED&date=2026-05-02&trending=true&with_channel=true"
+  },
+  {
+    "method": "GET",
+    "url": "https://kasa-live.api.dev.loomi.com.br/api/1.0/match/?page=1&status=NOTSTARTED&with_channel=true&date_start=2026-05-02"
+  },
+  {
+    "method": "GET",
+    "url": "https://kasa-live.api.dev.loomi.com.br/api/1.0/match/?page=1&ordering=DESC&status=ENDED&with_channel=true"
+  },
+  {
+    "method": "GET",
+    "url": "https://kasa-live.api.dev.loomi.com.br/api/1.0/user/profile/",
+    "headers": {
+      "auth": "present"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://kasa-live.api.dev.loomi.com.br/api/1.0/notification/",
+    "headers": {
+      "auth": "present"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://kasa-live.api.dev.loomi.com.br/api/1.0/user/favorite-matches/",
+    "headers": {
+      "auth": "present"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://kasa-live.api.dev.loomi.com.br/api/1.0/match/?status=INPLAY&with_channel=true&date_start=2026-05-02"
+  },
+  {
+    "method": "GET",
+    "url": "https://kasa-live.api.dev.loomi.com.br/api/1.0/match/?status=NOTSTARTED&date=2026-05-02&trending=true&with_channel=true"
+  },
+  {
+    "method": "GET",
+    "url": "https://kasa-live.api.dev.loomi.com.br/api/1.0/match/?page=1&status=NOTSTARTED&with_channel=true&date_start=2026-05-02"
+  },
+  {
+    "method": "GET",
+    "url": "https://kasa-live.api.dev.loomi.com.br/api/1.0/match/?page=1&ordering=DESC&status=ENDED&with_channel=true"
+  },
+  {
+    "method": "GET",
+    "url": "https://kasa-live.api.dev.loomi.com.br/api/1.0/user/profile/",
+    "headers": {
+      "auth": "present"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://kasa-live.api.dev.loomi.com.br/api/1.0/notification/",
+    "headers": {
+      "auth": "present"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://kasa-live.api.dev.loomi.com.br/api/1.0/user/favorite-matches/",
+    "headers": {
+      "auth": "present"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://kasa-live.api.dev.loomi.com.br/api/1.0/team/?page=1&name="
+  },
+  {
+    "method": "GET",
+    "url": "https://kasa-live.api.dev.loomi.com.br/api/1.0/championship/?name=&page=1"
+  },
+  {
+    "method": "GET",
+    "url": "https://kasa-live.api.dev.loomi.com.br/api/1.0/user/profile/",
+    "headers": {
+      "auth": "present"
+    }
+  },
+  {
+    "method": "GET",
+    "url": "https://kasa-live.api.dev.loomi.com.br/api/1.0/notification/",
+    "headers": {
+      "auth": "present"
+    }
+  }
+]
