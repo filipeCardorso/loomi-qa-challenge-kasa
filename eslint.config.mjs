@@ -6,7 +6,10 @@ export default [
   { ignores: ['node_modules', 'dist', 'build', 'allure-*', 'playwright-report', 'test-results'] },
   {
     files: ['**/*.ts'],
-    languageOptions: { parser: tsparser, parserOptions: { ecmaVersion: 2022, sourceType: 'module' } },
+    languageOptions: {
+      parser: tsparser,
+      parserOptions: { ecmaVersion: 2022, sourceType: 'module' },
+    },
     plugins: { '@typescript-eslint': tseslint, playwright },
     rules: {
       '@typescript-eslint/no-unused-vars': ['error', { argsIgnorePattern: '^_' }],

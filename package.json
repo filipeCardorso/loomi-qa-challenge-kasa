@@ -5,8 +5,12 @@
   "description": "Desafio QA Loomi - Suite de testes do kasa.live + MCP Server",
   "author": "Filipe Gabriel <filipecardosogabriel@gmail.com>",
   "license": "MIT",
-  "engines": { "node": ">=20.0.0" },
-  "workspaces": ["mcp-server"],
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "workspaces": [
+    "mcp-server"
+  ],
   "scripts": {
     "test": "playwright test",
     "test:smoke": "playwright test --grep @smoke",

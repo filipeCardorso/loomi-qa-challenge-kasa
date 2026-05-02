@@ -7,6 +7,7 @@
 Conforme spec §9.5:
 
 ### Listas
+
 1. 📋 Backlog
 2. 🎯 Sprint atual (48h)
 3. 🏃 Em andamento (WIP máximo 3)
@@ -17,6 +18,7 @@ Conforme spec §9.5:
 8. ⚠️ Bloqueios / Riscos
 
 ### Labels
+
 - 🔴 Critical · 🟡 High · 🟢 Medium · ⚪ Low
 - Por trilha: `trilha-A` (functional QA) · `trilha-B` (automation) · `trilha-C` (platform/MCP)
 - Por tarefa: `tarefa-1-casos` · `tarefa-2-auto` · `tarefa-3-bugs` · `tarefa-4-mcp` · `relatório`
@@ -32,6 +34,7 @@ Conforme spec §9.5:
 ## Sincronização com repo
 
 Manual mas disciplinada. Para cada bug/melhoria:
+
 1. Cria `.md` no repo (fonte da verdade)
 2. Cria card no Trello copiando o conteúdo
 3. Card linka pro `.md` no repo + pro `bug-reports/evidence/BUG-XXX/`
