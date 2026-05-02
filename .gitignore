@@ -18,3 +18,4 @@ mcp-server/data/
 .idea/
 .vscode/settings.json
 *.tsbuildinfo
+.auth-state.json

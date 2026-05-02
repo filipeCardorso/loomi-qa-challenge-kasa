@@ -1,0 +1,122 @@
+[
+  {
+    "method": "GET",
+    "url": "https://kasa-live.api.dev.loomi.com.br/api/1.0/match/?status=INPLAY&with_channel=true&date_start=2026-05-02",
+    "postData": null
+  },
+  {
+    "method": "GET",
+    "url": "https://kasa-live.api.dev.loomi.com.br/api/1.0/match/?status=NOTSTARTED&date=2026-05-02&trending=true&with_channel=true",
+    "postData": null
+  },
+  {
+    "method": "GET",
+    "url": "https://kasa-live.api.dev.loomi.com.br/api/1.0/match/?page=1&status=NOTSTARTED&with_channel=true&date_start=2026-05-02",
+    "postData": null
+  },
+  {
+    "method": "GET",
+    "url": "https://kasa-live.api.dev.loomi.com.br/api/1.0/match/?page=1&ordering=DESC&status=ENDED&with_channel=true",
+    "postData": null
+  },
+  {
+    "method": "GET",
+    "url": "https://kasa-live.api.dev.loomi.com.br/api/1.0/match/?status=INPLAY&with_channel=true&date_start=2026-05-02",
+    "postData": null
+  },
+  {
+    "method": "GET",
+    "url": "https://kasa-live.api.dev.loomi.com.br/api/1.0/match/?status=NOTSTARTED&date=2026-05-02&trending=true&with_channel=true",
+    "postData": null
+  },
+  {
+    "method": "GET",
+    "url": "https://kasa-live.api.dev.loomi.com.br/api/1.0/match/?page=1&status=NOTSTARTED&with_channel=true&date_start=2026-05-02",
+    "postData": null
+  },
+  {
+    "method": "GET",
+    "url": "https://kasa-live.api.dev.loomi.com.br/api/1.0/match/?page=1&ordering=DESC&status=ENDED&with_channel=true",
+    "postData": null
+  },
+  {
+    "method": "GET",
+    "url": "https://kasa-live.api.dev.loomi.com.br/api/1.0/match/?status=INPLAY&with_channel=true&date_start=2026-05-02",
+    "postData": null
+  },
+  {
+    "method": "GET",
+    "url": "https://kasa-live.api.dev.loomi.com.br/api/1.0/match/?status=NOTSTARTED&date=2026-05-02&trending=true&with_channel=true",
+    "postData": null
+  },
+  {
+    "method": "GET",
+    "url": "https://kasa-live.api.dev.loomi.com.br/api/1.0/match/?page=1&status=NOTSTARTED&with_channel=true&date_start=2026-05-02",
+    "postData": null
+  },
+  {
+    "method": "GET",
+    "url": "https://kasa-live.api.dev.loomi.com.br/api/1.0/match/?page=1&ordering=DESC&status=ENDED&with_channel=true",
+    "postData": null
+  },
+  {
+    "method": "GET",
+    "url": "https://kasa-live.api.dev.loomi.com.br/api/1.0/match/?status=INPLAY&with_channel=true&date_start=2026-05-02",
+    "postData": null
+  },
+  {
+    "method": "GET",
+    "url": "https://kasa-live.api.dev.loomi.com.br/api/1.0/match/?status=NOTSTARTED&date=2026-05-02&trending=true&with_channel=true",
+    "postData": null
+  },
+  {
+    "method": "GET",
+    "url": "https://kasa-live.api.dev.loomi.com.br/api/1.0/match/?page=1&status=NOTSTARTED&with_channel=true&date_start=2026-05-02",
+    "postData": null
+  },
+  {
+    "method": "GET",
+    "url": "https://kasa-live.api.dev.loomi.com.br/api/1.0/match/?page=1&ordering=DESC&status=ENDED&with_channel=true",
+    "postData": null
+  },
+  {
+    "method": "GET",
+    "url": "https://kasa-live.api.dev.loomi.com.br/api/1.0/match/?status=INPLAY&with_channel=true&date_start=2026-05-02",
+    "postData": null
+  },
+  {
+    "method": "GET",
+    "url": "https://kasa-live.api.dev.loomi.com.br/api/1.0/match/?status=NOTSTARTED&date=2026-05-02&trending=true&with_channel=true",
+    "postData": null
+  },
+  {
+    "method": "GET",
+    "url": "https://kasa-live.api.dev.loomi.com.br/api/1.0/match/?page=1&status=NOTSTARTED&with_channel=true&date_start=2026-05-02",
+    "postData": null
+  },
+  {
+    "method": "GET",
+    "url": "https://kasa-live.api.dev.loomi.com.br/api/1.0/match/?page=1&ordering=DESC&status=ENDED&with_channel=true",
+    "postData": null
+  },
+  {
+    "method": "GET",
+    "url": "https://kasa-live.api.dev.loomi.com.br/api/1.0/match/?status=INPLAY&with_channel=true&date_start=2026-05-02",
+    "postData": null
+  },
+  {
+    "method": "GET",
+    "url": "https://kasa-live.api.dev.loomi.com.br/api/1.0/match/?status=NOTSTARTED&date=2026-05-02&trending=true&with_channel=true",
+    "postData": null
+  },
+  {
+    "method": "GET",
+    "url": "https://kasa-live.api.dev.loomi.com.br/api/1.0/match/?page=1&status=NOTSTARTED&with_channel=true&date_start=2026-05-02",
+    "postData": null
+  },
+  {
+    "method": "GET",
+    "url": "https://kasa-live.api.dev.loomi.com.br/api/1.0/match/?page=1&ordering=DESC&status=ENDED&with_channel=true",
+    "postData": null
+  }
+]

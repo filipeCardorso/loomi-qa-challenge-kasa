@@ -211,9 +211,99 @@ A exploração automatizada já alimenta os 7 charters da spec §6.2:
 ## Próximos passos imediatos
 
 1. ✅ Estrutura geral mapeada — alimenta Phases 2/3/6/9/10
-2. 🧑 **Sessão humana de 30-45min** focada em:
-   - Logar via Google (sua conta de teste)
-   - Clicar numa partida → mapear detalhe + botão favoritar + Calendar
-   - Clicar num vídeo de melhores momentos → mapear player
-   - Tentar adicionar 1 partida ao Calendar → mapear flow OAuth
-3. Após sessão humana, **disparar Phase 3** (POMs com seletores reais) e Phase 2 (charters C1+C2+C3+C4)
+2. ✅ Sessão automatizada via login local (email/senha) — descobertas adicionais na seção 13 abaixo
+3. 🧑 5-10min humanos pendentes pra: clicar numa partida (modal vs rota?), achar botão favoritar, achar Calendar
+4. **Pode começar Phase 3** com seletores conhecidos; refinamento conforme novos achados
+
+---
+
+## 13. Pós-login (sessão automatizada com .env.local)
+
+### 13.1 Login funciona via email/senha LOCAL (descoberta crítica)
+
+❌ Spec/exploração inicial assumia OAuth Google único. **ERRADO.**
+✅ Modal de "Entrar" tem **DOIS métodos**:
+
+1. **Email/Senha local** (form padrão) — primário, fácil de automatizar
+   - `getByPlaceholder('Digite seu e-mail')`
+   - `getByPlaceholder('Digite sua senha')`
+   - Botão `getByRole('button', { name: 'Entrar' }).last()` (do modal — não do header)
+2. **"Entrar com o Google"** — secundário, OAuth real (manter mitigação R3 — só validar redirect)
+
+**Implicação pra automação:** OAuth não é mais o caminho crítico; usar login local em todos os E2E que exigem auth. Storage state pode ser persistido em `.auth-state.json` (gitignored).
+
+### 13.2 Nav LOGADA tem 4 tabs (não 2)
+
+| Tab               | Rota                         | Ícone       |
+| ----------------- | ---------------------------- | ----------- |
+| Partidas          | `/`                          | grid/casa   |
+| Favoritos         | (mesma URL `/`, state-based) | ⭐ estrela  |
+| Melhores momentos | `/melhores-momentos`         | ▷ play      |
+| Calendário        | (mesma URL `/`, state-based) | 📅 calendar |
+
+Tabs são state interno da SPA — clicar não muda URL. Renderização via React state.
+Header logado **substitui "Entrar" por avatar (👤)** + mantém sino 🔔.
+
+### 13.3 Cards de partida — anatomia visual
+
+Cada card (em "Partidas finalizadas"):
+
+- Pequeno chip do campeonato no topo (ex: "MLS", "Premier League")
+- 2 linhas com: ícone de escudo + nome do time + placar (`0`)
+- Linha de status: **"Finalizada"** (texto bold)
+- Controles à direita: ícone 📹 câmera (vídeo highlight) + → seta (vai pro detalhe)
+- Sem botão "Favoritar" visível NO CARD (provavelmente só no detalhe)
+
+Cards aparentemente **não são `<a>` com href próprio** — clicar no → setinha não mudou URL no script automatizado. Hipótese: detalhe abre como modal OU é roteamento client-side dinâmico que requer interação real.
+
+### 13.4 Toggle de view layout
+
+Top-right da seção "Partidas finalizadas" tem 2 ícones:
+
+- Grid (default selecionado)
+- Lista
+
+Vira candidato a teste de UI alternativa.
+
+### 13.5 Onde "favoritar" aparece textualmente
+
+Página `/melhores-momentos` contém a palavra "favorit" em algum elemento (confirmado por `body.innerText` regex). Provavelmente existe filtro "Apenas favoritos" ou indicador visual em vídeo de time favoritado. Detalhar humano.
+
+### 13.6 Onde "calendar" aparece textualmente
+
+Em **nenhuma das páginas** anônimas detectamos texto "Google Calendar" ou "calendar" no body. Hipóteses:
+
+- Aparece somente no detalhe de partida (modal)
+- Aparece após favoritar uma partida específica
+- Aparece em página de configuração de conta (não acessada)
+
+Detalhar humano.
+
+### 13.7 Bug confirmado: aria-label duplicado
+
+**35 botões com aria-label "Go to previous month"** confirmado tanto em sessão anônima quanto logada. **BUG-001 candidato sólido (a11y, severity Medium-High):** screen readers vão anunciar 35 vezes "Go to previous month" para usuário tabuando o calendar.
+
+### 13.8 Contas de teste: estado do site
+
+Site **PERMITE registro local** com email/senha. Conta de teste do desafio está cadastrada com:
+
+- E-mail: `filipecardosogabriel@gmail.com`
+- Storage state: `.auth-state.json` (gitignored)
+
+Login persistente funciona com `storageState`. Logout não testado ainda.
+
+---
+
+## 14. Recomendação de estratégia para automação
+
+Com base nesta exploração, a estratégia ótima:
+
+1. **Criar fixture `loggedInPage`** que injeta `storageState: '.auth-state.json'` automaticamente nos testes que precisam auth
+2. **Criar fixture `freshAccount`** que faz login programaticamente via API (descobrir endpoint POST /auth/login no devTools — TODO) ou via UI quando estável
+3. **POM HomePage** com 4 filtros + calendar mensal + paginação
+4. **POM MatchSearchPage = HomePage** (não é página separada — é state da home)
+5. **POM HighlightsPage** (`/melhores-momentos`) com filtros próprios + 2 buscas textuais
+6. **POM MatchCard** componente reutilizável (campeonato, times, placar, status, controles câmera+seta)
+7. **Detalhe de partida (TBD após sessão humana):** se for modal → POM MatchDetailModal; se for rota → POM MatchDetailPage
+8. **OAuth Google:** apenas teste que valida click → redireciona para accounts.google.com (sem completar)
+9. **API tests:** usar diretamente `https://kasa-live.api.dev.loomi.com.br/api/1.0/match/` com `request` fixture do Playwright
