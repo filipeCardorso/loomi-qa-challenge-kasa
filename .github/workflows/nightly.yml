@@ -30,26 +30,30 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - uses: actions/checkout@v4
         with: { ref: gh-pages, path: gh-pages }
         continue-on-error: true
+      - uses: actions/setup-java@v4
+        with: { distribution: 'temurin', java-version: '17' }
       - uses: actions/download-artifact@v4
         with: { path: ./all-results }
       - name: Merge Allure results
         run: |
           mkdir -p allure-results
           find ./all-results -type d -name 'allure-results-*' -exec cp -r {}/. allure-results/ \;
-      - name: Allure history
+      - name: Restore Allure history
         run: |
-          mkdir -p allure-results/history
-          if [ -d gh-pages/history ]; then cp -r gh-pages/history/* allure-results/history/; fi
-      - uses: simple-elf/allure-report-action@v1
-        with: { allure_results: allure-results, gh_pages: gh-pages, allure_report: allure-report }
-      # TODO: verify publish_dir on first run — simple-elf/allure-report-action@v1
-      # docs say `allure-history` (relative to runner workdir). If first publish
-      # errors with "directory not found", try `./allure-history` or inspect
-      # artifacts to see where the action wrote the report.
+          if [ -d gh-pages/history ]; then
+            mkdir -p allure-results/history
+            cp -r gh-pages/history/* allure-results/history/ || true
+          fi
+      - name: Install Allure CLI
+        run: npm install -g allure-commandline@2.29.0
+      - name: Generate Allure report
+        run: allure generate allure-results --clean -o allure-report
       - uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_branch: gh-pages
-          publish_dir: allure-history
+          publish_dir: allure-report
+          keep_files: false
