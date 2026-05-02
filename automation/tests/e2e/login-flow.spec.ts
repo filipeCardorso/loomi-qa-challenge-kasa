@@ -10,6 +10,9 @@ import { HomePage } from '@pages/HomePage';
 const hasCreds = !!(process.env.KASA_USER_EMAIL && process.env.KASA_USER_PASSWORD);
 
 test.describe('Login email/senha → nav 4 tabs', () => {
+  // Login via UI + Firebase auth pode levar 25s+ na DEV sob contenção paralela.
+  // Bumpamos pra 90s pra absorver flake da fixture loggedInPage sem virar `waitForTimeout`.
+  test.describe.configure({ timeout: 90_000 });
   test.skip(!hasCreds, 'precisa de KASA_USER_EMAIL/PASSWORD em .env.local');
 
   test('@smoke @core login funciona e header passa a mostrar 4 tabs nav', async ({
