@@ -4,7 +4,8 @@ import { parseResult } from '../runner/resultParser.js';
 
 export const runTestCaseTool = {
   name: 'run_test_case',
-  description: 'Executa um teste Playwright filtrado por nome ou tag (ex: @smoke). Retorna status, duração, erros e artefatos.',
+  description:
+    'Executa um teste Playwright filtrado por nome ou tag (ex: @smoke). Retorna status, duração, erros e artefatos.',
   inputSchema: {
     type: 'object',
     properties: {
@@ -18,7 +19,11 @@ export const runTestCaseTool = {
 
 export async function runTestCase(rawInput: unknown) {
   const input = RunTestCaseInputSchema.parse(rawInput);
-  const run = await runPlaywright({ grep: input.name, browser: input.browser, headed: input.headed });
+  const run = await runPlaywright({
+    grep: input.name,
+    browser: input.browser,
+    headed: input.headed,
+  });
   const result = parseResult(run.stdout);
   return { content: [{ type: 'text', text: JSON.stringify(result, null, 2) }] };
 }

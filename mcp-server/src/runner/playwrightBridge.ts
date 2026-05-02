@@ -25,7 +25,8 @@ export async function runPlaywright(opts: RunOptions): Promise<RunResult> {
 
   return new Promise((resolve) => {
     const proc = spawn('npx', args, { cwd: REPO_ROOT, env: { ...process.env, CI: 'true' } });
-    let stdout = '', stderr = '';
+    let stdout = '',
+      stderr = '';
     proc.stdout.on('data', (d) => (stdout += d.toString()));
     proc.stderr.on('data', (d) => (stderr += d.toString()));
     proc.on('close', (code) => resolve({ exitCode: code ?? 1, stdout, stderr }));

@@ -49,7 +49,8 @@ Reproduzibilidade obrigatória, com N/M tentativas.
 
 ## Checklist pré-commit
 
-- [ ] `npm run lint` passa
+- [ ] **`npm run format`** ANTES de qualquer commit (CI roda `prettier --check` e quebra se faltar)
+- [ ] `npm run lint` passa (inclui `prettier --check`)
 - [ ] `npm run typecheck` passa
 - [ ] Smoke local passa (se mexeu em E2E)
 - [ ] CHANGELOG atualizado se mudança relevante

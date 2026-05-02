@@ -10,8 +10,18 @@ export type RunTestCaseInput = z.infer<typeof RunTestCaseInputSchema>;
 export const RunTestCaseOutputSchema = z.object({
   status: z.enum(['passed', 'failed', 'timedOut', 'skipped']),
   duration_ms: z.number(),
-  errors: z.array(z.object({ message: z.string(), stack: z.string().optional(), location: z.string().optional() })),
-  artifacts: z.object({ screenshot: z.string().optional(), video: z.string().optional(), trace: z.string().optional() }),
+  errors: z.array(
+    z.object({
+      message: z.string(),
+      stack: z.string().optional(),
+      location: z.string().optional(),
+    }),
+  ),
+  artifacts: z.object({
+    screenshot: z.string().optional(),
+    video: z.string().optional(),
+    trace: z.string().optional(),
+  }),
   testId: z.string(),
 });
 export type RunTestCaseOutput = z.infer<typeof RunTestCaseOutputSchema>;
