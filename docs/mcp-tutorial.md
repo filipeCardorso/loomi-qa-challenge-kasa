@@ -2,6 +2,12 @@
 
 Este servidor MCP **expõe a suíte de testes Playwright como tools que uma IA (LLM) pode invocar**. Reproduzível em ≤5min sem instalar nada além de Node 20+.
 
+## 🎬 Demo (GIF de terminal)
+
+![MCP Demo](site-snapshots/mcp/demo.gif)
+
+Esse GIF mostra `bash scripts/demo-mcp.sh` rodando — exercita os 7 tools end-to-end + Vitest. Pra reproduzir localmente: `bash scripts/demo-mcp.sh`. Pra regravar: `asciinema rec docs/site-snapshots/mcp/demo.cast --overwrite -c 'bash scripts/demo-mcp.sh' --rows 30 --cols 100`.
+
 ---
 
 ## O que é MCP (contexto rápido)
