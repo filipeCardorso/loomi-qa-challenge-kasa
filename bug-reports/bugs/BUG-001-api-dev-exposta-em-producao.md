@@ -6,7 +6,7 @@
 **Reproduzibilidade:** Sempre
 **Frequência observada:** N/N (todas as requisições XHR observadas em https://www.kasa.live/ apontam para o host DEV)
 **Regressão?:** Desconhecido
-**Trello card:** TBD
+**Trello card:** https://trello.com/c/bo9Cuj7V
 
 ## Pré-condição
 

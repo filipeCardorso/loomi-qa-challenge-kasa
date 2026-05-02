@@ -6,7 +6,7 @@
 **Reproduzibilidade:** Sempre
 **Frequência observada:** 5/5 rotas testadas com axe-core
 **Regressão?:** Desconhecido
-**Trello card:** TBD
+**Trello card:** https://trello.com/c/PpFuwqQ9
 
 ## Pré-condição
 

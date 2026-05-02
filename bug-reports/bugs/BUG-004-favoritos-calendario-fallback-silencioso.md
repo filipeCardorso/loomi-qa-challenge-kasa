@@ -6,7 +6,7 @@
 **Reproduzibilidade:** Sempre
 **Frequência observada:** 2/2 rotas testadas em sessão anônima caem na home sem qualquer mensagem
 **Regressão?:** Desconhecido
-**Trello card:** TBD
+**Trello card:** https://trello.com/c/NriAeXTN
 
 ## Pré-condição
 

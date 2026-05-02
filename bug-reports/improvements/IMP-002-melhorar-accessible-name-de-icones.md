@@ -3,7 +3,7 @@
 **Impacto:** High
 **Categoria:** Acessibilidade
 **Esforço estimado:** S
-**Trello card:** TBD
+**Trello card:** https://trello.com/c/4pY9ttcj
 
 ## Contexto
 

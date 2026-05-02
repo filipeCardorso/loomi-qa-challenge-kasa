@@ -6,7 +6,7 @@
 **Reproduzibilidade:** Sempre
 **Frequência observada:** 4/4 rotas testadas retornam página de "Página não encontrada"
 **Regressão?:** Desconhecido
-**Trello card:** TBD
+**Trello card:** https://trello.com/c/YZHQQrBF
 
 ## Pré-condição
 

@@ -6,7 +6,7 @@
 **Reproduzibilidade:** Sempre
 **Frequência observada:** Presente em todas as rotas (footer compartilhado)
 **Regressão?:** Desconhecido
-**Trello card:** TBD
+**Trello card:** https://trello.com/c/pnSvKiDW
 
 ## Pré-condição
 

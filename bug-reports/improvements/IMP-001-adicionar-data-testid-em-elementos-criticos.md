@@ -3,7 +3,7 @@
 **Impacto:** Medium
 **Categoria:** Manutenibilidade
 **Esforço estimado:** M
-**Trello card:** TBD
+**Trello card:** https://trello.com/c/0EuSpblu
 
 ## Contexto
 

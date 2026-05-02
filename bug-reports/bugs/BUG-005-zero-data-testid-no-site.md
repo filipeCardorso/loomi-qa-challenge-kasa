@@ -6,7 +6,7 @@
 **Reproduzibilidade:** Sempre
 **Frequência observada:** 0 ocorrências de `data-testid` em todas as páginas inspecionadas (home, /melhores-momentos, /calendario, modais)
 **Regressão?:** Desconhecido (provavelmente nunca existiu)
-**Trello card:** TBD
+**Trello card:** https://trello.com/c/XqB6fQzv
 
 ## Pré-condição
 

@@ -6,7 +6,7 @@
 **Reproduzibilidade:** Sempre
 **Frequência observada:** 35/35 botões com aria-label idêntico (confirmado em sessão anônima e logada)
 **Regressão?:** Desconhecido
-**Trello card:** TBD
+**Trello card:** https://trello.com/c/mJTsYQsn
 
 ## Pré-condição
 

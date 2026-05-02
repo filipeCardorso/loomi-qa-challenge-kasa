@@ -3,7 +3,7 @@
 **Impacto:** Medium
 **Categoria:** Compliance
 **Esforço estimado:** M
-**Trello card:** TBD
+**Trello card:** https://trello.com/c/wM8SBBas
 
 ## Contexto
 

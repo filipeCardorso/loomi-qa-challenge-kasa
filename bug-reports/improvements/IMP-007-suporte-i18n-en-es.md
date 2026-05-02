@@ -3,7 +3,7 @@
 **Impacto:** Low
 **Categoria:** UX
 **Esforço estimado:** L
-**Trello card:** TBD
+**Trello card:** https://trello.com/c/B0UivRCI
 
 ## Contexto
 

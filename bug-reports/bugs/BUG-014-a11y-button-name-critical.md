@@ -6,7 +6,7 @@
 **Reproduzibilidade:** Sempre
 **Frequência observada:** 2/2 contextos testados (anônimo e logado)
 **Regressão?:** Desconhecido
-**Trello card:** TBD
+**Trello card:** https://trello.com/c/zAqivo5E
 
 ## Pré-condição
 

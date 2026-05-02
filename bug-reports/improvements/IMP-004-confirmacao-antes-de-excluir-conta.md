@@ -3,7 +3,7 @@
 **Impacto:** High
 **Categoria:** UX
 **Esforço estimado:** S
-**Trello card:** TBD
+**Trello card:** https://trello.com/c/Cf6ayq9g
 
 ## Contexto
 

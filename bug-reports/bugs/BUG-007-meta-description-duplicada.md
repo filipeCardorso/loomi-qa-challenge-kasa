@@ -6,7 +6,7 @@
 **Reproduzibilidade:** Sempre
 **Frequência observada:** 2/1 — sempre que a home é renderizada, há 2 tags `<meta name="description">`
 **Regressão?:** Desconhecido
-**Trello card:** TBD
+**Trello card:** https://trello.com/c/qJGFStBU
 
 ## Pré-condição
 

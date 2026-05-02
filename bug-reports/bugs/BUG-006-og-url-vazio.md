@@ -6,7 +6,7 @@
 **Reproduzibilidade:** Sempre
 **Frequência observada:** 1/1 — toda renderização da home retorna `<meta property="og:url" content="">`
 **Regressão?:** Desconhecido
-**Trello card:** TBD
+**Trello card:** https://trello.com/c/ho0umxI2
 
 ## Pré-condição
 

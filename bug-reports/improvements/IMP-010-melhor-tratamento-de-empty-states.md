@@ -3,7 +3,7 @@
 **Impacto:** Medium
 **Categoria:** UX
 **Esforço estimado:** S
-**Trello card:** TBD
+**Trello card:** https://trello.com/c/AhKOKfrs
 
 ## Contexto
 

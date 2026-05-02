@@ -3,7 +3,7 @@
 **Impacto:** High
 **Categoria:** Performance
 **Esforço estimado:** L
-**Trello card:** TBD
+**Trello card:** https://trello.com/c/m4NfECwr
 
 ## Contexto
 

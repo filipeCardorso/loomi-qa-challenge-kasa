@@ -6,7 +6,7 @@
 **Reproduzibilidade:** Sempre
 **Frequência observada:** Reproduzível em múltiplos dias renderizados na faixa de calendário inline (em particular dia 1 vira "11º")
 **Regressão?:** Desconhecido
-**Trello card:** TBD
+**Trello card:** https://trello.com/c/SMQpbiPQ
 
 ## Pré-condição
 

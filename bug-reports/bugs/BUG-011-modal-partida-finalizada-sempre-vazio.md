@@ -6,7 +6,7 @@
 **Reproduzibilidade:** Sempre
 **Frequência observada:** 5/5 tentativas em partidas finalizadas distintas
 **Regressão?:** Desconhecido
-**Trello card:** TBD
+**Trello card:** https://trello.com/c/upGcdsjB
 
 ## Pré-condição
 

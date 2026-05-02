@@ -6,7 +6,7 @@
 **Reproduzibilidade:** Sempre
 **Frequência observada:** Reproduzido em viewport 1440x900 e em larguras menores
 **Regressão?:** Desconhecido
-**Trello card:** TBD
+**Trello card:** https://trello.com/c/abMEy1yD
 
 ## Pré-condição
 

@@ -6,7 +6,7 @@
 **Reproduzibilidade:** Sempre
 **Frequência observada:** Múltiplos endpoints capturados — alguns usam `?date_start=YYYY-MM-DD`, outros usam `?date=YYYY-MM-DD` para a mesma semântica
 **Regressão?:** Desconhecido
-**Trello card:** TBD
+**Trello card:** https://trello.com/c/zKVntVFT
 
 ## Pré-condição
 

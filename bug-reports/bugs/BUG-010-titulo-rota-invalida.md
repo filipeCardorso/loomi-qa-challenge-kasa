@@ -6,7 +6,7 @@
 **Reproduzibilidade:** Sempre
 **Frequência observada:** 5/5 tentativas em rotas de fallback testadas
 **Regressão?:** Desconhecido
-**Trello card:** TBD
+**Trello card:** https://trello.com/c/kNexAnW2
 
 ## Pré-condição
 
