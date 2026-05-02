@@ -21,7 +21,7 @@ Funcionalidade: Buscar partidas
 
   Cenário: Filtrar partidas por data específica via datepicker
     Dado que estou em "https://kasa.live/"
-    Quando clico no filtro "Hoje" para abrir o datepicker
+    Quando clico no filtro de data (datepicker) para abrir o calendário
     E seleciono a data correspondente ao próximo sábado no calendário mensal
     E clico no botão de busca (lupa verde)
     Então a listagem deve exibir apenas partidas agendadas para a data selecionada
@@ -38,7 +38,7 @@ Funcionalidade: Buscar partidas
     Dado que estou em "https://kasa.live/"
     Quando seleciono "Corinthians" no filtro "Qual time?"
     E seleciono "Brasileirão Série A" no filtro "Qual campeonato?"
-    E seleciono uma data futura no filtro "Hoje"
+    E seleciono uma data futura no filtro de data (datepicker)
     E clico no botão de busca (lupa verde)
     Então a listagem deve exibir apenas partidas do "Corinthians" no "Brasileirão Série A" na data escolhida
     Ou uma mensagem indicando ausência de resultados deve ser exibida quando não houver jogos
@@ -52,7 +52,7 @@ Funcionalidade: Buscar partidas
 
   Cenário: Abrir o calendar mensal e validar a quantidade de dias
     Dado que estou em "https://kasa.live/"
-    Quando clico no filtro "Hoje" para abrir o calendar mensal
+    Quando clico no campo placeholder de data dinâmica (formato MMM DD, YYYY) para abrir o calendar mensal
     Então o calendário deve exibir o mês corrente com até 31 dias selecionáveis
     E os dias passados devem estar visualmente diferenciados dos dias futuros
 

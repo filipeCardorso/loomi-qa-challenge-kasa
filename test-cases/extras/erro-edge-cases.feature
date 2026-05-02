@@ -13,7 +13,7 @@ Funcionalidade: Erros e edge cases do kasa.live
     E não deve apresentar tela em branco ou loading infinito
 
   Cenário: API DEV instável com resposta lenta acima de 5s
-    Dado que estou no ambiente DEV "https://dev.kasa.live"
+    Dado que estou no ambiente DEV "https://www.kasa.live"
     E o backend está respondendo com latência acima de 5 segundos
     Quando acesso a tab "Partidas"
     Então um indicador de carregamento deve permanecer visível enquanto aguardo a resposta
@@ -29,12 +29,18 @@ Funcionalidade: Erros e edge cases do kasa.live
     E após reautenticar a partida deve permanecer marcada como favorita
 
   Cenário: Acesso a uma partida finalizada cujo modal de detalhes vem vazio
-    Dado que estou em "https://kasa.live/partidas" autenticado
+    Dado que estou em "https://www.kasa.live/" autenticado
     E existe uma partida com status "Finalizada" sem dados de melhores momentos
     Quando clico no card desta partida finalizada
     Então o modal de detalhes não deve abrir vazio sem mensagem
-    E deve ser exibida a mensagem "Detalhes indisponíveis para esta partida"
+    E deve ser exibida a mensagem "Nada por aqui — Ainda não temos os melhores momentos da partida"
     E o botão "Fechar" deve permanecer funcional para sair do modal
+
+  Cenário: Tentar acessar rota inexistente
+    Dado que estou anônimo
+    Quando navego para "https://www.kasa.live/buscar"
+    Então a página deve mostrar "Kasa.Live - Página não encontrada"
+    E o título da página deve refletir 404
 
   Cenário: Viewport esquisito muito estreito (320x480) não deve quebrar layout
     Dado que acesso "https://kasa.live" em viewport mobile reduzido 320x480

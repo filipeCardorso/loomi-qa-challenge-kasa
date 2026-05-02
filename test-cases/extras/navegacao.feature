@@ -13,13 +13,13 @@ Funcionalidade: Navegação principal do kasa.live
   Cenário: Tabs disponíveis para usuário anônimo
     Dado que estou em "https://kasa.live" sem autenticação
     Quando observo o menu de navegação principal do header
-    Então devem estar visíveis exatamente 2 tabs: "Partidas" e "Times"
+    Então devem estar visíveis exatamente 2 tabs: "Partidas" e "Melhores momentos"
     E as tabs "Favoritos" e "Calendário" não devem ser exibidas para visitantes
 
   Cenário: Tabs disponíveis para usuário logado e acesso ao calendário
     Dado que estou logado em "https://kasa.live" com email e senha
     Quando observo o menu de navegação principal do header
-    Então devem estar visíveis exatamente 4 tabs: "Partidas", "Times", "Favoritos" e "Calendário"
+    Então devem estar visíveis exatamente 4 tabs: "Partidas", "Favoritos", "Melhores momentos" e "Calendário"
     Quando clico na tab "Calendário"
     Então devo ser redirecionado para "/calendario"
     E a agenda semanal deve ser exibida

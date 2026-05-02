@@ -1,4 +1,6 @@
 # language: pt
+# NOTA: Mecanismo exato de favoritar PARTIDAS é hipótese (exploração não capturou modal de partida futura — só finalizada, que vem vazio). Cenários assumem padrão UX comum; reconfirmar antes de automatizar.
+@hipotese-favoritar
 Funcionalidade: Favoritar partidas
   Como torcedor
   Quero favoritar partidas específicas no kasa.live

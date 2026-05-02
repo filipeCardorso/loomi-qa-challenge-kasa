@@ -20,7 +20,7 @@ Funcionalidade: Recursos não-core do kasa.live
     E preencho email "torcedor.teste@example.com" e senha "Senha@123"
     E confirmo o login
     Então devo ser autenticado com sucesso
-    E as tabs "Partidas", "Times", "Favoritos" e "Calendário" devem ficar visíveis no header
+    E as tabs "Partidas", "Favoritos", "Melhores momentos" e "Calendário" devem ficar visíveis no header
 
   Cenário: Logout encerra a sessão e oculta tabs autenticadas
     Dado que estou logado em "https://kasa.live" como "torcedor.teste@example.com"
@@ -28,7 +28,7 @@ Funcionalidade: Recursos não-core do kasa.live
     E clico em "Sair"
     Então a sessão deve ser encerrada
     E devo ser redirecionado para a home como visitante
-    E somente as tabs "Partidas" e "Times" devem ficar visíveis
+    E somente as tabs "Partidas" e "Melhores momentos" devem ficar visíveis
 
   Cenário: Editar perfil atualiza nome exibido no avatar
     Dado que estou logado em "https://kasa.live" como "torcedor.teste@example.com"
