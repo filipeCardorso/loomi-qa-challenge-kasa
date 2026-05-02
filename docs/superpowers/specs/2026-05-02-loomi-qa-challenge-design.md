@@ -300,12 +300,12 @@ Site externo, sem acesso ao backend → diamante.
 
 ```
         Visual / A11y / Perf  (13 testes)
-       E2E funcional           (25 testes)
+       E2E funcional           (27 testes)
       API contract             (5 testes)
-     Smoke (subset E2E)        (10 testes)
+     Smoke (subset E2E)        (10 testes — não conta no total)
 ```
 
-Total automatizado: **45 testes** (vs 30-32 Pleno).
+Total automatizado: **45 testes** (27 E2E + 5 API + 5 Visual + 5 A11y + 3 Perf). Smoke é subset do E2E, não soma. Vs 30-32 do Pleno → +40%.
 
 ### 7.2 Matriz de cobertura
 
@@ -326,7 +326,7 @@ Total automatizado: **45 testes** (vs 30-32 Pleno).
 
 ### 7.3 Tipos de teste — escopo
 
-**E2E (25-27):** chromium default; nightly multi-browser. Trace + video + screenshot habilitados.
+**E2E (27):** chromium default; nightly multi-browser. Trace + video + screenshot habilitados. Distribuição por funcionalidade vide matriz 7.2.
 
 **API (5):** endpoints internos descobertos via DevTools. Status, schema (Zod), tempo.
 
@@ -442,9 +442,9 @@ URI pattern: `loomi://artifacts/{testId}/{type}`
 Notificação `notifications/resources/list_changed` após cada falha.
 
 ### 8.4 Arquitetura de processos
-- **MCPServer** (long-lived, stdio): SDK + ToolDispatcher + ResourceRegistry + LiveBrowser persistente + TestRunnerPool
+- **MCPServer** (long-lived, stdio): SDK + ToolDispatcher + ResourceRegistry + LiveBrowser persistente + TestRunner (single-flight)
 - **LiveBrowser** (independente): chromium persistente para `get_element_status`/`navigate_to`
-- **Test runner** (efêmero): processo Playwright spawn por `run_test_case`
+- **TestRunner** (efêmero, single-flight): processo Playwright spawn por `run_test_case`. **Sem pool/concorrência** — uma execução por vez para manter logs/artefatos rastreáveis 1:1 com tool calls. Chamadas concorrentes serializam-se por mutex interno (FIFO). Decisão deliberada: solo demo, simplicidade > paralelismo.
 
 LiveBrowser e TestRunner são separados — testes precisam de contexto limpo, exploração precisa de contexto persistente.
 
@@ -474,7 +474,7 @@ mcp-server/tests/
 
 ### 9.1 GitHub Actions
 **ci.yml** (PR gate, ≤5min): lint + typecheck + unit MCP + smoke + upload artifacts em falha.
-**nightly.yml** (≤30min): matrix multi-browser + multi-viewport + Allure publish em `gh-pages`.
+**nightly.yml** (≤30min): trigger via `schedule` (cron 03:00 UTC) **e** `workflow_dispatch` (acionável on-demand para publicar Allure em qualquer momento). Matrix multi-browser + multi-viewport + Allure publish em `gh-pages`.
 **visual-update.yml** (manual): regenera baselines, abre PR.
 
 ### 9.2 Allure
@@ -500,6 +500,8 @@ Dockerfile baseado em `mcr.microsoft.com/playwright:v1.50.0-jammy`. Avaliador ro
 **Template de card de bug:** idêntico ao schema `.md` do bug report (copy-paste 1:1).
 
 **Sincronização:** manual mas disciplinada (1. cria `.md` no repo, 2. cria card Trello copiando, 3. links cruzados). Não automatizado (custo > benefício pra 48h).
+
+**Convenção do campo `Trello card` no schema do bug:** pode aparecer como `TBD` em commits intermediários (quando o `.md` foi criado mas o card Trello ainda não). Deve estar preenchido com URL real até o checkpoint diário (fim do dia 1, fim do dia 2, manhã do dia 3). CI **não** lint este campo — é processo, não código.
 
 ### 9.6 Estrutura do `progress-report.md`
 
@@ -549,7 +551,7 @@ Dockerfile baseado em `mcr.microsoft.com/playwright:v1.50.0-jammy`. Avaliador ro
 
 ### 10.2 Lista ordenada de cortes (se tempo apertar)
 
-1. Extras MCP (`get_test_history`, `analyze_failure`, `extract_dom_snapshot`) — manter 5 tools
+1. Cortar 3 tools extras do MCP (`get_test_history`, `analyze_failure`, `extract_dom_snapshot`) — **reduzir para 5 tools (3 mandatórias + 2 extras: `list_test_cases` e `navigate_to`)**
 2. Perf tests (3) — manter Lighthouse manual
 3. Multi-browser nightly — só chromium
 4. visual-update workflow — baseline manual
@@ -561,7 +563,8 @@ Dockerfile baseado em `mcr.microsoft.com/playwright:v1.50.0-jammy`. Avaliador ro
 
 **Tarefa 1 (BDD):**
 - [ ] ≥40 cenários (alvo 55)
-- [ ] Cada uma das 4 funcionalidades core: ≥7 cenários
+- [ ] As 4 funcionalidades core (favoritar times, favoritar partidas, buscar partidas, melhores momentos) cobertas em profundidade: ≥7 cenários cada
+- [ ] Google Calendar tratado separadamente (5 cenários, OAuth real é manual conforme R3) — não conta como core para o critério ≥7
 - [ ] Linguagem comportamental (passa em lint Gherkin)
 - [ ] README do `test-cases/` indexa todos
 
@@ -639,43 +642,43 @@ echo "✅ ZIP pronto: $OUTPUT ($(du -h "$OUTPUT" | cut -f1))"
 
 ### 11.1 Dia 1 — 02/05
 
-| Hora | Bloco | Trilha |
-|---|---|---|
-| 14:00–15:30 | Setup repo, deps, CI skeleton, Trello board | ✱ |
-| 15:30–17:00 | Onda 0 — Exploração (timebox 90min) | A |
-| 17:00–19:00 | Charters C1+C2 → primeiros bugs | A |
-| 19:00–20:00 | Pausa jantar | — |
-| 20:00–22:00 | Playwright scaffold + POMs + 8 E2E core | B |
-| 22:00–23:30 | MCP skeleton + `run_test_case` mínimo | C |
+| Hora | Bloco | Trilha | # testes adicionados |
+|---|---|---|---|
+| 14:00–15:30 | Setup repo, deps, CI skeleton, Trello board | ✱ | — |
+| 15:30–17:00 | Onda 0 — Exploração (timebox 90min) | A | — |
+| 17:00–19:00 | Charters C1+C2 → primeiros bugs | A | — |
+| 19:00–20:00 | Pausa jantar | — | — |
+| 20:00–22:00 | Playwright scaffold + POMs + E2E core | B | +8 E2E (total 8) |
+| 22:00–23:30 | MCP skeleton + `run_test_case` mínimo | C | — |
 
-**Checkpoint dia 1:** repo + Trello + 6 bugs + 8 E2E verdes + MCP esqueleto.
+**Checkpoint dia 1:** repo + Trello + ≥6 bugs + 8 E2E verdes + MCP esqueleto.
 
 ### 11.2 Dia 2 — 03/05
 
-| Hora | Bloco | Trilha |
-|---|---|---|
-| 08:30–10:30 | Charters C3+C4 (Calendar, highlights) | A |
-| 10:30–12:30 | E2E batch 2 (busca, filtros, favoritos) | B |
-| 13:30–15:00 | API tests (5) + integração Allure | B |
-| 15:00–17:00 | MCP: `get_element_status`, browser persistente, Resources | C |
-| 17:00–19:00 | Charters C5+C6 (mobile, a11y) + C7 (não-core) | A |
-| 20:00–22:00 | Visual (5) + A11y (5) + baselines | B |
-| 22:00–23:30 | BDD escrita: completar até 55 cenários | A |
+| Hora | Bloco | Trilha | # testes adicionados |
+|---|---|---|---|
+| 08:30–10:30 | Charters C3+C4 (Calendar, highlights) | A | — |
+| 10:30–12:30 | E2E batch 2 (busca + filtros + favoritar partidas) | B | +12 E2E (total 20) |
+| 13:30–15:00 | API tests + integração Allure | B | +5 API (total 25) |
+| 15:00–17:00 | MCP: `get_element_status`, browser persistente, Resources | C | — |
+| 17:00–19:00 | Charters C5+C6 (mobile, a11y) + C7 (não-core) | A | — |
+| 20:00–22:00 | Visual + A11y + baselines | B | +5 Visual +5 A11y (total 35) |
+| 22:00–23:30 | BDD escrita: completar até 55 cenários | A | — |
 
-**Checkpoint dia 2:** 55 BDD + 30+ auto + 18 bugs + 10 melhorias + MCP funcional.
+**Checkpoint dia 2:** 55 BDD + 35 auto + 18 bugs + 10 melhorias + MCP funcional. Restam 10 auto (E2E batch 3 + Perf) para dia 3.
 
 ### 11.3 Dia 3 — 04/05
 
-| Hora | Bloco | Trilha |
-|---|---|---|
-| 06:30–08:00 | Performance (3) + finalizar 45 auto | B |
-| 08:00–10:00 | MCP: tutorial reproduzível + extras + Vitest | C |
-| 10:00–11:00 | CI nightly + Allure no Pages | C |
-| 11:00–12:30 | Vídeo demo 3-5min (Loom, sem edição) | ✱ |
-| 12:30–13:30 | Almoço + buffer + ZIP "candidato" backup | ✱ |
-| 13:30–14:30 | progress-report.md + READMEs + checklist | ✱ |
-| 14:30–14:50 | `package.sh` + smoke contra ZIP em pasta nova | ✱ |
-| 14:50–15:00 | Enviar e-mail | ✱ |
+| Hora | Bloco | Trilha | # testes adicionados |
+|---|---|---|---|
+| 06:30–08:00 | E2E batch 3 (7 testes restantes) + Perf (3) | B | +7 E2E +3 Perf (total 45) |
+| 08:00–10:00 | MCP: tutorial reproduzível + extras + Vitest | C | — |
+| 10:00–11:00 | Trigger manual `nightly.yml` (workflow_dispatch) → Allure no Pages | C | — |
+| 11:00–12:30 | Vídeo demo 3-5min (Loom, sem edição) | ✱ | — |
+| 12:30–13:30 | Almoço + buffer + ZIP "candidato" backup | ✱ | — |
+| 13:30–14:30 | progress-report.md + READMEs + checklist | ✱ | — |
+| 14:30–14:50 | `package.sh` + smoke contra ZIP em pasta nova | ✱ | — |
+| 14:50–15:00 | Enviar e-mail | ✱ | — |
 
 ### 11.4 Subagentes paralelos
 
