@@ -1,0 +1,294 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: performance/lighthouse.spec.ts >> @perf lighthouse /
+- Location: automation/tests/performance/lighthouse.spec.ts:30:7
+
+# Error details
+
+```
+Error: unrecognized category in 'onlyCategories': pwa
+```
+
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - generic [ref=e4]:
+    - banner [ref=e5]:
+      - generic [ref=e7]:
+        - generic [ref=e8]:
+          - link "home" [ref=e9] [cursor=pointer]:
+            - /url: /
+            - img "home" [ref=e10]
+          - generic [ref=e11]:
+            - button "Notificações" [ref=e13] [cursor=pointer]:
+              - img [ref=e14]
+            - button "Entrar" [ref=e15] [cursor=pointer]
+        - generic [ref=e20]:
+          - generic [ref=e22]:
+            - paragraph [ref=e23]: Procure o jogo
+            - paragraph [ref=e24]: Por times, campeonatos, datas..
+          - img [ref=e28] [cursor=pointer]
+      - generic [ref=e33]:
+        - link "Partidas Partidas" [ref=e34] [cursor=pointer]:
+          - /url: /
+          - img "Partidas" [ref=e35]
+          - paragraph [ref=e36]: Partidas
+        - link "Melhores momentos Melhores momentos" [ref=e37] [cursor=pointer]:
+          - /url: /melhores-momentos
+          - img "Melhores momentos" [ref=e38]
+          - paragraph [ref=e39]: Melhores momentos
+    - main [ref=e41]:
+      - generic [ref=e42]:
+        - generic [ref=e43]:
+          - generic [ref=e46]:
+            - separator [ref=e50]
+            - separator [ref=e55]
+            - separator [ref=e60]
+            - separator [ref=e65]
+            - separator [ref=e70]
+            - separator [ref=e75]
+            - separator [ref=e80]
+            - separator [ref=e85]
+            - separator [ref=e90]
+            - separator [ref=e95]
+            - separator [ref=e100]
+            - separator [ref=e105]
+            - separator [ref=e110]
+            - separator [ref=e115]
+            - separator [ref=e120]
+            - separator [ref=e125]
+            - separator [ref=e130]
+            - separator [ref=e135]
+            - separator [ref=e140]
+            - separator [ref=e145]
+            - separator [ref=e150]
+            - separator [ref=e155]
+            - separator [ref=e160]
+            - separator [ref=e165]
+            - separator [ref=e170]
+            - separator [ref=e175]
+            - separator [ref=e180]
+            - separator [ref=e185]
+            - separator [ref=e190]
+            - separator [ref=e195]
+          - paragraph [ref=e198]: ...
+        - generic [ref=e199]:
+          - generic [ref=e202]:
+            - separator [ref=e206]
+            - separator [ref=e211]
+            - separator [ref=e216]
+            - separator [ref=e221]
+            - separator [ref=e226]
+            - separator [ref=e231]
+            - separator [ref=e236]
+            - separator [ref=e241]
+            - separator [ref=e246]
+            - separator [ref=e251]
+            - separator [ref=e256]
+            - separator [ref=e261]
+            - separator [ref=e266]
+            - separator [ref=e271]
+            - separator [ref=e276]
+            - separator [ref=e281]
+            - separator [ref=e286]
+            - separator [ref=e291]
+            - separator [ref=e296]
+            - separator [ref=e301]
+            - separator [ref=e306]
+            - separator [ref=e311]
+            - separator [ref=e316]
+            - separator [ref=e321]
+            - separator [ref=e326]
+            - separator [ref=e331]
+            - separator [ref=e336]
+            - separator [ref=e341]
+            - separator [ref=e346]
+            - separator [ref=e351]
+          - paragraph [ref=e354]: ...
+        - generic [ref=e355]:
+          - generic [ref=e358]:
+            - separator [ref=e362]
+            - separator [ref=e367]
+            - separator [ref=e372]
+            - separator [ref=e377]
+            - separator [ref=e382]
+            - separator [ref=e387]
+            - separator [ref=e392]
+            - separator [ref=e397]
+            - separator [ref=e402]
+            - separator [ref=e407]
+            - separator [ref=e412]
+            - separator [ref=e417]
+            - separator [ref=e422]
+            - separator [ref=e427]
+            - separator [ref=e432]
+            - separator [ref=e437]
+            - separator [ref=e442]
+            - separator [ref=e447]
+            - separator [ref=e452]
+            - separator [ref=e457]
+            - separator [ref=e462]
+            - separator [ref=e467]
+            - separator [ref=e472]
+            - separator [ref=e477]
+            - separator [ref=e482]
+            - separator [ref=e487]
+            - separator [ref=e492]
+            - separator [ref=e497]
+            - separator [ref=e502]
+            - separator [ref=e507]
+          - paragraph [ref=e510]: ...
+        - generic [ref=e511]:
+          - generic [ref=e514]:
+            - separator [ref=e518]
+            - separator [ref=e523]
+            - separator [ref=e528]
+            - separator [ref=e533]
+            - separator [ref=e538]
+            - separator [ref=e543]
+            - separator [ref=e548]
+            - separator [ref=e553]
+            - separator [ref=e558]
+            - separator [ref=e563]
+            - separator [ref=e568]
+            - separator [ref=e573]
+            - separator [ref=e578]
+            - separator [ref=e583]
+            - separator [ref=e588]
+            - separator [ref=e593]
+            - separator [ref=e598]
+            - separator [ref=e603]
+            - separator [ref=e608]
+            - separator [ref=e613]
+            - separator [ref=e618]
+            - separator [ref=e623]
+            - separator [ref=e628]
+            - separator [ref=e633]
+            - separator [ref=e638]
+            - separator [ref=e643]
+            - separator [ref=e648]
+            - separator [ref=e653]
+            - separator [ref=e658]
+            - separator [ref=e663]
+          - paragraph [ref=e666]: ...
+    - contentinfo [ref=e667]:
+      - paragraph [ref=e669]: Porque Deus amou o mundo de tal maneira, que deu o seu Filho Unigênito (Jesus), para que todo aquele que nele crê não pereça, mas tenha a vida eterna - João 3:16
+      - generic [ref=e670]:
+        - img "playStore" [ref=e672] [cursor=pointer]
+        - img "appStore" [ref=e674] [cursor=pointer]
+      - generic [ref=e675]:
+        - link [ref=e676] [cursor=pointer]:
+          - /url: https://www.tiktok.com/@kasa.live/
+          - img [ref=e677]
+        - link [ref=e679] [cursor=pointer]:
+          - /url: https://www.instagram.com/kasa.live/
+          - img [ref=e680]
+      - generic [ref=e682]:
+        - paragraph [ref=e683]: © 2022 Kasa.live, LTDA.
+        - link "Termos de Uso e Política de Privacidade" [ref=e684] [cursor=pointer]:
+          - /url: /termos-de-uso
+      - paragraph [ref=e685]: v3.1-Web
+  - alert [ref=e686]
+  - generic:
+    - region
+    - region
+    - region
+    - region
+    - region
+    - region
+  - iframe [ref=e687]:
+    
+```
+
+# Test source
+
+```ts
+  1  | import { test, expect } from '@playwright/test';
+  2  | import { playAudit } from 'playwright-lighthouse';
+  3  | import { mkdir, writeFile } from 'node:fs/promises';
+  4  | import path from 'node:path';
+  5  | 
+  6  | /**
+  7  |  * Lighthouse audit por rota — performance + a11y + best-practices + seo.
+  8  |  *
+  9  |  * - Roda apenas no project `perf` (porta CDP 9222 exposta via launchOptions).
+  10 |  * - Modo serial obrigatório: porta 9222 não suporta concorrência.
+  11 |  * - Thresholds SOFT: kasa.live é DEV (API lenta + bundle não otimizado).
+  12 |  *   Run inicial 2026-05-02 mostrou performance=39 e a11y=72 na home, abaixo dos
+  13 |  *   alvos clássicos (50/80). playwright-lighthouse joga erro sincronamente; capturamos
+  14 |  *   via try/catch e logamos via expect.soft pra deixar a evidência sem matar o CI.
+  15 |  * - Achados detalhados ficam em ./reports/lighthouse/ + ./reports/lighthouse/lh-summary.json
+  16 |  */
+  17 | 
+  18 | const ROUTES = ['/', '/melhores-momentos', '/termos-de-uso'] as const;
+  19 | 
+  20 | const SOFT_THRESHOLDS = {
+  21 |   performance: 30,
+  22 |   accessibility: 60,
+  23 |   'best-practices': 70,
+  24 |   seo: 70,
+  25 | } as const;
+  26 | 
+  27 | test.describe.configure({ mode: 'serial' });
+  28 | 
+  29 | for (const route of ROUTES) {
+  30 |   test(`@perf lighthouse ${route}`, async ({ page }) => {
+  31 |     test.setTimeout(180_000);
+  32 |     await mkdir('./reports/lighthouse', { recursive: true }).catch(() => undefined);
+  33 |     await page.goto(`https://www.kasa.live${route}`, { waitUntil: 'domcontentloaded' });
+  34 | 
+  35 |     const safeName = `lh-${route.replace(/\W/g, '_') || 'home'}`;
+  36 |     let result;
+  37 |     try {
+  38 |       result = await playAudit({
+  39 |         page,
+  40 |         port: 9222,
+  41 |         thresholds: { ...SOFT_THRESHOLDS },
+  42 |         reports: {
+  43 |           formats: { html: true, json: true },
+  44 |           name: safeName,
+  45 |           directory: './reports/lighthouse',
+  46 |         },
+  47 |       });
+  48 |     } catch (err) {
+  49 |       // Threshold miss — captura como soft warning, não fail.
+  50 |       // playwright-lighthouse imprime os scores no console; aqui só registramos.
+  51 |       console.warn(`[lighthouse soft warn] ${route}:`, (err as Error).message);
+  52 |       // Re-roda sem thresholds só pra ter o relatório (e não perder o teste).
+> 53 |       result = await playAudit({
+     |                ^ Error: unrecognized category in 'onlyCategories': pwa
+  54 |         page,
+  55 |         port: 9222,
+  56 |         reports: {
+  57 |           formats: { html: true, json: true },
+  58 |           name: safeName,
+  59 |           directory: './reports/lighthouse',
+  60 |         },
+  61 |       });
+  62 |     }
+  63 | 
+  64 |     // Salva summary compacto pro relatório futuro consolidado.
+  65 |     const scores: Record<string, number | null> = {};
+  66 |     for (const [k, v] of Object.entries(result.lhr.categories ?? {})) {
+  67 |       scores[k] = v?.score != null ? Math.round(v.score * 100) : null;
+  68 |     }
+  69 |     await writeFile(
+  70 |       path.join('./reports/lighthouse', `${safeName}.summary.json`),
+  71 |       JSON.stringify({ route, scores }, null, 2),
+  72 |     ).catch(() => undefined);
+  73 | 
+  74 |     console.warn(`[lighthouse] ${route} →`, JSON.stringify(scores));
+  75 | 
+  76 |     expect(result.lhr).toBeDefined();
+  77 |     expect(result.lhr.categories).toBeDefined();
+  78 |   });
+  79 | }
+  80 | 
+```

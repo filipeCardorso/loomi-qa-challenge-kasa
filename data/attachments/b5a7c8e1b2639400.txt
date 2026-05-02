@@ -1,0 +1,126 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: e2e/melhores-momentos.spec.ts >> Página /melhores-momentos >> @smoke @core carrega filtros + heading "Melhores momentos das Partidas Finalizadas"
+- Location: automation/tests/e2e/melhores-momentos.spec.ts:8:7
+
+# Error details
+
+```
+Error: filtro time deve estar visível
+
+expect(locator).toBeVisible() failed
+
+Locator: getByPlaceholder(/qual time/i)
+Expected: visible
+Timeout: 5000ms
+Error: element(s) not found
+
+Call log:
+  - filtro time deve estar visível with timeout 5000ms
+  - waiting for getByPlaceholder(/qual time/i)
+
+```
+
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - generic [ref=e4]:
+    - banner [ref=e5]:
+      - generic [ref=e7]:
+        - generic [ref=e8]:
+          - link "home" [ref=e9] [cursor=pointer]:
+            - /url: /
+            - img "home" [ref=e10]
+          - generic [ref=e11]:
+            - button "Notificações" [ref=e13] [cursor=pointer]:
+              - img [ref=e14]
+            - button "Entrar" [ref=e15] [cursor=pointer]
+        - generic [ref=e20]:
+          - generic [ref=e22]:
+            - paragraph [ref=e23]: Procure o jogo
+            - paragraph [ref=e24]: Por times, campeonatos, datas..
+          - img [ref=e28] [cursor=pointer]
+      - generic [ref=e33]:
+        - link "Partidas Partidas" [ref=e34] [cursor=pointer]:
+          - /url: /
+          - img "Partidas" [ref=e35]
+          - paragraph [ref=e36]: Partidas
+        - link "Melhores momentos Melhores momentos" [ref=e37] [cursor=pointer]:
+          - /url: /melhores-momentos
+          - img "Melhores momentos" [ref=e38]
+          - paragraph [ref=e39]: Melhores momentos
+    - main [ref=e41]:
+      - generic [ref=e44]:
+        - generic [ref=e45]:
+          - heading "Melhores momentos das Partidas Finalizadas" [level=2] [ref=e46]
+          - button "Filtros" [ref=e47] [cursor=pointer]
+        - separator [ref=e48]
+        - generic [ref=e50] [cursor=pointer]:
+          - paragraph [ref=e54]: Brasileirão Série A
+          - paragraph [ref=e55]: São Paulo x Coritiba
+    - contentinfo [ref=e56]:
+      - paragraph [ref=e58]: Porque Deus amou o mundo de tal maneira, que deu o seu Filho Unigênito (Jesus), para que todo aquele que nele crê não pereça, mas tenha a vida eterna - João 3:16
+      - generic [ref=e59]:
+        - img "playStore" [ref=e61] [cursor=pointer]
+        - img "appStore" [ref=e63] [cursor=pointer]
+      - generic [ref=e64]:
+        - link [ref=e65] [cursor=pointer]:
+          - /url: https://www.tiktok.com/@kasa.live/
+          - img [ref=e66]
+        - link [ref=e68] [cursor=pointer]:
+          - /url: https://www.instagram.com/kasa.live/
+          - img [ref=e69]
+      - generic [ref=e71]:
+        - paragraph [ref=e72]: © 2022 Kasa.live, LTDA.
+        - link "Termos de Uso e Política de Privacidade" [ref=e73] [cursor=pointer]:
+          - /url: /termos-de-uso
+      - paragraph [ref=e74]: v3.1-Web
+  - alert [ref=e75]
+  - generic:
+    - region
+    - region
+    - region
+    - region
+    - region
+    - region
+  - iframe [ref=e76]:
+    
+```
+
+# Test source
+
+```ts
+  1  | import { test, expect } from '@fixtures/index';
+  2  | 
+  3  | /**
+  4  |  * @smoke @core
+  5  |  * `/melhores-momentos` carrega com filtros + h2 esperado.
+  6  |  */
+  7  | test.describe('Página /melhores-momentos', () => {
+  8  |   test('@smoke @core carrega filtros + heading "Melhores momentos das Partidas Finalizadas"', async ({
+  9  |     highlightsPage,
+  10 |   }) => {
+  11 |     await highlightsPage.open();
+  12 | 
+  13 |     await expect(
+  14 |       highlightsPage.headingPrincipal,
+  15 |       'h2 "Melhores momentos das Partidas Finalizadas" deve estar visível',
+  16 |     ).toBeVisible({ timeout: 10_000 });
+  17 | 
+> 18 |     await expect(highlightsPage.filtroQualTime, 'filtro time deve estar visível').toBeVisible();
+     |                                                                                   ^ Error: filtro time deve estar visível
+  19 |     await expect(
+  20 |       highlightsPage.filtroQualCampeonato,
+  21 |       'filtro campeonato deve estar visível',
+  22 |     ).toBeVisible();
+  23 |   });
+  24 | });
+  25 | 
+```

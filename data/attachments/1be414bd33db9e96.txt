@@ -1,0 +1,285 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: visual/pages.spec.ts >> Visual regression >> @visual termos-de-uso (estável)
+- Location: automation/tests/visual/pages.spec.ts:48:7
+
+# Error details
+
+```
+Error: A snapshot doesn't exist at /home/runner/work/loomi-qa-challenge-kasa/loomi-qa-challenge-kasa/automation/tests/visual/pages.spec.ts-snapshots/termos-de-uso-mobile-chrome-linux.png, writing actual.
+```
+
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - generic [ref=e4]:
+    - banner [ref=e5]:
+      - generic [ref=e7]:
+        - generic [ref=e8]:
+          - link "home" [ref=e9] [cursor=pointer]:
+            - /url: /
+            - img "home" [ref=e10]
+          - generic [ref=e11]:
+            - button "Notificações" [ref=e13] [cursor=pointer]:
+              - img [ref=e14]
+            - button "Entrar" [ref=e15] [cursor=pointer]
+        - generic [ref=e20]:
+          - generic [ref=e22]:
+            - paragraph [ref=e23]: Procure o jogo
+            - paragraph [ref=e24]: Por times, campeonatos, datas..
+          - img [ref=e28] [cursor=pointer]
+      - generic [ref=e33]:
+        - link "Partidas Partidas" [ref=e34] [cursor=pointer]:
+          - /url: /
+          - img "Partidas" [ref=e35]
+          - paragraph [ref=e36]: Partidas
+        - link "Melhores momentos Melhores momentos" [ref=e37] [cursor=pointer]:
+          - /url: /melhores-momentos
+          - img "Melhores momentos" [ref=e38]
+          - paragraph [ref=e39]: Melhores momentos
+    - main [ref=e41]:
+      - generic [ref=e42]:
+        - heading "Termos de Uso e Política de Privacidade" [level=2] [ref=e43]
+        - generic [ref=e44]:
+          - generic [ref=e45]:
+            - paragraph [ref=e46]: O aplicativo Kasa.live é mantido e operado por Arara Produções Artísticas, Culturais e Eventos Ltda., sociedade com sede na Alameda Peru, n.º 796, Alphaville Residencial Dois, Cidade de Barueri, Estado de São Paulo, CEP 06.470-050 e inscrita no CNPJ/ME sob o n.º 21.876.353/0001-20 (“Arara”, “Nós” ou “nosso”). Nós elaboramos esta Política de Privacidade (“Política”) a fim de conscientizar os titulares de dados pessoais tratados pelo aplicativo Kasa.live. (“titular de dados”, “usuário”, “titular”, “você” ou “seu(s)/sua(s)”) acerca dos seus direitos de privacidade e sobre a forma como os seus dados pessoais são tratados por nós.
+            - paragraph [ref=e47]: Esta política aplica-se a qualquer operação de tratamento realizada pelo Kasa.live com relação a todo o conjunto de dados pessoais que estejam sob seu controle, independentemente do modo como se realizou a sua coleta.
+            - paragraph [ref=e48]: Nós coletamos e utilizamos alguns dados pessoais que pertencem àqueles que utilizam nosso aplicativo. Ao fazê-lo, agimos na qualidade de controlador desses dados e estamos sujeitos às disposições da Lei Federal n. 13.709/2018 (Lei Geral de Proteção de Dados Pessoais - LGPD).
+            - paragraph [ref=e49]: Nós cuidamos da proteção de seus dados pessoais e, por isso, disponibilizamos esta política de privacidade, que contém informações importantes sobre
+            - generic [ref=e50]:
+              - paragraph [ref=e51]: "- Quem deve utilizar nosso aplicativo"
+              - paragraph [ref=e52]: "- Quais dados coletamos e o que fazemos com eles;"
+              - paragraph [ref=e53]: "- Seus direitos em relação aos seus dados pessoais; e"
+              - paragraph [ref=e54]: "- Como entrar em contato conosco."
+          - generic [ref=e55]:
+            - heading "1. Quem deve utilizar nosso aplicativo" [level=2] [ref=e56]
+            - paragraph [ref=e57]: Nosso aplicativo somente deve ser utilizado por pessoas que tenham, pelo menos, 16 (dezesseis) anos de idade, sendo que a utilização por pessoa com menos de 18 (dezoito) anos somente será possível mediante o consentimento de pelo menos um de seus pais ou responsável.
+            - heading "2. Encarregado pela proteção de dados pessoais" [level=2] [ref=e58]
+            - paragraph [ref=e59]: "2.1. A Arara indica Nome do encarregado, com o endereço eletrônico para exercer a função de Encarregado pelo Tratamento de Dados Pessoais, cujas atribuições consistem em: (i) aceitar reclamações e comunicações dos titulares e adotar providências; (ii) receber comunicações da Autoridade Nacional e adotar providências; (iii) orientar os funcionários e os contratados da Arara a respeito das práticas a serem tomadas em relação à proteção de dados pessoais; e (iv) executar as demais atribuições determinadas pela Arara ou estabelecidas em normas complementares."
+            - heading "3. Dados que coletamos e motivos da coleta" [level=2] [ref=e60]
+            - paragraph [ref=e61]: Nosso aplicativo coleta e utiliza alguns dados pessoais de nossos usuários, de acordo com o disposto nesta seção.
+            - paragraph [ref=e62]: 3.1. Dados pessoais fornecidos expressamente pelo usuário
+            - paragraph [ref=e63]: "Nós coletamos os seguintes dados pessoais que nossos usuários nos fornecem expressamente ao utilizar nosso aplicativo:"
+            - generic [ref=e64]:
+              - paragraph [ref=e65]: "- NOME COMPLETO"
+              - paragraph [ref=e66]: "- ENDEREÇO RESIDENCIAL"
+              - paragraph [ref=e67]: "- ENDEREÇO ELETRÔNICO"
+              - paragraph [ref=e68]: "- DATA DE NASCIMENTO"
+              - paragraph [ref=e69]: "- CPF"
+              - paragraph [ref=e70]: "- TELEFONE"
+              - paragraph [ref=e71]: "- RG"
+            - paragraph [ref=e72]: "A coleta destes dados ocorre nos seguintes momentos:"
+            - generic [ref=e73]:
+              - paragraph [ref=e74]: "- QUANDO O USUÁRIO REALIZA COMPRA NO APP"
+              - paragraph [ref=e75]: "- QUANDO REALIZA CADASTRO"
+            - paragraph [ref=e76]: 3.2. Dados sensíveis
+            - paragraph [ref=e77]: Não serão coletados dados sensíveis de nossos usuários, assim entendidos aqueles definidos nos arts. 11 e seguintes da Lei de Proteção de Dados Pessoais. Assim, não haverá coleta de dados sobre origem racial ou étnica, convicção religiosa, opinião política, filiação a sindicato ou a organização de caráter religioso, filosófico ou político, dado referente à saúde ou à vida sexual, dado genético ou biométrico, quando vinculado a uma pessoa natural.
+            - paragraph [ref=e78]: 3.3. Dados de crianças e adolescentes
+            - paragraph [ref=e79]: A Arara geralmente não trata dados pessoais de crianças e adolescentes. No caso de tratar esses tipos de dados, realizaremos no melhor interesse dos titulares, sempre com o consentimento específico e em destaque dado por pelo menos um dos pais ou pelo responsável legal. A qualquer momento, o consentimento poderá ser revogado.
+            - heading "4. Finalidade do tratamento" [level=2] [ref=e80]
+            - paragraph [ref=e81]: "Os dados fornecidos por nossos usuários são coletados com as seguintes finalidades: (a) para que os usuários possam adquirir novos produtos posteriormente; (b) para finalidade de controle gráfico de vendas e/ou densidade de acesso ao app; - e (c) para tratamento de dados nas nossas plataformas e parceiros."
+            - paragraph [ref=e82]: Em caso de eventual tratamento do seu nome, e-mail ou telefone para fins de envio de materiais publicitários, será obtido consentimento específico e prévio.
+            - paragraph [ref=e83]: Tratamos os dados pessoais de nossos colaboradores internos e terceirizados para (i) estabelecer a relação contratual de trabalho ou prestação de serviços, (ii) executar os termos e condições dos trabalhos e serviços contratados, (iii) pagar os valores devidos pelo exercício do trabalho ou contraprestação pelos serviços, (iv) fornecer os benefícios, como alimentação, transporte e saúde, e (v) cumprir as obrigações legais com o Poder Público. Além disso, podemos tratar dados pessoais de candidatos a vagas de trabalho para realização de processo seletivo.
+            - paragraph [ref=e84]: Eventuais dados pessoais de terceiros ou de sócios ou colaboradores de clientes ou potenciais clientes ou parceiros comerciais da Arara serão tratados apenas para o mínimo necessário para atingir as suas finalidades, tais como comunicação para estabelecer uma relação comercial e prospecção de novos negócios.
+            - heading "5. Compartilhamento de dados pessoais com terceiros" [level=2] [ref=e85]
+            - paragraph [ref=e86]: "Nós poderemos compartilhar os dados pessoais dos usuários mediante garantia de proteção dos seus dados pessoais, conforme a LGPD, e para as finalidades descritas nesta Política, com nossos prestadores de serviços, tais como:"
+            - paragraph [ref=e87]: a. Bases de dados na “nuvem”.
+            - paragraph [ref=e88]: b. Provedores de softwares e outras tecnologias da informação.
+            - paragraph [ref=e89]: c. Empresa de hospedagem do site ou aplicativo.
+            - paragraph [ref=e90]: Nós poderemos compartilhar os dados pessoais dos usuários como intuito de oferecer promoções, publicidade e eventos personalizados para o usuário mediante aceite deste termo.
+            - paragraph [ref=e91]: "Nós poderemos transferir os dados pessoais para outros países, incluindo prestadores de serviço e servidores localizados no exterior. Caso ocorra esse tipo de transferência, nós iremos garantir o cumprimento dos princípios, dos direitos do titular e do regime de proteção de dados previstos na legislação aplicável, na forma de: (i) cláusulas contratuais destacadas e específicas para determinada transferência; (ii) cláusulas padrão contratuais; (iii) normas corporativas globais; (iv) selos, certificados e códigos de conduta regularmente emitidos."
+            - paragraph [ref=e92]: Além das situações aqui informadas, é possível que compartilhemos dados com terceiros para cumprir alguma determinação legal ou regulatória, ou, ainda, para cumprir alguma ordem expedida por autoridade pública.
+            - paragraph [ref=e93]: Em qualquer caso, o compartilhamento de dados pessoais observará todas as leis e regras aplicáveis, buscando sempre garantir a segurança dos dados de nossos usuários, observados os padrões técnicos empregados no mercado.
+            - heading "6. Por quanto tempo seus dados pessoais serão armazenados" [level=2] [ref=e94]
+            - paragraph [ref=e95]: "A Arara encerrará o tratamento dos seus dados quando:"
+            - paragraph [ref=e96]: a. For verificado que a finalidade foi alcançada ou que os dados deixaram de ser necessários ou pertinentes ao alcance da finalidade descrita nesta Política.
+            - paragraph [ref=e97]: b. O titular de dados estiver no seu direito de revogação do consentimento, e o fizer, resguardado o interesse público.
+            - paragraph [ref=e98]: c. For determinado pela Autoridade Nacional de Proteção de Dados, nos casos previstos em lei.
+            - paragraph [ref=e99]: d. Houver determinação legal.
+            - paragraph [ref=e100]: "Com o término do tratamento, os seus dados pessoais serão eliminados, salvo para:"
+            - paragraph [ref=e101]: a. Cumprimento de obrigação legal ou regulatória pela Arara, na qualidade de controladora.
+            - paragraph [ref=e102]: b. Estudo por órgão de pesquisa, garantida, sempre que possível, a anonimização dos dados pessoais.
+            - paragraph [ref=e103]: c. Transferência a terceiro, desde que respeitados os requisitos de tratamento de dados dispostos em Lei.
+            - paragraph [ref=e104]: d. Uso exclusivo da Arara, na qualidade de controladora, sendo vedado seu acesso por terceiro, e desde que anonimizados os dados.
+            - paragraph [ref=e105]: Uma vez expirados os períodos de armazenamento dos dados pessoais, eles são removidos de nossas bases de dados ou anonimizados.
+            - heading "7. Bases legais para o tratamento de dados pessoais" [level=2] [ref=e106]
+            - paragraph [ref=e107]: "Nós somente tratamos os seus dados pessoais nos casos em que há uma base legal para isso, tais como:"
+            - paragraph [ref=e108]: a. Consentimento, fornecido por escrito, em cláusula destaca das demais, ou por outro meio que demonstre a manifestação de vontade do titular.
+            - paragraph [ref=e109]: b. Cumprimento de obrigação legal ou regulatória pelo Arara, na qualidade de controladora.
+            - paragraph [ref=e110]: c. Execução de contrato ou de procedimentos preliminares relacionados a contrato do qual você seja parte ou a pedido seu.
+            - paragraph [ref=e111]: d. Exercício regular de direitos em processo judicial, administrativo ou arbitral.
+            - paragraph [ref=e112]: e. Proteção da vida ou da incolumidade física do titular ou de terceiros.
+            - paragraph [ref=e113]: f. Atendimento dos interesses legítimos da Arara, na qualidade de controlador, ou de terceiros, nos termos da legislação aplicável.
+            - heading "8. GERENCIAMENTO DE COOKIES" [level=2] [ref=e114]
+            - paragraph [ref=e115]: Cookies são arquivos criados automaticamente pelos websites que você visita e armazenados nos seus dispositivos (computadores, dispositivos móveis etc.) a fim de tornar a experiência on-line mais otimizada, lembrando de suas preferências do site e fornecendo conteúdo relevante localmente.
+            - paragraph [ref=e116]: "Os cookies são utilizados geralmente para:"
+            - paragraph [ref=e117]: a. Realizar pesquisas e diagnósticos para melhorar o conteúdo, produtos e serviços.
+            - paragraph [ref=e118]: b. Impedir atividades fraudulentas.
+            - paragraph [ref=e119]: c. Melhorar a segurança.
+            - paragraph [ref=e120]: "Caso deseje, você poderá bloquear ou rejeitar nossos cookies. Nas configurações do seu navegador, clique em 'Ajuda' para: (i) saber como impedir o navegador de aceitar cookies, (ii) ser notificado quando receber novos, (iii) ver quando eles expiram e (iv) desativá-los."
+            - heading "9. Direitos do usuário" [level=2] [ref=e121]
+            - paragraph [ref=e122]: "O usuário do aplicativo possui os seguintes direitos, exercíveis a qualquer momento, gratuitamente, por meio do e-mail do Encarregado no endereço indicado abaixo e mediante requisição, conferidos pela Lei de Proteção de Dados Pessoais:"
+            - generic [ref=e123]:
+              - paragraph [ref=e124]: "- confirmação da existência de tratamento;"
+              - paragraph [ref=e125]: "- acesso aos dados;"
+              - paragraph [ref=e126]: "- correção de dados incompletos, inexatos ou desatualizados;"
+              - paragraph [ref=e127]: "- anonimização, bloqueio ou eliminação de dados desnecessários, excessivos ou tratados em desconformidade com o disposto na lei;"
+              - paragraph [ref=e128]: "- portabilidade dos dados a outro fornecedor de serviço ou produto, mediante requisição expressa, de acordo com a regulamentação da autoridade nacional, observados os segredos comercial e industrial;"
+              - paragraph [ref=e129]: "- eliminação dos dados pessoais tratados com o consentimento do titular, exceto nos casos previstos em lei;"
+              - paragraph [ref=e130]: "- informação das entidades públicas e privadas com as quais o controlador realizou uso compartilhado de dados;"
+              - paragraph [ref=e131]: "- informação sobre a possibilidade de não fornecer consentimento e sobre as consequências da negativa;"
+              - paragraph [ref=e132]: "- revogação do consentimento."
+            - paragraph [ref=e133]: É importante destacar que, nos termos da LGPD, não existe um direito de eliminação de dados tratados com fundamento em bases legais distintas do consentimento, a menos que os dados sejam desnecessários, excessivos ou tratados em desconformidade com o previsto na lei.
+            - paragraph [ref=e134]: 9.1. Como o titular pode exercer seus direitos
+            - paragraph [ref=e135]: Para garantir que o usuário que pretende exercer seus direitos é, de fato, o titular dos dados pessoais objeto da requisição, poderemos solicitar documentos ou outras informações que possam auxiliar em sua correta identificação, a fim de resguardar nossos direitos e os direitos de terceiros. Isto somente será feito, porém, se for absolutamente necessário, e o requerente receberá todas as informações relacionadas.
+            - paragraph [ref=e136]: Você tem o direito de peticionar em relação aos seus dados contra a Arara, quando na qualidade de controlador, perante a Autoridade Nacional de Proteção de Dados e perante os organismos de defesa do consumidor.
+            - paragraph [ref=e137]: Você poderá opor-se a tratamento realizado com fundamento em uma das hipóteses de dispensa de consentimento, em caso de descumprimento ao disposto na Lei Geral de Proteção de Dados.
+            - paragraph [ref=e138]: "Em caso de impossibilidade de adoção imediata de requerimento feito pelo titular com relação aos direitos elencados acima, a Arara, quando na qualidade de controladora, enviará ao titular resposta em que poderá: (i) comunicar que não é agente de tratamento dos dados e indicar, sempre que possível, o agente; ou (ii) indicar as razões de fato ou de direito que impedem a adoção imediata da providência."
+            - paragraph [ref=e139]: Em caso de solicitação, por você, de correção, eliminação, anonimização ou o bloqueio dos dados, a Arara irá informar aos agentes de tratamento com os quais tenha realizado uso compartilhado de dados para que repitam idêntico procedimento, exceto nos casos em que esta comunicação seja impossível ou implique esforço desproporcional.
+            - heading "10. Medidas de segurança no tratamento de dados pessoais" [level=2] [ref=e140]
+            - paragraph [ref=e141]: Empregamos medidas técnicas e organizativas aptas a proteger os dados pessoais de acessos não autorizados e de situações de destruição, perda, extravio ou alteração desses dados.
+            - paragraph [ref=e142]: As medidas que utilizamos levam em consideração a natureza dos dados, o contexto e a finalidade do tratamento, os riscos que uma eventual violação geraria para os direitos e liberdades do usuário, e os padrões atualmente empregados no mercado por empresas semelhantes à nossa.
+            - paragraph [ref=e143]: "Entre as medidas de segurança adotadas por nós, destacamos as seguintes:"
+            - generic [ref=e144]:
+              - paragraph [ref=e145]: "- Os dados de nossos usuários são armazenados em ambiente seguro;"
+              - paragraph [ref=e146]: "- Limitamos o acesso aos dados de nossos usuários, de modo que terceiros não autorizados não possam acessá-los;"
+              - paragraph [ref=e147]: "- Utilizamos certificado SSL (Secure Socket Layer), de modo que a transmissão de dados entre os dispositivos dos usuários e nossos servidores aconteça de forma criptografada;"
+              - paragraph [ref=e148]: "- Mantemos registros de todos aqueles que têm, de alguma forma, contato com nossos dados."
+            - paragraph [ref=e149]: Ainda que adote tudo o que está ao seu alcance para evitar incidentes de segurança, é possível que ocorra algum problema motivado exclusivamente por um terceiro - como em caso de ataques de hackers ou crackers ou, ainda, em caso de culpa exclusiva do usuário, que ocorre, por exemplo, quando ele mesmo transfere seus dados a terceiro. Assim, embora sejamos, em geral, responsáveis pelos dados pessoais que tratamos, nos eximimos de responsabilidade caso ocorra uma situação excepcional como essas, sobre as quais não temos nenhum tipo de controle.
+            - paragraph [ref=e150]: De qualquer forma, caso ocorra qualquer tipo de incidente de segurança que possa gerar risco ou dano relevante para qualquer de nossos usuários, comunicaremos os afetados e a Autoridade Nacional de Proteção de Dados acerca do ocorrido, em conformidade com o disposto na Lei Geral de Proteção de Dados.
+            - heading "11. Reclamação a uma autoridade de controle" [level=2] [ref=e151]
+            - paragraph [ref=e152]: Sem prejuízo de qualquer outra via de recurso administrativo ou judicial, os titulares de dados pessoais que se sentirem, de qualquer forma, lesados, podem apresentar reclamação à Autoridade Nacional de Proteção de Dados.
+            - heading "12. Alterações nesta política" [level=2] [ref=e153]
+            - paragraph [ref=e154]: "A presente versão desta Política de Privacidade foi atualizada pela última vez em: 25 de agosto de 2022."
+            - paragraph [ref=e155]: Reservamo-nos o direito de modificar, a qualquer momento, as presentes normas, especialmente para adaptá-las às eventuais alterações feitas em nosso aplicativo, seja pela disponibilização de novas funcionalidades, seja pela supressão ou modificação daquelas já existentes.
+            - paragraph [ref=e156]: Sempre que houver uma modificação, nossos usuários serão notificados acerca da mudança.
+            - heading "13. Como entrar em contato conosco" [level=2] [ref=e157]
+            - paragraph [ref=e158]: "Para esclarecer quaisquer dúvidas sobre esta Política de Privacidade ou sobre os dados pessoais que tratamos, entre em contato com nosso Encarregado de Proteção de Dados Pessoais, por algum dos canais mencionados abaixo:"
+            - paragraph [ref=e159]: "E-mail: gabriel@loomi.com.br"
+            - paragraph [ref=e160]: "Endereço postal: Av. Agamenon Magalhães, 2939, sala 1204, Recife - PE, Brasil"
+    - contentinfo [ref=e161]:
+      - paragraph [ref=e163]: Porque Deus amou o mundo de tal maneira, que deu o seu Filho Unigênito (Jesus), para que todo aquele que nele crê não pereça, mas tenha a vida eterna - João 3:16
+      - generic [ref=e164]:
+        - img "playStore" [ref=e166] [cursor=pointer]
+        - img "appStore" [ref=e168] [cursor=pointer]
+      - generic [ref=e169]:
+        - link [ref=e170] [cursor=pointer]:
+          - /url: https://www.tiktok.com/@kasa.live/
+          - img [ref=e171]
+        - link [ref=e173] [cursor=pointer]:
+          - /url: https://www.instagram.com/kasa.live/
+          - img [ref=e174]
+      - generic [ref=e176]:
+        - paragraph [ref=e177]: © 2022 Kasa.live, LTDA.
+        - link "Termos de Uso e Política de Privacidade" [ref=e178] [cursor=pointer]:
+          - /url: /termos-de-uso
+      - paragraph [ref=e179]: v3.1-Web
+  - alert [ref=e180]
+  - generic:
+    - region
+    - region
+    - region
+    - region
+    - region
+    - region
+  - iframe [ref=e181]:
+    
+```
+
+# Test source
+
+```ts
+  1  | import { test, expect } from '@fixtures/index';
+  2  | import { maskDynamic } from '@support/visualHelper';
+  3  | 
+  4  | /**
+  5  |  * Visual regression — 5 baselines cobrindo páginas-chave anônimas + logada + modal.
+  6  |  * Threshold global em playwright.config.ts (`maxDiffPixelRatio: 0.02`).
+  7  |  *
+  8  |  * Geração inicial dos baselines:
+  9  |  *   npx playwright test automation/tests/visual --project=chromium --update-snapshots
+  10 |  *
+  11 |  * Re-runs subsequentes apenas comparam.
+  12 |  */
+  13 | 
+  14 | test.describe('Visual regression', () => {
+  15 |   // Fullpage screenshots em DEV API podem demorar — timeout generoso por teste.
+  16 |   test.setTimeout(90_000);
+  17 | 
+  18 |   test('@visual home anônima', async ({ page }) => {
+  19 |     await page.goto('/', { waitUntil: 'domcontentloaded' });
+  20 |     // Espera UI principal — primeiro card finalizado ou heading qualquer (proxy de readiness)
+  21 |     await page
+  22 |       .locator('div.css-7mca6u, h1, h2')
+  23 |       .first()
+  24 |       .waitFor({ state: 'visible', timeout: 30_000 })
+  25 |       .catch(() => undefined);
+  26 |     // Pequena espera para fontes/imagens estabilizarem
+  27 |     await page.waitForLoadState('networkidle', { timeout: 15_000 }).catch(() => undefined);
+  28 |     await expect(page).toHaveScreenshot('home.png', {
+  29 |       fullPage: true,
+  30 |       mask: await maskDynamic(page),
+  31 |     });
+  32 |   });
+  33 | 
+  34 |   test('@visual melhores-momentos anônima', async ({ page }) => {
+  35 |     await page.goto('/melhores-momentos', { waitUntil: 'domcontentloaded' });
+  36 |     await page
+  37 |       .getByRole('heading', { name: /melhores momentos/i })
+  38 |       .first()
+  39 |       .waitFor({ state: 'visible', timeout: 30_000 })
+  40 |       .catch(() => undefined);
+  41 |     await page.waitForLoadState('networkidle', { timeout: 15_000 }).catch(() => undefined);
+  42 |     await expect(page).toHaveScreenshot('melhores-momentos.png', {
+  43 |       fullPage: true,
+  44 |       mask: await maskDynamic(page),
+  45 |     });
+  46 |   });
+  47 | 
+  48 |   test('@visual termos-de-uso (estável)', async ({ page }) => {
+  49 |     await page.goto('/termos-de-uso', { waitUntil: 'domcontentloaded' });
+  50 |     await page.waitForLoadState('networkidle', { timeout: 15_000 }).catch(() => undefined);
+> 51 |     await expect(page).toHaveScreenshot('termos-de-uso.png', {
+     |     ^ Error: A snapshot doesn't exist at /home/runner/work/loomi-qa-challenge-kasa/loomi-qa-challenge-kasa/automation/tests/visual/pages.spec.ts-snapshots/termos-de-uso-mobile-chrome-linux.png, writing actual.
+  52 |       fullPage: true,
+  53 |       mask: await maskDynamic(page),
+  54 |     });
+  55 |   });
+  56 | 
+  57 |   test('@visual modal de partida finalizada', async ({ page }) => {
+  58 |     await page.goto('/', { waitUntil: 'domcontentloaded' });
+  59 |     const firstCard = page.locator('div.css-7mca6u').first();
+  60 |     await firstCard.waitFor({ state: 'visible', timeout: 30_000 });
+  61 |     await firstCard.click();
+  62 | 
+  63 |     const modal = page.locator('[role="dialog"][aria-labelledby^="chakra-modal--header"]').first();
+  64 |     await modal.waitFor({ state: 'visible', timeout: 10_000 });
+  65 |     // toHaveScreenshot já tem retry interno até o frame estabilizar — não precisa sleep extra
+  66 | 
+  67 |     await expect(modal).toHaveScreenshot('match-modal.png', {
+  68 |       mask: await maskDynamic(page),
+  69 |     });
+  70 |   });
+  71 | 
+  72 |   test('@visual home logada (4 tabs)', async ({ loggedInPage }) => {
+  73 |     await loggedInPage.goto('/', { waitUntil: 'domcontentloaded' });
+  74 |     await loggedInPage
+  75 |       .locator('a[title="Calendário"], a[title="Calendario"]')
+  76 |       .first()
+  77 |       .waitFor({ state: 'visible', timeout: 15_000 });
+  78 |     await loggedInPage.waitForLoadState('networkidle', { timeout: 15_000 }).catch(() => undefined);
+  79 |     await expect(loggedInPage).toHaveScreenshot('home-logged.png', {
+  80 |       fullPage: true,
+  81 |       mask: await maskDynamic(loggedInPage),
+  82 |     });
+  83 |   });
+  84 | });
+  85 | 
+```

@@ -1,0 +1,307 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: e2e/calendar-mensal.spec.ts >> Calendar mensal — home widget >> @core click em um dia clicável do calendar muda state visual
+- Location: automation/tests/e2e/calendar-mensal.spec.ts:49:7
+
+# Error details
+
+```
+TimeoutError: locator.click: Timeout 10000ms exceeded.
+Call log:
+  - waiting for locator('input[placeholder*="2026"], input[value="Hoje"], input[value="Amanhã"]').first()
+
+```
+
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - generic [ref=e4]:
+    - banner [ref=e5]:
+      - generic [ref=e7]:
+        - generic [ref=e8]:
+          - link "home" [ref=e9] [cursor=pointer]:
+            - /url: /
+            - img "home" [ref=e10]
+          - generic [ref=e11]:
+            - button "Notificações" [ref=e13] [cursor=pointer]:
+              - img [ref=e14]
+            - button "Entrar" [ref=e15] [cursor=pointer]
+        - generic [ref=e20]:
+          - generic [ref=e22]:
+            - paragraph [ref=e23]: Procure o jogo
+            - paragraph [ref=e24]: Por times, campeonatos, datas..
+          - img [ref=e28] [cursor=pointer]
+      - generic [ref=e33]:
+        - link "Partidas Partidas" [ref=e34] [cursor=pointer]:
+          - /url: /
+          - img "Partidas" [ref=e35]
+          - paragraph [ref=e36]: Partidas
+        - link "Melhores momentos Melhores momentos" [ref=e37] [cursor=pointer]:
+          - /url: /melhores-momentos
+          - img "Melhores momentos" [ref=e38]
+          - paragraph [ref=e39]: Melhores momentos
+    - main [ref=e41]:
+      - generic [ref=e42]:
+        - generic [ref=e43]:
+          - generic [ref=e46]:
+            - separator [ref=e50]
+            - separator [ref=e55]
+            - separator [ref=e60]
+            - separator [ref=e65]
+            - separator [ref=e70]
+            - separator [ref=e75]
+            - separator [ref=e80]
+            - separator [ref=e85]
+            - separator [ref=e90]
+            - separator [ref=e95]
+            - separator [ref=e100]
+            - separator [ref=e105]
+            - separator [ref=e110]
+            - separator [ref=e115]
+            - separator [ref=e120]
+            - separator [ref=e125]
+            - separator [ref=e130]
+            - separator [ref=e135]
+            - separator [ref=e140]
+            - separator [ref=e145]
+            - separator [ref=e150]
+            - separator [ref=e155]
+            - separator [ref=e160]
+            - separator [ref=e165]
+            - separator [ref=e170]
+            - separator [ref=e175]
+            - separator [ref=e180]
+            - separator [ref=e185]
+            - separator [ref=e190]
+            - separator [ref=e195]
+          - paragraph [ref=e198]: ...
+        - generic [ref=e199]:
+          - generic [ref=e202]:
+            - separator [ref=e206]
+            - separator [ref=e211]
+            - separator [ref=e216]
+            - separator [ref=e221]
+            - separator [ref=e226]
+            - separator [ref=e231]
+            - separator [ref=e236]
+            - separator [ref=e241]
+            - separator [ref=e246]
+            - separator [ref=e251]
+            - separator [ref=e256]
+            - separator [ref=e261]
+            - separator [ref=e266]
+            - separator [ref=e271]
+            - separator [ref=e276]
+            - separator [ref=e281]
+            - separator [ref=e286]
+            - separator [ref=e291]
+            - separator [ref=e296]
+            - separator [ref=e301]
+            - separator [ref=e306]
+            - separator [ref=e311]
+            - separator [ref=e316]
+            - separator [ref=e321]
+            - separator [ref=e326]
+            - separator [ref=e331]
+            - separator [ref=e336]
+            - separator [ref=e341]
+            - separator [ref=e346]
+            - separator [ref=e351]
+          - paragraph [ref=e354]: ...
+        - generic [ref=e355]:
+          - generic [ref=e358]:
+            - separator [ref=e362]
+            - separator [ref=e367]
+            - separator [ref=e372]
+            - separator [ref=e377]
+            - separator [ref=e382]
+            - separator [ref=e387]
+            - separator [ref=e392]
+            - separator [ref=e397]
+            - separator [ref=e402]
+            - separator [ref=e407]
+            - separator [ref=e412]
+            - separator [ref=e417]
+            - separator [ref=e422]
+            - separator [ref=e427]
+            - separator [ref=e432]
+            - separator [ref=e437]
+            - separator [ref=e442]
+            - separator [ref=e447]
+            - separator [ref=e452]
+            - separator [ref=e457]
+            - separator [ref=e462]
+            - separator [ref=e467]
+            - separator [ref=e472]
+            - separator [ref=e477]
+            - separator [ref=e482]
+            - separator [ref=e487]
+            - separator [ref=e492]
+            - separator [ref=e497]
+            - separator [ref=e502]
+            - separator [ref=e507]
+          - paragraph [ref=e510]: ...
+        - generic [ref=e511]:
+          - generic [ref=e514]:
+            - separator [ref=e518]
+            - separator [ref=e523]
+            - separator [ref=e528]
+            - separator [ref=e533]
+            - separator [ref=e538]
+            - separator [ref=e543]
+            - separator [ref=e548]
+            - separator [ref=e553]
+            - separator [ref=e558]
+            - separator [ref=e563]
+            - separator [ref=e568]
+            - separator [ref=e573]
+            - separator [ref=e578]
+            - separator [ref=e583]
+            - separator [ref=e588]
+            - separator [ref=e593]
+            - separator [ref=e598]
+            - separator [ref=e603]
+            - separator [ref=e608]
+            - separator [ref=e613]
+            - separator [ref=e618]
+            - separator [ref=e623]
+            - separator [ref=e628]
+            - separator [ref=e633]
+            - separator [ref=e638]
+            - separator [ref=e643]
+            - separator [ref=e648]
+            - separator [ref=e653]
+            - separator [ref=e658]
+            - separator [ref=e663]
+          - paragraph [ref=e666]: ...
+    - contentinfo [ref=e667]:
+      - paragraph [ref=e669]: Porque Deus amou o mundo de tal maneira, que deu o seu Filho Unigênito (Jesus), para que todo aquele que nele crê não pereça, mas tenha a vida eterna - João 3:16
+      - generic [ref=e670]:
+        - img "playStore" [ref=e672] [cursor=pointer]
+        - img "appStore" [ref=e674] [cursor=pointer]
+      - generic [ref=e675]:
+        - link [ref=e676] [cursor=pointer]:
+          - /url: https://www.tiktok.com/@kasa.live/
+          - img [ref=e677]
+        - link [ref=e679] [cursor=pointer]:
+          - /url: https://www.instagram.com/kasa.live/
+          - img [ref=e680]
+      - generic [ref=e682]:
+        - paragraph [ref=e683]: © 2022 Kasa.live, LTDA.
+        - link "Termos de Uso e Política de Privacidade" [ref=e684] [cursor=pointer]:
+          - /url: /termos-de-uso
+      - paragraph [ref=e685]: v3.1-Web
+  - alert [ref=e686]
+  - generic:
+    - region
+    - region
+    - region
+    - region
+    - region
+    - region
+  - iframe [ref=e687]:
+    
+```
+
+# Test source
+
+```ts
+  1  | import { test, expect } from '@fixtures/index';
+  2  | 
+  3  | /**
+  4  |  * @core
+  5  |  * Calendar mensal — popover do filtro de data na home.
+  6  |  *
+  7  |  * O calendar (react-day-picker) só fica VISÍVEL após click no input de data
+  8  |  * ("Hoje" / "Apr 30, 2026" etc). O `<h2 class="rdp-caption_label">` existe no
+  9  |  * DOM mesmo fechado, mas com display:none, então testes precisam abrir o
+  10 |  * picker antes de interagir.
+  11 |  *
+  12 |  * 1. Click "Go to next month" → heading muda
+  13 |  * 2. Click em um dia clicável dispara mudança de state visual ou request
+  14 |  */
+  15 | test.describe('Calendar mensal — home widget', () => {
+  16 |   test('@core click "Go to next month" altera o heading do mês visível', async ({ page }) => {
+  17 |     await page.goto('/', { waitUntil: 'domcontentloaded' });
+  18 |     await page.waitForLoadState('networkidle', { timeout: 15_000 }).catch(() => undefined);
+  19 | 
+  20 |     // Abre o date picker focando o input de data via tab/keyboard ou click forçado.
+  21 |     // O input com value="Hoje" / placeholder="<MMM DD, YYYY>" abre o popover ao receber focus.
+  22 |     const dateInput = page.locator('input.chakra-input').filter({ hasText: '' }).nth(2);
+  23 |     // fallback robusto: se nth(2) não bater, tenta pelo placeholder
+  24 |     const dateInputAlt = page
+  25 |       .locator('input[placeholder*="2026"], input[value="Hoje"], input[value="Amanhã"]')
+  26 |       .first();
+  27 |     const target = (await dateInputAlt.count()) > 0 ? dateInputAlt : dateInput;
+  28 |     await target.click({ force: true });
+  29 | 
+  30 |     const monthLabel = page.locator('h2.rdp-caption_label').first();
+  31 |     await monthLabel.waitFor({ state: 'visible', timeout: 10_000 });
+  32 |     const before = (await monthLabel.textContent())?.trim() ?? '';
+  33 |     expect(before.length, 'label do mês deve estar populado').toBeGreaterThan(0);
+  34 | 
+  35 |     await page
+  36 |       .getByLabel(/go to next month/i)
+  37 |       .first()
+  38 |       .click();
+  39 | 
+  40 |     // Espera a mudança de label propagar — usar expect.poll evita waitForTimeout
+  41 |     await expect
+  42 |       .poll(async () => (await monthLabel.textContent())?.trim() ?? '', {
+  43 |         timeout: 5_000,
+  44 |         message: 'label do mês deve mudar após "next month"',
+  45 |       })
+  46 |       .not.toBe(before);
+  47 |   });
+  48 | 
+  49 |   test('@core click em um dia clicável do calendar muda state visual', async ({ page }) => {
+  50 |     await page.goto('/', { waitUntil: 'domcontentloaded' });
+  51 |     await page.waitForLoadState('networkidle', { timeout: 15_000 }).catch(() => undefined);
+  52 | 
+  53 |     // Abre o date picker
+  54 |     const dateInput = page
+  55 |       .locator('input[placeholder*="2026"], input[value="Hoje"], input[value="Amanhã"]')
+  56 |       .first();
+> 57 |     await dateInput.click({ force: true });
+     |                     ^ TimeoutError: locator.click: Timeout 10000ms exceeded.
+  58 | 
+  59 |     // Espera o calendar visível
+  60 |     const monthLabel = page.locator('h2.rdp-caption_label').first();
+  61 |     await monthLabel.waitFor({ state: 'visible', timeout: 10_000 });
+  62 | 
+  63 |     // Procura um botão de dia clicável dentro do react-day-picker
+  64 |     // (botões dos dias usam name "15º maio (sexta-feira)" etc — bug S2: 31 botões duplicados)
+  65 |     const dayBtn = page.locator('button.rdp-day').filter({ hasText: /^15/ }).first();
+  66 |     await dayBtn.waitFor({ state: 'visible', timeout: 5_000 });
+  67 | 
+  68 |     // Espera-se mudança de state visual: classe `rdp-day_selected` no botão clicado
+  69 |     // OU request à API com date filter (bug documentado: ora `date_start`, ora `date`)
+  70 |     const apiPromise = page
+  71 |       .waitForRequest(
+  72 |         (req) =>
+  73 |           /kasa-live\.api\.dev\.loomi\.com\.br\/api\/1\.0\/match\//i.test(req.url()) &&
+  74 |           /date(_start)?=/i.test(req.url()),
+  75 |         { timeout: 8_000 },
+  76 |       )
+  77 |       .catch(() => null);
+  78 | 
+  79 |     await dayBtn.click();
+  80 |     const req = await apiPromise;
+  81 | 
+  82 |     if (req) {
+  83 |       expect(req.url(), 'request à API com date filter detectada').toMatch(/date(_start)?=/i);
+  84 |     } else {
+  85 |       // Fallback: o input de data continua presente (asserção mínima de não-quebra)
+  86 |       await expect(dateInput, 'input de data ainda existe após click no dia').toHaveCount(1);
+  87 |     }
+  88 |   });
+  89 | });
+  90 | 
+```
