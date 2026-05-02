@@ -86,7 +86,7 @@ loomi-qa-challenge-kasa/
 │   └── extras/                      # 5 cenários não-core
 ├── automation/
 │   ├── tests/
-│   │   ├── e2e/                     # 25 testes
+│   │   ├── e2e/                     # 27 testes
 │   │   ├── api/                     # 5 testes
 │   │   ├── visual/                  # 5 testes
 │   │   ├── a11y/                    # 5 testes
@@ -168,7 +168,7 @@ Classes encapsulam UI do kasa.live: `BasePage`, `HomePage`, `MatchSearchPage`, `
 **Contrato:** classes recebem `Page` no construtor, métodos retornam Promises tipadas, seletores em `private readonly selectors`.
 
 ### 4.2 `fixtures/` — Custom test fixtures
-Estende `test` do Playwright com fixtures reutilizáveis (`homePage`, `matchSearchPage`, `authenticatedUser`, `testDataFactory`, `axeBuilder`). Zero boilerplate nos testes.
+Estende `test` do Playwright com fixtures reutilizáveis: `homePage`, `matchSearchPage`, `authenticatedUser`, `testDataFactory`, `axeBuilder`, `pristineAccount` (snapshot/restore do estado da conta para testes mutáveis — ver 6.3). Zero boilerplate nos testes.
 
 ### 4.3 `support/` — Helpers
 - `evidenceCollector.ts` — captura automática em falha
@@ -570,6 +570,7 @@ Dockerfile baseado em `mcr.microsoft.com/playwright:v1.50.0-jammy`. Avaliador ro
 
 **Tarefa 2 (Automação):**
 - [ ] ≥30 testes (alvo 45)
+- [ ] Mesmo sob cortes da Seção 10.2, manter ao menos 25 E2E + cobertura de 4 das 5 camadas (E2E/API/Visual/A11y/Perf) — não comprometer a "forma de diamante" da pirâmide para atingir o número
 - [ ] Suite full passa verde 2x consecutivas localmente
 - [ ] CI verde em 2 PRs consecutivos
 - [ ] Allure local sem erro
