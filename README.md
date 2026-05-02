@@ -12,21 +12,26 @@ npm run report:allure
 ```
 
 ## Links principais
-- Trello: <preencher>
-- Allure Report: <preencher>
-- Vídeo demo: <preencher>
-- Relatório: [docs/progress-report.md](docs/progress-report.md)
+
+- Repositório: https://github.com/filipeCardorso/loomi-qa-challenge-kasa
+- Trello (board público): https://trello.com/b/jL2scQSj/loomi-qa-challenge-filipe-gabriel
+- Allure Report: _(publicado na Fase 13 — GitHub Pages)_
+- Vídeo demo: _(gravado na Fase 14)_
+- Relatório de Progresso: [docs/progress-report.md](docs/progress-report.md) _(escrito na Fase 15)_
 
 ## Inventário de entregáveis
-| Tarefa | Pasta | Status |
-|---|---|---|
-| 1 — Casos BDD | `test-cases/` | em construção |
-| 2 — Automação | `automation/` | em construção |
+
+| Tarefa             | Pasta          | Status        |
+| ------------------ | -------------- | ------------- |
+| 1 — Casos BDD      | `test-cases/`  | em construção |
+| 2 — Automação      | `automation/`  | em construção |
 | 3 — Bugs/Melhorias | `bug-reports/` | em construção |
-| 4 — MCP Server | `mcp-server/` | em construção |
+| 4 — MCP Server     | `mcp-server/`  | em construção |
 
 ## Estrutura
+
 Ver tree completo em [docs/architecture.md](docs/architecture.md).
 
 ## Autor
+
 Filipe Gabriel · filipecardosogabriel@gmail.com
