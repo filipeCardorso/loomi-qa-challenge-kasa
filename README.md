@@ -15,7 +15,7 @@ npm run report:allure
 
 - Repositório: https://github.com/filipeCardorso/loomi-qa-challenge-kasa
 - Trello (board público): https://trello.com/b/jL2scQSj/loomi-qa-challenge-filipe-gabriel
-- Allure Report: _(publicado na Fase 13 — GitHub Pages)_
+- Allure Report: https://filipecardorso.github.io/loomi-qa-challenge-kasa/
 - Vídeo demo: _(gravado na Fase 14)_
 - Relatório de Progresso: [docs/progress-report.md](docs/progress-report.md) _(escrito na Fase 15)_
 
