@@ -1,5 +1,9 @@
-import 'dotenv/config'; // carrega .env.local automaticamente
+import { config as loadEnv } from 'dotenv';
 import { defineConfig, devices } from '@playwright/test';
+
+// Carrega .env.local PRIMEIRO (credenciais reais, gitignored), com fallback a .env
+loadEnv({ path: '.env.local' });
+loadEnv({ path: '.env' });
 
 export default defineConfig({
   testDir: './automation/tests',
