@@ -1,0 +1,3920 @@
+{
+  "visited": {
+    "https://www.kasa.live/": {
+      "title": "Kasa.Live - Encontre o Jogo",
+      "url": "https://www.kasa.live/",
+      "links": [
+        {
+          "href": "https://www.kasa.live/",
+          "text": "",
+          "inner": "<a class=\"chakra-link css-spn4bz\" href=\"/\"><img alt=\"home\" src=\"/_next/static/media/logo-home.e2a9b922.svg\" class=\"chakra-image css-11ukie\"></a>"
+        },
+        {
+          "href": "https://www.kasa.live/",
+          "text": "Partidas",
+          "inner": null
+        },
+        {
+          "href": "https://www.kasa.live/melhores-momentos",
+          "text": "Melhores momentos",
+          "inner": null
+        },
+        {
+          "href": "https://www.tiktok.com/@kasa.live/",
+          "text": "",
+          "inner": null
+        },
+        {
+          "href": "https://www.instagram.com/kasa.live/",
+          "text": "",
+          "inner": null
+        },
+        {
+          "href": "https://www.kasa.live/termos-de-uso",
+          "text": "Termos de Uso e Política de Privacidade",
+          "inner": "<a class=\"chakra-text css-1cq5ou2\" href=\"/termos-de-uso\">Termos de Uso e Política de Privacidade</a>"
+        }
+      ],
+      "buttons": [
+        {
+          "text": "",
+          "ariaLabel": "Go to previous month",
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "",
+          "ariaLabel": "Go to next month",
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "11º maio (sexta-feira)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "22º maio (sábado)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "33º maio (domingo)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "44º maio (segunda-feira)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "55º maio (terça-feira)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "66º maio (quarta-feira)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "77º maio (quinta-feira)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "88º maio (sexta-feira)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "99º maio (sábado)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "1010º maio (domingo)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "1111º maio (segunda-feira)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "1212º maio (terça-feira)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "1313º maio (quarta-feira)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "1414º maio (quinta-feira)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "1515º maio (sexta-feira)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "1616º maio (sábado)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "1717º maio (domingo)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "1818º maio (segunda-feira)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "1919º maio (terça-feira)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "2020º maio (quarta-feira)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "2121º maio (quinta-feira)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "2222º maio (sexta-feira)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "2323º maio (sábado)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "2424º maio (domingo)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "2525º maio (segunda-feira)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "2626º maio (terça-feira)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "2727º maio (quarta-feira)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "2828º maio (quinta-feira)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "2929º maio (sexta-feira)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "3030º maio (sábado)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "3131º maio (domingo)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "",
+          "ariaLabel": "Notificações",
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "Entrar",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "Criar conta",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "Entrar",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "",
+          "ariaLabel": "página anterior",
+          "testid": null,
+          "disabled": true
+        },
+        {
+          "text": "1",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "2",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "117",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "",
+          "ariaLabel": "próxima página",
+          "testid": null,
+          "disabled": false
+        }
+      ],
+      "inputs": [
+        {
+          "type": "text",
+          "name": "",
+          "placeholder": "Qual time?",
+          "ariaLabel": null,
+          "testid": null
+        },
+        {
+          "type": "text",
+          "name": "",
+          "placeholder": "Qual campeonato?",
+          "ariaLabel": null,
+          "testid": null
+        },
+        {
+          "type": "text",
+          "name": "",
+          "placeholder": "Apr 30, 2026",
+          "ariaLabel": null,
+          "testid": null
+        },
+        {
+          "type": "text",
+          "name": "",
+          "placeholder": "Onde quer ver?",
+          "ariaLabel": null,
+          "testid": null
+        }
+      ],
+      "headings": [
+        {
+          "level": "H2",
+          "text": "maio 2026"
+        }
+      ],
+      "testids": [],
+      "ariaLabels": [
+        "Go to previous month",
+        "Go to next month",
+        "Notificações",
+        "página anterior",
+        "próxima página"
+      ],
+      "roles": ["dialog", "grid", "alert", "region"],
+      "iframes": [],
+      "videos": [],
+      "screenshot": "/Users/filipegabriel/loomi-qa-challenge-kasa/docs/site-snapshots/exploration/home.png"
+    },
+    "https://www.kasa.live/melhores-momentos": {
+      "title": "Kasa.Live - Encontre o Jogo",
+      "url": "https://www.kasa.live/melhores-momentos",
+      "links": [
+        {
+          "href": "https://www.kasa.live/",
+          "text": "",
+          "inner": "<a class=\"chakra-link css-spn4bz\" href=\"/\"><img alt=\"home\" src=\"/_next/static/media/logo-home.e2a9b922.svg\" class=\"chakra-image css-11ukie\"></a>"
+        },
+        {
+          "href": "https://www.kasa.live/",
+          "text": "Partidas",
+          "inner": null
+        },
+        {
+          "href": "https://www.kasa.live/melhores-momentos",
+          "text": "Melhores momentos",
+          "inner": null
+        },
+        {
+          "href": "https://www.tiktok.com/@kasa.live/",
+          "text": "",
+          "inner": null
+        },
+        {
+          "href": "https://www.instagram.com/kasa.live/",
+          "text": "",
+          "inner": null
+        },
+        {
+          "href": "https://www.kasa.live/termos-de-uso",
+          "text": "Termos de Uso e Política de Privacidade",
+          "inner": "<a class=\"chakra-text css-1cq5ou2\" href=\"/termos-de-uso\">Termos de Uso e Política de Privacidade</a>"
+        }
+      ],
+      "buttons": [
+        {
+          "text": "",
+          "ariaLabel": "Go to previous month",
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "",
+          "ariaLabel": "Go to next month",
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "11º maio (sexta-feira)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "22º maio (sábado)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "33º maio (domingo)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "44º maio (segunda-feira)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "55º maio (terça-feira)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "66º maio (quarta-feira)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "77º maio (quinta-feira)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "88º maio (sexta-feira)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "99º maio (sábado)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "1010º maio (domingo)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "1111º maio (segunda-feira)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "1212º maio (terça-feira)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "1313º maio (quarta-feira)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "1414º maio (quinta-feira)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "1515º maio (sexta-feira)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "1616º maio (sábado)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "1717º maio (domingo)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "1818º maio (segunda-feira)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "1919º maio (terça-feira)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "2020º maio (quarta-feira)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "2121º maio (quinta-feira)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "2222º maio (sexta-feira)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "2323º maio (sábado)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "2424º maio (domingo)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "2525º maio (segunda-feira)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "2626º maio (terça-feira)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "2727º maio (quarta-feira)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "2828º maio (quinta-feira)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "2929º maio (sexta-feira)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "3030º maio (sábado)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "3131º maio (domingo)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "",
+          "ariaLabel": "Notificações",
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "Entrar",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "Criar conta",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "Entrar",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "Times",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "Campeonatos",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "Limpar",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "Filtros",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        }
+      ],
+      "inputs": [
+        {
+          "type": "text",
+          "name": "",
+          "placeholder": "Qual time?",
+          "ariaLabel": null,
+          "testid": null
+        },
+        {
+          "type": "text",
+          "name": "",
+          "placeholder": "Qual campeonato?",
+          "ariaLabel": null,
+          "testid": null
+        },
+        {
+          "type": "text",
+          "name": "",
+          "placeholder": "May 2, 2026",
+          "ariaLabel": null,
+          "testid": null
+        },
+        {
+          "type": "text",
+          "name": "",
+          "placeholder": "Onde quer ver?",
+          "ariaLabel": null,
+          "testid": null
+        },
+        {
+          "type": "text",
+          "name": "",
+          "placeholder": "Pesquisar",
+          "ariaLabel": null,
+          "testid": null
+        },
+        {
+          "type": "text",
+          "name": "",
+          "placeholder": "Pesquisar",
+          "ariaLabel": null,
+          "testid": null
+        }
+      ],
+      "headings": [
+        {
+          "level": "H2",
+          "text": "maio 2026"
+        },
+        {
+          "level": "H2",
+          "text": "Filtros"
+        },
+        {
+          "level": "H2",
+          "text": "Melhores momentos das Partidas Finalizadas"
+        }
+      ],
+      "testids": [],
+      "ariaLabels": ["Go to previous month", "Go to next month", "Notificações"],
+      "roles": ["dialog", "grid", "region", "alert"],
+      "iframes": [],
+      "videos": [],
+      "screenshot": "/Users/filipegabriel/loomi-qa-challenge-kasa/docs/site-snapshots/exploration/melhores-momentos.png"
+    },
+    "https://www.kasa.live/termos-de-uso": {
+      "title": "Termos de Uso",
+      "url": "https://www.kasa.live/termos-de-uso",
+      "links": [
+        {
+          "href": "https://www.kasa.live/",
+          "text": "",
+          "inner": "<a class=\"chakra-link css-spn4bz\" href=\"/\"><img alt=\"home\" src=\"/_next/static/media/logo-home.e2a9b922.svg\" class=\"chakra-image css-11ukie\"></a>"
+        },
+        {
+          "href": "https://www.kasa.live/",
+          "text": "Partidas",
+          "inner": null
+        },
+        {
+          "href": "https://www.kasa.live/melhores-momentos",
+          "text": "Melhores momentos",
+          "inner": null
+        },
+        {
+          "href": "https://www.tiktok.com/@kasa.live/",
+          "text": "",
+          "inner": null
+        },
+        {
+          "href": "https://www.instagram.com/kasa.live/",
+          "text": "",
+          "inner": null
+        },
+        {
+          "href": "https://www.kasa.live/termos-de-uso",
+          "text": "Termos de Uso e Política de Privacidade",
+          "inner": "<a class=\"chakra-text css-1cq5ou2\" href=\"/termos-de-uso\">Termos de Uso e Política de Privacidade</a>"
+        }
+      ],
+      "buttons": [
+        {
+          "text": "",
+          "ariaLabel": "Go to previous month",
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "",
+          "ariaLabel": "Go to next month",
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "11º maio (sexta-feira)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "22º maio (sábado)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "33º maio (domingo)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "44º maio (segunda-feira)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "55º maio (terça-feira)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "66º maio (quarta-feira)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "77º maio (quinta-feira)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "88º maio (sexta-feira)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "99º maio (sábado)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "1010º maio (domingo)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "1111º maio (segunda-feira)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "1212º maio (terça-feira)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "1313º maio (quarta-feira)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "1414º maio (quinta-feira)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "1515º maio (sexta-feira)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "1616º maio (sábado)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "1717º maio (domingo)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "1818º maio (segunda-feira)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "1919º maio (terça-feira)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "2020º maio (quarta-feira)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "2121º maio (quinta-feira)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "2222º maio (sexta-feira)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "2323º maio (sábado)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "2424º maio (domingo)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "2525º maio (segunda-feira)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "2626º maio (terça-feira)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "2727º maio (quarta-feira)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "2828º maio (quinta-feira)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "2929º maio (sexta-feira)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "3030º maio (sábado)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "3131º maio (domingo)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "",
+          "ariaLabel": "Notificações",
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "Entrar",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "Criar conta",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "Entrar",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        }
+      ],
+      "inputs": [
+        {
+          "type": "text",
+          "name": "",
+          "placeholder": "Qual time?",
+          "ariaLabel": null,
+          "testid": null
+        },
+        {
+          "type": "text",
+          "name": "",
+          "placeholder": "Qual campeonato?",
+          "ariaLabel": null,
+          "testid": null
+        },
+        {
+          "type": "text",
+          "name": "",
+          "placeholder": "Dec 11, 2025",
+          "ariaLabel": null,
+          "testid": null
+        },
+        {
+          "type": "text",
+          "name": "",
+          "placeholder": "Onde quer ver?",
+          "ariaLabel": null,
+          "testid": null
+        }
+      ],
+      "headings": [
+        {
+          "level": "H2",
+          "text": "maio 2026"
+        },
+        {
+          "level": "H2",
+          "text": "Termos de Uso e Política de Privacidade"
+        },
+        {
+          "level": "H2",
+          "text": "1. Quem deve utilizar nosso aplicativo"
+        },
+        {
+          "level": "H2",
+          "text": "2. Encarregado pela proteção de dados pessoais"
+        },
+        {
+          "level": "H2",
+          "text": "3. Dados que coletamos e motivos da coleta"
+        },
+        {
+          "level": "H2",
+          "text": "4. Finalidade do tratamento"
+        },
+        {
+          "level": "H2",
+          "text": "5. Compartilhamento de dados pessoais com terceiros"
+        },
+        {
+          "level": "H2",
+          "text": "6. Por quanto tempo seus dados pessoais serão armazenados"
+        },
+        {
+          "level": "H2",
+          "text": "7. Bases legais para o tratamento de dados pessoais"
+        },
+        {
+          "level": "H2",
+          "text": "8. GERENCIAMENTO DE COOKIES"
+        },
+        {
+          "level": "H2",
+          "text": "9. Direitos do usuário"
+        },
+        {
+          "level": "H2",
+          "text": "10. Medidas de segurança no tratamento de dados pessoais"
+        },
+        {
+          "level": "H2",
+          "text": "11. Reclamação a uma autoridade de controle"
+        },
+        {
+          "level": "H2",
+          "text": "12. Alterações nesta política"
+        },
+        {
+          "level": "H2",
+          "text": "13. Como entrar em contato conosco"
+        }
+      ],
+      "testids": [],
+      "ariaLabels": ["Go to previous month", "Go to next month", "Notificações"],
+      "roles": ["dialog", "grid", "alert", "region"],
+      "iframes": [],
+      "videos": [],
+      "screenshot": "/Users/filipegabriel/loomi-qa-challenge-kasa/docs/site-snapshots/exploration/termos-de-uso.png"
+    },
+    "https://www.kasa.live/buscar": {
+      "title": "Kasa.Live - Página não encontrada.",
+      "url": "https://www.kasa.live/buscar",
+      "links": [
+        {
+          "href": "https://www.kasa.live/",
+          "text": "",
+          "inner": "<a class=\"chakra-link css-spn4bz\" href=\"/\"><img alt=\"home\" src=\"/_next/static/media/logo-home.e2a9b922.svg\" class=\"chakra-image css-11ukie\"></a>"
+        },
+        {
+          "href": "https://www.kasa.live/",
+          "text": "Partidas",
+          "inner": null
+        },
+        {
+          "href": "https://www.kasa.live/melhores-momentos",
+          "text": "Melhores momentos",
+          "inner": null
+        },
+        {
+          "href": "https://www.tiktok.com/@kasa.live/",
+          "text": "",
+          "inner": null
+        },
+        {
+          "href": "https://www.instagram.com/kasa.live/",
+          "text": "",
+          "inner": null
+        },
+        {
+          "href": "https://www.kasa.live/termos-de-uso",
+          "text": "Termos de Uso e Política de Privacidade",
+          "inner": "<a class=\"chakra-text css-1cq5ou2\" href=\"/termos-de-uso\">Termos de Uso e Política de Privacidade</a>"
+        }
+      ],
+      "buttons": [
+        {
+          "text": "",
+          "ariaLabel": "Go to previous month",
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "",
+          "ariaLabel": "Go to next month",
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "11º maio (sexta-feira)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "22º maio (sábado)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "33º maio (domingo)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "44º maio (segunda-feira)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "55º maio (terça-feira)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "66º maio (quarta-feira)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "77º maio (quinta-feira)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "88º maio (sexta-feira)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "99º maio (sábado)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "1010º maio (domingo)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "1111º maio (segunda-feira)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "1212º maio (terça-feira)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "1313º maio (quarta-feira)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "1414º maio (quinta-feira)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "1515º maio (sexta-feira)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "1616º maio (sábado)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "1717º maio (domingo)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "1818º maio (segunda-feira)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "1919º maio (terça-feira)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "2020º maio (quarta-feira)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "2121º maio (quinta-feira)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "2222º maio (sexta-feira)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "2323º maio (sábado)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "2424º maio (domingo)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "2525º maio (segunda-feira)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "2626º maio (terça-feira)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "2727º maio (quarta-feira)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "2828º maio (quinta-feira)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "2929º maio (sexta-feira)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "3030º maio (sábado)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "3131º maio (domingo)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "",
+          "ariaLabel": "Notificações",
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "Entrar",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "Criar conta",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "Entrar",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        }
+      ],
+      "inputs": [
+        {
+          "type": "text",
+          "name": "",
+          "placeholder": "Qual time?",
+          "ariaLabel": null,
+          "testid": null
+        },
+        {
+          "type": "text",
+          "name": "",
+          "placeholder": "Qual campeonato?",
+          "ariaLabel": null,
+          "testid": null
+        },
+        {
+          "type": "text",
+          "name": "",
+          "placeholder": "Dec 11, 2025",
+          "ariaLabel": null,
+          "testid": null
+        },
+        {
+          "type": "text",
+          "name": "",
+          "placeholder": "Onde quer ver?",
+          "ariaLabel": null,
+          "testid": null
+        }
+      ],
+      "headings": [
+        {
+          "level": "H2",
+          "text": "maio 2026"
+        },
+        {
+          "level": "H2",
+          "text": "Página não encontrada"
+        }
+      ],
+      "testids": [],
+      "ariaLabels": ["Go to previous month", "Go to next month", "Notificações"],
+      "roles": ["dialog", "grid", "alert", "region"],
+      "iframes": [],
+      "videos": [],
+      "screenshot": "/Users/filipegabriel/loomi-qa-challenge-kasa/docs/site-snapshots/exploration/buscar.png"
+    },
+    "https://www.kasa.live/favoritos": {
+      "title": "Kasa.Live - Encontre o Jogo",
+      "url": "https://www.kasa.live/",
+      "links": [
+        {
+          "href": "https://www.kasa.live/",
+          "text": "",
+          "inner": "<a class=\"chakra-link css-spn4bz\" href=\"/\"><img alt=\"home\" src=\"/_next/static/media/logo-home.e2a9b922.svg\" class=\"chakra-image css-11ukie\"></a>"
+        },
+        {
+          "href": "https://www.kasa.live/",
+          "text": "Partidas",
+          "inner": null
+        },
+        {
+          "href": "https://www.kasa.live/melhores-momentos",
+          "text": "Melhores momentos",
+          "inner": null
+        },
+        {
+          "href": "https://www.tiktok.com/@kasa.live/",
+          "text": "",
+          "inner": null
+        },
+        {
+          "href": "https://www.instagram.com/kasa.live/",
+          "text": "",
+          "inner": null
+        },
+        {
+          "href": "https://www.kasa.live/termos-de-uso",
+          "text": "Termos de Uso e Política de Privacidade",
+          "inner": "<a class=\"chakra-text css-1cq5ou2\" href=\"/termos-de-uso\">Termos de Uso e Política de Privacidade</a>"
+        }
+      ],
+      "buttons": [
+        {
+          "text": "",
+          "ariaLabel": "Go to previous month",
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "",
+          "ariaLabel": "Go to next month",
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "11º maio (sexta-feira)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "22º maio (sábado)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "33º maio (domingo)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "44º maio (segunda-feira)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "55º maio (terça-feira)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "66º maio (quarta-feira)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "77º maio (quinta-feira)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "88º maio (sexta-feira)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "99º maio (sábado)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "1010º maio (domingo)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "1111º maio (segunda-feira)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "1212º maio (terça-feira)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "1313º maio (quarta-feira)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "1414º maio (quinta-feira)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "1515º maio (sexta-feira)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "1616º maio (sábado)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "1717º maio (domingo)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "1818º maio (segunda-feira)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "1919º maio (terça-feira)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "2020º maio (quarta-feira)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "2121º maio (quinta-feira)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "2222º maio (sexta-feira)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "2323º maio (sábado)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "2424º maio (domingo)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "2525º maio (segunda-feira)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "2626º maio (terça-feira)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "2727º maio (quarta-feira)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "2828º maio (quinta-feira)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "2929º maio (sexta-feira)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "3030º maio (sábado)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "3131º maio (domingo)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "",
+          "ariaLabel": "Notificações",
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "Entrar",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "Criar conta",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "Entrar",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "",
+          "ariaLabel": "página anterior",
+          "testid": null,
+          "disabled": true
+        },
+        {
+          "text": "1",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "2",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "117",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "",
+          "ariaLabel": "próxima página",
+          "testid": null,
+          "disabled": false
+        }
+      ],
+      "inputs": [
+        {
+          "type": "text",
+          "name": "",
+          "placeholder": "Qual time?",
+          "ariaLabel": null,
+          "testid": null
+        },
+        {
+          "type": "text",
+          "name": "",
+          "placeholder": "Qual campeonato?",
+          "ariaLabel": null,
+          "testid": null
+        },
+        {
+          "type": "text",
+          "name": "",
+          "placeholder": "Apr 30, 2026",
+          "ariaLabel": null,
+          "testid": null
+        },
+        {
+          "type": "text",
+          "name": "",
+          "placeholder": "Onde quer ver?",
+          "ariaLabel": null,
+          "testid": null
+        }
+      ],
+      "headings": [
+        {
+          "level": "H2",
+          "text": "maio 2026"
+        }
+      ],
+      "testids": [],
+      "ariaLabels": [
+        "Go to previous month",
+        "Go to next month",
+        "Notificações",
+        "página anterior",
+        "próxima página"
+      ],
+      "roles": ["dialog", "grid", "alert", "region"],
+      "iframes": [],
+      "videos": [],
+      "screenshot": "/Users/filipegabriel/loomi-qa-challenge-kasa/docs/site-snapshots/exploration/favoritos.png"
+    },
+    "https://www.kasa.live/login": {
+      "title": "Kasa.Live - Página não encontrada.",
+      "url": "https://www.kasa.live/login",
+      "links": [
+        {
+          "href": "https://www.kasa.live/",
+          "text": "",
+          "inner": "<a class=\"chakra-link css-spn4bz\" href=\"/\"><img alt=\"home\" src=\"/_next/static/media/logo-home.e2a9b922.svg\" class=\"chakra-image css-11ukie\"></a>"
+        },
+        {
+          "href": "https://www.kasa.live/",
+          "text": "Partidas",
+          "inner": null
+        },
+        {
+          "href": "https://www.kasa.live/melhores-momentos",
+          "text": "Melhores momentos",
+          "inner": null
+        },
+        {
+          "href": "https://www.tiktok.com/@kasa.live/",
+          "text": "",
+          "inner": null
+        },
+        {
+          "href": "https://www.instagram.com/kasa.live/",
+          "text": "",
+          "inner": null
+        },
+        {
+          "href": "https://www.kasa.live/termos-de-uso",
+          "text": "Termos de Uso e Política de Privacidade",
+          "inner": "<a class=\"chakra-text css-1cq5ou2\" href=\"/termos-de-uso\">Termos de Uso e Política de Privacidade</a>"
+        }
+      ],
+      "buttons": [
+        {
+          "text": "",
+          "ariaLabel": "Go to previous month",
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "",
+          "ariaLabel": "Go to next month",
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "11º maio (sexta-feira)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "22º maio (sábado)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "33º maio (domingo)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "44º maio (segunda-feira)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "55º maio (terça-feira)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "66º maio (quarta-feira)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "77º maio (quinta-feira)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "88º maio (sexta-feira)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "99º maio (sábado)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "1010º maio (domingo)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "1111º maio (segunda-feira)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "1212º maio (terça-feira)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "1313º maio (quarta-feira)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "1414º maio (quinta-feira)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "1515º maio (sexta-feira)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "1616º maio (sábado)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "1717º maio (domingo)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "1818º maio (segunda-feira)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "1919º maio (terça-feira)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "2020º maio (quarta-feira)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "2121º maio (quinta-feira)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "2222º maio (sexta-feira)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "2323º maio (sábado)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "2424º maio (domingo)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "2525º maio (segunda-feira)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "2626º maio (terça-feira)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "2727º maio (quarta-feira)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "2828º maio (quinta-feira)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "2929º maio (sexta-feira)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "3030º maio (sábado)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "3131º maio (domingo)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "",
+          "ariaLabel": "Notificações",
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "Entrar",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "Criar conta",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "Entrar",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        }
+      ],
+      "inputs": [
+        {
+          "type": "text",
+          "name": "",
+          "placeholder": "Qual time?",
+          "ariaLabel": null,
+          "testid": null
+        },
+        {
+          "type": "text",
+          "name": "",
+          "placeholder": "Qual campeonato?",
+          "ariaLabel": null,
+          "testid": null
+        },
+        {
+          "type": "text",
+          "name": "",
+          "placeholder": "Dec 11, 2025",
+          "ariaLabel": null,
+          "testid": null
+        },
+        {
+          "type": "text",
+          "name": "",
+          "placeholder": "Onde quer ver?",
+          "ariaLabel": null,
+          "testid": null
+        }
+      ],
+      "headings": [
+        {
+          "level": "H2",
+          "text": "maio 2026"
+        },
+        {
+          "level": "H2",
+          "text": "Página não encontrada"
+        }
+      ],
+      "testids": [],
+      "ariaLabels": ["Go to previous month", "Go to next month", "Notificações"],
+      "roles": ["dialog", "grid", "alert", "region"],
+      "iframes": [],
+      "videos": [],
+      "screenshot": "/Users/filipegabriel/loomi-qa-challenge-kasa/docs/site-snapshots/exploration/login.png"
+    },
+    "https://www.kasa.live/calendar": {
+      "title": "Kasa.Live - Página não encontrada.",
+      "url": "https://www.kasa.live/calendar",
+      "links": [
+        {
+          "href": "https://www.kasa.live/",
+          "text": "",
+          "inner": "<a class=\"chakra-link css-spn4bz\" href=\"/\"><img alt=\"home\" src=\"/_next/static/media/logo-home.e2a9b922.svg\" class=\"chakra-image css-11ukie\"></a>"
+        },
+        {
+          "href": "https://www.kasa.live/",
+          "text": "Partidas",
+          "inner": null
+        },
+        {
+          "href": "https://www.kasa.live/melhores-momentos",
+          "text": "Melhores momentos",
+          "inner": null
+        },
+        {
+          "href": "https://www.tiktok.com/@kasa.live/",
+          "text": "",
+          "inner": null
+        },
+        {
+          "href": "https://www.instagram.com/kasa.live/",
+          "text": "",
+          "inner": null
+        },
+        {
+          "href": "https://www.kasa.live/termos-de-uso",
+          "text": "Termos de Uso e Política de Privacidade",
+          "inner": "<a class=\"chakra-text css-1cq5ou2\" href=\"/termos-de-uso\">Termos de Uso e Política de Privacidade</a>"
+        }
+      ],
+      "buttons": [
+        {
+          "text": "",
+          "ariaLabel": "Go to previous month",
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "",
+          "ariaLabel": "Go to next month",
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "11º maio (sexta-feira)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "22º maio (sábado)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "33º maio (domingo)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "44º maio (segunda-feira)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "55º maio (terça-feira)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "66º maio (quarta-feira)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "77º maio (quinta-feira)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "88º maio (sexta-feira)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "99º maio (sábado)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "1010º maio (domingo)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "1111º maio (segunda-feira)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "1212º maio (terça-feira)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "1313º maio (quarta-feira)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "1414º maio (quinta-feira)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "1515º maio (sexta-feira)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "1616º maio (sábado)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "1717º maio (domingo)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "1818º maio (segunda-feira)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "1919º maio (terça-feira)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "2020º maio (quarta-feira)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "2121º maio (quinta-feira)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "2222º maio (sexta-feira)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "2323º maio (sábado)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "2424º maio (domingo)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "2525º maio (segunda-feira)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "2626º maio (terça-feira)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "2727º maio (quarta-feira)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "2828º maio (quinta-feira)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "2929º maio (sexta-feira)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "3030º maio (sábado)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "3131º maio (domingo)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "",
+          "ariaLabel": "Notificações",
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "Entrar",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "Criar conta",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "Entrar",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        }
+      ],
+      "inputs": [
+        {
+          "type": "text",
+          "name": "",
+          "placeholder": "Qual time?",
+          "ariaLabel": null,
+          "testid": null
+        },
+        {
+          "type": "text",
+          "name": "",
+          "placeholder": "Qual campeonato?",
+          "ariaLabel": null,
+          "testid": null
+        },
+        {
+          "type": "text",
+          "name": "",
+          "placeholder": "Dec 11, 2025",
+          "ariaLabel": null,
+          "testid": null
+        },
+        {
+          "type": "text",
+          "name": "",
+          "placeholder": "Onde quer ver?",
+          "ariaLabel": null,
+          "testid": null
+        }
+      ],
+      "headings": [
+        {
+          "level": "H2",
+          "text": "maio 2026"
+        },
+        {
+          "level": "H2",
+          "text": "Página não encontrada"
+        }
+      ],
+      "testids": [],
+      "ariaLabels": ["Go to previous month", "Go to next month", "Notificações"],
+      "roles": ["dialog", "grid", "alert", "region"],
+      "iframes": [],
+      "videos": [],
+      "screenshot": "/Users/filipegabriel/loomi-qa-challenge-kasa/docs/site-snapshots/exploration/calendar.png"
+    },
+    "https://www.kasa.live/calendario": {
+      "title": "Kasa.Live - Encontre o Jogo",
+      "url": "https://www.kasa.live/",
+      "links": [
+        {
+          "href": "https://www.kasa.live/",
+          "text": "",
+          "inner": "<a class=\"chakra-link css-spn4bz\" href=\"/\"><img alt=\"home\" src=\"/_next/static/media/logo-home.e2a9b922.svg\" class=\"chakra-image css-11ukie\"></a>"
+        },
+        {
+          "href": "https://www.kasa.live/",
+          "text": "Partidas",
+          "inner": null
+        },
+        {
+          "href": "https://www.kasa.live/melhores-momentos",
+          "text": "Melhores momentos",
+          "inner": null
+        },
+        {
+          "href": "https://www.tiktok.com/@kasa.live/",
+          "text": "",
+          "inner": null
+        },
+        {
+          "href": "https://www.instagram.com/kasa.live/",
+          "text": "",
+          "inner": null
+        },
+        {
+          "href": "https://www.kasa.live/termos-de-uso",
+          "text": "Termos de Uso e Política de Privacidade",
+          "inner": "<a class=\"chakra-text css-1cq5ou2\" href=\"/termos-de-uso\">Termos de Uso e Política de Privacidade</a>"
+        }
+      ],
+      "buttons": [
+        {
+          "text": "",
+          "ariaLabel": "Go to previous month",
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "",
+          "ariaLabel": "Go to next month",
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "11º maio (sexta-feira)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "22º maio (sábado)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "33º maio (domingo)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "44º maio (segunda-feira)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "55º maio (terça-feira)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "66º maio (quarta-feira)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "77º maio (quinta-feira)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "88º maio (sexta-feira)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "99º maio (sábado)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "1010º maio (domingo)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "1111º maio (segunda-feira)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "1212º maio (terça-feira)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "1313º maio (quarta-feira)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "1414º maio (quinta-feira)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "1515º maio (sexta-feira)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "1616º maio (sábado)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "1717º maio (domingo)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "1818º maio (segunda-feira)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "1919º maio (terça-feira)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "2020º maio (quarta-feira)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "2121º maio (quinta-feira)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "2222º maio (sexta-feira)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "2323º maio (sábado)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "2424º maio (domingo)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "2525º maio (segunda-feira)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "2626º maio (terça-feira)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "2727º maio (quarta-feira)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "2828º maio (quinta-feira)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "2929º maio (sexta-feira)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "3030º maio (sábado)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "3131º maio (domingo)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "",
+          "ariaLabel": "Notificações",
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "Entrar",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "Criar conta",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "Entrar",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "",
+          "ariaLabel": "página anterior",
+          "testid": null,
+          "disabled": true
+        },
+        {
+          "text": "1",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "2",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "117",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "",
+          "ariaLabel": "próxima página",
+          "testid": null,
+          "disabled": false
+        }
+      ],
+      "inputs": [
+        {
+          "type": "text",
+          "name": "",
+          "placeholder": "Qual time?",
+          "ariaLabel": null,
+          "testid": null
+        },
+        {
+          "type": "text",
+          "name": "",
+          "placeholder": "Qual campeonato?",
+          "ariaLabel": null,
+          "testid": null
+        },
+        {
+          "type": "text",
+          "name": "",
+          "placeholder": "Apr 30, 2026",
+          "ariaLabel": null,
+          "testid": null
+        },
+        {
+          "type": "text",
+          "name": "",
+          "placeholder": "Onde quer ver?",
+          "ariaLabel": null,
+          "testid": null
+        }
+      ],
+      "headings": [
+        {
+          "level": "H2",
+          "text": "maio 2026"
+        }
+      ],
+      "testids": [],
+      "ariaLabels": [
+        "Go to previous month",
+        "Go to next month",
+        "Notificações",
+        "página anterior",
+        "próxima página"
+      ],
+      "roles": ["dialog", "grid", "alert", "region"],
+      "iframes": [],
+      "videos": [],
+      "screenshot": "/Users/filipegabriel/loomi-qa-challenge-kasa/docs/site-snapshots/exploration/calendario.png"
+    },
+    "https://www.kasa.live/perfil": {
+      "title": "Kasa.Live - Página não encontrada.",
+      "url": "https://www.kasa.live/perfil",
+      "links": [
+        {
+          "href": "https://www.kasa.live/",
+          "text": "",
+          "inner": "<a class=\"chakra-link css-spn4bz\" href=\"/\"><img alt=\"home\" src=\"/_next/static/media/logo-home.e2a9b922.svg\" class=\"chakra-image css-11ukie\"></a>"
+        },
+        {
+          "href": "https://www.kasa.live/",
+          "text": "Partidas",
+          "inner": null
+        },
+        {
+          "href": "https://www.kasa.live/melhores-momentos",
+          "text": "Melhores momentos",
+          "inner": null
+        },
+        {
+          "href": "https://www.tiktok.com/@kasa.live/",
+          "text": "",
+          "inner": null
+        },
+        {
+          "href": "https://www.instagram.com/kasa.live/",
+          "text": "",
+          "inner": null
+        },
+        {
+          "href": "https://www.kasa.live/termos-de-uso",
+          "text": "Termos de Uso e Política de Privacidade",
+          "inner": "<a class=\"chakra-text css-1cq5ou2\" href=\"/termos-de-uso\">Termos de Uso e Política de Privacidade</a>"
+        }
+      ],
+      "buttons": [
+        {
+          "text": "",
+          "ariaLabel": "Go to previous month",
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "",
+          "ariaLabel": "Go to next month",
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "11º maio (sexta-feira)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "22º maio (sábado)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "33º maio (domingo)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "44º maio (segunda-feira)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "55º maio (terça-feira)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "66º maio (quarta-feira)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "77º maio (quinta-feira)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "88º maio (sexta-feira)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "99º maio (sábado)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "1010º maio (domingo)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "1111º maio (segunda-feira)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "1212º maio (terça-feira)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "1313º maio (quarta-feira)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "1414º maio (quinta-feira)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "1515º maio (sexta-feira)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "1616º maio (sábado)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "1717º maio (domingo)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "1818º maio (segunda-feira)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "1919º maio (terça-feira)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "2020º maio (quarta-feira)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "2121º maio (quinta-feira)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "2222º maio (sexta-feira)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "2323º maio (sábado)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "2424º maio (domingo)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "2525º maio (segunda-feira)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "2626º maio (terça-feira)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "2727º maio (quarta-feira)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "2828º maio (quinta-feira)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "2929º maio (sexta-feira)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "3030º maio (sábado)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "3131º maio (domingo)",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "",
+          "ariaLabel": "Notificações",
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "Entrar",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "Criar conta",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        },
+        {
+          "text": "Entrar",
+          "ariaLabel": null,
+          "testid": null,
+          "disabled": false
+        }
+      ],
+      "inputs": [
+        {
+          "type": "text",
+          "name": "",
+          "placeholder": "Qual time?",
+          "ariaLabel": null,
+          "testid": null
+        },
+        {
+          "type": "text",
+          "name": "",
+          "placeholder": "Qual campeonato?",
+          "ariaLabel": null,
+          "testid": null
+        },
+        {
+          "type": "text",
+          "name": "",
+          "placeholder": "Dec 11, 2025",
+          "ariaLabel": null,
+          "testid": null
+        },
+        {
+          "type": "text",
+          "name": "",
+          "placeholder": "Onde quer ver?",
+          "ariaLabel": null,
+          "testid": null
+        }
+      ],
+      "headings": [
+        {
+          "level": "H2",
+          "text": "maio 2026"
+        },
+        {
+          "level": "H2",
+          "text": "Página não encontrada"
+        }
+      ],
+      "testids": [],
+      "ariaLabels": ["Go to previous month", "Go to next month", "Notificações"],
+      "roles": ["dialog", "grid", "alert", "region"],
+      "iframes": [],
+      "videos": [],
+      "screenshot": "/Users/filipegabriel/loomi-qa-challenge-kasa/docs/site-snapshots/exploration/perfil.png"
+    }
+  },
+  "requests": [
+    {
+      "method": "GET",
+      "url": "https://www.kasa.live/",
+      "resourceType": "document"
+    },
+    {
+      "method": "POST",
+      "url": "https://analytics.google.com/g/collect?v=2&tid=G-KERN92K795&gtm=45je64t1v877312309za200zd877312309&_p=1777746320389&gcd=13l3l3l3l1l1&npa=0&dma=0&_eu=AEAAAGQ&ae=a&are=1&cid=404815612.1777746289&frm=0&pscdl=noapi&rcb=5&sr=1440x900&uaa=arm&uab=64&uafvl=HeadlessChrome%3B147.0.7727.15%7CNot.A%252FBrand%3B8.0.0.0%7CChromium%3B147.0.7727.15&uam=&uamb=0&uap=macOS&uapv=26.3.1&uaw=0&ul=pt-br&gaf=2&_s=2&tag_exp=0~115938466~115938468&sid=1777746288&sct=1&seg=1&dl=https%3A%2F%2Fwww.kasa.live%2Fperfil&dt=Kasa.Live%20-%20P%C3%A1gina%20n%C3%A3o%20encontrada.&en=scroll&epn.percent_scrolled=90&_et=1&tfd=711",
+      "resourceType": "fetch"
+    },
+    {
+      "method": "POST",
+      "url": "https://www.google.com/g/collect?v=2&tid=G-KERN92K795&gtm=45je64t1v877312309za200zd877312309&_p=1777746320389&gcd=13l3l3l3l1l1&npa=0&dma=0&_eu=AEAAAGQ&ae=a&are=1&cid=404815612.1777746289&frm=0&pscdl=noapi&rcb=5&sr=1440x900&uaa=arm&uab=64&uafvl=HeadlessChrome%3B147.0.7727.15%7CNot.A%252FBrand%3B8.0.0.0%7CChromium%3B147.0.7727.15&uam=&uamb=0&uap=macOS&uapv=26.3.1&uaw=0&ul=pt-br&gaf=3&_s=2&tag_exp=0%7E115938466%7E115938468&sid=1777746288&sct=1&seg=1&dl=https%3A%2F%2Fwww.kasa.live%2Fperfil&dt=Kasa.Live+-+P%C3%A1gina+n%C3%A3o+encontrada.&en=scroll&epn.percent_scrolled=90&_et=1&tfd=711",
+      "resourceType": "fetch"
+    },
+    {
+      "method": "GET",
+      "url": "https://www.kasa.live/_next/static/media/playstore.6bc4fe22.svg",
+      "resourceType": "image"
+    },
+    {
+      "method": "GET",
+      "url": "https://www.kasa.live/_next/static/media/appstore.600dc286.svg",
+      "resourceType": "image"
+    },
+    {
+      "method": "GET",
+      "url": "https://www.kasa.live/_next/static/css/c2cd3bf12cbe2b80.css",
+      "resourceType": "stylesheet"
+    },
+    {
+      "method": "GET",
+      "url": "https://www.kasa.live/_next/static/css/4d9fd375902f1db1.css",
+      "resourceType": "stylesheet"
+    },
+    {
+      "method": "GET",
+      "url": "https://www.kasa.live/_next/static/chunks/webpack-eeb1e4a6befe36e1.js",
+      "resourceType": "script"
+    },
+    {
+      "method": "GET",
+      "url": "https://www.kasa.live/_next/static/chunks/framework-75db3117d1377048.js",
+      "resourceType": "script"
+    },
+    {
+      "method": "GET",
+      "url": "https://www.kasa.live/_next/static/chunks/main-80519f71d4f9cf73.js",
+      "resourceType": "script"
+    },
+    {
+      "method": "GET",
+      "url": "https://www.kasa.live/_next/static/chunks/pages/_app-62021acdae063b09.js",
+      "resourceType": "script"
+    },
+    {
+      "method": "GET",
+      "url": "https://www.kasa.live/_next/static/chunks/d64684d8-928a94119a028597.js",
+      "resourceType": "script"
+    },
+    {
+      "method": "GET",
+      "url": "https://www.kasa.live/_next/static/chunks/908-a98273a209f59664.js",
+      "resourceType": "script"
+    },
+    {
+      "method": "GET",
+      "url": "https://www.kasa.live/_next/static/chunks/578-25af13888a29582f.js",
+      "resourceType": "script"
+    },
+    {
+      "method": "GET",
+      "url": "https://www.kasa.live/_next/static/chunks/789-84964f0833fb2932.js",
+      "resourceType": "script"
+    },
+    {
+      "method": "GET",
+      "url": "https://www.kasa.live/_next/static/chunks/915-b18198e5ae8d6bef.js",
+      "resourceType": "script"
+    },
+    {
+      "method": "GET",
+      "url": "https://www.kasa.live/_next/static/chunks/pages/index-3740dee3bad196a8.js",
+      "resourceType": "script"
+    },
+    {
+      "method": "GET",
+      "url": "https://www.kasa.live/_next/static/zY0MwD27k5U6rQOUXbn35/_buildManifest.js",
+      "resourceType": "script"
+    },
+    {
+      "method": "GET",
+      "url": "https://www.kasa.live/_next/static/zY0MwD27k5U6rQOUXbn35/_ssgManifest.js",
+      "resourceType": "script"
+    },
+    {
+      "method": "GET",
+      "url": "https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;200;300;400;600;700&family=Roboto:wght@100;300;400;500;700;900&display=swap",
+      "resourceType": "stylesheet"
+    },
+    {
+      "method": "GET",
+      "url": "https://www.kasa.live/_next/static/media/logo-home.e2a9b922.svg",
+      "resourceType": "image"
+    },
+    {
+      "method": "GET",
+      "url": "https://www.kasa.live/_next/static/media/logoIcon-black.1d27c55c.svg",
+      "resourceType": "image"
+    },
+    {
+      "method": "GET",
+      "url": "https://www.kasa.live/_next/static/media/highlights-regular.9f403edc.svg",
+      "resourceType": "image"
+    },
+    {
+      "method": "GET",
+      "url": "https://fonts.gstatic.com/s/roboto/v51/KFO7CnqEu92Fr1ME7kSn66aGLdTylUAMa3yUBHMdazQ.woff2",
+      "resourceType": "font"
+    },
+    {
+      "method": "GET",
+      "url": "https://www.googletagmanager.com/gtag/js?id=G-KERN92K795",
+      "resourceType": "script"
+    },
+    {
+      "method": "GET",
+      "url": "https://kasa-live.api.dev.loomi.com.br/api/1.0/match/?status=INPLAY&with_channel=true&date_start=2026-05-02",
+      "resourceType": "xhr"
+    },
+    {
+      "method": "GET",
+      "url": "https://kasa-live.api.dev.loomi.com.br/api/1.0/match/?status=NOTSTARTED&date=2026-05-02&trending=true&with_channel=true",
+      "resourceType": "xhr"
+    },
+    {
+      "method": "GET",
+      "url": "https://kasa-live.api.dev.loomi.com.br/api/1.0/match/?page=1&status=NOTSTARTED&with_channel=true&date_start=2026-05-02",
+      "resourceType": "xhr"
+    },
+    {
+      "method": "GET",
+      "url": "https://kasa-live.api.dev.loomi.com.br/api/1.0/match/?page=1&ordering=DESC&status=ENDED&with_channel=true",
+      "resourceType": "xhr"
+    },
+    {
+      "method": "GET",
+      "url": "https://www.kasa.live/_next/data/zY0MwD27k5U6rQOUXbn35/index.json",
+      "resourceType": "fetch"
+    },
+    {
+      "method": "GET",
+      "url": "https://www.kasa.live/_next/static/chunks/600-c5f07978d4accccd.js",
+      "resourceType": "other"
+    },
+    {
+      "method": "GET",
+      "url": "https://www.kasa.live/_next/static/chunks/pages/melhores-momentos-285ba21c060d0468.js",
+      "resourceType": "other"
+    },
+    {
+      "method": "POST",
+      "url": "https://analytics.google.com/g/collect?v=2&tid=G-KERN92K795&gtm=45je64t1v877312309za200zd877312309&_p=1777746321129&gcd=13l3l3l3l1l1&npa=0&dma=0&_eu=AAAAAGQ&are=1&cid=404815612.1777746289&frm=0&pscdl=noapi&rcb=7&sr=1440x900&uaa=arm&uab=64&uafvl=HeadlessChrome%3B147.0.7727.15%7CNot.A%252FBrand%3B8.0.0.0%7CChromium%3B147.0.7727.15&uam=&uamb=0&uap=macOS&uapv=26.3.1&uaw=0&ul=pt-br&gaf=2&_s=1&tag_exp=0~115616986~115938466~115938469~116363098&sid=1777746288&sct=1&seg=1&dl=https%3A%2F%2Fwww.kasa.live%2F&dt=Kasa.Live%20-%20Encontre%20o%20Jogo&en=page_view&_ee=1&tfd=231",
+      "resourceType": "fetch"
+    },
+    {
+      "method": "GET",
+      "url": "https://www.kasa.live/_next/static/css/4d9fd375902f1db1.css",
+      "resourceType": "fetch"
+    },
+    {
+      "method": "GET",
+      "url": "https://www.kasa.live/_next/static/media/bell.2a97ea4e.svg",
+      "resourceType": "image"
+    },
+    {
+      "method": "GET",
+      "url": "https://www.kasa.live/_next/static/chunks/600-c5f07978d4accccd.js",
+      "resourceType": "script"
+    },
+    {
+      "method": "GET",
+      "url": "https://www.kasa.live/_next/static/chunks/pages/melhores-momentos-285ba21c060d0468.js",
+      "resourceType": "script"
+    },
+    {
+      "method": "GET",
+      "url": "https://www.kasa.live/_next/static/media/whistle.503b46d2.svg",
+      "resourceType": "image"
+    },
+    {
+      "method": "GET",
+      "url": "https://www.kasa.live/_next/static/media/grid-filled.a477e0a1.svg",
+      "resourceType": "image"
+    },
+    {
+      "method": "GET",
+      "url": "https://www.kasa.live/_next/static/media/list.d0194b7c.svg",
+      "resourceType": "image"
+    },
+    {
+      "method": "GET",
+      "url": "https://kasalive-api-stage.s3.amazonaws.com/media/team/badge/3270.png",
+      "resourceType": "image"
+    },
+    {
+      "method": "GET",
+      "url": "https://kasalive-api-stage.s3.amazonaws.com/media/team/badge/3268.png",
+      "resourceType": "image"
+    },
+    {
+      "method": "GET",
+      "url": "https://www.kasa.live/_next/static/media/video-filled.a8c79a24.svg",
+      "resourceType": "image"
+    },
+    {
+      "method": "GET",
+      "url": "https://kasalive-api-stage.s3.amazonaws.com/media/team/badge/3252.png",
+      "resourceType": "image"
+    },
+    {
+      "method": "GET",
+      "url": "https://kasalive-api-stage.s3.amazonaws.com/media/team/badge/3245.png",
+      "resourceType": "image"
+    },
+    {
+      "method": "GET",
+      "url": "https://kasalive-api-stage.s3.amazonaws.com/media/team/badge/3266.png",
+      "resourceType": "image"
+    },
+    {
+      "method": "GET",
+      "url": "https://kasalive-api-stage.s3.amazonaws.com/media/team/badge/3258.png",
+      "resourceType": "image"
+    },
+    {
+      "method": "GET",
+      "url": "https://kasalive-api-stage.s3.amazonaws.com/media/team/badge/3250.png",
+      "resourceType": "image"
+    },
+    {
+      "method": "GET",
+      "url": "https://kasalive-api-stage.s3.amazonaws.com/media/team/badge/3269.png",
+      "resourceType": "image"
+    },
+    {
+      "method": "GET",
+      "url": "https://kasalive-api-stage.s3.amazonaws.com/media/team/badge/7393_V8yGVrE.png",
+      "resourceType": "image"
+    },
+    {
+      "method": "GET",
+      "url": "https://kasalive-api-stage.s3.amazonaws.com/media/team/badge/14325_uoXVfGL.png",
+      "resourceType": "image"
+    },
+    {
+      "method": "GET",
+      "url": "https://kasalive-api-stage.s3.amazonaws.com/media/team/badge/3929.png",
+      "resourceType": "image"
+    },
+    {
+      "method": "GET",
+      "url": "https://kasalive-api-stage.s3.amazonaws.com/media/team/badge/7395_04YxSXb.png",
+      "resourceType": "image"
+    },
+    {
+      "method": "GET",
+      "url": "https://kasalive-api-stage.s3.amazonaws.com/media/team/badge/3251.png",
+      "resourceType": "image"
+    },
+    {
+      "method": "GET",
+      "url": "https://kasalive-api-stage.s3.amazonaws.com/media/team/badge/3260.png",
+      "resourceType": "image"
+    },
+    {
+      "method": "GET",
+      "url": "https://kasalive-api-stage.s3.amazonaws.com/media/team/badge/3267_AFk2mQu.png",
+      "resourceType": "image"
+    },
+    {
+      "method": "GET",
+      "url": "https://kasalive-api-stage.s3.amazonaws.com/media/team/badge/3254.png",
+      "resourceType": "image"
+    },
+    {
+      "method": "GET",
+      "url": "https://kasalive-api-stage.s3.amazonaws.com/media/team/badge/3264.png",
+      "resourceType": "image"
+    },
+    {
+      "method": "GET",
+      "url": "https://kasalive-api-stage.s3.amazonaws.com/media/team/badge/3249.png",
+      "resourceType": "image"
+    },
+    {
+      "method": "GET",
+      "url": "https://kasalive-api-stage.s3.amazonaws.com/media/team/badge/3246.png",
+      "resourceType": "image"
+    },
+    {
+      "method": "GET",
+      "url": "https://kasalive-api-stage.s3.amazonaws.com/media/team/badge/3255.png",
+      "resourceType": "image"
+    },
+    {
+      "method": "GET",
+      "url": "https://kasalive-api-stage.s3.amazonaws.com/media/team/badge/508305382.png",
+      "resourceType": "image"
+    },
+    {
+      "method": "GET",
+      "url": "https://kasalive-api-stage.s3.amazonaws.com/media/team/badge/3259_mt9buhi.png",
+      "resourceType": "image"
+    },
+    {
+      "method": "GET",
+      "url": "https://kasalive-api-stage.s3.amazonaws.com/media/team/badge/3261.png",
+      "resourceType": "image"
+    },
+    {
+      "method": "GET",
+      "url": "https://kasalive-api-stage.s3.amazonaws.com/media/team/badge/294259407.png",
+      "resourceType": "image"
+    },
+    {
+      "method": "GET",
+      "url": "https://kasalive-api-stage.s3.amazonaws.com/media/team/badge/3262.png",
+      "resourceType": "image"
+    },
+    {
+      "method": "GET",
+      "url": "https://kasalive-api-stage.s3.amazonaws.com/media/team/badge/20830.png",
+      "resourceType": "image"
+    },
+    {
+      "method": "GET",
+      "url": "https://kasalive-api-stage.s3.amazonaws.com/media/team/badge/3265.png",
+      "resourceType": "image"
+    },
+    {
+      "method": "GET",
+      "url": "https://kasalive-api-stage.s3.amazonaws.com/media/team/badge/2223_UqqEdC5.png",
+      "resourceType": "image"
+    },
+    {
+      "method": "GET",
+      "url": "https://kasalive-api-stage.s3.amazonaws.com/media/team/badge/2217_lerrryr.png",
+      "resourceType": "image"
+    },
+    {
+      "method": "GET",
+      "url": "https://kasalive-api-stage.s3.amazonaws.com/media/team/badge/20_EHgKKVx.png",
+      "resourceType": "image"
+    },
+    {
+      "method": "GET",
+      "url": "https://kasalive-api-stage.s3.amazonaws.com/media/team/badge/13_aEH6xkr.png",
+      "resourceType": "image"
+    },
+    {
+      "method": "GET",
+      "url": "https://kasalive-api-stage.s3.amazonaws.com/media/team/badge/3818_7ql7y2y.png",
+      "resourceType": "image"
+    },
+    {
+      "method": "GET",
+      "url": "https://kasalive-api-stage.s3.amazonaws.com/media/team/badge/1434.png",
+      "resourceType": "image"
+    },
+    {
+      "method": "GET",
+      "url": "https://kasalive-api-stage.s3.amazonaws.com/media/team/badge/2936_mAduLZk.png",
+      "resourceType": "image"
+    },
+    {
+      "method": "GET",
+      "url": "https://kasalive-api-stage.s3.amazonaws.com/media/team/badge/2213_ppIUxE7.png",
+      "resourceType": "image"
+    },
+    {
+      "method": "GET",
+      "url": "https://kasalive-api-stage.s3.amazonaws.com/media/team/badge/2937_nxlhjzA.png",
+      "resourceType": "image"
+    },
+    {
+      "method": "GET",
+      "url": "https://kasalive-api-stage.s3.amazonaws.com/media/team/badge/1446_XqfUTBG.png",
+      "resourceType": "image"
+    },
+    {
+      "method": "GET",
+      "url": "https://kasalive-api-stage.s3.amazonaws.com/media/team/badge/2224_VaDYYuD.png",
+      "resourceType": "image"
+    },
+    {
+      "method": "GET",
+      "url": "https://kasalive-api-stage.s3.amazonaws.com/media/team/badge/2941_axmVp1X.png",
+      "resourceType": "image"
+    },
+    {
+      "method": "GET",
+      "url": "https://kasalive-api-stage.s3.amazonaws.com/media/team/badge/12_lsDVmTH.png",
+      "resourceType": "image"
+    },
+    {
+      "method": "GET",
+      "url": "https://kasalive-api-stage.s3.amazonaws.com/media/team/badge/14_eIfgHn6.png",
+      "resourceType": "image"
+    },
+    {
+      "method": "GET",
+      "url": "https://kasalive-api-stage.s3.amazonaws.com/media/team/badge/3683.png",
+      "resourceType": "image"
+    },
+    {
+      "method": "GET",
+      "url": "https://kasalive-api-stage.s3.amazonaws.com/media/team/badge/2214_N8HgMyr.png",
+      "resourceType": "image"
+    },
+    {
+      "method": "POST",
+      "url": "https://analytics.google.com/g/collect?v=2&tid=G-KERN92K795&gtm=45je64t1v877312309za200zd877312309&_p=1777746321129&gcd=13l3l3l3l1l1&npa=0&dma=0&_eu=AEAAAGQ&ae=a&are=1&cid=404815612.1777746289&frm=0&pscdl=noapi&rcb=7&sr=1440x900&uaa=arm&uab=64&uafvl=HeadlessChrome%3B147.0.7727.15%7CNot.A%252FBrand%3B8.0.0.0%7CChromium%3B147.0.7727.15&uam=&uamb=0&uap=macOS&uapv=26.3.1&uaw=0&ul=pt-br&gaf=2&_s=2&tag_exp=0~115616986~115938466~115938469~116363098&sid=1777746288&sct=1&seg=1&dl=https%3A%2F%2Fwww.kasa.live%2F&dt=Kasa.Live%20-%20Encontre%20o%20Jogo&en=scroll&epn.percent_scrolled=90&tfd=5233",
+      "resourceType": "fetch"
+    },
+    {
+      "method": "GET",
+      "url": "https://www.kasa.live/_next/static/media/teamEmpty.6065dc43.svg",
+      "resourceType": "image"
+    }
+  ]
+}
