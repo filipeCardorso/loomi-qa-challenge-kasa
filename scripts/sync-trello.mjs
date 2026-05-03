@@ -1,4 +1,4 @@
-// Sincroniza 18 bugs + 10 melhorias com Trello via API.
+// Sincroniza 22 bugs + 10 melhorias com Trello via API.
 // Requer TRELLO_API_KEY + TRELLO_TOKEN em .env.local.
 // Cria cards nas listas "Bugs reportados" e "Melhorias sugeridas",
 // aplica labels, e atualiza "Trello card: TBD" nos .md com URL real.
@@ -166,4 +166,4 @@ for (const f of impFiles) {
   }
 }
 
-console.log('\n✅ Done. Total: 18 bugs + 10 melhorias = 28 cards.');
+console.log('\n✅ Done. Total: 22 bugs + 10 melhorias = 32 cards.');
