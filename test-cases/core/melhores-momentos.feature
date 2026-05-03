@@ -38,7 +38,9 @@ Funcionalidade: Melhores momentos das partidas finalizadas
     Então a listagem deve atualizar exibindo apenas vídeos do "São Paulo" no "Brasileirão Série A" cujo título contenha "gols"
     Ou uma mensagem indicando ausência de resultados deve ser exibida quando não houver vídeos
 
-  @hipotese-youtube
+  # Player embedado: hipótese é YouTube iframe (verificar tipo exato e selector
+  # do botão play após click no card — pode ser custom HTML5 player também).
+  @manual-validation
   Cenário: Reproduzir um vídeo de melhores momentos no player embedado
     Dado que estou em "https://kasa.live/melhores-momentos" com a listagem carregada
     Quando clico no botão "play" do primeiro card de melhores momentos

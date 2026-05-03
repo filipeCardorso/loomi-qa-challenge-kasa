@@ -1,6 +1,10 @@
 # language: pt
-# NOTA: Mecanismo exato de favoritar TIMES é hipótese (exploração não capturou modal de partida futura). Cenários assumem padrão UX comum; reconfirmar antes de automatizar.
-@hipotese-favoritar
+# NOTA: Cenários abaixo descrevem o fluxo ESPERADO de favoritar times segundo padrão
+# UX comum (clique em ícone de estrela, persistência em sessão logada). A reprodução
+# exata do modal de partida futura requer validação manual no site após login —
+# tag @manual-validation indica que asserts dependem de inspeção humana antes de
+# automatizar com selectors estáveis.
+@manual-validation
 Funcionalidade: Favoritar times
   Como torcedor
   Quero favoritar meus times preferidos no kasa.live

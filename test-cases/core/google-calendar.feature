@@ -47,3 +47,20 @@ Funcionalidade: Integração com Google Calendar
     Então devo retornar ao kasa.live sem integração ativa
     E o switch deve permanecer desativado no popover do avatar
     E uma mensagem informando que a conexão não foi concluída deve ser exibida
+
+  Cenário: Tentar acessar funcionalidade de Google Calendar sem ter conectado
+    Dado que estou logado e nunca conectei minha conta ao Google Calendar
+    Quando abro o popover do avatar do header
+    Então o switch "Conectar com seu Google Calendar" deve estar visível e desativado
+    E uma mensagem ou tooltip explicando o benefício da integração deve estar presente
+    E nenhuma sincronização deve estar ocorrendo em background
+
+  @manual-oauth
+  Cenário: Permissão do Google Calendar revogada externamente pelo usuário
+    Dado que estou logado e havia conectado minha conta ao Google Calendar previamente
+    E que revoguei a permissão do kasa.live diretamente em myaccount.google.com/permissions
+    Quando volto ao kasa.live e abro o popover do avatar
+    Então o sistema deve detectar a permissão revogada na próxima tentativa de sincronização
+    E o switch "Conectar com seu Google Calendar" deve refletir o estado desconectado
+    E uma mensagem clara deve informar que a integração precisa ser refeita
+    E nenhuma sincronização silenciosa deve continuar tentando rodar

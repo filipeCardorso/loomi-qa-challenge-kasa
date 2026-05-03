@@ -1,6 +1,10 @@
 # language: pt
-# NOTA: Mecanismo exato de favoritar PARTIDAS é hipótese (exploração não capturou modal de partida futura — só finalizada, que vem vazio). Cenários assumem padrão UX comum; reconfirmar antes de automatizar.
-@hipotese-favoritar
+# NOTA: Cenários abaixo descrevem o fluxo ESPERADO de favoritar partidas segundo
+# padrão UX comum. A exploração 2026-05-02 capturou apenas modais de partidas
+# FINALIZADAS (que vêm vazias — ver BUG-011). Modais de partidas FUTURAS exigem
+# validação manual no site logado pra confirmar selectors antes de automatizar.
+# Tag @manual-validation indica essa dependência.
+@manual-validation
 Funcionalidade: Favoritar partidas
   Como torcedor
   Quero favoritar partidas específicas no kasa.live
