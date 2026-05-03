@@ -55,6 +55,22 @@ export const SELECTORS = {
   profilePopover: '[role="dialog"][aria-labelledby^="popover-header"]',
 
   /**
+   * Calendar mensal — popover react-day-picker que abre ao focar o input
+   * de data. Wrappers Chakra (`input.chakra-input`) e classes do
+   * react-day-picker (`rdp-*`) ficam centralizados aqui pra honrar ADR-002.
+   */
+  calendar: {
+    /** Input que abre o popover (placeholder dinâmico "MMM DD, YYYY" / "Hoje"). */
+    dateInput: 'input[placeholder*="2026"], input[value="Hoje"], input[value="Amanhã"]',
+    /** Heading do mês visível dentro do popover. */
+    monthLabel: 'h2.rdp-caption_label',
+    /** Botão de dia clicável dentro da grade. */
+    dayButton: 'button.rdp-day',
+    /** Botão de dia já selecionado (state visual pós-click). */
+    daySelected: 'button.rdp-day.rdp-day_selected, button.rdp-day[aria-selected="true"]',
+  },
+
+  /**
    * NotificationsPanel — popover sem heading próprio, identificado por texto.
    * O conteúdo sempre tem "notifica" (empty state ou itens).
    */

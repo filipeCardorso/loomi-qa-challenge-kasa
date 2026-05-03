@@ -54,8 +54,15 @@ test.describe('Busca avançada — typeahead, combos e reset', () => {
     await expect(homePage.filtroQualTime, 'filtro time continua visível').toBeVisible();
     await expect(homePage.filtroQualCampeonato, 'filtro campeonato continua visível').toBeVisible();
 
+    // Snapshot determinístico: aguarda networkidle, então assert sem timeout
+    // (o banner ou já apareceu ou não vai aparecer — não esperar 5s default).
+    await page.waitForLoadState('networkidle', { timeout: 15_000 }).catch(() => undefined);
     const errorBanner = page.locator('text=/algo deu errado|error 500|oops/i').first();
-    expect(await errorBanner.isVisible().catch(() => false)).toBe(false);
+    await expect(errorBanner, 'nenhum banner de erro deve aparecer ao combinar filtros').toBeHidden(
+      {
+        timeout: 1_000,
+      },
+    );
   });
 
   test('@core limpar filtros (refresh / click logo) restaura listagem inicial', async ({
