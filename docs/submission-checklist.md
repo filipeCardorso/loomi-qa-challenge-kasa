@@ -60,7 +60,7 @@ Legenda: `[x]` ok · `[ ]` pendente.
 
 - [x] **Tarefa 1:** 56 BDD em `test-cases/` (core + extras)
 - [x] **Tarefa 2:** 68 testes em `automation/tests/` (6 camadas: E2E + API + Visual + A11y + Perf + Security)
-- [x] **Tarefa 3:** 22 bugs + 10 melhorias em `bug-reports/`
+- [x] **Tarefa 3:** 21 bugs + 11 melhorias em `bug-reports/`
 - [x] **Tarefa 4:** 7 tools + Resources + 31 testes Vitest + tutorial em `mcp-server/` e `docs/mcp-tutorial.md`
 
 ---

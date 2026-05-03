@@ -21,10 +21,10 @@ Diagrama da suite + componentes principais. Para o detalhamento completo (decis�
    │ Functional QA │         │ Automation         │         │ Platform / MCP    │
    ├───────────────┤         ├────────────────────┤         ├───────────────────┤
    │ exploration   │         │ Playwright runner  │         │ MCP Server        │
-   │ 7 charters    │         │ 6 camadas          │         │ stdio transport   │
+   │ 2 charters    │         │ 6 camadas          │         │ stdio transport   │
    │ 56 BDD        │         │ 68 testes verdes   │         │ 7 tools           │
-   │ 22 bugs       │         │ POMs + fixtures    │         │ Resources         │
-   │ 10 melhorias  │         │ Allure publicado   │         │ 31 testes Vitest  │
+   │ 21 bugs       │         │ POMs + fixtures    │         │ Resources         │
+   │ 11 melhorias  │         │ Allure publicado   │         │ 31 testes Vitest  │
    └───────────────┘         └────────────────────┘         └───────────────────┘
         │                              │                              │
         └──────────────────────────────┼──────────────────────────────┘
@@ -95,11 +95,11 @@ loomi-qa-challenge-kasa/
 │   ├── support/                     # apiClient, evidenceCollector, helpers
 │   └── reports/                     # gitignored
 │
-├── bug-reports/                     # TAREFA 3 — 22 bugs + 10 melhorias
+├── bug-reports/                     # TAREFA 3 — 21 bugs + 11 melhorias
 │   ├── README.md                    # índice geral
 │   ├── bugs/                        # BUG-001..BUG-022 (.md schema fixo)
 │   ├── improvements/                # IMP-001..IMP-010 (.md)
-│   ├── charters/                    # 7 charter reports
+│   ├── charters/                    # 2 executados (C1, C5) + 5 da spec não executados por timebox
 │   └── evidence/                    # screenshots/HAR/console por bug
 │
 ├── mcp-server/                      # TAREFA 4 — MCP Server

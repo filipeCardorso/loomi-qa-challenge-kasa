@@ -73,14 +73,14 @@ Cada pasta de topo é um entregável do desafio:
 - Linguagem comportamental (Dado/Quando/Então) com lint Gherkin
 - Funcionalidades core ≥7 cenários cada
 
-### `bug-reports/` — 22 bugs + 10 melhorias (Tarefa 3)
+### `bug-reports/` — 21 bugs + 11 melhorias (Tarefa 3)
 
-- `bugs/BUG-001..BUG-022.md` — schema fixo (Severidade · Prioridade · Status · Reprodução · Evidência · Sugestão de fix · Impacto)
-- `improvements/IMP-001..IMP-010.md`
-- `charters/` — 7 session reports
-- `evidence/BUG-XXX/` — screenshots/HAR/console por bug
+- `bugs/BUG-001, 002, 004..022.md` — schema fixo (Severidade · Prioridade · Status · Reprodução · Evidência · Sugestão de fix · Impacto). BUG-003 foi reclassificado para IMP-011 (não era defeito).
+- `improvements/IMP-001..IMP-011.md`
+- `charters/` — 2 charters executados (C1, C5) + 5 charters da spec não executados por timebox
+- `evidence/BUG-XXX/` — screenshots/HAR/console por bug (BUG-002/009/012 + axe JSON em BUG-013/014/015/016)
 - `README.md` — índice geral
-- Distribuição: **3 Critical · 5 High · 9 Medium · 5 Low**
+- Distribuição: **3 Critical · 5 High · 8 Medium · 5 Low**
 
 ### `automation/` — 68 testes em camadas (Tarefa 2)
 
@@ -134,8 +134,8 @@ Cada pasta de topo é um entregável do desafio:
 - [ ] **`README.md` raiz** com TL;DR, Quick Start, links e inventário
 - [ ] **`docs/progress-report.md`** com 8 seções completas
 - [ ] **`test-cases/`** com 56 BDD organizados em core/extras
-- [ ] **`bug-reports/bugs/`** com 22 bugs (Critical → Low)
-- [ ] **`bug-reports/improvements/`** com 10 melhorias
+- [ ] **`bug-reports/bugs/`** com 21 bugs (Critical → Low)
+- [ ] **`bug-reports/improvements/`** com 11 melhorias
 - [ ] **`automation/tests/`** com 6 camadas (e2e/api/visual/a11y/performance/security)
 - [ ] **`mcp-server/`** com 7 tools + 31 testes Vitest + tutorial reproduzível
 - [ ] **CI verde** no último commit

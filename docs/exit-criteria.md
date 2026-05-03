@@ -36,9 +36,10 @@ Legenda: `[x]` entregue · `[ ]` não entregue · `[~]` parcial (com nota).
 
 ## Tarefa 3 — Bugs / Melhorias
 
-- [x] **≥12 bugs** (alvo 22) com evidência commitada → **22 entregues** (+83%)
-  - Distribuição: 3 Critical · 5 High · 9 Medium · 5 Low
-- [x] **≥8 melhorias** (alvo 10) com evidência → **10 entregues** (+25%)
+- [x] **≥12 bugs** (alvo 22) com evidência commitada → **21 entregues** (+75%)
+  - Distribuição: 3 Critical · 5 High · 8 Medium · 5 Low
+  - BUG-003 reclassificado para IMP-011 em pré-submissão (não era defeito; ver IMP-011)
+- [x] **≥8 melhorias** (alvo 10) com evidência → **11 entregues** (+38%)
 - [x] **Todos no Trello + `.md` no repo** (schema 1:1 entre card e arquivo)
 - [x] **Severidade preenchida** em 100% dos bugs
 
@@ -92,7 +93,7 @@ Legenda: `[x]` entregue · `[ ]` não entregue · `[~]` parcial (com nota).
 | -------------------- | ----------------------------------------- |
 | Tarefa 1 (BDD)       | ✅ Estourado (+37%)                       |
 | Tarefa 2 (Automação) | ✅ Estourado (+40%)                       |
-| Tarefa 3 (Bugs)      | ✅ Estourado (+50% bugs · +25% melhorias) |
+| Tarefa 3 (Bugs)      | ✅ Estourado (+75% bugs · +38% melhorias) |
 | Tarefa 4 (MCP)       | ✅ Estourado (+133% tools)                |
 | Transversais         | ✅ Todos entregues                        |
 

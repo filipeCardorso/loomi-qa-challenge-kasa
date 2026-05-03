@@ -25,9 +25,9 @@ Formato: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/)
 - Helpers: `apiClient.ts`, `evidenceCollector.ts`, `lighthouseRunner.ts`, `visualHelper.ts`
 - Allure publicado em GitHub Pages: https://filipecardorso.github.io/loomi-qa-challenge-kasa/
 
-#### Tarefa 3 — Bugs e Melhorias (22 bugs + 10 melhorias, +83% / +25%)
+#### Tarefa 3 — Bugs e Melhorias (21 bugs + 11 melhorias, +75% / +38%)
 
-- 22 bugs documentados em `bug-reports/bugs/` com schema fixo: 3 Critical · 5 High · 9 Medium · 5 Low
+- 21 bugs documentados em `bug-reports/bugs/` com schema fixo: 3 Critical · 5 High · 8 Medium · 5 Low
   - BUG-022 cookie auth `next-leap_access` sem Secure nem HttpOnly (Critical)
   - BUG-013 a11y aria-allowed-attr (Critical)
   - BUG-014 a11y button-name (Critical)
@@ -36,10 +36,11 @@ Formato: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/)
   - BUG-021 API DEV sem rate limiting 50/50 → 200 (High)
   - BUG-015 a11y color-contrast (High)
   - BUG-016 a11y link-name (High)
-  - 14 outros bugs (Medium/Low) cobrindo SEO, calendário, navegação, modais, perf, segurança (HSTS/CSP)
-- 10 melhorias em `bug-reports/improvements/` (data-testid, accessible names, dark mode, i18n, LGPD, etc)
-- 7 charters de session-based testing
-- Evidências por bug em `bug-reports/evidence/`
+  - 13 outros bugs (Medium/Low) cobrindo SEO, calendário, navegação, modais, perf, segurança (HSTS/CSP)
+  - BUG-003 reclassificado para IMP-011 em pré-submissão (rotas /buscar, /login etc não eram defeito, eram product decision)
+- 11 melhorias em `bug-reports/improvements/` (data-testid, accessible names, dark mode, i18n, LGPD, deeplinks, etc)
+- 2 charters executados (C1 busca adversarial, C5 mobile viewports) + 5 da spec não executados por timebox
+- Evidências por bug em `bug-reports/evidence/` (screenshots reais BUG-002/009/012 + axe JSON BUG-013/014/015/016 capturados em pre-submission)
 
 #### Tarefa 4 — MCP Server (7 tools, +133% sobre as 3 mandatórias)
 

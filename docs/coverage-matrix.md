@@ -114,13 +114,12 @@ Subset de E2E que roda no PR gate (`ci.yml`, ≤5min):
 
 ## 6. Cruzamento bug → cobertura
 
-22 bugs documentados em `bug-reports/bugs/`; cruzando com a matriz acima, todos têm cobertura BDD e/ou automatizada equivalente:
+21 bugs documentados em `bug-reports/bugs/`; cruzando com a matriz acima, todos têm cobertura BDD e/ou automatizada equivalente:
 
 | Bug                                       | Funcionalidade impactada  | Cobertura na suite                   |
 | ----------------------------------------- | ------------------------- | ------------------------------------ |
 | BUG-001 (API DEV em PROD)                 | Buscar partidas           | API tests + E2E (timeouts ampliados) |
 | BUG-002 (aria-label duplicado)            | Calendário                | A11y + E2E calendário                |
-| BUG-003 (rotas 404)                       | Navegação                 | E2E navegação                        |
 | BUG-004 (favoritos calendário)            | Favoritar times           | E2E + BDD                            |
 | BUG-005 (zero data-testid)                | Transversal               | Documentado em IMP-001               |
 | BUG-006/007 (SEO)                         | Home                      | E2E navegação + Visual               |

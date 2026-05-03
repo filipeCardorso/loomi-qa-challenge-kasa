@@ -25,7 +25,7 @@ npm run report:allure
 | --- | ------------------ | ------------------------------ | ------------------------------------------------------ | ------ |
 | 1   | Casos de Teste BDD | [`test-cases/`](test-cases/)   | **56** cenários (PT-BR Gherkin)                        | ✅     |
 | 2   | Automação          | [`automation/`](automation/)   | **68** testes (E2E + API + Visual + A11y + Perf + Sec) | ✅     |
-| 3   | Bugs e Melhorias   | [`bug-reports/`](bug-reports/) | **22** bugs + **10** melhorias (Trello + repo)         | ✅     |
+| 3   | Bugs e Melhorias   | [`bug-reports/`](bug-reports/) | **21** bugs + **11** melhorias (Trello + repo)         | ✅     |
 | 4   | MCP Server         | [`mcp-server/`](mcp-server/)   | **7** tools + 31 testes Vitest + tutorial              | ✅     |
 
 ## Critérios atendidos vs Pleno S1
@@ -33,8 +33,8 @@ npm run report:allure
 | Critério                | Pleno S1 (PDF) | Entregue | Delta     |
 | ----------------------- | -------------- | -------- | --------- |
 | Casos BDD               | 40             | **56**   | **+40%**  |
-| Bugs                    | 12             | **22**   | **+83%**  |
-| Melhorias               | 8              | **10**   | **+25%**  |
+| Bugs                    | 12             | **21**   | **+75%**  |
+| Melhorias               | 8              | **11**   | **+38%**  |
 | Automação               | 30-32          | **68**   | **+112%** |
 | Tools MCP (mandatórias) | 3              | 3        | ✅        |
 | Tools MCP (totais)      | —              | **7**    | **+133%** |
@@ -70,7 +70,7 @@ npm run report:allure
 .
 ├── automation/          # Trilha B — POMs + 68 testes Playwright (E2E/API/visual/a11y/perf/security)
 ├── test-cases/          # Trilha A — 56 cenários BDD em PT-BR Gherkin
-├── bug-reports/         # Trilha A — 22 bugs + 10 melhorias estruturados
+├── bug-reports/         # Trilha A — 21 bugs + 11 melhorias estruturados
 ├── mcp-server/          # Trilha C — MCP server Node/TS com 7 tools + Vitest
 ├── docs/                # 8 documentos: arquitetura, relatório, matriz, journey, etc
 ├── docker/              # Dockerfile baseado em Playwright official image
