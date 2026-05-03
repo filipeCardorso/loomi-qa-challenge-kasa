@@ -1,6 +1,6 @@
 # Journey do Avaliador — 20-25min review
 
-**Filipe Gabriel · 2026-05-04**
+**Filipe Gabriel · 2026-05-02 (entrega) · revisado 2026-05-03**
 
 Roteiro otimizado para que o avaliador veja todos os entregáveis sem instalar nada. Tudo o que é mandatório (Trello + Allure + relatório de progresso) está acessível por link. Quick start opcional para quem quiser rodar local.
 
@@ -35,7 +35,7 @@ O `README.md` raiz tem TL;DR, Quick Start, links principais e inventário de ent
   - 22 cards de bug + 10 de melhoria + cards de progresso por trilha
 
 - **Allure Report (GitHub Pages):** https://filipecardorso.github.io/loomi-qa-challenge-kasa/
-  - 68 testes verdes
+  - 77 testes verdes
   - Severidade, categorias (epic/feature/story), histórico de runs
   - Anexos navegáveis (screenshot, video, trace) por teste
 
@@ -65,24 +65,25 @@ docker run --rm -v $(pwd)/reports:/app/reports loomi-qa npm run test:smoke
 
 Cada pasta de topo é um entregável do desafio:
 
-### `test-cases/` — 56 BDD em PT-BR (Tarefa 1)
+### `test-cases/` — 61 BDD em PT-BR (Tarefa 1)
 
 - `core/` (5 features): favoritar times, favoritar partidas, buscar partidas, melhores momentos, google calendar
 - `extras/` (4 features): navegação, responsividade, erro/edge, recursos não-core
-- `README.md` indexa todos os 56 cenários
+- `README.md` indexa todos os 61 cenários
 - Linguagem comportamental (Dado/Quando/Então) com lint Gherkin
 - Funcionalidades core ≥7 cenários cada
 
 ### `bug-reports/` — 21 bugs + 11 melhorias (Tarefa 3)
 
-- `bugs/BUG-001, 002, 004..022.md` — schema fixo (Severidade · Prioridade · Status · Reprodução · Evidência · Sugestão de fix · Impacto). BUG-003 foi reclassificado para IMP-011 (não era defeito).
-- `improvements/IMP-001..IMP-011.md`
+- `bugs/BUG-001, 002, 004..022.md` — schema fixo (Severidade · Prioridade · Status · Reprodução · Evidência · Sugestão de fix · Impacto).
+  - **Sequência pula BUG-003 propositalmente** — foi reclassificado em pré-submissão como IMP-011 (rotas `/buscar`, `/login`, `/calendar`, `/perfil` retornam 404 não por defeito mas por decisão de produto; melhor tratado como melhoria de UX/SEO via redirects 301). Card Trello original arquivado, IMP-011 tem card dedicado.
+- `improvements/IMP-001..IMP-011.md` (IMP-011 é a continuação do BUG-003)
 - `charters/` — 2 charters executados (C1, C5) + 5 charters da spec não executados por timebox
-- `evidence/BUG-XXX/` — screenshots/HAR/console por bug (BUG-002/009/012 + axe JSON em BUG-013/014/015/016)
-- `README.md` — índice geral
-- Distribuição: **3 Critical · 5 High · 8 Medium · 5 Low**
+- `evidence/BUG-XXX/` — screenshots/HAR/console manuais + subpasta `auto-runs/` (gerada pela suite `automation/tests/bugs/` em cada falha — gitignored)
+- `README.md` — índice geral com nota de recalibragem 2026-05-03
+- Distribuição (atualizada 2026-05-03): **2 Critical · 5 High · 7 Medium · 7 Low** (BUG-008/009/012 rebaixados Medium→Low; BUG-021 rebaixado High→Medium; BUG-014 rebaixado Critical→High e marcado Likely Fixed; BUG-012 marcado Needs revalidation — detalhes nos `.md`)
 
-### `automation/` — 68 testes em camadas (Tarefa 2)
+### `automation/` — 77 testes em 7 camadas (Tarefa 2)
 
 - `tests/e2e/` — 27 testes funcionais (smoke = subset de 10)
 - `tests/api/` — 5 testes contract (Zod schemas)
@@ -90,7 +91,8 @@ Cada pasta de topo é um entregável do desafio:
 - `tests/a11y/` — 5 testes WCAG 2.1 AA
 - `tests/performance/` — 3 testes Lighthouse
 - `tests/security/` — 23 testes (XSS reflected/stored/DOM, headers, cookies, CORS, rate-limit)
-- `pages/` — POMs · `fixtures/` — custom · `support/` — helpers
+- **`tests/bugs/` — 22 testes bug-regression em 21 specs (NOVA CAMADA), 1:1 com `bug-reports/bugs/`. Reporter custom dump trace/screenshot/findings em `bug-reports/evidence/BUG-XXX/auto-runs/<timestamp>/` em cada falha. Polaridade: spec falha enquanto bug existir, fica verde quando dev fixar. Lifecycle e padrão em `automation/tests/bugs/README.md`. Comandos: `npm run test:bugs`, `npm run test:bug -- @bug-002`.**
+- `pages/` — POMs · `fixtures/` — custom (incluindo `bugFindings`) · `support/` — helpers
 - Suite passa verde 2x consecutivas localmente; CI verde
 
 ### `mcp-server/` — 7 tools + tutorial (Tarefa 4)
@@ -130,10 +132,10 @@ Cada pasta de topo é um entregável do desafio:
 ## 7. Resumo do que validar (checklist do avaliador)
 
 - [ ] **Trello público acessível** em janela anônima
-- [ ] **Allure URL acessível** em janela anônima (68 testes verdes)
+- [ ] **Allure URL acessível** em janela anônima (77 testes verdes)
 - [ ] **`README.md` raiz** com TL;DR, Quick Start, links e inventário
 - [ ] **`docs/progress-report.md`** com 8 seções completas
-- [ ] **`test-cases/`** com 56 BDD organizados em core/extras
+- [ ] **`test-cases/`** com 61 BDD organizados em core/extras
 - [ ] **`bug-reports/bugs/`** com 21 bugs (Critical → Low)
 - [ ] **`bug-reports/improvements/`** com 11 melhorias
 - [ ] **`automation/tests/`** com 6 camadas (e2e/api/visual/a11y/performance/security)

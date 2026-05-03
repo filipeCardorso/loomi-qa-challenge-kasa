@@ -1,6 +1,6 @@
 # Submission Checklist — Desafio QA Loomi
 
-**Filipe Gabriel · 2026-05-04**
+**Filipe Gabriel · 2026-05-02 (entrega) · revisado 2026-05-03**
 
 Checklist final antes de enviar o e-mail para `processoseletivo@loomi.com.br`. Adaptado da spec §10.5.
 
@@ -58,8 +58,8 @@ Legenda: `[x]` ok · `[ ]` pendente.
 
 ## 5. Entregáveis por tarefa (rápido)
 
-- [x] **Tarefa 1:** 56 BDD em `test-cases/` (core + extras)
-- [x] **Tarefa 2:** 68 testes em `automation/tests/` (6 camadas: E2E + API + Visual + A11y + Perf + Security)
+- [x] **Tarefa 1:** 60 BDD em `test-cases/` (core + extras)
+- [x] **Tarefa 2:** 77 testes em `automation/tests/` (7 camadas: E2E + API + Visual + A11y + Perf + Security + bug-regression)
 - [x] **Tarefa 3:** 21 bugs + 11 melhorias em `bug-reports/`
 - [x] **Tarefa 4:** 7 tools + Resources + 31 testes Vitest + tutorial em `mcp-server/` e `docs/mcp-tutorial.md`
 

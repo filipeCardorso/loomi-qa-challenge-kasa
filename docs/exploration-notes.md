@@ -7,6 +7,22 @@
 
 ---
 
+## 📋 Executive Summary (TL;DR — 1 minuto)
+
+A Onda 0 (90min de exploração automatizada + 30min de sessão logada) revelou:
+
+1. **3 rotas reais em produção**: `/`, `/melhores-momentos`, `/calendario` (canônico — `/calendar` retorna 404 — vira IMP-011).
+2. **4 camadas de filtros na busca**: time (typeahead `/team/?name=`), campeonato, data, local. Inputs Chakra UI sem `data-testid`.
+3. **Mecanismo de login**: email + senha (Firebase Auth — não OAuth Google). Modal Chakra com `aria-labelledby^="chakra-modal--header"`.
+4. **Google Calendar via switch** no popover do avatar (não rota dedicada).
+5. **API DEV exposta em PROD**: `kasa-live.api.dev.loomi.com.br` (vide BUG-001).
+6. **10 proto-bugs identificados (S1–S12)** que viraram BUG-001 a BUG-022 + IMPs.
+7. **Seletores prontos para automação** em §15.2–15.9.
+
+Para **navegação rápida**: pular para §11 (proto-bugs), §13 (sessão logada), §15 (seletores). Seções 5–8 são apêndice técnico (sitemap detalhado, stack analysis, endpoints API).
+
+---
+
 ## 1. Sitemap real
 
 | Rota                 | Status                    | Observação                                            |

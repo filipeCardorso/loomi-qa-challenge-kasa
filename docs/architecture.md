@@ -1,6 +1,6 @@
 # Arquitetura da Suíte — Desafio QA Loomi
 
-**Filipe Gabriel · 2026-05-04**
+**Filipe Gabriel · 2026-05-02 (entrega) · revisado 2026-05-03**
 
 Diagrama da suite + componentes principais. Para o detalhamento completo (decisões, riscos, racional), ver `docs/superpowers/specs/2026-05-02-loomi-qa-challenge-design.md`.
 
@@ -21,8 +21,8 @@ Diagrama da suite + componentes principais. Para o detalhamento completo (decis�
    │ Functional QA │         │ Automation         │         │ Platform / MCP    │
    ├───────────────┤         ├────────────────────┤         ├───────────────────┤
    │ exploration   │         │ Playwright runner  │         │ MCP Server        │
-   │ 2 charters    │         │ 6 camadas          │         │ stdio transport   │
-   │ 56 BDD        │         │ 68 testes verdes   │         │ 7 tools           │
+   │ 2 charters    │         │ 7 camadas          │         │ stdio transport   │
+   │ 61 BDD        │         │ 77 testes (55+22)  │         │ 7 tools           │
    │ 21 bugs       │         │ POMs + fixtures    │         │ Resources         │
    │ 11 melhorias  │         │ Allure publicado   │         │ 31 testes Vitest  │
    └───────────────┘         └────────────────────┘         └───────────────────┘
@@ -68,7 +68,7 @@ loomi-qa-challenge-kasa/
 │   ├── site-snapshots/              # backup de exploração
 │   └── superpowers/specs/           # design document fonte
 │
-├── test-cases/                      # TAREFA 1 — 56 cenários BDD em PT-BR
+├── test-cases/                      # TAREFA 1 — 61 cenários BDD em PT-BR
 │   ├── README.md                    # índice
 │   ├── core/                        # 5 .feature (favoritar/buscar/highlights/calendar)
 │   │   ├── favoritar-times.feature
@@ -82,14 +82,20 @@ loomi-qa-challenge-kasa/
 │       ├── erro-edge-cases.feature
 │       └── recursos-nao-core.feature
 │
-├── automation/                      # TAREFA 2 — 68 testes Playwright
+├── automation/                      # TAREFA 2 — 77 testes Playwright (55 contract + 22 bug-regression)
 │   ├── tests/
 │   │   ├── e2e/                     # 27 testes (smoke subset = 10)
 │   │   ├── api/                     # 5 testes contract (Zod)
 │   │   ├── visual/                  # 5 testes regression
 │   │   ├── a11y/                    # 5 testes WCAG 2.1 AA
 │   │   ├── performance/             # 3 testes Lighthouse
-│   │   └── security/                # 23 testes (XSS/headers/cookies/CORS/rate-limit)
+│   │   ├── security/                # 23 testes (XSS/headers/cookies/CORS/rate-limit)
+│   │   └── bugs/                    # 21 specs 1:1 com bug-reports/bugs/ (NOVA CAMADA)
+│   │       ├── BUG-XXX-*.spec.ts    # asserta comportamento esperado, falha enquanto bug existir
+│   │       ├── _fixtures.ts         # extends de @fixtures/index com slot bugFindings
+│   │       ├── _reporter.ts         # BugEvidenceReporter (auto-dump em bug-reports/evidence/.../auto-runs/)
+│   │       ├── helpers/             # evidence.ts, axe.ts, http.ts
+│   │       └── README.md            # lifecycle, polaridade, padrão de spec
 │   ├── pages/                       # POMs (Home, Highlights, Calendar)
 │   ├── fixtures/                    # custom fixtures (loggedInPage, etc)
 │   ├── support/                     # apiClient, evidenceCollector, helpers
@@ -144,6 +150,26 @@ Estende `test` do Playwright: `homePage`, `loggedInPage` (com re-login automáti
 - `evidenceCollector.ts` — captura automática em falha (screenshot, video, trace)
 - `lighthouseRunner.ts` — wrapper sobre `playwright-lighthouse`
 - `visualHelper.ts` — masking de áreas dinâmicas
+
+### 3.3.1 `automation/tests/bugs/` — Bug-regression suite (camada de memória)
+
+Cada bug encontrado vira spec dedicado que **falha enquanto o defeito existir, fica verde quando o dev fixar**. Mapping 1:1 com `bug-reports/bugs/BUG-XXX-*.md` (e cards Trello correspondentes).
+
+**Componentes:**
+
+- **`_fixtures.ts`** — extends de `@fixtures/index` adicionando slot `bugFindings` (cada spec preenche expected/actual antes do assert)
+- **`_reporter.ts`** — Playwright Reporter custom (registrado em `playwright.config.ts`). Em cada falha, copia `trace.zip` + `screenshot.png` + `video.webm` + `findings.json` + `summary.json` pra `bug-reports/evidence/BUG-XXX/auto-runs/<timestamp>/`. Roda em `onTestEnd` (post-teardown garantido — fixtures nativas do Playwright populam attachments DEPOIS dos teardowns customizados).
+- **`helpers/evidence.ts`** — utilitários compartilhados entre fixture e reporter (extractBugId, safeTimestamp, BugFindings type)
+- **`helpers/axe.ts`** — `runAxeRule(page, ruleId)` reusado pelos specs de a11y (BUG-013/014/015/016)
+- **`helpers/http.ts`** — `fetchUrl()` pra specs que asseguram comportamento de headers/HTML brutos sem instanciar Page
+
+**Polaridade:** specs assertam comportamento ESPERADO (não defeito). Sem inversão de lógica.
+
+**Lifecycle:** Open (fail) → In dev (PR fix) → Fixed (verde, .md status Closed, card Trello pra "Concluído") → Archived (após 6 meses verde).
+
+**Auto-evidence em pasta dedicada vs test-results/:** `auto-runs/` cresce só em falha; `test-results/` é descartável a cada run. Pasta `auto-runs/` está gitignored.
+
+Detalhes em `automation/tests/bugs/README.md`.
 
 ### 3.4 `mcp-server/` — Tarefa 4
 
@@ -227,15 +253,26 @@ LLM → call tool → MCP usa LiveBrowser persistente já em kasa.live
   → LLM decide próxima ação
 ```
 
-### 4.5 Bug → Trello
+### 4.5 Bug → Trello + spec de regressão
 
 ```
 Bug encontrado durante charter
   → cria bug-reports/bugs/BUG-XXX-titulo.md (schema fixo)
-  → coloca evidências em bug-reports/evidence/BUG-XXX/
+  → coloca evidências manuais em bug-reports/evidence/BUG-XXX/
+  → cria spec automation/tests/bugs/BUG-XXX-*.spec.ts (asserta esperado, hoje vermelho)
   → cria card Trello (mesmo schema, link cruzado)
   → commit + push
-  → board público mostra status
+  → board público mostra status, CI roda spec, evidência viva é gerada em cada falha
+```
+
+### 4.6 Validação de fix de bug
+
+```
+Dev abre PR de fix → CI roda npm run test:bugs
+  → spec do BUG-XXX vira verde
+  → BugEvidenceReporter NÃO cria pasta (sem falha)
+  → QA atualiza .md Status: Closed + move card Trello pra "Concluído"
+  → spec fica como guarda contra regressão
 ```
 
 ---

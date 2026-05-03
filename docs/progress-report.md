@@ -1,6 +1,6 @@
 # Relatório de Progresso — Desafio QA Loomi
 
-**Filipe Gabriel · 2026-05-04**
+**Filipe Gabriel · 2026-05-02 (entrega) · revisado 2026-05-03**
 
 ---
 
@@ -12,10 +12,10 @@ Entrega completa do desafio QA Loomi (escopo Pleno S1) com todos os números do 
 
 | Eixo      | Pleno S1 (PDF) | Entregue             | Delta     |
 | --------- | -------------- | -------------------- | --------- |
-| Casos BDD | 40             | **56**               | **+40%**  |
+| Casos BDD | 40             | **61**               | **+52%**  |
 | Bugs      | 12             | **21**               | **+75%**  |
 | Melhorias | 8              | **11**               | **+38%**  |
-| Automação | 30-32          | **68**               | **+112%** |
+| Automação | 30-32          | **77**               | **+140%** |
 | Tools MCP | 3 mandatórias  | **7 (3 + 5 extras)** | **+133%** |
 
 ### Links principais
@@ -35,11 +35,11 @@ Listas: Backlog · Sprint atual (48h) · Em andamento (WIP=3) · Em revisão · 
 
 ### Três trilhas paralelas
 
-| Trilha                 | Foco                                          | Pasta primária                                             | Output mensurável                                                     |
-| ---------------------- | --------------------------------------------- | ---------------------------------------------------------- | --------------------------------------------------------------------- |
-| **A — Functional QA**  | Exploração, charters, BDD, bugs, melhorias    | `test-cases/`, `bug-reports/`, `docs/exploration-notes.md` | 56 BDD + 21 bugs + 11 melhorias                                       |
-| **B — Automation**     | POMs, fixtures, suite Playwright em 6 camadas | `automation/`                                              | 68 testes (27 E2E + 5 API + 5 visual + 5 a11y + 3 perf + 23 security) |
-| **C — Platform / MCP** | MCP server, Resources, tutorial reproduzível  | `mcp-server/`, `docs/mcp-tutorial.md`                      | 7 tools + 31 testes Vitest + tutorial                                 |
+| Trilha                 | Foco                                          | Pasta primária                                             | Output mensurável                                                                         |
+| ---------------------- | --------------------------------------------- | ---------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
+| **A — Functional QA**  | Exploração, charters, BDD, bugs, melhorias    | `test-cases/`, `bug-reports/`, `docs/exploration-notes.md` | 61 BDD + 21 bugs + 11 melhorias                                                           |
+| **B — Automation**     | POMs, fixtures, suite Playwright em 7 camadas | `automation/`                                              | 77 testes (31 E2E + 8 API + 5 visual + 1 a11y + 1 perf + 12 security + 22 bug-regression) |
+| **C — Platform / MCP** | MCP server, Resources, tutorial reproduzível  | `mcp-server/`, `docs/mcp-tutorial.md`                      | 7 tools + 31 testes Vitest + tutorial                                                     |
 
 ### Cadência
 
@@ -75,23 +75,23 @@ Critério-mestre: **cobertura × impacto × tempo**. Em cada decisão de escopo,
 
 A entrega foi feita em **uma única sessão intensiva contínua** em 2026-05-02 (vs cronograma original de 2-3 dias). O primeiro commit foi às 11:52 e o último às 22:45 — wall-clock de ~10h53min, com pausas curtas, não 30h em 3 dias.
 
-| Janela        | Atividade                                                                                                                        | Trilha |
-| ------------- | -------------------------------------------------------------------------------------------------------------------------------- | ------ |
-| 11:52 – 12:20 | Spec design + revisão (4 commits docs)                                                                                           | ✱      |
-| 12:25 – 13:22 | Foundation (deps, ts, lint, prettier, CI workflows, README inicial, fixes Fase 0)                                                | ✱      |
-| 13:56 – 14:25 | Trello board + lockfile MCP workspace + skeleton MCP `run_test_case` + pre-commit hook                                           | C + ✱  |
-| 15:01 – 15:22 | Security fix `.env.example` + MCP `get_element_status`/`navigate_to`/Resources + 4 tools extras + Vitest tutorial                | C      |
-| 15:29 – 16:07 | Exploração kasa.live (3 commits exploration-notes, mapeamento home/login/calendario)                                             | A      |
-| 16:20 – 16:34 | Config `.env.local` + POMs (Home, Highlights, Calendar) + 5 componentes + fixtures + 8 E2E smoke + fixes login                   | B      |
-| 16:59 – 17:00 | apiClient + 5 contract tests + E2E batch 2 (12 testes) + bump timeout login                                                      | B      |
-| 17:20         | Visual regression (5) + a11y axe-core (5) + perf Lighthouse (3)                                                                  | B      |
-| 17:28 – 17:35 | 56 cenários BDD em batch (favoritar/busca/momentos/calendar/nav/responsividade/extras)                                           | A      |
-| 17:40 – 17:51 | 18 bugs documentados (BUG-001..018) + 10 melhorias + README índice geral                                                         | A      |
-| 18:01 – 18:41 | E2E batch 3 (6 testes) + fix CI Allure CLI + link Allure publicado + docs finais (progress-report, coverage-matrix, etc)         | B + ✱  |
-| 19:06 – 19:58 | Sync Trello via API + script `package.sh` + tutorial MCP polido + demo end-to-end (asciinema + GIFs Playwright contra kasa.live) | C + ✱  |
-| 20:02 – 20:20 | Cleanup (46 artefatos exploratórios + 6 scripts duplicados, Dockerfile real) + correções pós-review BDD/automação                | ✱      |
-| 21:14 – 21:56 | **Security suite** (23 testes XSS/headers/cookies/CORS/rate-limit) + 4 bugs novos (BUG-019..022) + 5 ADRs + refatorações finais  | A + B  |
-| 22:04 – 22:45 | Fixes BDD (vocabulário alinhado), MatchCard parsing, `.dockerignore`, link quebrado risks-and-mitigations, sync de contagens     | ✱      |
+| Janela        | Atividade                                                                                                                                                                                                               | Trilha |
+| ------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------ |
+| 11:52 – 12:20 | Spec design + revisão (4 commits docs)                                                                                                                                                                                  | ✱      |
+| 12:25 – 13:22 | Foundation (deps, ts, lint, prettier, CI workflows, README inicial, fixes Fase 0)                                                                                                                                       | ✱      |
+| 13:56 – 14:25 | Trello board + lockfile MCP workspace + skeleton MCP `run_test_case` + pre-commit hook                                                                                                                                  | C + ✱  |
+| 15:01 – 15:22 | Security fix `.env.example` + MCP `get_element_status`/`navigate_to`/Resources + 4 tools extras + Vitest tutorial                                                                                                       | C      |
+| 15:29 – 16:07 | Exploração kasa.live (3 commits exploration-notes, mapeamento home/login/calendario)                                                                                                                                    | A      |
+| 16:20 – 16:34 | Config `.env.local` + POMs (Home, Highlights, Calendar) + 5 componentes + fixtures + 8 E2E smoke + fixes login                                                                                                          | B      |
+| 16:59 – 17:00 | apiClient + 5 contract tests + E2E batch 2 (12 testes) + bump timeout login                                                                                                                                             | B      |
+| 17:20         | Visual regression (5) + a11y axe-core (5) + perf Lighthouse (3)                                                                                                                                                         | B      |
+| 17:28 – 17:35 | 56 cenários BDD em batch (favoritar/busca/momentos/calendar/nav/responsividade/extras) — expandidos a 61 em pré-submissão (+5 cenários: Google Calendar pré-conexão e revogação externa, responsividade comportamental) | A      |
+| 17:40 – 17:51 | 18 bugs documentados (BUG-001..018) + 10 melhorias + README índice geral                                                                                                                                                | A      |
+| 18:01 – 18:41 | E2E batch 3 (6 testes) + fix CI Allure CLI + link Allure publicado + docs finais (progress-report, coverage-matrix, etc)                                                                                                | B + ✱  |
+| 19:06 – 19:58 | Sync Trello via API + script `package.sh` + tutorial MCP polido + demo end-to-end (asciinema + GIFs Playwright contra kasa.live)                                                                                        | C + ✱  |
+| 20:02 – 20:20 | Cleanup (46 artefatos exploratórios + 6 scripts duplicados, Dockerfile real) + correções pós-review BDD/automação                                                                                                       | ✱      |
+| 21:14 – 21:56 | **Security suite** (23 testes XSS/headers/cookies/CORS/rate-limit) + 4 bugs novos (BUG-019..022) + 5 ADRs + refatorações finais                                                                                         | A + B  |
+| 22:04 – 22:45 | Fixes BDD (vocabulário alinhado), MatchCard parsing, `.dockerignore`, link quebrado risks-and-mitigations, sync de contagens                                                                                            | ✱      |
 
 ### Diferença vs spec original
 
@@ -110,7 +110,7 @@ A spec previa **~30h produtivas em 2 dias** com checkpoints diários. Entreguei 
 
 **Uso honesto de IA:** este projeto foi construído com auxílio intensivo de Claude Code (subagentes paralelos para batch de bugs/BDD, agente revisor para pre-submission). Eu coordeno escopo/prioridades e revisão crítica; os agentes executam as tasks que delego. A qualidade final passa pela minha revisão humana — bug reports questionáveis, evidências fracas, contagens divergentes foram caçados nas iterações de revisão (ex.: BUG-003 reclassificado para IMP-011, BUG-009 reescrito após reinvestigação visual em 2026-05-03).
 
-Os checkpoints da spec original (final dia 1: ≥6 bugs + 8 E2E + MCP esqueleto) foram atingidos por volta de 17:51 do dia 02. Checkpoint final (56 BDD + 68 auto + 21 bugs + 11 melhorias + MCP funcional + Allure publicado) atingido por volta de 22:45.
+Os checkpoints da spec original (final dia 1: ≥6 bugs + 8 E2E + MCP esqueleto) foram atingidos por volta de 17:51 do dia 02. Checkpoint final (61 BDD + 68 auto + 21 bugs + 11 melhorias + MCP funcional + Allure publicado) atingido por volta de 22:45.
 
 ---
 
@@ -130,7 +130,7 @@ Top 5 honesto, sem polimento:
 ## 6. Decisões técnicas relevantes
 
 - **Playwright como runner único** (E2E + API + Visual + A11y + Perf) — uma stack, um report (Allure), uma curva. Evita fragmentação típica de "Cypress pra E2E + Postman pra API + Percy pra visual + Pa11y pra a11y".
-- **BDD como documentação, não como runtime** — Gherkin em `.feature` arquivos para os 56 cenários (atende Tarefa 1 do PDF), automação usa `test.step('Given...')`. Sem o overhead de tradução cara entre `.feature` e código que o Cucumber impõe.
+- **BDD como documentação, não como runtime** — Gherkin em `.feature` arquivos para os 61 cenários (atende Tarefa 1 do PDF), automação usa `test.step('Given...')`. Sem o overhead de tradução cara entre `.feature` e código que o Cucumber impõe.
 - **MCP server em Node/TS** — mesma stack do resto do projeto; SDK oficial `@modelcontextprotocol/sdk`; transport stdio (padrão Claude Desktop, sem porta/auth).
 - **Login email/senha local em vez de Google OAuth** — viabilidade em 48h. OAuth é coberto manualmente.
 - **Allure publicado em GH Pages** (não só local) — entregável tem URL pública navegável. Resolvi quebra do action `simple-elf/allure-report-action` substituindo pela CLI Allure direta (commit `6ef3392`).
@@ -141,11 +141,24 @@ Top 5 honesto, sem polimento:
 
 ## 7. O que faria diferente com mais tempo
 
+### Tradeoff que assumi conscientemente — velocidade vs validação manual
+
+A entrega em uma sessão única (~11h wall-clock) priorizou **escopo amplo** e **rastreabilidade documental** sobre **validação manual exaustiva** de cada UX. Os efeitos visíveis disso:
+
+- **3 features com tag `@manual-validation`** (Favoritar times, Favoritar partidas, Melhores momentos — player) onde os cenários BDD descrevem o fluxo esperado mas não foram validados visualmente em sessão logada com clicks reais. Documentei explicitamente em vez de inflar a contagem com cenários "como se" — preferência por honestidade sobre métrica.
+- **Modais de partidas FUTURAS** não capturados na exploração (só finalizadas, que vêm vazias — BUG-011). Asserts dependem de inspeção humana dos selectors antes de virar specs robustos em `automation/tests/e2e/`.
+- **`/perfil` autenticado e fluxo de exclusão de conta** (IMP-004) não validados ao vivo — proposta baseada em padrões de mercado e LGPD.
+
+**Próxima vez:** dedicaria 1h fixo de "validação manual logada" antes de escrever qualquer cenário sobre features post-login. Isso elimina tags `@manual-validation` e fortalece automação sem custo de retrabalho.
+
+### Itens não-críticos que ficaram fora
+
 - **Sincronização automática Trello via API** (hoje é manual mas disciplinada — 1. cria `.md`, 2. cria card, 3. links cruzados). Em 48h o custo > benefício.
 - **Cobertura mobile mais profunda** via real devices (BrowserStack ou similar) — hoje uso emulação Chromium com viewports.
 - **Mutation testing** (Stryker) nos testes para validar a qualidade dos asserts, não só a execução.
 - **Testes contra ambiente PROD distinto de DEV** assim que o time disponibilizar (BUG-001 expõe o problema de DEV em PROD).
 - **Vídeo demo melhor produzido** (com cortes, narração, GIF do MCP em ação) — o atual é Loom direto.
+- **Auditoria pré-entrega de 1h** com checklist (contagens batem em todos os docs, datas corretas, cross-references íntegros) — em pré-submissão 2026-05-03 detectei e corrigi 91→77 testes (eu inflei sem perceber), data postdatada no relatório, 4 IMPs sem evidência (BUG-005 cruzado), e BUG-011 com 3 PNGs idênticos (recapturei 3 modais distintos). Isso virou rotina obrigatória.
 
 ---
 
@@ -153,13 +166,13 @@ Top 5 honesto, sem polimento:
 
 | Eixo      | Pleno S1 (PDF) | Entregue | Delta     |
 | --------- | -------------- | -------- | --------- |
-| Casos BDD | 40             | **56**   | **+40%**  |
+| Casos BDD | 40             | **61**   | **+52%**  |
 | Bugs      | 12             | **21**   | **+75%**  |
 | Melhorias | 8              | **11**   | **+38%**  |
-| Automação | 30-32          | **68**   | **+112%** |
+| Automação | 30-32          | **77**   | **+140%** |
 | Tools MCP | 3              | **7**    | **+133%** |
 
-**Distribuição de bugs por severidade:** 3 Critical · 5 High · 8 Medium · 5 Low (= 21).
+**Distribuição de bugs por severidade (recalibrada 2026-05-03):** 2 Critical · 5 High · 7 Medium · 7 Low (= 21). Recalibragens: BUG-008/009/012 Medium→Low (design debt / só DOM / Needs revalidation), BUG-021 High→Medium (burst de 50 reqs não conclusivo), BUG-014 Critical→High (axe-core retornou 0 nodes em 2026-05-03; status `Likely Fixed`).
 
 ### Diferenciais não-mensuráveis pelo PDF
 

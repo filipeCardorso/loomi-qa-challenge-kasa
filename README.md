@@ -7,9 +7,11 @@
 ```bash
 nvm use && npm install
 npx playwright install --with-deps
-npm run test:smoke   # 9 testes verdes em ~17s
+npm run test:smoke   # 7 testes verdes em ~17s
 npm run report:allure
 ```
+
+> **Suite completa requer credenciais.** Os specs que dependem de login (`loggedInPage` fixture) precisam de `.env.local` com `KASA_USER_EMAIL` / `KASA_USER_PASSWORD`. Sem isso, `test:smoke` e a maioria de `test:bugs` rodam normalmente (anônimos); apenas BUG-022 (cookie auth) é skippado. Template em `.env.example`.
 
 ## Links principais
 
@@ -21,21 +23,21 @@ npm run report:allure
 
 ## Inventário de entregáveis
 
-| #   | Tarefa             | Pasta                          | Métrica entregue                                       | Status |
-| --- | ------------------ | ------------------------------ | ------------------------------------------------------ | ------ |
-| 1   | Casos de Teste BDD | [`test-cases/`](test-cases/)   | **56** cenários (PT-BR Gherkin)                        | ✅     |
-| 2   | Automação          | [`automation/`](automation/)   | **68** testes (E2E + API + Visual + A11y + Perf + Sec) | ✅     |
-| 3   | Bugs e Melhorias   | [`bug-reports/`](bug-reports/) | **21** bugs + **11** melhorias (Trello + repo)         | ✅     |
-| 4   | MCP Server         | [`mcp-server/`](mcp-server/)   | **7** tools + 31 testes Vitest + tutorial              | ✅     |
+| #   | Tarefa             | Pasta                          | Métrica entregue                                | Status |
+| --- | ------------------ | ------------------------------ | ----------------------------------------------- | ------ |
+| 1   | Casos de Teste BDD | [`test-cases/`](test-cases/)   | **61** cenários (PT-BR Gherkin)                 | ✅     |
+| 2   | Automação          | [`automation/`](automation/)   | **77** testes (55 contract + 22 bug-regression) | ✅     |
+| 3   | Bugs e Melhorias   | [`bug-reports/`](bug-reports/) | **21** bugs + **11** melhorias (Trello + repo)  | ✅     |
+| 4   | MCP Server         | [`mcp-server/`](mcp-server/)   | **7** tools + 31 testes Vitest + tutorial       | ✅     |
 
 ## Critérios atendidos vs Pleno S1
 
 | Critério                | Pleno S1 (PDF) | Entregue | Delta     |
 | ----------------------- | -------------- | -------- | --------- |
-| Casos BDD               | 40             | **56**   | **+40%**  |
+| Casos BDD               | 40             | **60**   | **+50%**  |
 | Bugs                    | 12             | **21**   | **+75%**  |
 | Melhorias               | 8              | **11**   | **+38%**  |
-| Automação               | 30-32          | **68**   | **+112%** |
+| Automação               | 30-32          | **77**   | **+140%** |
 | Tools MCP (mandatórias) | 3              | 3        | ✅        |
 | Tools MCP (totais)      | —              | **7**    | **+133%** |
 
@@ -43,7 +45,7 @@ npm run report:allure
 
 - 🌐 Allure Report **publicado em URL pública** (GitHub Pages)
 - 🤖 MCP Server com 4 tools extras + 31 testes Vitest + tutorial reproduzível
-- 📈 6 camadas de teste: E2E + API + Visual regression + A11y (WCAG AA) + Performance (Lighthouse) + Security (XSS/headers/cookies/CORS/rate-limit)
+- 📈 7 camadas de teste: 6 de contrato (E2E + API + Visual regression + A11y WCAG AA + Performance Lighthouse + Security) **+ 1 de regressão-por-bug** (`automation/tests/bugs/` com 21 specs 1:1 mapeados aos `.md` em `bug-reports/bugs/`, reporter custom que dump trace/screenshot/video em falha)
 - 🐳 Docker pronto para uso (`docker/Dockerfile`)
 - 🔄 CI/CD GitHub Actions com smoke gate em PR + nightly multi-browser
 - 📚 Documentação ponta-a-ponta em [`docs/`](docs/) (8 documentos)
@@ -51,25 +53,28 @@ npm run report:allure
 
 ## Como rodar cada peça
 
-| O que                      | Comando                                  |
-| -------------------------- | ---------------------------------------- |
-| Smoke (9 testes, ≤20s)     | `npm run test:smoke`                     |
-| E2E completo               | `npm run test:e2e`                       |
-| API contract               | `npm run test:api`                       |
-| Visual regression          | `npm run test:visual`                    |
-| Acessibilidade             | `npm run test:a11y`                      |
-| Performance                | `npm run test:perf`                      |
-| Security                   | `npm run test:security`                  |
-| MCP Server (build + start) | `npm run mcp:build && npm run mcp:start` |
-| Allure local               | `npm run report:allure`                  |
-| Suite completa             | `npm test`                               |
+| O que                             | Comando                                  |
+| --------------------------------- | ---------------------------------------- |
+| Smoke (7 testes, ≤20s)            | `npm run test:smoke`                     |
+| E2E completo                      | `npm run test:e2e`                       |
+| API contract                      | `npm run test:api`                       |
+| Visual regression                 | `npm run test:visual`                    |
+| Acessibilidade                    | `npm run test:a11y`                      |
+| Performance                       | `npm run test:perf`                      |
+| Security                          | `npm run test:security`                  |
+| **Bug regression** (21 specs 1:1) | `npm run test:bugs`                      |
+| Bug específico (ex.: BUG-002)     | `npm run test:bug -- @bug-002`           |
+| MCP Server (build + start)        | `npm run mcp:build && npm run mcp:start` |
+| Allure local                      | `npm run report:allure`                  |
+| Suite completa                    | `npm test`                               |
 
 ## Estrutura do repo
 
 ```
 .
-├── automation/          # Trilha B — POMs + 68 testes Playwright (E2E/API/visual/a11y/perf/security)
-├── test-cases/          # Trilha A — 56 cenários BDD em PT-BR Gherkin
+├── automation/          # Trilha B — POMs + 77 testes Playwright (6 camadas de contrato + 1 de bug-regression)
+│   └── tests/bugs/      # 21 specs 1:1 com bug-reports/bugs/ (reporter custom auto-evidence)
+├── test-cases/          # Trilha A — 60 cenários BDD em PT-BR Gherkin
 ├── bug-reports/         # Trilha A — 21 bugs + 11 melhorias estruturados
 ├── mcp-server/          # Trilha C — MCP server Node/TS com 7 tools + Vitest
 ├── docs/                # 8 documentos: arquitetura, relatório, matriz, journey, etc

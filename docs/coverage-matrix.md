@@ -1,26 +1,28 @@
 # Matriz de Cobertura — kasa.live
 
-**Filipe Gabriel · 2026-05-04**
+**Filipe Gabriel · 2026-05-02 (entrega) · revisado 2026-05-03**
 
-Cruzamento funcionalidade × tipo de teste. Os números refletem o estado entregue (56 BDD + 68 automatizados).
+Cruzamento funcionalidade × tipo de teste. Os números refletem o estado entregue (60 BDD + 77 automatizados, recalibrado 2026-05-03).
 
 ---
 
 ## 1. Funcionalidade × tipo de teste
 
-| Funcionalidade         |    BDD |    E2E |   API | Visual |  A11y |  Perf | Security | Auto total |
-| ---------------------- | -----: | -----: | ----: | -----: | ----: | ----: | -------: | ---------: |
-| Favoritar times        |      8 |      5 |     1 |      1 |     1 |     – |        – |      **8** |
-| Favoritar partidas     |      8 |      5 |     1 |      1 |     1 |     – |        – |      **8** |
-| Buscar partidas        |     10 |      6 |     2 |      1 |     1 |     1 |        9 |     **20** |
-| Melhores momentos      |      7 |      4 |     1 |      1 |     1 |     1 |        – |      **8** |
-| Google Calendar        |      5 |    2\* |     – |      – |     – |     – |        – |      **2** |
-| Navegação / home       |      4 |      2 |     – |      1 |     1 |     1 |        4 |      **9** |
-| Responsividade         |      3 |      1 |     – |      – |     – |     – |        – |      **1** |
-| Erro / edge cases      |      6 |      – |     – |      – |     – |     – |        – |      **0** |
-| Não-core (descobertos) |      5 |      2 |     – |      – |     – |     – |        – |      **2** |
-| Auth / cookies         |      – |      – |     – |      – |     – |     – |       10 |     **10** |
-| **TOTAL**              | **56** | **27** | **5** |  **5** | **5** | **3** |   **23** |     **68** |
+| Funcionalidade         |    BDD |    E2E |   API | Visual |  A11y |  Perf | Security |   Bugs | Auto total |
+| ---------------------- | -----: | -----: | ----: | -----: | ----: | ----: | -------: | -----: | ---------: |
+| Favoritar times        |      8 |      3 |     1 |      1 |     1 |     – |        – |      – |      **6** |
+| Favoritar partidas     |      8 |      3 |     1 |      1 |     1 |     – |        – |      1 |      **7** |
+| Buscar partidas        |     10 |      6 |     3 |      1 |     – |     1 |        4 |      1 |     **16** |
+| Melhores momentos      |      7 |      4 |     1 |      1 |     – |     1 |        – |      1 |      **8** |
+| Google Calendar        |      7 |    2\* |     – |      – |     – |     – |        – |      – |      **2** |
+| Navegação / home       |      4 |      8 |     – |      1 |     1 |     1 |        2 |      – |     **13** |
+| Responsividade         |      6 |      1 |     – |      – |     – |     – |        – |      – |      **1** |
+| Erro / edge cases      |      6 |      – |     – |      – |     – |     – |        – |      – |      **0** |
+| Não-core (descobertos) |      5 |      4 |     – |      – |     – |     – |        – |      – |      **4** |
+| Auth / cookies         |      – |      – |     – |      – |     – |     – |        6 |      1 |      **7** |
+| Bugs (regression)      |      – |      – |     – |      – |     – |     – |        – |     18 |     **18** |
+| A11y / SEO / Sec       |      – |      – |     – |      – |     – |     – |        – |      – |      **0** |
+| **TOTAL**              | **61** | **31** | **8** |  **5** | **2** | **3** |   **12** | **22** |     **83** |
 
 \* OAuth real é manual (decisão deliberada — risco R3 da spec). E2E cobre apenas iniciação do flow.
 
@@ -37,7 +39,7 @@ Site externo, sem acesso ao backend → estrutura em diamante:
      Smoke (subset E2E)                  (10 testes — não soma no total)
 ```
 
-**Total: 68 testes automatizados** (vs 30-32 do Pleno S1 → +112%). Smoke é subset do E2E e não é contado no total.
+**Total: 77 testes automatizados** (55 contract + 22 bug-regression). Vs 30-32 do Pleno S1 → +140%. Smoke (10 testes) é subset do E2E e não é contado no total.
 
 ---
 
@@ -130,7 +132,7 @@ Subset de E2E que roda no PR gate (`ci.yml`, ≤5min):
 | BUG-012 (calendário vista semanal 3 dias) | Calendário                | E2E calendário + responsividade      |
 | BUG-013/014/015/016 (a11y)                | Transversal               | A11y axe-core 5 testes               |
 | BUG-017 (sitemap.xml)                     | SEO                       | API                                  |
-| BUG-018 (Lighthouse Perf 41)              | Home                      | Perf Lighthouse                      |
+| BUG-018 (Lighthouse Perf 63 + CLS 0.705)  | Home                      | Perf Lighthouse + bugs/BUG-018       |
 | BUG-019 (security headers home)           | Transversal/Home          | Security `security-headers.spec.ts`  |
 | BUG-020 (API DEV sem HSTS/CSP)            | API                       | Security `security-headers.spec.ts`  |
 | BUG-021 (API sem rate limiting)           | API                       | Security `rate-limiting.spec.ts`     |
