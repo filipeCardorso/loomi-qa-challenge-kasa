@@ -7,7 +7,9 @@
 
 ## Contexto
 
-A Home apresenta Lighthouse Performance = **41** (BUG-018), bem abaixo do limiar saudável (>= 75). Métricas como LCP e TBT estão degradadas, impactando diretamente conversão, SEO (Core Web Vitals) e percepção de qualidade.
+A Home apresenta Lighthouse Performance = **63** (recaptura 2026-05-03; 41 na exploração inicial 2026-05-02 — ver BUG-018), bem abaixo do limiar saudável (≥ 80). Métrica dominante: **CLS = 0.705** (7× o limite WCAG 0.1), causada por imagens sem dimensões fixas e cards/banners entrando tardiamente.
+
+**Evidências:** ver [`bug-reports/evidence/IMP-006/cross-references.md`](../evidence/IMP-006/cross-references.md) — cross-reference com Lighthouse JSON completo, score-summary e screenshot do gauge de BUG-018.
 
 ## Problema observado
 

@@ -1,5 +1,7 @@
 # IMP-001 — Adicionar `data-testid` em elementos críticos
 
+> **Evidências:** ver [`bug-reports/evidence/IMP-001/cross-references.md`](../evidence/IMP-001/cross-references.md) — cross-reference com BUG-005 (`console-zero-testids.txt` mostrando 0/1161 elementos com data-testid).
+
 **Impacto:** Medium
 **Categoria:** Manutenibilidade
 **Esforço estimado:** M

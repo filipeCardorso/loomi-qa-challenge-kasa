@@ -1,0 +1,14 @@
+# BUG-006 — og:url vazio
+Capturado em: 2026-05-03T03:01:22.115Z
+URL inspecionada: https://www.kasa.live/
+
+## Tags <meta property="og:url"> encontradas no HTML servido
+Total: 1
+
+[0] <meta property="og:url" content=""/>
+
+## Comando equivalente para reproduzir
+curl -sL https://www.kasa.live/ | grep -oE '<meta[^>]*property="og:url"[^>]*>'
+
+## Conclusão
+BUG CONFIRMADO: pelo menos uma tag og:url está com content vazio.

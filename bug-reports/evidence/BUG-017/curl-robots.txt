@@ -1,0 +1,27 @@
+# Verificação adicional: robots.txt
+Capturado em: 2026-05-03T03:01:22.115Z
+
+## curl -i https://www.kasa.live/robots.txt
+HTTP/2 200 OK
+accept-ranges: bytes
+access-control-allow-origin: *
+age: 674170
+cache-control: public, max-age=0, must-revalidate
+content-disposition: inline; filename="robots.txt"
+content-length: 22
+content-type: text/plain; charset=utf-8
+date: Sun, 03 May 2026 03:01:22 GMT
+etag: "f77c87f977e0fcce05a6df46c885a129"
+last-modified: Sat, 25 Apr 2026 07:45:11 GMT
+server: Vercel
+strict-transport-security: max-age=63072000
+x-matched-path: /robots.txt
+x-vercel-cache: HIT
+x-vercel-id: gru1::t6fzm-1777777282251-0535b51a84ab
+
+----- BODY -----
+User-agent: *
+Allow: /
+
+## Análise
+Referência ao sitemap: AUSENTE — confirma falta de sitemap no projeto

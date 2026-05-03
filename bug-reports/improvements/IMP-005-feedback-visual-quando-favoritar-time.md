@@ -1,5 +1,7 @@
 # IMP-005 — Feedback visual ao favoritar time/partida
 
+> **Evidências:** ver [`bug-reports/evidence/IMP-005/cross-references.md`](../evidence/IMP-005/cross-references.md) — cross-reference com BUG-004 + verificação manual em Slow 3G.
+
 **Impacto:** Medium
 **Categoria:** UX
 **Esforço estimado:** S

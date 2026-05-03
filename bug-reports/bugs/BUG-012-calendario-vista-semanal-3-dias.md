@@ -1,12 +1,14 @@
 # BUG-012 — /calendario exibe apenas 3 dias na vista semanal (Sex/Sáb/Dom) em vez de 7
 
-**Severidade:** Medium
-**Prioridade:** P2
-**Status:** Open
-**Reproduzibilidade:** Sempre
-**Frequência observada:** Reproduzido em viewport 1440x900 e em larguras menores
+**Severidade:** Low
+**Prioridade:** P3
+**Status:** Needs revalidation (ver "Re-investigação 2026-05-03" abaixo)
+**Reproduzibilidade:** A re-investigar
+**Frequência observada:** Reportado na exploração inicial (2026-05-02); recaptura em 2026-05-03 não encontrou grade semanal renderizada — ver nota
 **Regressão?:** Desconhecido
 **Trello card:** https://trello.com/c/abMEy1yD
+
+> **Re-investigação 2026-05-03:** captura recente em `/calendario` (sessão anônima, viewport 1440x900) mostra a rota como **listagem de "Partidas finalizadas" em grid de 3 colunas de cards** (`evidence/BUG-009/screenshot-calendario-dedicado.png` antes de removida e `evidence/BUG-012/recapture-grid-vs-sidebar-2026-05-03.json`), não como uma grade calendário-semanal de 7 colunas. Os 8 labels de dia (`dom, seg, ter, qua, qui, sex, sáb`) capturados originalmente no `visible-day-labels.json` provavelmente vieram do mini-calendário do popover/datepicker do header, não da "grade principal". A alegação central deste bug (3 dias renderizam onde deveria ter 7) **provavelmente é falso positivo** ou refere-se a uma feature/visualização que não está mais ativa. Severidade rebaixada de Medium/P2 para Low/P3 e status mudado para `Needs revalidation` enquanto não se confirma se há toggle de vista semanal escondido (ex.: somente em estado autenticado ou em outra rota).
 
 ## Pré-condição
 
@@ -40,10 +42,12 @@
 
 ## Evidência
 
-- `docs/exploration-notes.md` §12 (cheiro S12 — vista semanal cortada)
-- `docs/site-snapshots/exploration/` (screenshot de /calendario mostrando apenas 3 colunas + DOM dump)
-- Screenshot real (2026-05-03): `bug-reports/evidence/BUG-012/screenshot-calendar-3-dias.png` — confirma que a grade principal mostra apenas Sex 01, Sáb 02 e Dom 03 ao invés de 7 dias da semana
-- Dump JSON dos labels de dia visíveis: `bug-reports/evidence/BUG-012/visible-day-labels.json` (a sidebar mini-calendário renderiza os 7 dias da semana corretamente; a grade principal não)
+- `docs/exploration-notes.md` §12 (cheiro S12 — vista semanal cortada) — exploração inicial 2026-05-02
+- `docs/site-snapshots/exploration/` (screenshot de /calendario + DOM dump da exploração inicial)
+- Screenshot da exploração: `bug-reports/evidence/BUG-012/screenshot-calendar-3-dias.png` — capturado em 2026-05-02 mostrando 3 dias na grade
+- Dump JSON dos labels visíveis (exploração inicial): `bug-reports/evidence/BUG-012/visible-day-labels.json` (8 labels capturados sem distinção de origem)
+- **Recaptura 2026-05-03 separando grid principal vs sidebar:** `bug-reports/evidence/BUG-012/recapture-grid-vs-sidebar-2026-05-03.json` — `gridLabelsCount: 0`, `sidebarLabelsCount: 15`. Confirma que os labels de dia vinham do mini-calendário do popover, não da grade principal (que não renderiza labels de dia em texto).
+- Reprodução: `node scripts/recapture-partials.mjs` (Playwright + DOM walking).
 
 ## Workaround conhecido
 

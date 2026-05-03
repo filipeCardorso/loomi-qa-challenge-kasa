@@ -1,5 +1,7 @@
 # IMP-004 — Confirmação antes de excluir conta
 
+> **Evidências:** ver [`bug-reports/evidence/IMP-004/cross-references.md`](../evidence/IMP-004/cross-references.md) — proposta de UX/compliance LGPD baseada em padrões de mercado (GitHub, Slack, Discord) e art. 18 IX.
+
 **Impacto:** High
 **Categoria:** UX
 **Esforço estimado:** S

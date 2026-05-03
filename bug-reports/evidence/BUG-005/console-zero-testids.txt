@@ -1,0 +1,22 @@
+# BUG-005 — Console output: zero data-testid
+Capturado em: 2026-05-03T03:01:22.115Z
+URL: https://www.kasa.live/
+
+## Comando reproduzido (DevTools console)
+> document.querySelectorAll('[data-testid]').length
+0
+
+## Variantes alternativas testadas (mesmo resultado: tudo zero)
+  document.querySelectorAll('[data-testid]').length = 0
+  document.querySelectorAll('[data-test]').length = 0
+  document.querySelectorAll('[data-cy]').length = 3
+  document.querySelectorAll('[data-qa]').length = 0
+  document.querySelectorAll('[data-test-id]').length = 0
+  document.querySelectorAll('[totalElements]').length = 1161
+  document.querySelectorAll('[ariaLabels]').length = 5
+  document.querySelectorAll('[buttons]').length = 72
+  document.querySelectorAll('[links]').length = 6
+
+## Conclusão
+BUG CONFIRMADO: zero data-testid em 1161 elementos no DOM.
+QA é forçada a usar aria-label (35 ocorrências para "Go to previous month" — ver BUG-002), texto visível ou classes CSS auto-geradas.

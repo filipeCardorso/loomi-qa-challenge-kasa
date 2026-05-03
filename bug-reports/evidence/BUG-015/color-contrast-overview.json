@@ -1,0 +1,33 @@
+{
+  "capturedAt": "2026-05-03T16:40:14.484Z",
+  "summary": [
+    {
+      "slug": "home",
+      "url": "https://www.kasa.live/",
+      "nodeCount": 2
+    },
+    {
+      "slug": "melhores-momentos",
+      "url": "https://www.kasa.live/melhores-momentos",
+      "nodeCount": 3
+    },
+    {
+      "slug": "calendario",
+      "url": "https://www.kasa.live/calendario",
+      "nodeCount": 2
+    },
+    {
+      "slug": "termos-de-uso",
+      "url": "https://www.kasa.live/termos-de-uso",
+      "nodeCount": 3
+    },
+    {
+      "slug": "politicas-de-privacidade",
+      "url": "https://www.kasa.live/politicas-de-privacidade",
+      "nodeCount": 4
+    }
+  ],
+  "totalNodes": 14,
+  "routesAffected": 5,
+  "routesTested": 5
+}

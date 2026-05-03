@@ -1,0 +1,36 @@
+{
+  "capturedAt": "2026-05-03T18:07:42.142Z",
+  "url": "https://www.kasa.live/",
+  "context": "Visita anônima sem qualquer consentimento prévio. Cookies e localStorage capturados imediatamente após networkidle.",
+  "hasCookieBanner": false,
+  "cookies": [
+    {
+      "name": "_ga",
+      "value": "GA1.1.464024098.1777831657",
+      "domain": ".kasa.live",
+      "path": "/",
+      "expires": 1812391656.649187,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "_ga_KERN92K795",
+      "value": "GS2.1.s1777831656$o1$g0$t1777831656$j60$l0$h0",
+      "domain": ".kasa.live",
+      "path": "/",
+      "expires": 1812391656.652115,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    }
+  ],
+  "localStorageKeys": [
+    "chakra-ui-color-mode"
+  ],
+  "localStorageSample": {
+    "chakra-ui-color-mode": "light"
+  },
+  "totalCookiesSet": 2,
+  "totalLocalStorageKeys": 1
+}

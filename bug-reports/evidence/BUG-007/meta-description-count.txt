@@ -1,0 +1,15 @@
+# BUG-007 — meta description duplicada
+Capturado em: 2026-05-03T03:01:22.115Z
+URL: https://www.kasa.live/
+
+## Comando para reproduzir
+curl -sL https://www.kasa.live/ | grep -oE '<meta[^>]*name="description"[^>]*>' | wc -l
+
+## Resultado
+Total de ocorrências de <meta name="description"> no <head>: 2
+
+[0] <meta name="description" content="O Kasa te ajuda a encontrar e assistir jogos de futebol. Aqui você consegue saber em qual canal assistir o jogo ao vivo e acompanhar o calendário do seu time favorito."/>
+[1] <meta name="description" content="O Kasa te ajuda a encontrar e assistir jogos de futebol. Aqui você consegue saber em qual canal assistir o jogo ao vivo e acompanhar o calendário do seu time favorito."/>
+
+## Conclusão
+BUG CONFIRMADO: existem 2 tags duplicadas.

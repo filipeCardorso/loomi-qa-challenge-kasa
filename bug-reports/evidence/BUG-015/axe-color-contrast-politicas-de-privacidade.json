@@ -1,0 +1,36 @@
+{
+  "capturedAt": "2026-05-03T16:40:14.481Z",
+  "url": "https://www.kasa.live/politicas-de-privacidade",
+  "route": "politicas-de-privacidade",
+  "axeRule": "color-contrast",
+  "impact": "serious",
+  "help": "Elements must meet minimum color contrast ratio thresholds",
+  "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=playwright",
+  "nodeCount": 4,
+  "nodes": [
+    {
+      "target": [".css-wpe2lc"],
+      "html": "<input placeholder=\"Dec 11, 2025\" class=\"chakra-input css-wpe2lc\" value=\"Hoje\">",
+      "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.52 (foreground color: #a3a3a3, background color: #ffffff, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1",
+      "impact": "serious"
+    },
+    {
+      "target": ["a[title=\"Partidas\"] > .css-0"],
+      "html": "<p class=\"chakra-text css-0\">Partidas</p>",
+      "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.31 (foreground color: #a3a3a3, background color: #f5f5f5, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1",
+      "impact": "serious"
+    },
+    {
+      "target": ["a[title=\"Melhores momentos\"] > .css-0"],
+      "html": "<p class=\"chakra-text css-0\">Melhores momentos</p>",
+      "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.31 (foreground color: #a3a3a3, background color: #f5f5f5, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1",
+      "impact": "serious"
+    },
+    {
+      "target": [".css-1ktwz1r"],
+      "html": "<p class=\"chakra-text css-1ktwz1r\">Ops</p>",
+      "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.39 (foreground color: #00ba48, background color: #f6f6f6, font size: 72.0pt (96px), font weight: bold). Expected contrast ratio of 3:1",
+      "impact": "serious"
+    }
+  ]
+}

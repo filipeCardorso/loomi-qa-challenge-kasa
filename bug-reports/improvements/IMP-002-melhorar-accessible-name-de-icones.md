@@ -9,6 +9,8 @@
 
 Diversos botões da interface são apenas ícones (favoritar, fechar modal, navegação de calendário, hambúrguer, voltar). Sem accessible name adequado, leitores de tela anunciam apenas "button" ou o conteúdo SVG, o que é registrado em BUG-014 (axe `button-name` critical) e relacionado a BUG-002 (`aria-label` "Go to previous month" duplicado 35x).
 
+**Evidências:** ver [`bug-reports/evidence/IMP-002/cross-references.md`](../evidence/IMP-002/cross-references.md) — cross-reference com axe-core JSONs de BUG-014/016 (30 botões sem nome + 2 links sociais sem nome) + screenshot do datepicker de BUG-002.
+
 ## Problema observado
 
 - Botões `<button>` sem texto, sem `aria-label` e sem `aria-labelledby`.

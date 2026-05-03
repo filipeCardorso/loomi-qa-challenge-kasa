@@ -1,0 +1,31 @@
+# BUG-008 — diff entre date_start= e date= no mesmo endpoint
+Capturado em: 2026-05-03T03:01:22.115Z
+Endpoint base: https://kasa-live.api.dev.loomi.com.br/api/1.0/matches/
+
+## Chamada A — query param "date_start"
+URL: https://kasa-live.api.dev.loomi.com.br/api/1.0/match/?status=NOTSTARTED&date_start=2026-05-03&with_channel=true
+Status: 200
+Tamanho do body: 69 bytes
+Tipo do conteúdo: object
+Possui chave "results"?: true
+
+## Chamada B — query param "date"
+URL: https://kasa-live.api.dev.loomi.com.br/api/1.0/match/?status=NOTSTARTED&date=2026-05-03&trending=true&with_channel=true
+Status: 200
+Tamanho do body: 69 bytes
+Tipo do conteúdo: object
+Possui chave "results"?: true
+
+## Análise
+- Status A vs B: IGUAL (200 vs 200)
+- Diferença de tamanho de payload: 0 bytes
+- Inconsistência confirmada se a API responde 200 para AMBOS os params com semânticas diferentes,
+  ou se aceita um e rejeita o outro — nos dois casos é falta de padronização.
+
+## Snapshot adicional dos requests reais (capturados via Network durante navegação na home)
+Ver bug-reports/evidence/BUG-001/network-har.json — buscar entradas com "date_start=" e "date=".
+
+## Reprodução manual (curl)
+curl -s 'https://kasa-live.api.dev.loomi.com.br/api/1.0/match/?status=NOTSTARTED&date_start=2026-05-03&with_channel=true' | head -c 500
+echo ''
+curl -s 'https://kasa-live.api.dev.loomi.com.br/api/1.0/match/?status=NOTSTARTED&date=2026-05-03&trending=true&with_channel=true' | head -c 500

@@ -1,0 +1,12 @@
+{
+  "url": "https://kasa-live.api.dev.loomi.com.br/api/1.0/match/?status=NOTSTARTED&date_start=2026-05-03&with_channel=true",
+  "status": 200,
+  "capturedAt": "2026-05-03T03:01:22.115Z",
+  "body": {
+    "count": 0,
+    "next": null,
+    "previous": null,
+    "results": [],
+    "current_page": 1
+  }
+}

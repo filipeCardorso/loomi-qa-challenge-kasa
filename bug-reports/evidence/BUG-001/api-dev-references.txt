@@ -1,0 +1,22 @@
+# BUG-001 — Referências à API DEV expostas em produção
+Capturado em: 2026-05-03T03:01:22.115Z
+Origem do request: https://www.kasa.live/ (build de produção)
+
+## Total de chamadas para *.api.* observadas via window.performance
+4
+
+## Distribuição
+- Para *.api.dev.*: 4
+- Para *.api.* (não dev): 0
+
+## URLs únicas (deduplicadas por path)
+https://kasa-live.api.dev.loomi.com.br/api/1.0/match/
+
+## Amostra das primeiras 10 URLs completas (com query params)
+https://kasa-live.api.dev.loomi.com.br/api/1.0/match/?status=INPLAY&with_channel=true&date_start=2026-05-03
+https://kasa-live.api.dev.loomi.com.br/api/1.0/match/?page=1&status=NOTSTARTED&with_channel=true&date_start=2026-05-03
+https://kasa-live.api.dev.loomi.com.br/api/1.0/match/?status=NOTSTARTED&date=2026-05-03&trending=true&with_channel=true
+https://kasa-live.api.dev.loomi.com.br/api/1.0/match/?page=1&ordering=DESC&status=ENDED&with_channel=true
+
+## Conclusão
+BUG CONFIRMADO: produção (https://www.kasa.live) consome API DEV.

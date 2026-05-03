@@ -1,0 +1,15 @@
+{
+  "capturedAt": "2026-05-03T18:07:42.218Z",
+  "url": "https://www.kasa.live/",
+  "context": "Inspeção do estado atual de tema. Chakra UI já está configurado (chave chakra-ui-color-mode em localStorage), mas não há toggle visível na UI.",
+  "localStorageColorMode": "light",
+  "computedTheme": {
+    "htmlDataTheme": "light",
+    "htmlClass": "",
+    "bodyBgColor": "rgb(255, 255, 255)",
+    "bodyColor": "rgb(0, 0, 0)",
+    "chakraColorMode": null,
+    "prefersColorScheme": "light"
+  },
+  "toggleVisible": false
+}

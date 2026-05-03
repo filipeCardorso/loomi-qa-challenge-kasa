@@ -1,8 +1,9 @@
-# BUG-008 — Inconsistência de query param na API: `date_start=` vs `date=` em chamadas similares
+# BUG-008 — Inconsistência de contrato na API: `date_start=` vs `date=` em chamadas similares (design debt)
 
-**Severidade:** Medium
-**Prioridade:** P2
+**Severidade:** Low
+**Prioridade:** P3
 **Status:** Open
+**Categoria:** Design debt / DX (não bug funcional — ver `Resultado obtido`)
 **Reproduzibilidade:** Sempre
 **Frequência observada:** Múltiplos endpoints capturados — alguns usam `?date_start=YYYY-MM-DD`, outros usam `?date=YYYY-MM-DD` para a mesma semântica
 **Regressão?:** Desconhecido
@@ -30,8 +31,9 @@
 ## Resultado obtido
 
 - O frontend envia ora `?date_start=YYYY-MM-DD`, ora `?date=YYYY-MM-DD` para chamadas que aparentam ter a mesma semântica.
-- Indica falta de padronização do design de API e/ou contrato confuso entre frontend e backend.
-- Risco: ao adicionar um novo endpoint, dev novo escolhe "qual dos dois" arbitrariamente; bugs de filtro silenciosos quando o backend ignora o param desconhecido.
+- **Validação adicional (2026-05-03):** ambos os parâmetros foram testados via `curl` no mesmo endpoint `/api/1.0/match/?status=ENDED` e retornam `HTTP 200` com **estrutura de resposta idêntica** (`count`, `next`, `previous`, `results`), confirmando que **não é bug funcional** — é inconsistência de contrato (design debt). Ver `evidence/BUG-008/curl-date-start.json`, `curl-date.json` e `diff.txt`.
+- Por isso a severidade foi rebaixada para **Low/P3**: o impacto é em DX/manutenção (não em comportamento percebido pelo usuário).
+- Risco: ao adicionar um novo endpoint, dev novo escolhe "qual dos dois" arbitrariamente; eventual divergência futura entre os aliases pode introduzir bugs silenciosos de filtro.
 
 ## Ambiente
 
@@ -63,6 +65,7 @@
 
 ## Impacto no usuário
 
-- Indireto: inconsistência aumenta probabilidade de bugs futuros em filtros de data (resultados errados para "partidas a partir de X").
+- **Direto: nenhum hoje** (ambos params funcionam — confirmado em 2026-05-03).
+- Indireto: inconsistência aumenta probabilidade de bugs futuros em filtros de data se um dos aliases for descontinuado sem migração.
 - DX/QA: complica documentação, contract testing e onboarding de devs.
 - Performance: potencial de cache HTTP/CDN ineficiente quando query params variam por endpoint.

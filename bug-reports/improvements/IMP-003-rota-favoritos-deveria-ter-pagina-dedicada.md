@@ -1,5 +1,7 @@
 # IMP-003 — Rota `/favoritos` deveria ter página dedicada
 
+> **Evidências:** ver [`bug-reports/evidence/IMP-003/cross-references.md`](../evidence/IMP-003/cross-references.md) — cross-reference com BUG-004 (GIF + screenshots do fallback silencioso) e BUG-010 (title genérico).
+
 **Impacto:** Medium
 **Categoria:** UX
 **Esforço estimado:** M

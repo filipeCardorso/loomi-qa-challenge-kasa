@@ -1,0 +1,24 @@
+{
+  "capturedAt": "2026-05-03T16:39:53.472Z",
+  "url": "https://www.kasa.live/",
+  "route": "home",
+  "axeRule": "color-contrast",
+  "impact": "serious",
+  "help": "Elements must meet minimum color contrast ratio thresholds",
+  "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=playwright",
+  "nodeCount": 2,
+  "nodes": [
+    {
+      "target": [".css-wpe2lc"],
+      "html": "<input placeholder=\"Apr 30, 2026\" class=\"chakra-input css-wpe2lc\" value=\"Hoje\">",
+      "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.52 (foreground color: #a3a3a3, background color: #ffffff, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1",
+      "impact": "serious"
+    },
+    {
+      "target": [".css-1ruz7og > .css-0"],
+      "html": "<p class=\"chakra-text css-0\">Melhores momentos</p>",
+      "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.31 (foreground color: #a3a3a3, background color: #f5f5f5, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1",
+      "impact": "serious"
+    }
+  ]
+}

@@ -1,10 +1,10 @@
 # BUG-014 — A11y: violation button-name (impact=critical) em home anônima e logada
 
-**Severidade:** Critical
-**Prioridade:** P0
-**Status:** Open
-**Reproduzibilidade:** Sempre
-**Frequência observada:** 2/2 contextos testados (anônimo e logado)
+**Severidade:** High (rebaixado de Critical em 2026-05-03 — recaptura mostra `nodeCount: 0` na home anônima desktop; downgrade pra High enquanto aguarda validação logado + mobile pra confirmar Closed)
+**Prioridade:** P1 (rebaixado de P0 pelo mesmo motivo)
+**Status:** Likely Fixed — needs manual revalidation (run automatizado em 2026-05-03 via `automation/tests/bugs/BUG-014-a11y-button-name.spec.ts` retornou `nodeCount: 0` na home anônima; necessário revalidar logado e em viewport mobile antes de fechar)
+**Reproduzibilidade:** Era 100% em 2026-05-02; em 2026-05-03 não-reproduzido na home desktop anônima
+**Frequência observada:** 30 nós em 2026-05-02 (anônimo); 0 em 2026-05-03 (anônimo desktop)
 **Regressão?:** Desconhecido
 **Trello card:** https://trello.com/c/zAqivo5E
 

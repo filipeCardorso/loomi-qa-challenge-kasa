@@ -17,6 +17,14 @@ Inspecionando o `localStorage`, encontra-se a chave `chakra-ui-color-mode` — s
 - Componentes Chakra renderizam só com tokens de tema light (potencial bug visual ao forçar `dark` no devtools).
 - Usuários em ambientes escuros (uso noturno) sofrem com brilho excessivo.
 
+**Evidência capturada 2026-05-03 (home anônima):**
+
+- `localStorage["chakra-ui-color-mode"]` = `"light"` ← Chakra está configurado, falta UI
+- Toggle de tema visível: **não** (busca por `aria-label*="dark|tema|theme"` retornou zero matches)
+- Computed body bg-color e text-color confirmando tema light ativo
+- Arquivos: [`bug-reports/evidence/IMP-009/localstorage-color-mode.json`](../evidence/IMP-009/localstorage-color-mode.json) + [`screenshot-home-light-mode.png`](../evidence/IMP-009/screenshot-home-light-mode.png)
+- Reprodução: `node scripts/capture-imp-evidence.mjs`
+
 ## Sugestão
 
 1. **Toggle no header** (ícone sol/lua) e/ou no menu do perfil.

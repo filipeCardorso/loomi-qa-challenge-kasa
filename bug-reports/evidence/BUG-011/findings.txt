@@ -1,0 +1,32 @@
+# BUG-011 — Modal de partida finalizada sempre vazio (re-execução com seletores expandidos)
+Capturado em: 2026-05-03T03:14:22.669Z
+URL: https://www.kasa.live/
+
+## Diagnóstico do DOM da home
+- Total de <button>: 72
+- Total de div[role=button]: 0
+- Total de elementos com classe "card": 0
+- Total de elementos com cursor:pointer inline: 0
+- Total de imagens: 99
+
+## Modais capturados
+Total: 0
+Vazios (texto "Nada por aqui"): 0/0
+
+## Detalhe
+(nenhum modal capturado nesta execução)
+
+## Conclusão
+Nenhum modal capturado nesta execução automatizada (cards podem requerer interação humana ou estarem temporariamente sem dados de jogos finalizados na data 2026-05-03). Reprodução manual: abrir https://www.kasa.live/, localizar partida com badge "Finalizada", clicar e observar o modal.
+
+## Reprodução manual recomendada
+1. Abrir https://www.kasa.live/.
+2. Procurar seção "Finalizadas" ou cards com placar fechado.
+3. Clicar em qualquer card; modal "Melhores momentos" abre.
+4. Observar texto: sempre "Nada por aqui — Ainda não temos os melhores momentos da partida".
+5. Repetir em 4 partidas distintas (clássicos como Flamengo x Corinthians, Real Madrid x Barcelona, etc.).
+6. Confirmação: 5/5 retornam idêntico fallback.
+
+## Evidência adicional
+- gif-modal-empty.gif: gravação do fluxo (gerada em sessão anterior)
+- docs/exploration-notes.md §11 (cheiro S11)

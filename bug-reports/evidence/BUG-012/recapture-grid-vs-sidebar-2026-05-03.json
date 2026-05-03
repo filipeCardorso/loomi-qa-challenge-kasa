@@ -1,0 +1,67 @@
+{
+  "capturedAt": "2026-05-03T16:45:40.576Z",
+  "url": "https://www.kasa.live/",
+  "gridLabels": [],
+  "sidebarLabels": [
+    "domdomingo",
+    "dom",
+    "domingo",
+    "seg",
+    "ter",
+    "terça-feira",
+    "qua",
+    "quarta-feira",
+    "qui",
+    "quinta-feira",
+    "sex",
+    "sexta-feira",
+    "sabsábado",
+    "sab",
+    "sábado"
+  ],
+  "gridLabelsCount": 0,
+  "sidebarLabelsCount": 15,
+  "rawGridSample": [],
+  "rawSidebarSample": [
+    {
+      "tag": "TH",
+      "text": "domdomingo",
+      "classes": "rdp-head_cell"
+    },
+    {
+      "tag": "SPAN",
+      "text": "dom",
+      "classes": ""
+    },
+    {
+      "tag": "SPAN",
+      "text": "domingo",
+      "classes": "rdp-vhidden"
+    },
+    {
+      "tag": "SPAN",
+      "text": "seg",
+      "classes": ""
+    },
+    {
+      "tag": "SPAN",
+      "text": "ter",
+      "classes": ""
+    },
+    {
+      "tag": "SPAN",
+      "text": "terça-feira",
+      "classes": "rdp-vhidden"
+    },
+    {
+      "tag": "SPAN",
+      "text": "qua",
+      "classes": ""
+    },
+    {
+      "tag": "SPAN",
+      "text": "quarta-feira",
+      "classes": "rdp-vhidden"
+    }
+  ]
+}

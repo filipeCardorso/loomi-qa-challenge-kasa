@@ -1,5 +1,7 @@
 # IMP-007 — Suporte a i18n (EN/ES)
 
+> **Evidências:** ver [`bug-reports/evidence/IMP-007/cross-references.md`](../evidence/IMP-007/cross-references.md) — cross-reference com BUG-002 (aria-label em inglês num site pt-BR, validado 2026-05-03).
+
 **Impacto:** Low
 **Categoria:** UX
 **Esforço estimado:** L

@@ -1,4 +1,4 @@
-# BUG-018 — Performance: Lighthouse score 41 na home (vs 95 em /melhores-momentos, 97 em /termos-de-uso)
+# BUG-018 — Performance: Lighthouse score 63 na home (CLS 0.705 — vs 95 em /melhores-momentos, 97 em /termos-de-uso)
 
 **Severidade:** Medium
 **Prioridade:** P2
@@ -31,11 +31,11 @@
 
 ## Resultado obtido
 
-- **Home (/):** Performance Score = **41** (vermelho).
+- **Home (/):** Performance Score = **63** (laranja, abaixo do mínimo aceitável de 80). Score original capturado em 2026-05-02 era 41; recaptura em 2026-05-03 (Lighthouse 13.2.0, desktop, throttling simulate) registrou 63 — variação esperada por throttling/condições de rede, mas em ambas execuções abaixo de 80.
 - **/melhores-momentos:** Performance Score = 95 (verde).
 - **/termos-de-uso:** Performance Score = 97 (verde).
-- A discrepância de >50 pontos entre a home e as outras rotas indica problema específico da home (possivelmente carregamento pesado de carrossel de jogos, imagens não otimizadas, JS de terceiros, vídeos auto-load).
-- Métricas afetadas (esperadas): LCP alto, TBT alto, possivelmente CLS por imagens sem dimensões.
+- A discrepância de >30 pontos entre a home e as outras rotas indica problema específico da home (possivelmente carregamento pesado de carrossel de jogos, imagens não otimizadas, JS de terceiros, vídeos auto-load).
+- **Métrica crítica observada:** CLS = **0.705** (limite vermelho ≥ 0.25 — neste caso 2.8× o limite). LCP 1.9s e TBT 10ms estão OK; o problema dominante é layout shift, provavelmente por imagens sem dimensões fixas e cards/banners que entram tardiamente.
 
 ## Ambiente
 

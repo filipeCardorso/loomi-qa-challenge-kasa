@@ -1,0 +1,26 @@
+# BUG-017 — sitemap.xml inexistente
+Capturado em: 2026-05-03T03:01:22.115Z
+
+## curl -i https://www.kasa.live/sitemap.xml
+HTTP/2 404 Not Found
+access-control-allow-origin: *
+age: 674165
+cache-control: public, max-age=0, must-revalidate
+content-disposition: inline; filename="404"
+content-encoding: br
+content-type: text/html; charset=utf-8
+date: Sun, 03 May 2026 03:01:22 GMT
+etag: W/"33388b35c23b2fee4d3b2081c4e2d9e0"
+last-modified: Sat, 25 Apr 2026 07:45:16 GMT
+server: Vercel
+strict-transport-security: max-age=63072000
+transfer-encoding: chunked
+x-matched-path: /404
+x-vercel-cache: HIT
+x-vercel-id: gru1::t6fzm-1777777282233-e522b3f45e1f
+
+----- BODY (primeiros 2000 chars) -----
+<!DOCTYPE html><html lang="pt-BR"><head><meta charSet="utf-8"/><title>Kasa.Live - Página não encontrada.</title><meta name="description" content=""/><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/><link rel="preload" as="image" href="/_next/static/media/playstore.6bc4fe22.svg"/><link rel="preload" as="image" href="/_next/static/media/appstore.600dc286.svg"/><meta name="next-head-count" content="6"/><meta charSet="uf-8"/><meta name="robots" content="index,follow"/><link rel="apple-touch-icon" sizes="32x32" href="../assets/favicons/logo-s.svg"/><link rel="apple-touch-icon" href="../assets/favicons/logo-s.svg"/><link rel="apple-touch-icon" sizes="76x76" href="../assets/favicons/logo-s.svg"/><link rel="apple-touch-icon" sizes="120x120" href="../assets/favicons/logo-s.svg"/><link rel="apple-touch-icon" sizes="152x152" href="../assets/favicons/logo-s.svg"/><link rel="icon" type="image/png" sizes="32x32" href="../assets/favicons/logo-s.svg"/><meta name="google-site-verification" content="ekD90_UZzbB1BsP-mox9Vj03no_a5wshlF958x5rToY"/><link rel="icon" type="image/png" sizes="16x16" href="../assets/logo-s.svg"/><meta name="msapplication-TileColor" content="#da532c"/><meta name="theme-color" content="#ffffff"/><meta name="description" content="O Kasa te ajuda a encontrar e assistir jogos de futebol. Aqui você consegue saber em qual canal assistir o jogo ao vivo e acompanhar o calendário do seu time favorito."/><meta property="og:url" content=""/><meta property="og:type" content="website"/><meta property="og:title" content="Kasa.Live - Encontre o Jogo"/><meta property="og:description" content="O Kasa te ajuda a encontrar e assistir jogos de futebol. Aqui você consegue saber em qual canal assistir o jogo ao vivo e acompanhar o calendário do seu time favorito."/><meta property="og:image" content="https://kasalive-api-stage.s3.amazonaws.com/og-cover-full.png"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:title" 
+
+## Conclusão
+Status code: 404 → BUG CONFIRMADO (sitemap inexistente)

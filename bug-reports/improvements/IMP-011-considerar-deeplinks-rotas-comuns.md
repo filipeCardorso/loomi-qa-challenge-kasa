@@ -4,7 +4,7 @@
 **Categoria:** UX / Discoverability
 **Esforço:** S (pequeno — adicionar redirects no `next.config.js`)
 **Status:** Open
-**Trello card:** https://trello.com/c/YZHQQrBF (card original do BUG-003 reclassificado)
+**Trello card:** https://trello.com/c/OaSXIQ4k (card dedicado do IMP-011; o card original BUG-003 https://trello.com/c/YZHQQrBF foi arquivado em 2026-05-03)
 
 ## Contexto
 

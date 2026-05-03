@@ -1,12 +1,14 @@
-# BUG-021 — Segurança: API DEV sem rate limiting visível (50/50 requests paralelas → 200)
+# BUG-021 — Segurança: API DEV sem rate limiting visível em burst de 50 reqs (sinal de risco — burden of proof requer teste maior)
 
-**Severidade:** High
-**Prioridade:** P1
-**Status:** Open
-**Reproduzibilidade:** Sempre
+**Severidade:** Medium
+**Prioridade:** P2
+**Status:** Open (a confirmar com teste de carga)
+**Reproduzibilidade:** Sempre (no escopo do teste de 50 reqs)
 **Frequência observada:** 50/50 requests paralelas a `/api/1.0/match/?status=ENDED&page=1` retornaram 200 OK
 **Regressão?:** Desconhecido
 **Trello card:** https://trello.com/c/DFaX3goR
+
+> **Limite do escopo do teste:** o burst de 50 reqs paralelas pode ser absorvido por buffers/queue mesmo em APIs com rate limiting configurado (ex.: 60/min). A ausência de 429 em 50 reqs é **sinal de risco**, não prova definitiva. Para evidência conclusiva, executar burst de 500-1000 reqs ou consultar logs do servidor. Severidade rebaixada de High/P1 para Medium/P2 em 2026-05-03 enquanto a evidência não é ampliada.
 
 ## Pré-condição
 
@@ -36,10 +38,11 @@
          (status counts: {"200":50})
   ```
 
-- Sem rate limiting → endpoint sujeito a:
+- Em ausência de rate limiting confirmado, endpoint estaria sujeito a:
   1. **Scraping massivo** (clonar todo o catálogo de partidas/times/campeonatos).
   2. **Negação de serviço** de baixo custo (1 atacante consegue saturar workers gunicorn).
   3. **Brute force** em endpoints de autenticação (caso o mesmo middleware seja aplicado a `/auth/`).
+- **Próximo passo de validação (recomendado):** ampliar burst para 500-1000 reqs e/ou inspecionar logs de gunicorn/Cloudflare por rejeições antes de elevar a severidade de volta para High.
 
 ## Ambiente
 

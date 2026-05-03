@@ -44,6 +44,13 @@
 - `docs/exploration-notes.md` §11 (cheiro S11 — modal partida finalizada sempre vazio)
 - `docs/site-snapshots/exploration/` (screenshot do modal aberto + DOM dump mostrando texto fixo)
 - Screenshot: bug-reports/evidence/BUG-011/
+- **Recaptura 2026-05-03 com 3 partidas distintas (resolve smoking gun de PNGs idênticos):** `bug-reports/evidence/BUG-011/manual-recapture-2026-05-03/`
+  - `modal-1-*-mls-minnesota-utd.png` (MD5 `82c162cd...`) — Minnesota Utd. (MLS)
+  - `modal-2-*-mls-toronto-fc.png` (MD5 `14b38c04...`) — Toronto FC (MLS)
+  - `modal-3-*-mls-chicago.png` (MD5 `285fd0bc...`) — Chicago (MLS)
+  - `findings.json` — metadata + excerpt do body de cada modal (todos confirmam empty state)
+  - **3/3 modais distintos exibem o mesmo empty state** — bug confirmado em partidas diferentes (não 3 prints da mesma como antes)
+- Reprodução: `node scripts/recapture-bug011.mjs`
 
 ## Workaround conhecido
 

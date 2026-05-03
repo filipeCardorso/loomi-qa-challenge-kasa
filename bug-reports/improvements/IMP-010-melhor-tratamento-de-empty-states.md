@@ -1,5 +1,7 @@
 # IMP-010 — Melhor tratamento de empty states
 
+> **Evidências:** ver [`bug-reports/evidence/IMP-010/cross-references.md`](../evidence/IMP-010/cross-references.md) — cross-reference com BUG-011 (3 modais distintos com mesmo empty state) e BUG-004.
+
 **Impacto:** Medium
 **Categoria:** UX
 **Esforço estimado:** S

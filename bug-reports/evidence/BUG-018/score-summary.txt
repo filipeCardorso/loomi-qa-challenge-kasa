@@ -1,0 +1,33 @@
+# BUG-018 — Lighthouse home (score-summary)
+Capturado em: 2026-05-03T03:03:56.544Z
+URL: https://www.kasa.live/
+Lighthouse version: 13.2.0
+User agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/147.0.0.0 Safari/537.36
+Form factor: desktop
+Throttling: simulate
+
+## Scores
+- Performance:    63
+- Accessibility:  74
+- Best Practices: 100
+- SEO:            100
+
+## Métricas Core Web Vitals (desktop)
+- LCP (Largest Contentful Paint): 1.9 s
+- TBT (Total Blocking Time):      10 ms
+- CLS (Cumulative Layout Shift):  0.705
+- FCP (First Contentful Paint):   0.8 s
+- Speed Index:                    2.2 s
+- TTI (Time to Interactive):      2.2 s
+
+## Top oportunidades de performance (savings estimadas)
+  - unused-javascript: economia estimada 230ms — Reduce unused JavaScript
+  - server-response-time: economia estimada 7ms — Initial server response time was short
+
+## Conclusão
+BUG CONFIRMADO: Performance score 63 < 80 (threshold mínimo aceitável).
+
+## Anexos
+- lighthouse-home.json — relatório JSON completo
+- lighthouse-home.report.html — relatório HTML interativo do Lighthouse
+- screenshot-lighthouse.png — print do score gauge

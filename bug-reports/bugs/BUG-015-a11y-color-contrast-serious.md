@@ -26,12 +26,20 @@
 
 ## Resultado obtido
 
-- Violation `color-contrast` (impact=serious) presente em 5/5 rotas testadas.
-- Múltiplos pares de cores com razão abaixo de 4.5:1 — incluindo:
-  - Texto secundário cinza claro (`#9CA3AF` aprox) sobre fundo branco.
-  - Badges de status (cinzas/cinzas-azulados) sobre fundo claro.
-  - Links no rodapé com cor abaixo do mínimo.
-- Footer e seções de conteúdo informativo são os mais afetados.
+- Violation `color-contrast` (impact=serious) presente em **5/5 rotas testadas** (recaptura 2026-05-03):
+
+  | Rota                        | Violations |
+  | --------------------------- | ---------- |
+  | `/` (home)                  | 2          |
+  | `/melhores-momentos`        | 3          |
+  | `/calendario`               | 2          |
+  | `/termos-de-uso`            | 3          |
+  | `/politicas-de-privacidade` | 4          |
+  | **Total**                   | **14**     |
+
+- Exemplo concreto (home, `.css-wpe2lc`): texto cinza `#a3a3a3` sobre fundo branco com razão **2.52:1** (mínimo WCAG AA é 4.5:1).
+- Outro exemplo (home, `.css-1ruz7og > .css-0`): mesma cor `#a3a3a3` com razão **2.31:1**.
+- Footer e seções de conteúdo informativo são os mais afetados (políticas-de-privacidade tem 4 violations).
 
 ## Ambiente
 
@@ -45,7 +53,14 @@
 
 - `docs/exploration-notes.md` Phase 9 — A11y axe-core findings
 - `docs/site-snapshots/a11y/` (output JSON axe.run() com pares de cores e razões)
-- Output axe-core (re-executado em 2026-05-03 contra home anônima): `bug-reports/evidence/BUG-015/axe-color-contrast.json` — contagem de nós varia por execução (a regra detecta cores dinâmicas)
+- **Output axe-core 2026-05-03 (5 rotas, axe-core via Playwright):**
+  - `bug-reports/evidence/BUG-015/axe-color-contrast-home.json`
+  - `bug-reports/evidence/BUG-015/axe-color-contrast-melhores-momentos.json`
+  - `bug-reports/evidence/BUG-015/axe-color-contrast-calendario.json`
+  - `bug-reports/evidence/BUG-015/axe-color-contrast-termos-de-uso.json`
+  - `bug-reports/evidence/BUG-015/axe-color-contrast-politicas-de-privacidade.json`
+  - `bug-reports/evidence/BUG-015/color-contrast-overview.json` (consolidação)
+- Reprodução: `node scripts/recapture-bug015.mjs` (Playwright + @axe-core/playwright).
 
 ## Workaround conhecido
 

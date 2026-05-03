@@ -1,0 +1,36 @@
+{
+  "capturedAt": "2026-05-03T18:10:59.615Z",
+  "url": "https://www.kasa.live/",
+  "cardsFound": 30,
+  "attempted": 3,
+  "successful": 3,
+  "attempts": [
+    {
+      "index": 0,
+      "cardSummary": "MLS |  | Minnesota Utd. | ",
+      "cardSignature": "43053283",
+      "cardScreenshot": "card-1-43053283-mls-minnesota-utd.png",
+      "modalScreenshot": "modal-1-43053283-mls-minnesota-utd.png",
+      "modalBodyExcerpt": "Partida Finalizada\n\n10/05/2025\n\nMLS\n\nMinnesota Utd.\n\n0\n\nX\n\n0\n\nInter Miami CF\n\nAcompanhe a próxima\n\nNada por aqui\n\nAinda não temos os melhores momentos da partida",
+      "modalIsEmpty": true
+    },
+    {
+      "index": 1,
+      "cardSummary": "MLS |  | Toronto FC | ",
+      "cardSignature": "0e5de915",
+      "cardScreenshot": "card-2-0e5de915-mls-toronto-fc.png",
+      "modalScreenshot": "modal-2-0e5de915-mls-toronto-fc.png",
+      "modalBodyExcerpt": "Partida Finalizada\n\n10/05/2025\n\nMLS\n\nToronto FC\n\n0\n\nX\n\n0\n\nDC United\n\nAcompanhe a próxima\n\nNada por aqui\n\nAinda não temos os melhores momentos da partida",
+      "modalIsEmpty": true
+    },
+    {
+      "index": 2,
+      "cardSummary": "MLS |  | Chicago | ",
+      "cardSignature": "9055f3b1",
+      "cardScreenshot": "card-3-9055f3b1-mls-chicago.png",
+      "modalScreenshot": "modal-3-9055f3b1-mls-chicago.png",
+      "modalBodyExcerpt": "Partida Finalizada\n\n10/05/2025\n\nMLS\n\nChicago\n\n0\n\nX\n\n0\n\nAtlanta United\n\nAcompanhe a próxima\n\nNada por aqui\n\nAinda não temos os melhores momentos da partida",
+      "modalIsEmpty": true
+    }
+  ]
+}

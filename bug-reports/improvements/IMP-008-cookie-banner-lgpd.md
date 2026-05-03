@@ -17,6 +17,14 @@ A aplicação não exibe banner de consentimento de cookies. A LGPD (Lei 13.709/
 - Sem painel para o usuário revisar/revogar consentimento.
 - Sem distinção entre cookies essenciais e opcionais.
 
+**Evidência capturada 2026-05-03 (visita anônima sem consentimento):**
+
+- Cookies setados imediatamente: **2** (incluindo `next-leap_access` — ver BUG-022 sobre flags ausentes)
+- localStorage entries setadas: **1** (`chakra-ui-color-mode`)
+- Cookie banner detectado na UI: **não** (busca por texto `/cookie|consentimento|aceitar|consent/i` retornou zero matches visíveis)
+- Arquivos: [`bug-reports/evidence/IMP-008/cookies-localstorage-anonimo.json`](../evidence/IMP-008/cookies-localstorage-anonimo.json) + [`screenshot-home-sem-banner.png`](../evidence/IMP-008/screenshot-home-sem-banner.png)
+- Reprodução: `node scripts/capture-imp-evidence.mjs`
+
 ## Sugestão
 
 1. **Banner inicial** (não-bloqueante, fixo no rodapé):

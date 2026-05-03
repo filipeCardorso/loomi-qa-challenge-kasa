@@ -1,0 +1,17 @@
+# BUG-010 — Comparação de <title> entre rotas (sessão anônima)
+Capturado em: 2026-05-03T03:01:22.115Z
+
+| Rota                       | URL final                | <title>
+|----------------------------|--------------------------|---------
+| /favoritos (auth-required) | https://www.kasa.live/   | "Kasa.Live - Encontre o Jogo"
+| /buscar (404 esperado)     | https://www.kasa.live/buscar   | "Kasa.Live - Página não encontrada."
+| /rota-aleatoria-xyz (404)  | https://www.kasa.live/rota-aleatoria-xyz-1777777302594   | "Kasa.Live - Página não encontrada."
+| / (home)                   | https://www.kasa.live/           | "Kasa.Live - Encontre o Jogo"
+
+## Análise
+- /favoritos retorna o MESMO title da home → não diferencia da home pra crawlers/leitores de tela.
+- /buscar e /rota-aleatoria-xyz mostram "Página não encontrada" → comportamento correto pra 404.
+- /favoritos deveria ou (a) redirecionar com um title específico, ou (b) ter <title>"Faça login — Kasa"</title>.
+
+## Bug confirmado
+SIM — title de /favoritos é idêntico ao da home, escondendo o fallback silencioso.

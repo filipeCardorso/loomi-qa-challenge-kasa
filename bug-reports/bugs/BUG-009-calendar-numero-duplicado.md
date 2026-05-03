@@ -51,8 +51,9 @@
 
 - `docs/exploration-notes.md` §9 (cheiro S9) e §15.7 (S12 — vista semanal cortada em /calendario)
 - `docs/site-snapshots/exploration/` (screenshots e dump de DOM da home + /calendario)
-- Screenshot recortado do componente: `bug-reports/evidence/BUG-009/screenshot-calendar-duplicate.png` (mostra que visualmente os dias estão CORRETOS — bug é só no DOM/textContent)
+- Screenshot recortado do componente: `bug-reports/evidence/BUG-009/screenshot-calendar-duplicate.png` (mostra que visualmente os dias estão CORRETOS — bug é só no DOM/textContent). Mesmo screenshot usado em BUG-002: justificado, é o mesmo elemento `react-day-picker` no datepicker da home expondo dois bugs ortogonais (aria-label genérico em inglês para BUG-002; duplicação de textContent para BUG-009).
 - Dump JSON com 31 ocorrências e 11 com pattern duplicado: `bug-reports/evidence/BUG-009/duplicate-text-findings.json`
+- Recaptura 2026-05-03 (ordem dos botões + contagem): `bug-reports/evidence/BUG-009/recapture-calendario-2026-05-03.json` (rota /calendario hoje não tem datepicker — confirma que o bug é específico do datepicker da home).
 
 ## Workaround conhecido
 
