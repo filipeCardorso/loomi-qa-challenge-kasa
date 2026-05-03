@@ -10,6 +10,7 @@ import { LoginModal } from '@pages/components/LoginModal';
 import { ProfilePopover } from '@pages/components/ProfilePopover';
 import { NotificationsPanel } from '@pages/components/NotificationsPanel';
 import { TestDataFactory, testDataFactory } from '@support/testDataFactory';
+import { TIMEOUTS } from '@support/timeouts';
 
 /** Path do storageState persistido entre runs. Gitignored. */
 const AUTH_STATE_PATH = path.resolve(process.cwd(), '.auth-state.json');
@@ -41,13 +42,13 @@ async function isLoggedIn(page: Page): Promise<boolean> {
   await page
     .locator('a[href="/"]')
     .first()
-    .waitFor({ state: 'visible', timeout: 10_000 })
+    .waitFor({ state: 'visible', timeout: TIMEOUTS.normal })
     .catch(() => undefined);
 
   const entrarHeader = page.getByRole('button', { name: /^entrar$/i }).first();
   const calendarTab = page.locator('a[title="Calendário"], a[title="Calendario"]').first();
 
-  // dá tempo do React montar UM dos dois
+  // dá tempo do React montar UM dos dois (8s — entre fast e normal)
   await Promise.race([
     entrarHeader.waitFor({ state: 'visible', timeout: 8_000 }).catch(() => undefined),
     calendarTab.waitFor({ state: 'visible', timeout: 8_000 }).catch(() => undefined),
@@ -71,7 +72,7 @@ async function performLogin(page: Page, email: string, password: string): Promis
   await headerEntrar.click();
 
   const emailInput = page.getByPlaceholder(/digite seu e-?mail/i);
-  await emailInput.waitFor({ state: 'visible', timeout: 10_000 });
+  await emailInput.waitFor({ state: 'visible', timeout: TIMEOUTS.normal });
   await emailInput.fill(email);
   await page.getByPlaceholder(/digite sua senha/i).fill(password);
 
@@ -84,15 +85,15 @@ async function performLogin(page: Page, email: string, password: string): Promis
   // Aguarda modal sumir + network idle (Firebase auth pode demorar)
   await page
     .getByPlaceholder(/digite seu e-?mail/i)
-    .waitFor({ state: 'hidden', timeout: 15_000 })
+    .waitFor({ state: 'hidden', timeout: TIMEOUTS.network })
     .catch(() => undefined);
-  await page.waitForLoadState('networkidle', { timeout: 15_000 }).catch(() => undefined);
+  await page.waitForLoadState('networkidle', { timeout: TIMEOUTS.network }).catch(() => undefined);
 
   // Garante que o header logado renderizou (tab Calendário só aparece logado)
   await page
     .locator('a[title="Calendário"], a[title="Calendario"]')
     .first()
-    .waitFor({ state: 'visible', timeout: 15_000 });
+    .waitFor({ state: 'visible', timeout: TIMEOUTS.network });
 
   // Persiste storage state pra próximas runs
   await page.context().storageState({ path: AUTH_STATE_PATH });

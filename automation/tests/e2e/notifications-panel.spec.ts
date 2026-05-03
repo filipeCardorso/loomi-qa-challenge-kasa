@@ -1,5 +1,6 @@
 import { test, expect } from '@fixtures/index';
 import { NotificationsPanel } from '@pages/components/NotificationsPanel';
+import { TIMEOUTS } from '@support/timeouts';
 
 /**
  * @core
@@ -15,7 +16,7 @@ const hasCreds = !!(process.env.KASA_USER_EMAIL && process.env.KASA_USER_PASSWOR
 
 test.describe('Notifications panel — sino', () => {
   // Login fixture pode estourar o default 30s sob contenção; subimos pra 90s.
-  test.describe.configure({ timeout: 90_000 });
+  test.describe.configure({ timeout: TIMEOUTS.login });
   test.skip(!hasCreds, 'precisa de KASA_USER_EMAIL/PASSWORD em .env.local');
 
   test('@core Sino abre painel de notificações com mensagem padrão', async ({ loggedInPage }) => {
@@ -28,7 +29,7 @@ test.describe('Notifications panel — sino', () => {
     await expect(
       panel.root.getByText(/você não tem notificações no momento/i),
       'mensagem padrão de empty state deve estar visível no painel',
-    ).toBeVisible({ timeout: 10_000 });
+    ).toBeVisible({ timeout: TIMEOUTS.normal });
 
     // Sanity: lista de itens deve estar vazia (sem <li>/listitem)
     const messages = await panel.getMessages();

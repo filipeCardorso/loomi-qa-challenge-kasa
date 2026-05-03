@@ -1,6 +1,7 @@
 import { test, expect } from '@fixtures/index';
 import { MatchModal } from '@pages/components/MatchModal';
 import { SELECTORS } from '@support/selectors';
+import { TIMEOUTS } from '@support/timeouts';
 
 /**
  * @smoke @core
@@ -14,11 +15,11 @@ test.describe('Modal de partida finalizada', () => {
     await homePage.open();
 
     const firstCard = page.locator(SELECTORS.matchCard).first();
-    await firstCard.waitFor({ state: 'visible', timeout: 30_000 });
+    await firstCard.waitFor({ state: 'visible', timeout: TIMEOUTS.devApiSlow });
     await firstCard.click();
 
     const modal = new MatchModal(page);
-    await modal.waitForOpen(10_000);
+    await modal.waitForOpen(TIMEOUTS.normal);
     expect(await modal.isOpen(), 'modal deve estar aberto após click').toBe(true);
 
     const status = await modal.getStatus();

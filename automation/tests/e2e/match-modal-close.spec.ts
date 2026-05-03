@@ -1,6 +1,7 @@
 import { test, expect } from '@fixtures/index';
 import { MatchModal } from '@pages/components/MatchModal';
 import { SELECTORS } from '@support/selectors';
+import { TIMEOUTS } from '@support/timeouts';
 
 /**
  * @core
@@ -20,11 +21,11 @@ test.describe('Modal de partida — botão Close', () => {
 
     // Espera o primeiro card de partida finalizada e abre o modal
     const firstCard = page.locator(SELECTORS.matchCard).first();
-    await firstCard.waitFor({ state: 'visible', timeout: 30_000 });
+    await firstCard.waitFor({ state: 'visible', timeout: TIMEOUTS.devApiSlow });
     await firstCard.click();
 
     const modal = new MatchModal(page);
-    await modal.waitForOpen(10_000);
+    await modal.waitForOpen(TIMEOUTS.normal);
     expect(await modal.isOpen(), 'modal deveria estar aberto após click no card').toBe(true);
 
     // Fecha via Close (X) — método encapsula o getByRole('button', { name: /close/i })
@@ -32,7 +33,7 @@ test.describe('Modal de partida — botão Close', () => {
 
     // Modal precisa ter sumido
     await expect(modal.locator, 'modal deve estar oculto após click no Close (X)').toBeHidden({
-      timeout: 5_000,
+      timeout: TIMEOUTS.fast,
     });
 
     // E não devemos ter saído da home — pathname continua sendo "/"

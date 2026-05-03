@@ -1,5 +1,6 @@
 import { test, expect } from '@fixtures/index';
 import { CalendarPage } from '@pages/CalendarPage';
+import { TIMEOUTS } from '@support/timeouts';
 
 /**
  * @core
@@ -21,7 +22,7 @@ const hasCreds = !!(process.env.KASA_USER_EMAIL && process.env.KASA_USER_PASSWOR
 
 test.describe('/calendario — página dedicada (logado)', () => {
   // Login fixture pode estourar o default 30s sob contenção; subimos pra 90s.
-  test.describe.configure({ timeout: 90_000 });
+  test.describe.configure({ timeout: TIMEOUTS.login });
   test.skip(!hasCreds, 'precisa de KASA_USER_EMAIL/PASSWORD em .env.local');
 
   test('@core /calendario carrega para usuário logado, mostra side panel + grade semanal', async ({
@@ -30,26 +31,26 @@ test.describe('/calendario — página dedicada (logado)', () => {
     const calendar = new CalendarPage(loggedInPage);
     await calendar.open();
 
-    await loggedInPage.waitForURL(/\/calendario/i, { timeout: 15_000 });
+    await loggedInPage.waitForURL(/\/calendario/i, { timeout: TIMEOUTS.network });
     expect(loggedInPage.url(), 'URL deve conter /calendario').toMatch(/\/calendario/);
 
     // Header da agenda: botão "Hoje" sempre presente
     await expect(
       calendar.hojeButton.first(),
       'botão "Hoje" do painel principal deve estar visível',
-    ).toBeVisible({ timeout: 15_000 });
+    ).toBeVisible({ timeout: TIMEOUTS.network });
 
     // Header da agenda: label do mês ("maio de 2026")
     await expect(
       calendar.monthLabel,
       'label do mês ("<Mês> de <ano>") deve estar visível no header da grade',
-    ).toBeVisible({ timeout: 10_000 });
+    ).toBeVisible({ timeout: TIMEOUTS.normal });
 
     // Trigger do painel de filtros (Times+Campeonatos unificados)
     await expect(
       loggedInPage.getByRole('button', { name: /times e campeonatos/i }).first(),
       'botão "Times e campeonatos" (acesso aos filtros) deve estar visível',
-    ).toBeVisible({ timeout: 10_000 });
+    ).toBeVisible({ timeout: TIMEOUTS.normal });
 
     // Grade semanal renderizou pelo menos um dia (formato "01 sex" / "02 sáb"...)
     const weekDayBtn = loggedInPage
@@ -58,14 +59,14 @@ test.describe('/calendario — página dedicada (logado)', () => {
     await expect(
       weekDayBtn,
       'pelo menos um botão de dia da semana ("DD <abrev>") deve estar visível na grade',
-    ).toBeVisible({ timeout: 10_000 });
+    ).toBeVisible({ timeout: TIMEOUTS.normal });
   });
 
   test('@core /calendario tem switch "Partidas favoritas"', async ({ loggedInPage }) => {
     const calendar = new CalendarPage(loggedInPage);
     await calendar.open();
 
-    await loggedInPage.waitForURL(/\/calendario/i, { timeout: 15_000 });
+    await loggedInPage.waitForURL(/\/calendario/i, { timeout: TIMEOUTS.network });
 
     // O texto "Partidas favoritas" EXISTE no DOM da página (collapse fechado),
     // mas pode estar com display:none até abrir "Times e campeonatos".
@@ -74,6 +75,6 @@ test.describe('/calendario — página dedicada (logado)', () => {
     await expect(
       switchLabel,
       'label "Partidas favoritas" deve existir no DOM da página /calendario',
-    ).toHaveCount(1, { timeout: 10_000 });
+    ).toHaveCount(1, { timeout: TIMEOUTS.normal });
   });
 });

@@ -1,6 +1,7 @@
 import { test, expect } from '@fixtures/index';
 import { maskDynamic } from '@support/visualHelper';
 import { SELECTORS } from '@support/selectors';
+import { TIMEOUTS } from '@support/timeouts';
 
 /**
  * Visual regression — 5 baselines cobrindo páginas-chave anônimas + logada + modal.
@@ -14,7 +15,7 @@ import { SELECTORS } from '@support/selectors';
 
 test.describe('Visual regression', () => {
   // Fullpage screenshots em DEV API podem demorar — timeout generoso por teste.
-  test.setTimeout(90_000);
+  test.setTimeout(TIMEOUTS.login);
 
   test('@visual home anônima', async ({ page }) => {
     await page.goto('/', { waitUntil: 'domcontentloaded' });
@@ -22,10 +23,12 @@ test.describe('Visual regression', () => {
     await page
       .locator(`${SELECTORS.matchCard}, h1, h2`)
       .first()
-      .waitFor({ state: 'visible', timeout: 30_000 })
+      .waitFor({ state: 'visible', timeout: TIMEOUTS.devApiSlow })
       .catch(() => undefined);
     // Pequena espera para fontes/imagens estabilizarem
-    await page.waitForLoadState('networkidle', { timeout: 15_000 }).catch(() => undefined);
+    await page
+      .waitForLoadState('networkidle', { timeout: TIMEOUTS.network })
+      .catch(() => undefined);
     await expect(page).toHaveScreenshot('home.png', {
       fullPage: true,
       mask: await maskDynamic(page),
@@ -37,9 +40,11 @@ test.describe('Visual regression', () => {
     await page
       .getByRole('heading', { name: /melhores momentos/i })
       .first()
-      .waitFor({ state: 'visible', timeout: 30_000 })
+      .waitFor({ state: 'visible', timeout: TIMEOUTS.devApiSlow })
       .catch(() => undefined);
-    await page.waitForLoadState('networkidle', { timeout: 15_000 }).catch(() => undefined);
+    await page
+      .waitForLoadState('networkidle', { timeout: TIMEOUTS.network })
+      .catch(() => undefined);
     await expect(page).toHaveScreenshot('melhores-momentos.png', {
       fullPage: true,
       mask: await maskDynamic(page),
@@ -48,7 +53,9 @@ test.describe('Visual regression', () => {
 
   test('@visual termos-de-uso (estável)', async ({ page }) => {
     await page.goto('/termos-de-uso', { waitUntil: 'domcontentloaded' });
-    await page.waitForLoadState('networkidle', { timeout: 15_000 }).catch(() => undefined);
+    await page
+      .waitForLoadState('networkidle', { timeout: TIMEOUTS.network })
+      .catch(() => undefined);
     await expect(page).toHaveScreenshot('termos-de-uso.png', {
       fullPage: true,
       mask: await maskDynamic(page),
@@ -58,11 +65,11 @@ test.describe('Visual regression', () => {
   test('@visual modal de partida finalizada', async ({ page }) => {
     await page.goto('/', { waitUntil: 'domcontentloaded' });
     const firstCard = page.locator(SELECTORS.matchCard).first();
-    await firstCard.waitFor({ state: 'visible', timeout: 30_000 });
+    await firstCard.waitFor({ state: 'visible', timeout: TIMEOUTS.devApiSlow });
     await firstCard.click();
 
     const modal = page.locator(SELECTORS.matchModalDialog).first();
-    await modal.waitFor({ state: 'visible', timeout: 10_000 });
+    await modal.waitFor({ state: 'visible', timeout: TIMEOUTS.normal });
     // toHaveScreenshot já tem retry interno até o frame estabilizar — não precisa sleep extra
 
     await expect(modal).toHaveScreenshot('match-modal.png', {
@@ -75,8 +82,10 @@ test.describe('Visual regression', () => {
     await loggedInPage
       .locator('a[title="Calendário"], a[title="Calendario"]')
       .first()
-      .waitFor({ state: 'visible', timeout: 15_000 });
-    await loggedInPage.waitForLoadState('networkidle', { timeout: 15_000 }).catch(() => undefined);
+      .waitFor({ state: 'visible', timeout: TIMEOUTS.network });
+    await loggedInPage
+      .waitForLoadState('networkidle', { timeout: TIMEOUTS.network })
+      .catch(() => undefined);
     await expect(loggedInPage).toHaveScreenshot('home-logged.png', {
       fullPage: true,
       mask: await maskDynamic(loggedInPage),

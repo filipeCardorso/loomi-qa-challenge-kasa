@@ -1,5 +1,6 @@
 import { test, expect } from '@fixtures/index';
 import { ProfilePopover } from '@pages/components/ProfilePopover';
+import { TIMEOUTS } from '@support/timeouts';
 
 /**
  * @core
@@ -19,7 +20,7 @@ const hasCreds = !!(process.env.KASA_USER_EMAIL && process.env.KASA_USER_PASSWOR
 
 test.describe('Profile popover (avatar logado)', () => {
   // Login fixture pode estourar o default 30s sob contenção; subimos pra 90s.
-  test.describe.configure({ timeout: 90_000 });
+  test.describe.configure({ timeout: TIMEOUTS.login });
   test.skip(!hasCreds, 'precisa de KASA_USER_EMAIL/PASSWORD em .env.local');
 
   test('@core Avatar click abre popover com 4 ações (Editar, Excluir, Sair, Switch Google Calendar)', async ({
@@ -34,17 +35,17 @@ test.describe('Profile popover (avatar logado)', () => {
     await expect(
       popover.root.getByRole('button', { name: /editar perfil/i }),
       'botão "Editar perfil" deve estar visível',
-    ).toBeVisible({ timeout: 5_000 });
+    ).toBeVisible({ timeout: TIMEOUTS.fast });
 
     await expect(
       popover.root.getByRole('button', { name: /excluir conta/i }),
       'botão "Excluir conta" (destrutivo) deve estar visível',
-    ).toBeVisible({ timeout: 5_000 });
+    ).toBeVisible({ timeout: TIMEOUTS.fast });
 
     await expect(
       popover.root.getByRole('button', { name: /^sair$/i }),
       'botão "Sair" deve estar visível',
-    ).toBeVisible({ timeout: 5_000 });
+    ).toBeVisible({ timeout: TIMEOUTS.fast });
 
     // Switch Google Calendar (input hidden + label clicável)
     await expect(
@@ -74,6 +75,6 @@ test.describe('Profile popover (avatar logado)', () => {
     await expect(
       switchLabel,
       'texto "Conectar com seu Google Calendar" deve estar visível no popover',
-    ).toBeVisible({ timeout: 5_000 });
+    ).toBeVisible({ timeout: TIMEOUTS.fast });
   });
 });
