@@ -25,7 +25,9 @@ import AxeBuilder from '@axe-core/playwright';
 const ROUTES = [
   { path: '/', label: 'home anônima' },
   { path: '/melhores-momentos', label: 'melhores momentos' },
+  { path: '/calendario', label: 'calendario' },
   { path: '/termos-de-uso', label: 'termos de uso' },
+  { path: '/politicas-de-privacidade', label: 'politicas de privacidade' },
 ] as const;
 
 const KNOWN_RULES = ['aria-allowed-attr', 'button-name', 'color-contrast', 'link-name'] as const;

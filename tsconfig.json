@@ -17,7 +17,8 @@
     "paths": {
       "@pages/*": ["automation/pages/*"],
       "@fixtures/*": ["automation/fixtures/*"],
-      "@support/*": ["automation/support/*"]
+      "@support/*": ["automation/support/*"],
+      "@bugs/*": ["automation/tests/bugs/*"]
     }
   },
   "include": ["automation/**/*", "playwright.config.ts"],

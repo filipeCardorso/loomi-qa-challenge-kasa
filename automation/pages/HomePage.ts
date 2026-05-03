@@ -1,5 +1,5 @@
 import type { Locator } from '@playwright/test';
-import { BasePage } from './BasePage';
+import { FilterableSearchPage } from './FilterableSearchPage';
 import { MatchCard } from './components/MatchCard';
 import { SELECTORS } from '@support/selectors';
 
@@ -7,31 +7,13 @@ import { SELECTORS } from '@support/selectors';
  * HomePage — modela `/` (página principal de busca + listagem de partidas).
  *
  * Funcionalidades cobertas (exploration-notes §4):
- * - 4 filtros (time / campeonato / data picker / local)
+ * - 4 filtros (time / campeonato / data picker / local) → herdados de FilterableSearchPage
  * - Calendar mensal (~31 botões "Nº maio (sexta-feira)")
  * - Lista "Partidas finalizadas" com cards `div.css-7mca6u`
  * - Tabs nav (anônima: 2; logada: 4)
  * - Paginação
  */
-export class HomePage extends BasePage {
-  // ===== Filtros =====
-  get filtroQualTime(): Locator {
-    return this.page.getByPlaceholder(/qual time/i);
-  }
-
-  get filtroQualCampeonato(): Locator {
-    return this.page.getByPlaceholder(/qual campeonato/i);
-  }
-
-  /** Datepicker (placeholder muda conforme o dia: "Hoje", "Apr 30, 2026", etc). */
-  get filtroData(): Locator {
-    return this.page.getByPlaceholder(/^(hoje|amanh[ãa]|[A-Z][a-z]{2}\s\d+,\s\d{4})$/).first();
-  }
-
-  get filtroOndeQuerVer(): Locator {
-    return this.page.getByPlaceholder(/onde quer ver/i);
-  }
-
+export class HomePage extends FilterableSearchPage {
   /** Botão de busca (lupa SVG verde, sem texto — último botão da search bar). */
   get searchButton(): Locator {
     // estratégia robusta: botão dentro do container dos filtros que NÃO tem texto

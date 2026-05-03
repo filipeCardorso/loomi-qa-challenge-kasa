@@ -15,7 +15,13 @@ import path from 'node:path';
  * - Achados detalhados ficam em ./reports/lighthouse/ + ./reports/lighthouse/lh-summary.json
  */
 
-const ROUTES = ['/', '/melhores-momentos', '/termos-de-uso'] as const;
+const ROUTES = [
+  '/',
+  '/melhores-momentos',
+  '/calendario',
+  '/termos-de-uso',
+  '/politicas-de-privacidade',
+] as const;
 
 const SOFT_THRESHOLDS = {
   performance: 30,

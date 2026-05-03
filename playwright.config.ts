@@ -13,6 +13,7 @@ export default defineConfig({
   workers: process.env.CI ? 4 : undefined,
   reporter: [
     ['list'],
+    ['./automation/tests/bugs/_reporter.ts'],
     ['html', { outputFolder: 'playwright-report', open: 'never' }],
     ['allure-playwright', { detail: true, outputFolder: 'allure-results' }],
     ['json', { outputFile: 'reports/results.json' }],

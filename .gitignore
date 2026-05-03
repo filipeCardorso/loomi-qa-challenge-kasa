@@ -22,3 +22,6 @@ mcp-server/data/
 
 # ZIP de release (gerado por scripts/package.sh, não commitado)
 loomi-qa-challenge-*.zip
+
+# Auto-evidence dos specs de bugs (gerada por _reporter.ts em cada run de CI)
+bug-reports/evidence/*/auto-runs/

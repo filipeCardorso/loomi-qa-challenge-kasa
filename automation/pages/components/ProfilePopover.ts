@@ -54,19 +54,21 @@ export class ProfilePopover extends BaseComponent {
 
   /** Toggle do switch Google Calendar (Chakra Switch). */
   async toggleGoogleCalendar(): Promise<void> {
-    const switchInput = this.page.locator('input#switch-google-calendar');
-    // Chakra Switch: input está hidden, clicar no label envia o evento real
-    const label = this.page.locator('label[for="switch-google-calendar"]');
+    // Escopado em `this.root` (popover) — Chakra Switch tem o input hidden,
+    // clicar no label envia o evento real. Fallback: forçar check no input.
+    const label = this.root.locator('label[for="switch-google-calendar"]');
     if (await label.isVisible().catch(() => false)) {
       await label.click();
-    } else {
-      await switchInput.check({ force: true });
+      return;
     }
+    await this.root.locator('input#switch-google-calendar').check({ force: true });
   }
 
   /** True se Google Calendar conectado (switch ON). */
   async isGoogleCalendarConnected(): Promise<boolean> {
-    const switchInput = this.page.locator('input#switch-google-calendar');
-    return switchInput.isChecked().catch(() => false);
+    return this.root
+      .locator('input#switch-google-calendar')
+      .isChecked()
+      .catch(() => false);
   }
 }

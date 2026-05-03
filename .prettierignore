@@ -24,3 +24,6 @@ docs/superpowers/
 # Misc
 *.log
 .DS_Store
+
+# Evidência gerada por scripts (JSON automatizado, não formatado por prettier)
+bug-reports/evidence/
