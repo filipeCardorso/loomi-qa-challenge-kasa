@@ -1,0 +1,1 @@
+[security] rate-limit burst counts: {"-1":50} (failed=50)

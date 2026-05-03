@@ -1,0 +1,3 @@
+[security] cookies não-sensíveis sem Secure (warning):
+  - [other] _ga: faltando Secure
+  - [other] _ga_KERN92K795: faltando Secure

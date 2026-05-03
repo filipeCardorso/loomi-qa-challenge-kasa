@@ -1,0 +1,82 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: security/rate-limiting.spec.ts >> @security API responde >0 com 429 sob burst de 50 requests paralelas
+- Location: automation/tests/security/rate-limiting.spec.ts:20:5
+
+# Error details
+
+```
+Error: 0/50 requests retornaram 429. API parece NÃO ter rate limiting visível (status counts: {"-1":50})
+
+expect(received).toBeGreaterThan(expected)
+
+Expected: > 0
+Received:   0
+```
+
+# Test source
+
+```ts
+  1  | import { test, expect, request as playwrightRequest } from '@playwright/test';
+  2  | 
+  3  | /**
+  4  |  * @security Rate limiting — endpoints públicos
+  5  |  *
+  6  |  * Dispara N requests paralelas pra um endpoint da API DEV. Se TODAS retornarem
+  7  |  * 200, não há rate limiting visível (potencial DoS). Se algumas retornarem 429,
+  8  |  * a defesa básica está em pé.
+  9  |  *
+  10 |  * Observação: este teste é HEURÍSTICO — pode passar mesmo se houver rate
+  11 |  * limit configurado fora desse range. Documentamos o achado real
+  12 |  * (proporção 429 vs 200) sem mascarar.
+  13 |  */
+  14 | 
+  15 | const API_URL = 'https://kasa-live.api.dev.loomi.com.br/api/1.0/match/?status=ENDED&page=1';
+  16 | const BURST = 50;
+  17 | 
+  18 | test.describe.configure({ timeout: 90_000 });
+  19 | 
+  20 | test('@security API responde >0 com 429 sob burst de 50 requests paralelas', async () => {
+  21 |   const ctx = await playwrightRequest.newContext({ timeout: 60_000 });
+  22 |   try {
+  23 |     const responses = await Promise.all(
+  24 |       Array.from({ length: BURST }, () =>
+  25 |         ctx.get(API_URL).catch((e: Error) => ({ status: () => -1, _err: e })),
+  26 |       ),
+  27 |     );
+  28 |     const statuses = responses.map((r) => r.status());
+  29 |     const counts = statuses.reduce<Record<number, number>>((acc, s) => {
+  30 |       acc[s] = (acc[s] ?? 0) + 1;
+  31 |       return acc;
+  32 |     }, {});
+  33 |     const rate429 = counts[429] ?? 0;
+  34 |     const rate200 = counts[200] ?? 0;
+  35 |     const failed = statuses.filter((s) => s < 0).length;
+  36 | 
+  37 |     console.warn(
+  38 |       `[security] rate-limit burst counts: ${JSON.stringify(counts)} (failed=${failed})`,
+  39 |     );
+  40 | 
+  41 |     // Asserção principal: pelo menos UMA defesa visível. Se 0 → bug candidato.
+  42 |     expect(
+  43 |       rate429,
+  44 |       `0/${BURST} requests retornaram 429. API parece NÃO ter rate limiting visível (status counts: ${JSON.stringify(counts)})`,
+> 45 |     ).toBeGreaterThan(0);
+     |       ^ Error: 0/50 requests retornaram 429. API parece NÃO ter rate limiting visível (status counts: {"-1":50})
+  46 | 
+  47 |     // Asserções soft pra registrar contexto sem mascarar
+  48 |     expect
+  49 |       .soft(rate200 + rate429 + failed, 'soma de status conhecidos == BURST')
+  50 |       .toBeLessThanOrEqual(BURST);
+  51 |   } finally {
+  52 |     await ctx.dispose();
+  53 |   }
+  54 | });
+  55 | 
+```

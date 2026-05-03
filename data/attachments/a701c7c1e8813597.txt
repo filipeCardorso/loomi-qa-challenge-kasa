@@ -1,0 +1,311 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: visual/pages.spec.ts >> Visual regression >> @visual home anônima
+- Location: automation/tests/visual/pages.spec.ts:20:7
+
+# Error details
+
+```
+Error: A snapshot doesn't exist at /home/runner/work/loomi-qa-challenge-kasa/loomi-qa-challenge-kasa/automation/tests/visual/pages.spec.ts-snapshots/home-firefox-linux.png, writing actual.
+```
+
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - generic [ref=e4]:
+    - banner [ref=e5]:
+      - generic [ref=e7]:
+        - link "home" [ref=e8] [cursor=pointer]:
+          - /url: /
+          - img "home" [ref=e9]
+        - generic [ref=e14]:
+          - generic [ref=e17]:
+            - textbox "Qual time?" [ref=e20]
+            - textbox "Qual campeonato?" [ref=e23]
+            - generic [ref=e28]:
+              - generic:
+                - img
+              - textbox "Apr 30, 2026" [ref=e29]: Hoje
+            - textbox "Onde quer ver?" [ref=e32]
+          - img [ref=e36] [cursor=pointer]
+        - generic [ref=e38]:
+          - button "Notificações" [ref=e40] [cursor=pointer]:
+            - img [ref=e41]
+          - button "Entrar" [ref=e42] [cursor=pointer]
+      - generic [ref=e46]:
+        - link "Partidas Partidas" [ref=e47] [cursor=pointer]:
+          - /url: /
+          - img "Partidas" [ref=e48]
+          - paragraph [ref=e49]: Partidas
+        - link "Melhores momentos Melhores momentos" [ref=e50] [cursor=pointer]:
+          - /url: /melhores-momentos
+          - img "Melhores momentos" [ref=e51]
+          - paragraph [ref=e52]: Melhores momentos
+    - main [ref=e54]:
+      - generic [ref=e55]:
+        - generic [ref=e56]:
+          - generic [ref=e59]:
+            - separator [ref=e63]
+            - separator [ref=e68]
+            - separator [ref=e73]
+            - separator [ref=e78]
+            - separator [ref=e83]
+            - separator [ref=e88]
+            - separator [ref=e93]
+            - separator [ref=e98]
+            - separator [ref=e103]
+            - separator [ref=e108]
+            - separator [ref=e113]
+            - separator [ref=e118]
+            - separator [ref=e123]
+            - separator [ref=e128]
+            - separator [ref=e133]
+            - separator [ref=e138]
+            - separator [ref=e143]
+            - separator [ref=e148]
+            - separator [ref=e153]
+            - separator [ref=e158]
+            - separator [ref=e163]
+            - separator [ref=e168]
+            - separator [ref=e173]
+            - separator [ref=e178]
+            - separator [ref=e183]
+            - separator [ref=e188]
+            - separator [ref=e193]
+            - separator [ref=e198]
+            - separator [ref=e203]
+            - separator [ref=e208]
+          - paragraph [ref=e211]: ...
+        - generic [ref=e212]:
+          - generic [ref=e215]:
+            - separator [ref=e219]
+            - separator [ref=e224]
+            - separator [ref=e229]
+            - separator [ref=e234]
+            - separator [ref=e239]
+            - separator [ref=e244]
+            - separator [ref=e249]
+            - separator [ref=e254]
+            - separator [ref=e259]
+            - separator [ref=e264]
+            - separator [ref=e269]
+            - separator [ref=e274]
+            - separator [ref=e279]
+            - separator [ref=e284]
+            - separator [ref=e289]
+            - separator [ref=e294]
+            - separator [ref=e299]
+            - separator [ref=e304]
+            - separator [ref=e309]
+            - separator [ref=e314]
+            - separator [ref=e319]
+            - separator [ref=e324]
+            - separator [ref=e329]
+            - separator [ref=e334]
+            - separator [ref=e339]
+            - separator [ref=e344]
+            - separator [ref=e349]
+            - separator [ref=e354]
+            - separator [ref=e359]
+            - separator [ref=e364]
+          - paragraph [ref=e367]: ...
+        - generic [ref=e368]:
+          - generic [ref=e371]:
+            - separator [ref=e375]
+            - separator [ref=e380]
+            - separator [ref=e385]
+            - separator [ref=e390]
+            - separator [ref=e395]
+            - separator [ref=e400]
+            - separator [ref=e405]
+            - separator [ref=e410]
+            - separator [ref=e415]
+            - separator [ref=e420]
+            - separator [ref=e425]
+            - separator [ref=e430]
+            - separator [ref=e435]
+            - separator [ref=e440]
+            - separator [ref=e445]
+            - separator [ref=e450]
+            - separator [ref=e455]
+            - separator [ref=e460]
+            - separator [ref=e465]
+            - separator [ref=e470]
+            - separator [ref=e475]
+            - separator [ref=e480]
+            - separator [ref=e485]
+            - separator [ref=e490]
+            - separator [ref=e495]
+            - separator [ref=e500]
+            - separator [ref=e505]
+            - separator [ref=e510]
+            - separator [ref=e515]
+            - separator [ref=e520]
+          - paragraph [ref=e523]: ...
+        - generic [ref=e524]:
+          - generic [ref=e527]:
+            - separator [ref=e531]
+            - separator [ref=e536]
+            - separator [ref=e541]
+            - separator [ref=e546]
+            - separator [ref=e551]
+            - separator [ref=e556]
+            - separator [ref=e561]
+            - separator [ref=e566]
+            - separator [ref=e571]
+            - separator [ref=e576]
+            - separator [ref=e581]
+            - separator [ref=e586]
+            - separator [ref=e591]
+            - separator [ref=e596]
+            - separator [ref=e601]
+            - separator [ref=e606]
+            - separator [ref=e611]
+            - separator [ref=e616]
+            - separator [ref=e621]
+            - separator [ref=e626]
+            - separator [ref=e631]
+            - separator [ref=e636]
+            - separator [ref=e641]
+            - separator [ref=e646]
+            - separator [ref=e651]
+            - separator [ref=e656]
+            - separator [ref=e661]
+            - separator [ref=e666]
+            - separator [ref=e671]
+            - separator [ref=e676]
+          - paragraph [ref=e679]: ...
+    - contentinfo [ref=e680]:
+      - paragraph [ref=e682]: Porque Deus amou o mundo de tal maneira, que deu o seu Filho Unigênito (Jesus), para que todo aquele que nele crê não pereça, mas tenha a vida eterna - João 3:16
+      - generic [ref=e683]:
+        - img "playStore" [ref=e685] [cursor=pointer]
+        - img "appStore" [ref=e687] [cursor=pointer]
+      - generic [ref=e688]:
+        - link [ref=e689] [cursor=pointer]:
+          - /url: https://www.tiktok.com/@kasa.live/
+          - img [ref=e690]
+        - link [ref=e692] [cursor=pointer]:
+          - /url: https://www.instagram.com/kasa.live/
+          - img [ref=e693]
+      - generic [ref=e695]:
+        - paragraph [ref=e696]: © 2022 Kasa.live, LTDA.
+        - link "Termos de Uso e Política de Privacidade" [ref=e697] [cursor=pointer]:
+          - /url: /termos-de-uso
+      - paragraph [ref=e698]: v3.1-Web
+  - alert [ref=e699]
+  - generic:
+    - region
+    - region
+    - region
+    - region
+    - region
+    - region
+```
+
+# Test source
+
+```ts
+  1  | import { test, expect } from '@fixtures/index';
+  2  | import { maskDynamic } from '@support/visualHelper';
+  3  | import { SELECTORS } from '@support/selectors';
+  4  | import { TIMEOUTS } from '@support/timeouts';
+  5  | 
+  6  | /**
+  7  |  * Visual regression — 5 baselines cobrindo páginas-chave anônimas + logada + modal.
+  8  |  * Threshold global em playwright.config.ts (`maxDiffPixelRatio: 0.02`).
+  9  |  *
+  10 |  * Geração inicial dos baselines:
+  11 |  *   npx playwright test automation/tests/visual --project=chromium --update-snapshots
+  12 |  *
+  13 |  * Re-runs subsequentes apenas comparam.
+  14 |  */
+  15 | 
+  16 | test.describe('Visual regression', () => {
+  17 |   // Fullpage screenshots em DEV API podem demorar — timeout generoso por teste.
+  18 |   test.setTimeout(TIMEOUTS.login);
+  19 | 
+  20 |   test('@visual home anônima', async ({ page }) => {
+  21 |     await page.goto('/', { waitUntil: 'domcontentloaded' });
+  22 |     // Espera UI principal — primeiro card finalizado ou heading qualquer (proxy de readiness)
+  23 |     await page
+  24 |       .locator(`${SELECTORS.matchCard}, h1, h2`)
+  25 |       .first()
+  26 |       .waitFor({ state: 'visible', timeout: TIMEOUTS.devApiSlow })
+  27 |       .catch(() => undefined);
+  28 |     // Pequena espera para fontes/imagens estabilizarem
+  29 |     await page
+  30 |       .waitForLoadState('networkidle', { timeout: TIMEOUTS.network })
+  31 |       .catch(() => undefined);
+> 32 |     await expect(page).toHaveScreenshot('home.png', {
+     |     ^ Error: A snapshot doesn't exist at /home/runner/work/loomi-qa-challenge-kasa/loomi-qa-challenge-kasa/automation/tests/visual/pages.spec.ts-snapshots/home-firefox-linux.png, writing actual.
+  33 |       fullPage: true,
+  34 |       mask: await maskDynamic(page),
+  35 |     });
+  36 |   });
+  37 | 
+  38 |   test('@visual melhores-momentos anônima', async ({ page }) => {
+  39 |     await page.goto('/melhores-momentos', { waitUntil: 'domcontentloaded' });
+  40 |     await page
+  41 |       .getByRole('heading', { name: /melhores momentos/i })
+  42 |       .first()
+  43 |       .waitFor({ state: 'visible', timeout: TIMEOUTS.devApiSlow })
+  44 |       .catch(() => undefined);
+  45 |     await page
+  46 |       .waitForLoadState('networkidle', { timeout: TIMEOUTS.network })
+  47 |       .catch(() => undefined);
+  48 |     await expect(page).toHaveScreenshot('melhores-momentos.png', {
+  49 |       fullPage: true,
+  50 |       mask: await maskDynamic(page),
+  51 |     });
+  52 |   });
+  53 | 
+  54 |   test('@visual termos-de-uso (estável)', async ({ page }) => {
+  55 |     await page.goto('/termos-de-uso', { waitUntil: 'domcontentloaded' });
+  56 |     await page
+  57 |       .waitForLoadState('networkidle', { timeout: TIMEOUTS.network })
+  58 |       .catch(() => undefined);
+  59 |     await expect(page).toHaveScreenshot('termos-de-uso.png', {
+  60 |       fullPage: true,
+  61 |       mask: await maskDynamic(page),
+  62 |     });
+  63 |   });
+  64 | 
+  65 |   test('@visual modal de partida finalizada', async ({ page }) => {
+  66 |     await page.goto('/', { waitUntil: 'domcontentloaded' });
+  67 |     const firstCard = page.locator(SELECTORS.matchCard).first();
+  68 |     await firstCard.waitFor({ state: 'visible', timeout: TIMEOUTS.devApiSlow });
+  69 |     await firstCard.click();
+  70 | 
+  71 |     const modal = page.locator(SELECTORS.matchModalDialog).first();
+  72 |     await modal.waitFor({ state: 'visible', timeout: TIMEOUTS.normal });
+  73 |     // toHaveScreenshot já tem retry interno até o frame estabilizar — não precisa sleep extra
+  74 | 
+  75 |     await expect(modal).toHaveScreenshot('match-modal.png', {
+  76 |       mask: await maskDynamic(page),
+  77 |     });
+  78 |   });
+  79 | 
+  80 |   test('@visual home logada (4 tabs)', async ({ loggedInPage }) => {
+  81 |     await loggedInPage.goto('/', { waitUntil: 'domcontentloaded' });
+  82 |     await loggedInPage
+  83 |       .locator('a[title="Calendário"], a[title="Calendario"]')
+  84 |       .first()
+  85 |       .waitFor({ state: 'visible', timeout: TIMEOUTS.network });
+  86 |     await loggedInPage
+  87 |       .waitForLoadState('networkidle', { timeout: TIMEOUTS.network })
+  88 |       .catch(() => undefined);
+  89 |     await expect(loggedInPage).toHaveScreenshot('home-logged.png', {
+  90 |       fullPage: true,
+  91 |       mask: await maskDynamic(loggedInPage),
+  92 |     });
+  93 |   });
+  94 | });
+  95 | 
+```

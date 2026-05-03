@@ -1,0 +1,145 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: security/cookies-flags.spec.ts >> @security cookie de auth tem flags Secure + HttpOnly + SameSite (logado)
+- Location: automation/tests/security/cookies-flags.spec.ts:56:5
+
+# Error details
+
+```
+Error: KASA_USER_EMAIL/PASSWORD não definidos em .env.local — fixture loggedInPage requer credenciais.
+```
+
+# Test source
+
+```ts
+  42  |   await page
+  43  |     .locator('a[href="/"]')
+  44  |     .first()
+  45  |     .waitFor({ state: 'visible', timeout: TIMEOUTS.normal })
+  46  |     .catch(() => undefined);
+  47  | 
+  48  |   const entrarHeader = page.getByRole('button', { name: /^entrar$/i }).first();
+  49  |   const calendarTab = page.locator('a[title="Calendário"], a[title="Calendario"]').first();
+  50  | 
+  51  |   // dá tempo do React montar UM dos dois (8s — entre fast e normal)
+  52  |   await Promise.race([
+  53  |     entrarHeader.waitFor({ state: 'visible', timeout: 8_000 }).catch(() => undefined),
+  54  |     calendarTab.waitFor({ state: 'visible', timeout: 8_000 }).catch(() => undefined),
+  55  |   ]);
+  56  | 
+  57  |   const entrarVisible = await entrarHeader.isVisible().catch(() => false);
+  58  |   return !entrarVisible;
+  59  | }
+  60  | 
+  61  | /**
+  62  |  * Faz login programático via UI (modal email/senha).
+  63  |  * Persiste storageState em AUTH_STATE_PATH no fim.
+  64  |  */
+  65  | async function performLogin(page: Page, email: string, password: string): Promise<void> {
+  66  |   // garante que estamos na home
+  67  |   if (!page.url().includes('kasa.live')) {
+  68  |     await page.goto('/', { waitUntil: 'domcontentloaded' });
+  69  |   }
+  70  | 
+  71  |   const headerEntrar = page.getByRole('button', { name: /^entrar$/i }).first();
+  72  |   await headerEntrar.click();
+  73  | 
+  74  |   const emailInput = page.getByPlaceholder(/digite seu e-?mail/i);
+  75  |   await emailInput.waitFor({ state: 'visible', timeout: TIMEOUTS.normal });
+  76  |   await emailInput.fill(email);
+  77  |   await page.getByPlaceholder(/digite sua senha/i).fill(password);
+  78  | 
+  79  |   // Submit pelo botão Entrar do MODAL (.last() — header tem o outro)
+  80  |   await page
+  81  |     .getByRole('button', { name: /^entrar$/i })
+  82  |     .last()
+  83  |     .click();
+  84  | 
+  85  |   // Aguarda modal sumir + network idle (Firebase auth pode demorar)
+  86  |   await page
+  87  |     .getByPlaceholder(/digite seu e-?mail/i)
+  88  |     .waitFor({ state: 'hidden', timeout: TIMEOUTS.network })
+  89  |     .catch(() => undefined);
+  90  |   await page.waitForLoadState('networkidle', { timeout: TIMEOUTS.network }).catch(() => undefined);
+  91  | 
+  92  |   // Garante que o header logado renderizou (tab Calendário só aparece logado)
+  93  |   await page
+  94  |     .locator('a[title="Calendário"], a[title="Calendario"]')
+  95  |     .first()
+  96  |     .waitFor({ state: 'visible', timeout: TIMEOUTS.network });
+  97  | 
+  98  |   // Persiste storage state pra próximas runs
+  99  |   await page.context().storageState({ path: AUTH_STATE_PATH });
+  100 | }
+  101 | 
+  102 | export const test = base.extend<Fixtures>({
+  103 |   homePage: async ({ page }, use) => {
+  104 |     await use(new HomePage(page));
+  105 |   },
+  106 |   highlightsPage: async ({ page }, use) => {
+  107 |     await use(new HighlightsPage(page));
+  108 |   },
+  109 |   calendarPage: async ({ page }, use) => {
+  110 |     await use(new CalendarPage(page));
+  111 |   },
+  112 |   loginModal: async ({ page }, use) => {
+  113 |     await use(new LoginModal(page));
+  114 |   },
+  115 |   profilePopover: async ({ page }, use) => {
+  116 |     await use(new ProfilePopover(page));
+  117 |   },
+  118 |   notificationsPanel: async ({ page }, use) => {
+  119 |     await use(new NotificationsPanel(page));
+  120 |   },
+  121 |   testDataFactory: async ({}, use) => {
+  122 |     await use(testDataFactory);
+  123 |   },
+  124 |   axeBuilder: async ({ page }, use) => {
+  125 |     await use(new AxeBuilder({ page }));
+  126 |   },
+  127 | 
+  128 |   /**
+  129 |    * loggedInPage — garante que a page retornada está autenticada.
+  130 |    *
+  131 |    * Estratégia (exploration-notes §13.8 e §14):
+  132 |    * 1. Cria contexto novo. Se `.auth-state.json` existir, injeta como storageState.
+  133 |    * 2. Vai pra home, checa se está logado.
+  134 |    * 3. Se NÃO logado → faz login fresco via UI usando .env.local (KASA_USER_EMAIL/PASSWORD)
+  135 |    *    e re-salva o storageState.
+  136 |    * 4. Skip elegante se vars de ambiente faltarem.
+  137 |    */
+  138 |   loggedInPage: async ({ browser }, use) => {
+  139 |     const email = process.env.KASA_USER_EMAIL;
+  140 |     const password = process.env.KASA_USER_PASSWORD;
+  141 |     if (!email || !password) {
+> 142 |       throw new Error(
+      |             ^ Error: KASA_USER_EMAIL/PASSWORD não definidos em .env.local — fixture loggedInPage requer credenciais.
+  143 |         'KASA_USER_EMAIL/PASSWORD não definidos em .env.local — fixture loggedInPage requer credenciais.',
+  144 |       );
+  145 |     }
+  146 | 
+  147 |     const hasStoredState = fs.existsSync(AUTH_STATE_PATH);
+  148 |     const context = await browser.newContext(
+  149 |       hasStoredState ? { storageState: AUTH_STATE_PATH } : {},
+  150 |     );
+  151 |     const page = await context.newPage();
+  152 |     await page.goto('/', { waitUntil: 'domcontentloaded' });
+  153 | 
+  154 |     if (!(await isLoggedIn(page))) {
+  155 |       await performLogin(page, email, password);
+  156 |     }
+  157 | 
+  158 |     await use(page);
+  159 |     await context.close();
+  160 |   },
+  161 | });
+  162 | 
+  163 | export { expect } from '@playwright/test';
+  164 | 
+```

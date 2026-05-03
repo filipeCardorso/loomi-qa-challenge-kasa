@@ -1,0 +1,103 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: security/security-headers.spec.ts >> @security headers de segurança presentes em API DEV /match/
+- Location: automation/tests/security/security-headers.spec.ts:33:7
+
+# Error details
+
+```
+TimeoutError: apiRequestContext.get: Timeout 45000ms exceeded.
+Call log:
+  - → GET https://kasa-live.api.dev.loomi.com.br/api/1.0/match/?status=ENDED&page=1
+    - user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:148.0.2) Gecko/20100101 Firefox/148.0.2
+    - accept: */*
+    - accept-encoding: gzip,deflate,br
+
+```
+
+# Test source
+
+```ts
+  1  | import { test, expect, request as playwrightRequest } from '@playwright/test';
+  2  | 
+  3  | /**
+  4  |  * @security Cabeçalhos HTTP de segurança
+  5  |  *
+  6  |  * Verifica presença das principais defenses-in-depth:
+  7  |  *  - Strict-Transport-Security (HSTS)
+  8  |  *  - X-Content-Type-Options: nosniff
+  9  |  *  - X-Frame-Options OU CSP frame-ancestors (anti-clickjacking)
+  10 |  *  - Referrer-Policy
+  11 |  *  - Content-Security-Policy (registrado como soft — CSP é estratégia, não mandatório)
+  12 |  *
+  13 |  * Cada finding ausente vira candidato a bug separado, mas reportamos tudo
+  14 |  * num assert único pra ter o relatório completo numa única falha.
+  15 |  */
+  16 | 
+  17 | interface HeaderCheck {
+  18 |   url: string;
+  19 |   label: string;
+  20 | }
+  21 | 
+  22 | const TARGETS: HeaderCheck[] = [
+  23 |   { url: 'https://www.kasa.live/', label: 'home (frontend)' },
+  24 |   {
+  25 |     url: 'https://kasa-live.api.dev.loomi.com.br/api/1.0/match/?status=ENDED&page=1',
+  26 |     label: 'API DEV /match/',
+  27 |   },
+  28 | ];
+  29 | 
+  30 | test.describe.configure({ timeout: 60_000 });
+  31 | 
+  32 | for (const t of TARGETS) {
+  33 |   test(`@security headers de segurança presentes em ${t.label}`, async () => {
+  34 |     const ctx = await playwrightRequest.newContext({ timeout: 45_000 });
+  35 |     try {
+> 36 |       const res = await ctx.get(t.url);
+     |                             ^ TimeoutError: apiRequestContext.get: Timeout 45000ms exceeded.
+  37 |       const headers = res.headers();
+  38 | 
+  39 |       const findings: string[] = [];
+  40 | 
+  41 |       if (!headers['strict-transport-security']) {
+  42 |         findings.push('falta HSTS (Strict-Transport-Security)');
+  43 |       }
+  44 |       if (!headers['x-content-type-options']) {
+  45 |         findings.push('falta X-Content-Type-Options: nosniff');
+  46 |       }
+  47 | 
+  48 |       const csp = headers['content-security-policy'];
+  49 |       const xfo = headers['x-frame-options'];
+  50 |       const cspBlocksFrame = !!csp && /frame-ancestors/i.test(csp);
+  51 |       if (!xfo && !cspBlocksFrame) {
+  52 |         findings.push('vulnerável a clickjacking (sem X-Frame-Options nem CSP frame-ancestors)');
+  53 |       }
+  54 | 
+  55 |       if (!headers['referrer-policy']) {
+  56 |         findings.push('falta Referrer-Policy');
+  57 |       }
+  58 | 
+  59 |       // CSP genérico como soft — site moderno deveria ter, mas é estratégia
+  60 |       if (!csp) {
+  61 |         expect
+  62 |           .soft(csp, `${t.label}: falta Content-Security-Policy (defense-in-depth)`)
+  63 |           .toBeTruthy();
+  64 |       }
+  65 | 
+  66 |       expect(
+  67 |         findings,
+  68 |         `${t.label}: headers de segurança ausentes:\n  - ${findings.join('\n  - ')}`,
+  69 |       ).toEqual([]);
+  70 |     } finally {
+  71 |       await ctx.dispose();
+  72 |     }
+  73 |   });
+  74 | }
+  75 | 
+```

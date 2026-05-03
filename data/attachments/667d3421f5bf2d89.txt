@@ -1,0 +1,317 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: e2e/buscar-avancado.spec.ts >> Busca avançada — typeahead, combos e reset >> @core limpar filtros (refresh / click logo) restaura listagem inicial
+- Location: automation/tests/e2e/buscar-avancado.spec.ts:61:7
+
+# Error details
+
+```
+Test timeout of 30000ms exceeded.
+```
+
+```
+Error: locator.waitFor: Test timeout of 30000ms exceeded.
+Call log:
+  - waiting for locator('div.css-7mca6u').first() to be visible
+
+```
+
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - generic [ref=e4]:
+    - banner [ref=e5]:
+      - generic [ref=e7]:
+        - link "home" [ref=e8] [cursor=pointer]:
+          - /url: /
+          - img "home" [ref=e9]
+        - generic [ref=e14]:
+          - generic [ref=e17]:
+            - textbox "Qual time?" [ref=e20]
+            - textbox "Qual campeonato?" [ref=e23]
+            - generic [ref=e28]:
+              - generic:
+                - img
+              - textbox "Apr 30, 2026" [ref=e29]: Hoje
+            - textbox "Onde quer ver?" [ref=e32]
+          - img [ref=e36] [cursor=pointer]
+        - generic [ref=e38]:
+          - button "Notificações" [ref=e40] [cursor=pointer]:
+            - img [ref=e41]
+          - button "Entrar" [ref=e42] [cursor=pointer]
+      - generic [ref=e46]:
+        - link "Partidas Partidas" [ref=e47] [cursor=pointer]:
+          - /url: /
+          - img "Partidas" [ref=e48]
+          - paragraph [ref=e49]: Partidas
+        - link "Melhores momentos Melhores momentos" [ref=e50] [cursor=pointer]:
+          - /url: /melhores-momentos
+          - img "Melhores momentos" [ref=e51]
+          - paragraph [ref=e52]: Melhores momentos
+    - main [ref=e54]:
+      - generic [ref=e55]:
+        - generic [ref=e56]:
+          - generic [ref=e59]:
+            - separator [ref=e63]
+            - separator [ref=e68]
+            - separator [ref=e73]
+            - separator [ref=e78]
+            - separator [ref=e83]
+            - separator [ref=e88]
+            - separator [ref=e93]
+            - separator [ref=e98]
+            - separator [ref=e103]
+            - separator [ref=e108]
+            - separator [ref=e113]
+            - separator [ref=e118]
+            - separator [ref=e123]
+            - separator [ref=e128]
+            - separator [ref=e133]
+            - separator [ref=e138]
+            - separator [ref=e143]
+            - separator [ref=e148]
+            - separator [ref=e153]
+            - separator [ref=e158]
+            - separator [ref=e163]
+            - separator [ref=e168]
+            - separator [ref=e173]
+            - separator [ref=e178]
+            - separator [ref=e183]
+            - separator [ref=e188]
+            - separator [ref=e193]
+            - separator [ref=e198]
+            - separator [ref=e203]
+            - separator [ref=e208]
+          - paragraph [ref=e211]: ...
+        - generic [ref=e212]:
+          - generic [ref=e215]:
+            - separator [ref=e219]
+            - separator [ref=e224]
+            - separator [ref=e229]
+            - separator [ref=e234]
+            - separator [ref=e239]
+            - separator [ref=e244]
+            - separator [ref=e249]
+            - separator [ref=e254]
+            - separator [ref=e259]
+            - separator [ref=e264]
+            - separator [ref=e269]
+            - separator [ref=e274]
+            - separator [ref=e279]
+            - separator [ref=e284]
+            - separator [ref=e289]
+            - separator [ref=e294]
+            - separator [ref=e299]
+            - separator [ref=e304]
+            - separator [ref=e309]
+            - separator [ref=e314]
+            - separator [ref=e319]
+            - separator [ref=e324]
+            - separator [ref=e329]
+            - separator [ref=e334]
+            - separator [ref=e339]
+            - separator [ref=e344]
+            - separator [ref=e349]
+            - separator [ref=e354]
+            - separator [ref=e359]
+            - separator [ref=e364]
+          - paragraph [ref=e367]: ...
+        - generic [ref=e368]:
+          - generic [ref=e371]:
+            - separator [ref=e375]
+            - separator [ref=e380]
+            - separator [ref=e385]
+            - separator [ref=e390]
+            - separator [ref=e395]
+            - separator [ref=e400]
+            - separator [ref=e405]
+            - separator [ref=e410]
+            - separator [ref=e415]
+            - separator [ref=e420]
+            - separator [ref=e425]
+            - separator [ref=e430]
+            - separator [ref=e435]
+            - separator [ref=e440]
+            - separator [ref=e445]
+            - separator [ref=e450]
+            - separator [ref=e455]
+            - separator [ref=e460]
+            - separator [ref=e465]
+            - separator [ref=e470]
+            - separator [ref=e475]
+            - separator [ref=e480]
+            - separator [ref=e485]
+            - separator [ref=e490]
+            - separator [ref=e495]
+            - separator [ref=e500]
+            - separator [ref=e505]
+            - separator [ref=e510]
+            - separator [ref=e515]
+            - separator [ref=e520]
+          - paragraph [ref=e523]: ...
+        - generic [ref=e524]:
+          - generic [ref=e527]:
+            - separator [ref=e531]
+            - separator [ref=e536]
+            - separator [ref=e541]
+            - separator [ref=e546]
+            - separator [ref=e551]
+            - separator [ref=e556]
+            - separator [ref=e561]
+            - separator [ref=e566]
+            - separator [ref=e571]
+            - separator [ref=e576]
+            - separator [ref=e581]
+            - separator [ref=e586]
+            - separator [ref=e591]
+            - separator [ref=e596]
+            - separator [ref=e601]
+            - separator [ref=e606]
+            - separator [ref=e611]
+            - separator [ref=e616]
+            - separator [ref=e621]
+            - separator [ref=e626]
+            - separator [ref=e631]
+            - separator [ref=e636]
+            - separator [ref=e641]
+            - separator [ref=e646]
+            - separator [ref=e651]
+            - separator [ref=e656]
+            - separator [ref=e661]
+            - separator [ref=e666]
+            - separator [ref=e671]
+            - separator [ref=e676]
+          - paragraph [ref=e679]: ...
+    - contentinfo [ref=e680]:
+      - paragraph [ref=e682]: Porque Deus amou o mundo de tal maneira, que deu o seu Filho Unigênito (Jesus), para que todo aquele que nele crê não pereça, mas tenha a vida eterna - João 3:16
+      - generic [ref=e683]:
+        - img "playStore" [ref=e685] [cursor=pointer]
+        - img "appStore" [ref=e687] [cursor=pointer]
+      - generic [ref=e688]:
+        - link [ref=e689] [cursor=pointer]:
+          - /url: https://www.tiktok.com/@kasa.live/
+          - img [ref=e690]
+        - link [ref=e692] [cursor=pointer]:
+          - /url: https://www.instagram.com/kasa.live/
+          - img [ref=e693]
+      - generic [ref=e695]:
+        - paragraph [ref=e696]: © 2022 Kasa.live, LTDA.
+        - link "Termos de Uso e Política de Privacidade" [ref=e697] [cursor=pointer]:
+          - /url: /termos-de-uso
+      - paragraph [ref=e698]: v3.1-Web
+  - alert [ref=e699]
+  - generic:
+    - region
+    - region
+    - region
+    - region
+    - region
+    - region
+  - iframe [ref=e700]:
+    
+```
+
+# Test source
+
+```ts
+  1  | import { test, expect } from '@fixtures/index';
+  2  | import { SELECTORS } from '@support/selectors';
+  3  | 
+  4  | /**
+  5  |  * @core
+  6  |  * Suite avançada de busca cobrindo o typeahead via API:
+  7  |  * 1. Busca parcial por time → /team/?name=Flam
+  8  |  * 2. Busca por campeonato → dispara API
+  9  |  * 3. Combinação 2 filtros simultâneos
+  10 |  * 4. Limpar filtros restaura listagem inicial
+  11 |  */
+  12 | test.describe('Busca avançada — typeahead, combos e reset', () => {
+  13 |   test('@core busca parcial por time "Flam" dispara /team/?name=Flam', async ({
+  14 |     homePage,
+  15 |     page,
+  16 |   }) => {
+  17 |     await homePage.open();
+  18 |     await page.waitForLoadState('networkidle', { timeout: 15_000 }).catch(() => undefined);
+  19 | 
+  20 |     const teamLookupPromise = page.waitForRequest(
+  21 |       (req) => /\/team\/\?[^ ]*name=Flam/i.test(req.url()),
+  22 |       { timeout: 15_000 },
+  23 |     );
+  24 |     await homePage.filtroQualTime.fill('Flam');
+  25 | 
+  26 |     const req = await teamLookupPromise;
+  27 |     expect(req.url(), 'request /team/?name=Flam esperado').toMatch(/\/team\/\?[^ ]*name=Flam/i);
+  28 |   });
+  29 | 
+  30 |   test('@core busca por campeonato dispara request à API', async ({ homePage, page }) => {
+  31 |     await homePage.open();
+  32 |     await page.waitForLoadState('networkidle', { timeout: 15_000 }).catch(() => undefined);
+  33 | 
+  34 |     // Esperamos qualquer request à API que carregue dados após a interação
+  35 |     // (championship typeahead pode bater /championship/, /tournament/ ou /match/).
+  36 |     const apiCallPromise = page.waitForRequest(
+  37 |       (req) => /kasa-live\.api\.dev\.loomi\.com\.br/i.test(req.url()) && req.method() === 'GET',
+  38 |       { timeout: 15_000 },
+  39 |     );
+  40 |     await homePage.filtroQualCampeonato.fill('Brasileir');
+  41 | 
+  42 |     const req = await apiCallPromise;
+  43 |     expect(req.url(), 'esperada chamada à API kasa-live').toMatch(/kasa-live\.api/);
+  44 |   });
+  45 | 
+  46 |   test('@core combinar filtros time+campeonato sem erro de runtime', async ({ homePage, page }) => {
+  47 |     await homePage.open();
+  48 |     await page.waitForLoadState('networkidle', { timeout: 15_000 }).catch(() => undefined);
+  49 | 
+  50 |     await homePage.filtroQualTime.fill('Flamengo');
+  51 |     await homePage.filtroQualCampeonato.fill('Brasileirão');
+  52 | 
+  53 |     // Página continua interativa — assert proxy: filtros ainda visíveis
+  54 |     await expect(homePage.filtroQualTime, 'filtro time continua visível').toBeVisible();
+  55 |     await expect(homePage.filtroQualCampeonato, 'filtro campeonato continua visível').toBeVisible();
+  56 | 
+  57 |     const errorBanner = page.locator('text=/algo deu errado|error 500|oops/i').first();
+  58 |     expect(await errorBanner.isVisible().catch(() => false)).toBe(false);
+  59 |   });
+  60 | 
+  61 |   test('@core limpar filtros (refresh / click logo) restaura listagem inicial', async ({
+  62 |     homePage,
+  63 |     page,
+  64 |   }) => {
+  65 |     await homePage.open();
+  66 |     await page.waitForLoadState('networkidle', { timeout: 15_000 }).catch(() => undefined);
+  67 | 
+  68 |     // baseline: pega contagem de cards
+  69 |     const cardLocator = page.locator(SELECTORS.matchCard);
+> 70 |     await cardLocator.first().waitFor({ state: 'visible', timeout: 30_000 });
+     |                               ^ Error: locator.waitFor: Test timeout of 30000ms exceeded.
+  71 |     const initialCount = await cardLocator.count();
+  72 |     expect(initialCount, 'baseline: deve haver cards na home').toBeGreaterThan(0);
+  73 | 
+  74 |     // aplica filtro
+  75 |     await homePage.filtroQualTime.fill('Inter');
+  76 | 
+  77 |     // limpa via click no logo (volta pra `/` resetando filtros)
+  78 |     const logoLink = page.locator('a[href="/"]').first();
+  79 |     await logoLink.click();
+  80 |     await page.waitForURL((url) => url.pathname === '/' || url.pathname === '', {
+  81 |       timeout: 10_000,
+  82 |     });
+  83 |     await cardLocator.first().waitFor({ state: 'visible', timeout: 30_000 });
+  84 | 
+  85 |     const restoredCount = await cardLocator.count();
+  86 |     expect(
+  87 |       restoredCount,
+  88 |       `após reset esperado >=1 card (recebido ${restoredCount})`,
+  89 |     ).toBeGreaterThanOrEqual(1);
+  90 |   });
+  91 | });
+  92 | 
+```

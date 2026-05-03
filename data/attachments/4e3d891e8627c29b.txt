@@ -1,0 +1,889 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: e2e/buscar-avancado.spec.ts >> Busca avançada — typeahead, combos e reset >> @core busca parcial por time "Flam" dispara /team/?name=Flam
+- Location: automation/tests/e2e/buscar-avancado.spec.ts:13:7
+
+# Error details
+
+```
+TimeoutError: page.waitForRequest: Timeout 15000ms exceeded while waiting for event "request"
+```
+
+# Page snapshot
+
+```yaml
+- generic [ref=e1]:
+  - generic [ref=e4]:
+    - banner [ref=e5]:
+      - generic [ref=e7]:
+        - link "home" [ref=e8] [cursor=pointer]:
+          - /url: /
+          - img "home" [ref=e9]
+        - generic [ref=e12]:
+          - generic [ref=e14]:
+            - generic [ref=e17]:
+              - textbox "Qual time?" [ref=e20]
+              - textbox "Qual campeonato?" [ref=e23]
+              - generic [ref=e28]:
+                - generic:
+                  - img
+                - textbox "Apr 30, 2026" [ref=e29]: Hoje
+              - textbox "Onde quer ver?" [ref=e32]
+            - img [ref=e36] [cursor=pointer]
+          - dialog [active] [ref=e39]:
+            - generic [ref=e42]:
+              - paragraph [ref=e43]: Sugestões
+              - generic [ref=e45]:
+                - generic [ref=e46]:
+                  - generic [ref=e47] [cursor=pointer]:
+                    - paragraph [ref=e49]: 09 Dortmund
+                    - img [ref=e50]
+                  - separator [ref=e52]
+                - generic [ref=e53]:
+                  - generic [ref=e54] [cursor=pointer]:
+                    - paragraph [ref=e56]: 11 Deportivo FC U20
+                    - img [ref=e57]
+                  - separator [ref=e59]
+                - generic [ref=e60]:
+                  - generic [ref=e61] [cursor=pointer]:
+                    - paragraph [ref=e63]: 12 Bingol Spor
+                    - img [ref=e64]
+                  - separator [ref=e66]
+                - generic [ref=e67]:
+                  - generic [ref=e68] [cursor=pointer]:
+                    - paragraph [ref=e70]: 12 de Junio de Villa Hayes
+                    - img [ref=e71]
+                  - separator [ref=e73]
+                - generic [ref=e74]:
+                  - generic [ref=e75] [cursor=pointer]:
+                    - paragraph [ref=e77]: 12 de Octubre
+                    - img [ref=e78]
+                  - separator [ref=e80]
+                - generic [ref=e81]:
+                  - generic [ref=e82] [cursor=pointer]:
+                    - paragraph [ref=e84]: 12 de Octubre de San Domingo
+                    - img [ref=e85]
+                  - separator [ref=e87]
+                - generic [ref=e88]:
+                  - generic [ref=e89] [cursor=pointer]:
+                    - paragraph [ref=e91]: 14 de Mayo de Capiibary
+                    - img [ref=e92]
+                  - separator [ref=e94]
+                - generic [ref=e95]:
+                  - generic [ref=e96] [cursor=pointer]:
+                    - paragraph [ref=e98]: 16 de Julio de Pto. Sastre
+                    - img [ref=e99]
+                  - separator [ref=e101]
+                - generic [ref=e102]:
+                  - generic [ref=e103] [cursor=pointer]:
+                    - paragraph [ref=e105]: 1860 Munich
+                    - img [ref=e106]
+                  - separator [ref=e108]
+                - generic [ref=e109]:
+                  - generic [ref=e110] [cursor=pointer]:
+                    - paragraph [ref=e112]: 1860 Munich II
+                    - img [ref=e113]
+                  - separator [ref=e115]
+                - generic [ref=e116]:
+                  - generic [ref=e117] [cursor=pointer]:
+                    - paragraph [ref=e119]: 1865 Dachau
+                    - img [ref=e120]
+                  - separator [ref=e122]
+                - generic [ref=e123]:
+                  - generic [ref=e124] [cursor=pointer]:
+                    - paragraph [ref=e126]: 1899 Hoffenheim U19
+                    - img [ref=e127]
+                  - separator [ref=e129]
+                - generic [ref=e130]:
+                  - generic [ref=e131] [cursor=pointer]:
+                    - paragraph [ref=e133]: 1914 Samorin
+                    - img [ref=e134]
+                  - separator [ref=e136]
+                - generic [ref=e137]:
+                  - generic [ref=e138] [cursor=pointer]:
+                    - paragraph [ref=e140]: 1922 Konyaspor
+                    - img [ref=e141]
+                  - separator [ref=e143]
+                - generic [ref=e144]:
+                  - generic [ref=e145] [cursor=pointer]:
+                    - paragraph [ref=e147]: 1923 MK Pasaspor
+                    - img [ref=e148]
+                  - separator [ref=e150]
+                - generic [ref=e151]:
+                  - generic [ref=e152] [cursor=pointer]:
+                    - paragraph [ref=e154]: 1926 Polatli Belediyespor
+                    - img [ref=e155]
+                  - separator [ref=e157]
+                - generic [ref=e158]:
+                  - generic [ref=e159] [cursor=pointer]:
+                    - paragraph [ref=e161]: 1929 Waldgirmes
+                    - img [ref=e162]
+                  - separator [ref=e164]
+                - generic [ref=e165]:
+                  - generic [ref=e166] [cursor=pointer]:
+                    - paragraph [ref=e168]: 1954 Kelkit Belediyespor
+                    - img [ref=e169]
+                  - separator [ref=e171]
+                - generic [ref=e172]:
+                  - generic [ref=e173] [cursor=pointer]:
+                    - paragraph [ref=e175]: 1. Bfk Frydlant Nad Ostravici
+                    - img [ref=e176]
+                  - separator [ref=e178]
+                - generic [ref=e179]:
+                  - generic [ref=e180] [cursor=pointer]:
+                    - paragraph [ref=e182]: 1 Dezembro
+                    - img [ref=e183]
+                  - separator [ref=e185]
+                - generic [ref=e186]:
+                  - generic [ref=e187] [cursor=pointer]:
+                    - paragraph [ref=e189]: 1 FC Cologne U19
+                    - img [ref=e190]
+                  - separator [ref=e192]
+                - generic [ref=e193]:
+                  - generic [ref=e194] [cursor=pointer]:
+                    - paragraph [ref=e196]: 1 FC Cologne (W)
+                    - img [ref=e197]
+                  - separator [ref=e199]
+                - generic [ref=e200]:
+                  - generic [ref=e201] [cursor=pointer]:
+                    - paragraph [ref=e203]: 1. FC Duren
+                    - img [ref=e204]
+                  - separator [ref=e206]
+                - generic [ref=e207]:
+                  - generic [ref=e208] [cursor=pointer]:
+                    - paragraph [ref=e210]: 1. FC Heidenheim U19
+                    - img [ref=e211]
+                  - separator [ref=e213]
+                - generic [ref=e214]:
+                  - generic [ref=e215] [cursor=pointer]:
+                    - paragraph [ref=e217]: 1. FC Kaiserslautern U19
+                    - img [ref=e218]
+                  - separator [ref=e220]
+                - generic [ref=e221]:
+                  - generic [ref=e222] [cursor=pointer]:
+                    - paragraph [ref=e224]: 1. FC Karlovy Vary
+                    - img [ref=e225]
+                  - separator [ref=e227]
+                - generic [ref=e228]:
+                  - generic [ref=e229] [cursor=pointer]:
+                    - paragraph [ref=e231]: 1 FC Magdeburg U19
+                    - img [ref=e232]
+                  - separator [ref=e234]
+                - generic [ref=e235]:
+                  - generic [ref=e236] [cursor=pointer]:
+                    - paragraph [ref=e238]: 1 FC Normannia Schwabisch Gmund
+                    - img [ref=e239]
+                  - separator [ref=e241]
+                - generic [ref=e242]:
+                  - generic [ref=e243] [cursor=pointer]:
+                    - paragraph [ref=e245]: 1 FC Nuremberg U19
+                    - img [ref=e246]
+                  - separator [ref=e248]
+                - generic [ref=e249]:
+                  - generic [ref=e250] [cursor=pointer]:
+                    - paragraph [ref=e252]: 1. FC Nuremberg (W)
+                    - img [ref=e253]
+                  - separator [ref=e255]
+        - generic [ref=e256]:
+          - button "Notificações" [ref=e258] [cursor=pointer]:
+            - img [ref=e259]
+          - button "Entrar" [ref=e260] [cursor=pointer]
+      - generic [ref=e264]:
+        - link "Partidas Partidas" [ref=e265] [cursor=pointer]:
+          - /url: /
+          - img "Partidas" [ref=e266]
+          - paragraph [ref=e267]: Partidas
+        - link "Melhores momentos Melhores momentos" [ref=e268] [cursor=pointer]:
+          - /url: /melhores-momentos
+          - img "Melhores momentos" [ref=e269]
+          - paragraph [ref=e270]: Melhores momentos
+    - main [ref=e272]:
+      - generic [ref=e274]:
+        - generic [ref=e275]:
+          - generic [ref=e276]:
+            - img "logo" [ref=e277]
+            - paragraph [ref=e278]: Partidas finalizadas
+          - generic [ref=e279]:
+            - img "grid" [ref=e280] [cursor=pointer]
+            - img "lista" [ref=e281] [cursor=pointer]
+        - generic [ref=e282]:
+          - generic [ref=e286]:
+            - generic [ref=e288] [cursor=pointer]:
+              - paragraph [ref=e291]: MLS
+              - generic [ref=e292]:
+                - generic [ref=e293]:
+                  - generic [ref=e294]:
+                    - img "Escudo do time Minnesota Utd." [ref=e295]
+                    - paragraph [ref=e296]: Minnesota Utd.
+                  - paragraph [ref=e297]: "0"
+                - generic [ref=e298]:
+                  - generic [ref=e299]:
+                    - img "Escudo do time Inter Miami CF" [ref=e300]
+                    - paragraph [ref=e301]: Inter Miami CF
+                  - paragraph [ref=e302]: "0"
+              - separator [ref=e303]
+              - generic [ref=e304]:
+                - paragraph [ref=e305]: Finalizada
+                - button [ref=e306]:
+                  - img [ref=e307]
+            - generic [ref=e310] [cursor=pointer]:
+              - paragraph [ref=e313]: MLS
+              - generic [ref=e314]:
+                - generic [ref=e315]:
+                  - generic [ref=e316]:
+                    - img "Escudo do time Toronto FC" [ref=e317]
+                    - paragraph [ref=e318]: Toronto FC
+                  - paragraph [ref=e319]: "0"
+                - generic [ref=e320]:
+                  - generic [ref=e321]:
+                    - img "Escudo do time DC United" [ref=e322]
+                    - paragraph [ref=e323]: DC United
+                  - paragraph [ref=e324]: "0"
+              - separator [ref=e325]
+              - generic [ref=e326]:
+                - paragraph [ref=e327]: Finalizada
+                - button [ref=e328]:
+                  - img [ref=e329]
+            - generic [ref=e332] [cursor=pointer]:
+              - paragraph [ref=e335]: MLS
+              - generic [ref=e336]:
+                - generic [ref=e337]:
+                  - generic [ref=e338]:
+                    - img "Escudo do time Chicago" [ref=e339]
+                    - paragraph [ref=e340]: Chicago
+                  - paragraph [ref=e341]: "0"
+                - generic [ref=e342]:
+                  - generic [ref=e343]:
+                    - img "Escudo do time Atlanta United" [ref=e344]
+                    - paragraph [ref=e345]: Atlanta United
+                  - paragraph [ref=e346]: "0"
+              - separator [ref=e347]
+              - generic [ref=e348]:
+                - paragraph [ref=e349]: Finalizada
+                - button [ref=e350]:
+                  - img [ref=e351]
+            - generic [ref=e354] [cursor=pointer]:
+              - paragraph [ref=e357]: MLS
+              - generic [ref=e358]:
+                - generic [ref=e359]:
+                  - generic [ref=e360]:
+                    - img "Escudo do time LA Galaxy" [ref=e361]
+                    - paragraph [ref=e362]: LA Galaxy
+                  - paragraph [ref=e363]: "0"
+                - generic [ref=e364]:
+                  - generic [ref=e365]:
+                    - img "Escudo do time Portland Timbers" [ref=e366]
+                    - paragraph [ref=e367]: Portland Timbers
+                  - paragraph [ref=e368]: "0"
+              - separator [ref=e369]
+              - generic [ref=e370]:
+                - paragraph [ref=e371]: Finalizada
+                - button [ref=e372]:
+                  - img [ref=e373]
+            - generic [ref=e376] [cursor=pointer]:
+              - paragraph [ref=e379]: Premier League
+              - generic [ref=e380]:
+                - generic [ref=e381]:
+                  - generic [ref=e382]:
+                    - img "Escudo do time Mount Pleasant FC" [ref=e383]
+                    - paragraph [ref=e384]: Mount Pleasant FC
+                  - paragraph [ref=e385]: "0"
+                - generic [ref=e386]:
+                  - generic [ref=e387]:
+                    - img "Escudo do time Montego Bay Utd." [ref=e388]
+                    - paragraph [ref=e389]: Montego Bay Utd.
+                  - paragraph [ref=e390]: "0"
+              - separator [ref=e391]
+              - generic [ref=e392]:
+                - paragraph [ref=e393]: Finalizada
+                - button [ref=e394]:
+                  - img [ref=e395]
+            - generic [ref=e398] [cursor=pointer]:
+              - paragraph [ref=e401]: Premier League
+              - generic [ref=e402]:
+                - generic [ref=e403]:
+                  - generic [ref=e404]:
+                    - img "Escudo do time Portmore Utd" [ref=e405]
+                    - paragraph [ref=e406]: Portmore Utd
+                  - paragraph [ref=e407]: "0"
+                - generic [ref=e408]:
+                  - generic [ref=e409]:
+                    - img "Escudo do time Waterhouse FC" [ref=e410]
+                    - paragraph [ref=e411]: Waterhouse FC
+                  - paragraph [ref=e412]: "0"
+              - separator [ref=e413]
+              - generic [ref=e414]:
+                - paragraph [ref=e415]: Finalizada
+                - button [ref=e416]:
+                  - img [ref=e417]
+            - generic [ref=e420] [cursor=pointer]:
+              - paragraph [ref=e423]: MLS
+              - generic [ref=e424]:
+                - generic [ref=e425]:
+                  - generic [ref=e426]:
+                    - img "Escudo do time San Jose Earthquakes" [ref=e427]
+                    - paragraph [ref=e428]: San Jose Earthquakes
+                  - paragraph [ref=e429]: "0"
+                - generic [ref=e430]:
+                  - generic [ref=e431]:
+                    - img "Escudo do time Sporting Kansas City" [ref=e432]
+                    - paragraph [ref=e433]: Sporting Kansas City
+                  - paragraph [ref=e434]: "0"
+              - separator [ref=e435]
+              - generic [ref=e436]:
+                - paragraph [ref=e437]: Finalizada
+                - button [ref=e438]:
+                  - img [ref=e439]
+            - generic [ref=e442] [cursor=pointer]:
+              - paragraph [ref=e445]: MLS
+              - generic [ref=e446]:
+                - generic [ref=e447]:
+                  - generic [ref=e448]:
+                    - img "Escudo do time Portland Timbers" [ref=e449]
+                    - paragraph [ref=e450]: Portland Timbers
+                  - paragraph [ref=e451]: "0"
+                - generic [ref=e452]:
+                  - generic [ref=e453]:
+                    - img "Escudo do time Los Angeles FC" [ref=e454]
+                    - paragraph [ref=e455]: Los Angeles FC
+                  - paragraph [ref=e456]: "0"
+              - separator [ref=e457]
+              - generic [ref=e458]:
+                - paragraph [ref=e459]: Finalizada
+                - button [ref=e460]:
+                  - img [ref=e461]
+            - generic [ref=e464] [cursor=pointer]:
+              - paragraph [ref=e467]: MLS
+              - generic [ref=e468]:
+                - generic [ref=e469]:
+                  - generic [ref=e470]:
+                    - img "Escudo do time Real Salt Lake" [ref=e471]
+                    - paragraph [ref=e472]: Real Salt Lake
+                  - paragraph [ref=e473]: "0"
+                - generic [ref=e474]:
+                  - generic [ref=e475]:
+                    - img "Escudo do time Toronto FC" [ref=e476]
+                    - paragraph [ref=e477]: Toronto FC
+                  - paragraph [ref=e478]: "0"
+              - separator [ref=e479]
+              - generic [ref=e480]:
+                - paragraph [ref=e481]: Finalizada
+                - button [ref=e482]:
+                  - img [ref=e483]
+            - generic [ref=e486] [cursor=pointer]:
+              - paragraph [ref=e489]: MLS
+              - generic [ref=e490]:
+                - generic [ref=e491]:
+                  - generic [ref=e492]:
+                    - img "Escudo do time Chicago" [ref=e493]
+                    - paragraph [ref=e494]: Chicago
+                  - paragraph [ref=e495]: "0"
+                - generic [ref=e496]:
+                  - generic [ref=e497]:
+                    - img "Escudo do time FC Cincinnati" [ref=e498]
+                    - paragraph [ref=e499]: FC Cincinnati
+                  - paragraph [ref=e500]: "0"
+              - separator [ref=e501]
+              - generic [ref=e502]:
+                - paragraph [ref=e503]: Finalizada
+                - button [ref=e504]:
+                  - img [ref=e505]
+            - generic [ref=e508] [cursor=pointer]:
+              - paragraph [ref=e511]: MLS
+              - generic [ref=e512]:
+                - generic [ref=e513]:
+                  - generic [ref=e514]:
+                    - img "Escudo do time Houston Dynamo" [ref=e515]
+                    - paragraph [ref=e516]: Houston Dynamo
+                  - paragraph [ref=e517]: "0"
+                - generic [ref=e518]:
+                  - generic [ref=e519]:
+                    - img "Escudo do time Colorado Rapids" [ref=e520]
+                    - paragraph [ref=e521]: Colorado Rapids
+                  - paragraph [ref=e522]: "0"
+              - separator [ref=e523]
+              - generic [ref=e524]:
+                - paragraph [ref=e525]: Finalizada
+                - button [ref=e526]:
+                  - img [ref=e527]
+            - generic [ref=e530] [cursor=pointer]:
+              - paragraph [ref=e533]: MLS
+              - generic [ref=e534]:
+                - generic [ref=e535]:
+                  - generic [ref=e536]:
+                    - img "Escudo do time Minnesota Utd." [ref=e537]
+                    - paragraph [ref=e538]: Minnesota Utd.
+                  - paragraph [ref=e539]: "0"
+                - generic [ref=e540]:
+                  - generic [ref=e541]:
+                    - img "Escudo do time FC Dallas" [ref=e542]
+                    - paragraph [ref=e543]: FC Dallas
+                  - paragraph [ref=e544]: "0"
+              - separator [ref=e545]
+              - generic [ref=e546]:
+                - paragraph [ref=e547]: Finalizada
+                - button [ref=e548]:
+                  - img [ref=e549]
+            - generic [ref=e552] [cursor=pointer]:
+              - paragraph [ref=e555]: MLS
+              - generic [ref=e556]:
+                - generic [ref=e557]:
+                  - generic [ref=e558]:
+                    - img "Escudo do time St. Louis City SC" [ref=e559]
+                    - paragraph [ref=e560]: St. Louis City SC
+                  - paragraph [ref=e561]: "0"
+                - generic [ref=e562]:
+                  - generic [ref=e563]:
+                    - img "Escudo do time Vancouver Whitecaps" [ref=e564]
+                    - paragraph [ref=e565]: Vancouver Whitecaps
+                  - paragraph [ref=e566]: "0"
+              - separator [ref=e567]
+              - generic [ref=e568]:
+                - paragraph [ref=e569]: Finalizada
+                - button [ref=e570]:
+                  - img [ref=e571]
+            - generic [ref=e574] [cursor=pointer]:
+              - paragraph [ref=e577]: MLS
+              - generic [ref=e578]:
+                - generic [ref=e579]:
+                  - generic [ref=e580]:
+                    - img "Escudo do time Columbus Crew" [ref=e581]
+                    - paragraph [ref=e582]: Columbus Crew
+                  - paragraph [ref=e583]: "0"
+                - generic [ref=e584]:
+                  - generic [ref=e585]:
+                    - img "Escudo do time Inter Miami CF" [ref=e586]
+                    - paragraph [ref=e587]: Inter Miami CF
+                  - paragraph [ref=e588]: "0"
+              - separator [ref=e589]
+              - generic [ref=e590]:
+                - paragraph [ref=e591]: Finalizada
+                - button [ref=e592]:
+                  - img [ref=e593]
+            - generic [ref=e596] [cursor=pointer]:
+              - paragraph [ref=e599]: MLS
+              - generic [ref=e600]:
+                - generic [ref=e601]:
+                  - generic [ref=e602]:
+                    - img "Escudo do time Austin FC" [ref=e603]
+                    - paragraph [ref=e604]: Austin FC
+                  - paragraph [ref=e605]: "0"
+                - generic [ref=e606]:
+                  - generic [ref=e607]:
+                    - img "Escudo do time LA Galaxy" [ref=e608]
+                    - paragraph [ref=e609]: LA Galaxy
+                  - paragraph [ref=e610]: "0"
+              - separator [ref=e611]
+              - generic [ref=e612]:
+                - paragraph [ref=e613]: Finalizada
+                - button [ref=e614]:
+                  - img [ref=e615]
+            - generic [ref=e618] [cursor=pointer]:
+              - paragraph [ref=e621]: MLS
+              - generic [ref=e622]:
+                - generic [ref=e623]:
+                  - generic [ref=e624]:
+                    - img "Escudo do time Inter Miami CF" [ref=e625]
+                    - paragraph [ref=e626]: Inter Miami CF
+                  - paragraph [ref=e627]: "0"
+                - generic [ref=e628]:
+                  - generic [ref=e629]:
+                    - img "Escudo do time Toronto FC" [ref=e630]
+                    - paragraph [ref=e631]: Toronto FC
+                  - paragraph [ref=e632]: "0"
+              - separator [ref=e633]
+              - generic [ref=e634]:
+                - paragraph [ref=e635]: Finalizada
+                - button [ref=e636]:
+                  - img [ref=e637]
+            - generic [ref=e640] [cursor=pointer]:
+              - paragraph [ref=e643]: MLS
+              - generic [ref=e644]:
+                - generic [ref=e645]:
+                  - generic [ref=e646]:
+                    - img "Escudo do time San Jose Earthquakes" [ref=e647]
+                    - paragraph [ref=e648]: San Jose Earthquakes
+                  - paragraph [ref=e649]: "0"
+                - generic [ref=e650]:
+                  - generic [ref=e651]:
+                    - img "Escudo do time DC United" [ref=e652]
+                    - paragraph [ref=e653]: DC United
+                  - paragraph [ref=e654]: "0"
+              - separator [ref=e655]
+              - generic [ref=e656]:
+                - paragraph [ref=e657]: Finalizada
+                - button [ref=e658]:
+                  - img [ref=e659]
+            - generic [ref=e662] [cursor=pointer]:
+              - paragraph [ref=e665]: MLS
+              - generic [ref=e666]:
+                - generic [ref=e667]:
+                  - generic [ref=e668]:
+                    - img "Escudo do time New York City" [ref=e669]
+                    - paragraph [ref=e670]: New York City
+                  - paragraph [ref=e671]: "0"
+                - generic [ref=e672]:
+                  - generic [ref=e673]:
+                    - img "Escudo do time Minnesota Utd." [ref=e674]
+                    - paragraph [ref=e675]: Minnesota Utd.
+                  - paragraph [ref=e676]: "0"
+              - separator [ref=e677]
+              - generic [ref=e678]:
+                - paragraph [ref=e679]: Finalizada
+                - button [ref=e680]:
+                  - img [ref=e681]
+            - generic [ref=e684] [cursor=pointer]:
+              - paragraph [ref=e687]: MLS
+              - generic [ref=e688]:
+                - generic [ref=e689]:
+                  - generic [ref=e690]:
+                    - img "Escudo do time San Diego FC" [ref=e691]
+                    - paragraph [ref=e692]: San Diego FC
+                  - paragraph [ref=e693]: "0"
+                - generic [ref=e694]:
+                  - generic [ref=e695]:
+                    - img "Escudo do time Seattle Sounders" [ref=e696]
+                    - paragraph [ref=e697]: Seattle Sounders
+                  - paragraph [ref=e698]: "0"
+              - separator [ref=e699]
+              - generic [ref=e700]:
+                - paragraph [ref=e701]: Finalizada
+                - button [ref=e702]:
+                  - img [ref=e703]
+            - generic [ref=e706] [cursor=pointer]:
+              - paragraph [ref=e709]: MLS
+              - generic [ref=e710]:
+                - generic [ref=e711]:
+                  - generic [ref=e712]:
+                    - img "Escudo do time Vancouver Whitecaps" [ref=e713]
+                    - paragraph [ref=e714]: Vancouver Whitecaps
+                  - paragraph [ref=e715]: "0"
+                - generic [ref=e716]:
+                  - generic [ref=e717]:
+                    - img "Escudo do time Colorado Rapids" [ref=e718]
+                    - paragraph [ref=e719]: Colorado Rapids
+                  - paragraph [ref=e720]: "0"
+              - separator [ref=e721]
+              - generic [ref=e722]:
+                - paragraph [ref=e723]: Finalizada
+                - button [ref=e724]:
+                  - img [ref=e725]
+            - generic [ref=e728] [cursor=pointer]:
+              - paragraph [ref=e731]: MLS
+              - generic [ref=e732]:
+                - generic [ref=e733]:
+                  - generic [ref=e734]:
+                    - img "Escudo do time Houston Dynamo" [ref=e735]
+                    - paragraph [ref=e736]: Houston Dynamo
+                  - paragraph [ref=e737]: "0"
+                - generic [ref=e738]:
+                  - generic [ref=e739]:
+                    - img "Escudo do time Los Angeles FC" [ref=e740]
+                    - paragraph [ref=e741]: Los Angeles FC
+                  - paragraph [ref=e742]: "0"
+              - separator [ref=e743]
+              - generic [ref=e744]:
+                - paragraph [ref=e745]: Finalizada
+                - button [ref=e746]:
+                  - img [ref=e747]
+            - generic [ref=e750] [cursor=pointer]:
+              - paragraph [ref=e753]: MLS
+              - generic [ref=e754]:
+                - generic [ref=e755]:
+                  - generic [ref=e756]:
+                    - img "Escudo do time Sporting Kansas City" [ref=e757]
+                    - paragraph [ref=e758]: Sporting Kansas City
+                  - paragraph [ref=e759]: "0"
+                - generic [ref=e760]:
+                  - generic [ref=e761]:
+                    - img "Escudo do time St. Louis City SC" [ref=e762]
+                    - paragraph [ref=e763]: St. Louis City SC
+                  - paragraph [ref=e764]: "0"
+              - separator [ref=e765]
+              - generic [ref=e766]:
+                - paragraph [ref=e767]: Finalizada
+                - button [ref=e768]:
+                  - img [ref=e769]
+            - generic [ref=e772] [cursor=pointer]:
+              - paragraph [ref=e775]: Copa Libertadores
+              - generic [ref=e776]:
+                - generic [ref=e777]:
+                  - generic [ref=e778]:
+                    - img "Escudo do time Bahia" [ref=e779]
+                    - paragraph [ref=e780]: Bahia
+                  - paragraph [ref=e781]: "0"
+                - generic [ref=e782]:
+                  - generic [ref=e783]:
+                    - img "Escudo do time Internacional" [ref=e784]
+                    - paragraph [ref=e785]: Internacional
+                  - paragraph [ref=e786]: "0"
+              - separator [ref=e787]
+              - generic [ref=e788]:
+                - paragraph [ref=e789]: Finalizada
+                - button [ref=e790]:
+                  - img [ref=e791]
+            - generic [ref=e794] [cursor=pointer]:
+              - paragraph [ref=e797]: Premier League
+              - generic [ref=e798]:
+                - generic [ref=e799]:
+                  - generic [ref=e800]:
+                    - img "Escudo do time Chelsea FC" [ref=e801]
+                    - paragraph [ref=e802]: Chelsea FC
+                  - paragraph [ref=e803]: "0"
+                - generic [ref=e804]:
+                  - generic [ref=e805]:
+                    - img "Escudo do time Tottenham Hotspur" [ref=e806]
+                    - paragraph [ref=e807]: Tottenham Hotspur
+                  - paragraph [ref=e808]: "0"
+              - separator [ref=e809]
+              - generic [ref=e810]:
+                - paragraph [ref=e811]: Finalizada
+                - button [ref=e812]:
+                  - img [ref=e813]
+            - generic [ref=e816] [cursor=pointer]:
+              - paragraph [ref=e819]: Copa Libertadores
+              - generic [ref=e820]:
+                - generic [ref=e821]:
+                  - generic [ref=e822]:
+                    - img "Escudo do time Atlético Nacional" [ref=e823]
+                    - paragraph [ref=e824]: Atlético Nacional
+                  - paragraph [ref=e825]: "0"
+                - generic [ref=e826]:
+                  - generic [ref=e827]:
+                    - img "Escudo do time Nacional" [ref=e828]
+                    - paragraph [ref=e829]: Nacional
+                  - paragraph [ref=e830]: "0"
+              - separator [ref=e831]
+              - generic [ref=e832]:
+                - paragraph [ref=e833]: Finalizada
+                - button [ref=e834]:
+                  - img [ref=e835]
+            - generic [ref=e838] [cursor=pointer]:
+              - paragraph [ref=e841]: Copa Libertadores
+              - generic [ref=e842]:
+                - generic [ref=e843]:
+                  - generic [ref=e844]:
+                    - img "Escudo do time Talleres Cordoba" [ref=e845]
+                    - paragraph [ref=e846]: Talleres Cordoba
+                  - paragraph [ref=e847]: "0"
+                - generic [ref=e848]:
+                  - generic [ref=e849]:
+                    - img "Escudo do time São Paulo" [ref=e850]
+                    - paragraph [ref=e851]: São Paulo
+                  - paragraph [ref=e852]: "0"
+              - separator [ref=e853]
+              - generic [ref=e854]:
+                - paragraph [ref=e855]: Finalizada
+                - button [ref=e856]:
+                  - img [ref=e857]
+            - generic [ref=e860] [cursor=pointer]:
+              - paragraph [ref=e863]: Copa Libertadores
+              - generic [ref=e864]:
+                - generic [ref=e865]:
+                  - generic [ref=e866]:
+                    - img "Escudo do time Velez S." [ref=e867]
+                    - paragraph [ref=e868]: Velez S.
+                  - paragraph [ref=e869]: "0"
+                - generic [ref=e870]:
+                  - generic [ref=e871]:
+                    - img "Escudo do time Peñarol" [ref=e872]
+                    - paragraph [ref=e873]: Peñarol
+                  - paragraph [ref=e874]: "0"
+              - separator [ref=e875]
+              - generic [ref=e876]:
+                - paragraph [ref=e877]: Finalizada
+                - button [ref=e878]:
+                  - img [ref=e879]
+            - generic [ref=e882] [cursor=pointer]:
+              - paragraph [ref=e885]: Copa Sul-Americana
+              - generic [ref=e886]:
+                - generic [ref=e887]:
+                  - generic [ref=e888]:
+                    - img "Escudo do time Corinthians" [ref=e889]
+                    - paragraph [ref=e890]: Corinthians
+                  - paragraph [ref=e891]: "0"
+                - generic [ref=e892]:
+                  - generic [ref=e893]:
+                    - img "Escudo do time Huracan" [ref=e894]
+                    - paragraph [ref=e895]: Huracan
+                  - paragraph [ref=e896]: "0"
+              - separator [ref=e897]
+              - generic [ref=e898]:
+                - paragraph [ref=e899]: Finalizada
+                - button [ref=e900]:
+                  - img [ref=e901]
+            - generic [ref=e904] [cursor=pointer]:
+              - paragraph [ref=e907]: Premier League
+              - generic [ref=e908]:
+                - generic [ref=e909]:
+                  - generic [ref=e910]:
+                    - img "Escudo do time Brighton & Hove Albion" [ref=e911]
+                    - paragraph [ref=e912]: Brighton & Hove Albion
+                  - paragraph [ref=e913]: "0"
+                - generic [ref=e914]:
+                  - generic [ref=e915]:
+                    - img "Escudo do time Aston Villa" [ref=e916]
+                    - paragraph [ref=e917]: Aston Villa
+                  - paragraph [ref=e918]: "0"
+              - separator [ref=e919]
+              - generic [ref=e920]:
+                - paragraph [ref=e921]: Finalizada
+                - button [ref=e922]:
+                  - img [ref=e923]
+            - generic [ref=e926] [cursor=pointer]:
+              - paragraph [ref=e929]: Copa Sul-Americana
+              - generic [ref=e930]:
+                - generic [ref=e931]:
+                  - generic [ref=e932]:
+                    - img "Escudo do time Cienciano" [ref=e933]
+                    - paragraph [ref=e934]: Cienciano
+                  - paragraph [ref=e935]: "0"
+                - generic [ref=e936]:
+                  - generic [ref=e937]:
+                    - img "Escudo do time Atlético Mineiro" [ref=e938]
+                    - paragraph [ref=e939]: Atlético Mineiro
+                  - paragraph [ref=e940]: "0"
+              - separator [ref=e941]
+              - generic [ref=e942]:
+                - paragraph [ref=e943]: Finalizada
+                - button [ref=e944]:
+                  - img [ref=e945]
+          - generic [ref=e948]:
+            - button "página anterior" [disabled] [ref=e949]:
+              - img [ref=e950]
+            - button "1" [ref=e952] [cursor=pointer]
+            - button "2" [ref=e953] [cursor=pointer]
+            - paragraph [ref=e954]: ...
+            - button "117" [ref=e955] [cursor=pointer]
+            - button "próxima página" [ref=e956] [cursor=pointer]:
+              - img [ref=e957]
+    - contentinfo [ref=e959]:
+      - paragraph [ref=e961]: Porque Deus amou o mundo de tal maneira, que deu o seu Filho Unigênito (Jesus), para que todo aquele que nele crê não pereça, mas tenha a vida eterna - João 3:16
+      - generic [ref=e962]:
+        - img "playStore" [ref=e964] [cursor=pointer]
+        - img "appStore" [ref=e966] [cursor=pointer]
+      - generic [ref=e967]:
+        - link [ref=e968] [cursor=pointer]:
+          - /url: https://www.tiktok.com/@kasa.live/
+          - img [ref=e969]
+        - link [ref=e971] [cursor=pointer]:
+          - /url: https://www.instagram.com/kasa.live/
+          - img [ref=e972]
+      - generic [ref=e974]:
+        - paragraph [ref=e975]: © 2022 Kasa.live, LTDA.
+        - link "Termos de Uso e Política de Privacidade" [ref=e976] [cursor=pointer]:
+          - /url: /termos-de-uso
+      - paragraph [ref=e977]: v3.1-Web
+  - alert [ref=e978]
+  - generic:
+    - region
+    - region
+    - region
+    - region
+    - region
+    - region
+```
+
+# Test source
+
+```ts
+  1  | import { test, expect } from '@fixtures/index';
+  2  | import { SELECTORS } from '@support/selectors';
+  3  | 
+  4  | /**
+  5  |  * @core
+  6  |  * Suite avançada de busca cobrindo o typeahead via API:
+  7  |  * 1. Busca parcial por time → /team/?name=Flam
+  8  |  * 2. Busca por campeonato → dispara API
+  9  |  * 3. Combinação 2 filtros simultâneos
+  10 |  * 4. Limpar filtros restaura listagem inicial
+  11 |  */
+  12 | test.describe('Busca avançada — typeahead, combos e reset', () => {
+  13 |   test('@core busca parcial por time "Flam" dispara /team/?name=Flam', async ({
+  14 |     homePage,
+  15 |     page,
+  16 |   }) => {
+  17 |     await homePage.open();
+  18 |     await page.waitForLoadState('networkidle', { timeout: 15_000 }).catch(() => undefined);
+  19 | 
+> 20 |     const teamLookupPromise = page.waitForRequest(
+     |                                    ^ TimeoutError: page.waitForRequest: Timeout 15000ms exceeded while waiting for event "request"
+  21 |       (req) => /\/team\/\?[^ ]*name=Flam/i.test(req.url()),
+  22 |       { timeout: 15_000 },
+  23 |     );
+  24 |     await homePage.filtroQualTime.fill('Flam');
+  25 | 
+  26 |     const req = await teamLookupPromise;
+  27 |     expect(req.url(), 'request /team/?name=Flam esperado').toMatch(/\/team\/\?[^ ]*name=Flam/i);
+  28 |   });
+  29 | 
+  30 |   test('@core busca por campeonato dispara request à API', async ({ homePage, page }) => {
+  31 |     await homePage.open();
+  32 |     await page.waitForLoadState('networkidle', { timeout: 15_000 }).catch(() => undefined);
+  33 | 
+  34 |     // Esperamos qualquer request à API que carregue dados após a interação
+  35 |     // (championship typeahead pode bater /championship/, /tournament/ ou /match/).
+  36 |     const apiCallPromise = page.waitForRequest(
+  37 |       (req) => /kasa-live\.api\.dev\.loomi\.com\.br/i.test(req.url()) && req.method() === 'GET',
+  38 |       { timeout: 15_000 },
+  39 |     );
+  40 |     await homePage.filtroQualCampeonato.fill('Brasileir');
+  41 | 
+  42 |     const req = await apiCallPromise;
+  43 |     expect(req.url(), 'esperada chamada à API kasa-live').toMatch(/kasa-live\.api/);
+  44 |   });
+  45 | 
+  46 |   test('@core combinar filtros time+campeonato sem erro de runtime', async ({ homePage, page }) => {
+  47 |     await homePage.open();
+  48 |     await page.waitForLoadState('networkidle', { timeout: 15_000 }).catch(() => undefined);
+  49 | 
+  50 |     await homePage.filtroQualTime.fill('Flamengo');
+  51 |     await homePage.filtroQualCampeonato.fill('Brasileirão');
+  52 | 
+  53 |     // Página continua interativa — assert proxy: filtros ainda visíveis
+  54 |     await expect(homePage.filtroQualTime, 'filtro time continua visível').toBeVisible();
+  55 |     await expect(homePage.filtroQualCampeonato, 'filtro campeonato continua visível').toBeVisible();
+  56 | 
+  57 |     const errorBanner = page.locator('text=/algo deu errado|error 500|oops/i').first();
+  58 |     expect(await errorBanner.isVisible().catch(() => false)).toBe(false);
+  59 |   });
+  60 | 
+  61 |   test('@core limpar filtros (refresh / click logo) restaura listagem inicial', async ({
+  62 |     homePage,
+  63 |     page,
+  64 |   }) => {
+  65 |     await homePage.open();
+  66 |     await page.waitForLoadState('networkidle', { timeout: 15_000 }).catch(() => undefined);
+  67 | 
+  68 |     // baseline: pega contagem de cards
+  69 |     const cardLocator = page.locator(SELECTORS.matchCard);
+  70 |     await cardLocator.first().waitFor({ state: 'visible', timeout: 30_000 });
+  71 |     const initialCount = await cardLocator.count();
+  72 |     expect(initialCount, 'baseline: deve haver cards na home').toBeGreaterThan(0);
+  73 | 
+  74 |     // aplica filtro
+  75 |     await homePage.filtroQualTime.fill('Inter');
+  76 | 
+  77 |     // limpa via click no logo (volta pra `/` resetando filtros)
+  78 |     const logoLink = page.locator('a[href="/"]').first();
+  79 |     await logoLink.click();
+  80 |     await page.waitForURL((url) => url.pathname === '/' || url.pathname === '', {
+  81 |       timeout: 10_000,
+  82 |     });
+  83 |     await cardLocator.first().waitFor({ state: 'visible', timeout: 30_000 });
+  84 | 
+  85 |     const restoredCount = await cardLocator.count();
+  86 |     expect(
+  87 |       restoredCount,
+  88 |       `após reset esperado >=1 card (recebido ${restoredCount})`,
+  89 |     ).toBeGreaterThanOrEqual(1);
+  90 |   });
+  91 | });
+  92 | 
+```

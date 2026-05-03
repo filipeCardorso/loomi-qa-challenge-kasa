@@ -1,0 +1,101 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: security/sql-injection-api.spec.ts >> @security payload "' UNION SELECT NULL--" em /team/?name= não causa 5xx ou leak
+- Location: automation/tests/security/sql-injection-api.spec.ts:39:7
+
+# Error details
+
+```
+TimeoutError: apiRequestContext.get: Timeout 60000ms exceeded.
+Call log:
+  - → GET https://kasa-live.api.dev.loomi.com.br/api/1.0/team/?name=%27+UNION+SELECT+NULL--
+    - user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.4 Safari/605.1.15
+    - accept: */*
+    - accept-encoding: gzip,deflate,br
+
+```
+
+# Test source
+
+```ts
+  1  | import { test, expect, request as playwrightRequest } from '@playwright/test';
+  2  | 
+  3  | /**
+  4  |  * @security SQL-injection-like — endpoints públicos da API DEV
+  5  |  *
+  6  |  * Sondamos os endpoints `/team/?name=` e `/match/?status=` com payloads
+  7  |  * clássicos. Não esperamos derrubar o backend — esperamos que:
+  8  |  *   1. A API responda < 500 (entendeu o input ou rejeitou com 4xx).
+  9  |  *   2. O body de resposta NÃO contenha sinais de stack/SQL leak (Django
+  10 |  *      Traceback, "SQLSTATE", "psycopg2", "OperationalError", etc).
+  11 |  *
+  12 |  * A DEV API é lenta no primeiro hit (~10s) — usamos test.setTimeout(60_000)
+  13 |  * e um requestContext próprio sem o `actionTimeout: 10_000` herdado do config.
+  14 |  */
+  15 | 
+  16 | const API_BASE = 'https://kasa-live.api.dev.loomi.com.br/api/1.0';
+  17 | 
+  18 | const SQL_PAYLOADS = [
+  19 |   "' OR '1'='1",
+  20 |   '1; DROP TABLE matches;--',
+  21 |   "' UNION SELECT NULL--",
+  22 |   '"><script>alert(1)</script>',
+  23 | ];
+  24 | 
+  25 | const LEAK_MARKERS = [
+  26 |   'sqlstate',
+  27 |   'traceback',
+  28 |   'psycopg2',
+  29 |   'operationalerror',
+  30 |   'programmingerror',
+  31 |   'django.db',
+  32 |   'syntax error at or near',
+  33 |   'integrityerror',
+  34 | ];
+  35 | 
+  36 | test.describe.configure({ timeout: 90_000 });
+  37 | 
+  38 | for (const payload of SQL_PAYLOADS) {
+  39 |   test(`@security payload "${payload.slice(0, 24)}" em /team/?name= não causa 5xx ou leak`, async () => {
+  40 |     const ctx = await playwrightRequest.newContext({ timeout: 60_000 });
+  41 |     try {
+> 42 |       const res = await ctx.get(`${API_BASE}/team/`, { params: { name: payload } });
+     |                             ^ TimeoutError: apiRequestContext.get: Timeout 60000ms exceeded.
+  43 |       expect
+  44 |         .soft(res.status(), `payload "${payload}" causou ${res.status()} (>= 500)`)
+  45 |         .toBeLessThan(500);
+  46 | 
+  47 |       const body = (await res.text()).toLowerCase();
+  48 |       const found = LEAK_MARKERS.filter((m) => body.includes(m));
+  49 |       expect(
+  50 |         found,
+  51 |         `response leak markers presentes (${found.join(', ')}) — vazamento de stack/SQL`,
+  52 |       ).toEqual([]);
+  53 |     } finally {
+  54 |       await ctx.dispose();
+  55 |     }
+  56 |   });
+  57 | }
+  58 | 
+  59 | test('@security payload em /match/?status= não causa 5xx', async () => {
+  60 |   const ctx = await playwrightRequest.newContext({ timeout: 60_000 });
+  61 |   try {
+  62 |     const res = await ctx.get(`${API_BASE}/match/`, {
+  63 |       params: { status: "ENDED' OR '1'='1" },
+  64 |     });
+  65 |     expect.soft(res.status(), `payload SQL no status causou ${res.status()}`).toBeLessThan(500);
+  66 |     const body = (await res.text()).toLowerCase();
+  67 |     const found = LEAK_MARKERS.filter((m) => body.includes(m));
+  68 |     expect(found, `leak markers em /match/: ${found.join(', ')}`).toEqual([]);
+  69 |   } finally {
+  70 |     await ctx.dispose();
+  71 |   }
+  72 | });
+  73 | 
+```

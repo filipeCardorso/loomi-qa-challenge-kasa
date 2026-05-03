@@ -1,0 +1,119 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: security/cors-policy.spec.ts >> @security CORS preflight responde sem expor wildcard com credentials
+- Location: automation/tests/security/cors-policy.spec.ts:56:5
+
+# Error details
+
+```
+TimeoutError: apiRequestContext.fetch: Timeout 45000ms exceeded.
+Call log:
+  - → OPTIONS https://kasa-live.api.dev.loomi.com.br/api/1.0/match/?status=ENDED&page=1
+    - user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.7727.15 Safari/537.36
+    - accept: */*
+    - accept-encoding: gzip,deflate,br
+    - Origin: https://evil.example.com
+    - Access-Control-Request-Method: GET
+    - Access-Control-Request-Headers: authorization
+
+```
+
+# Test source
+
+```ts
+  1  | import { test, expect, request as playwrightRequest } from '@playwright/test';
+  2  | 
+  3  | /**
+  4  |  * @security CORS — política da API DEV
+  5  |  *
+  6  |  * A API kasa-live.api.dev.loomi.com.br é consumida pelo frontend www.kasa.live.
+  7  |  * Esperamos que `Access-Control-Allow-Origin` seja restrito a esse domínio
+  8  |  * (ou a uma allowlist explícita) — NUNCA `*` quando há cookies/credentials.
+  9  |  *
+  10 |  * Heurísticas:
+  11 |  *   - Origin malicioso recebe ACAO=*: warning (permitido se sem credentials).
+  12 |  *   - ACAO=* combinado com Allow-Credentials=true: BLOQUEANTE (impossível
+  13 |  *     pelo spec, mas alguns proxies reescrevem).
+  14 |  *   - ACAO espelhando o Origin enviado (refletivo): bug — qualquer site pode
+  15 |  *     ler responses autenticadas se cookies forem cross-site.
+  16 |  */
+  17 | 
+  18 | const API_URL = 'https://kasa-live.api.dev.loomi.com.br/api/1.0/match/?status=ENDED&page=1';
+  19 | 
+  20 | test.describe.configure({ timeout: 60_000 });
+  21 | 
+  22 | test('@security CORS: API não reflete Origin arbitrário com credentials', async () => {
+  23 |   const evilOrigin = 'https://evil.example.com';
+  24 |   const ctx = await playwrightRequest.newContext({ timeout: 45_000 });
+  25 |   try {
+  26 |     const res = await ctx.get(API_URL, { headers: { Origin: evilOrigin } });
+  27 | 
+  28 |     const headers = res.headers();
+  29 |     const acao = headers['access-control-allow-origin'];
+  30 |     const acac = headers['access-control-allow-credentials'];
+  31 | 
+  32 |     expect.soft(res.status(), 'API respondeu sem erro').toBeLessThan(500);
+  33 | 
+  34 |     console.warn(
+  35 |       `[security] CORS GET: ACAO=${acao ?? '(absent)'} ACAC=${acac ?? '(absent)'} status=${res.status()}`,
+  36 |     );
+  37 | 
+  38 |     // Caso 1: ACAO espelhando origin malicioso → bug claro
+  39 |     expect(
+  40 |       acao,
+  41 |       `Access-Control-Allow-Origin reflete Origin malicioso ("${evilOrigin}") — qualquer site pode ler respostas`,
+  42 |     ).not.toBe(evilOrigin);
+  43 | 
+  44 |     // Caso 2: ACAO=* + Allow-Credentials=true é proibido pelo spec
+  45 |     if (acao === '*' && acac === 'true') {
+  46 |       expect(
+  47 |         false,
+  48 |         `combinação inválida: ACAO=* + Access-Control-Allow-Credentials=true (spec proíbe, navegador rejeita mas server está mal configurado)`,
+  49 |       ).toBe(true);
+  50 |     }
+  51 |   } finally {
+  52 |     await ctx.dispose();
+  53 |   }
+  54 | });
+  55 | 
+  56 | test('@security CORS preflight responde sem expor wildcard com credentials', async () => {
+  57 |   const ctx = await playwrightRequest.newContext({ timeout: 45_000 });
+  58 |   try {
+> 59 |     const res = await ctx.fetch(API_URL, {
+     |                           ^ TimeoutError: apiRequestContext.fetch: Timeout 45000ms exceeded.
+  60 |       method: 'OPTIONS',
+  61 |       headers: {
+  62 |         Origin: 'https://evil.example.com',
+  63 |         'Access-Control-Request-Method': 'GET',
+  64 |         'Access-Control-Request-Headers': 'authorization',
+  65 |       },
+  66 |     });
+  67 |     const headers = res.headers();
+  68 |     const acao = headers['access-control-allow-origin'];
+  69 |     const acac = headers['access-control-allow-credentials'];
+  70 | 
+  71 |     console.warn(
+  72 |       `[security] CORS preflight: status=${res.status()} ACAO=${acao ?? '(absent)'} ACAC=${acac ?? '(absent)'}`,
+  73 |     );
+  74 | 
+  75 |     if (acao === '*' && acac === 'true') {
+  76 |       expect(false, 'preflight com ACAO=* + Allow-Credentials=true').toBe(true);
+  77 |     }
+  78 | 
+  79 |     // Não deve permitir Authorization de um origin arbitrário
+  80 |     const allowedHeaders = (headers['access-control-allow-headers'] || '').toLowerCase();
+  81 |     if (allowedHeaders.includes('authorization') && acao === 'https://evil.example.com') {
+  82 |       expect(false, 'preflight permite Authorization vindo de origin malicioso').toBe(true);
+  83 |     }
+  84 |   } finally {
+  85 |     await ctx.dispose();
+  86 |   }
+  87 | });
+  88 | 
+```

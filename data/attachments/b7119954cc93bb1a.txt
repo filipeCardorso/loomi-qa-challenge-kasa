@@ -1,0 +1,287 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: e2e/responsividade.spec.ts >> Responsividade — mobile e tablet viewports >> @core tablet 768x1024: nav tabs visíveis e clicáveis
+- Location: automation/tests/e2e/responsividade.spec.ts:40:7
+
+# Error details
+
+```
+TimeoutError: locator.click: Timeout 10000ms exceeded.
+Call log:
+  - waiting for locator('a[title="Melhores momentos"]').first()
+    - locator resolved to <a title="Melhores momentos" href="/melhores-momentos" class="chakra-link css-1ruz7og" data-cy="link/melhores-momentos">…</a>
+  - attempting click action
+    2 × waiting for element to be visible, enabled and stable
+      - element is not stable
+    - retrying click action
+    - waiting 20ms
+    2 × waiting for element to be visible, enabled and stable
+      - element is not stable
+    - retrying click action
+      - waiting 100ms
+    5 × waiting for element to be visible, enabled and stable
+      - element is not stable
+    - retrying click action
+      - waiting 500ms
+
+```
+
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - generic [ref=e4]:
+    - banner [ref=e5]:
+      - generic [ref=e7]:
+        - generic [ref=e8]:
+          - link "home" [ref=e9] [cursor=pointer]:
+            - /url: /
+            - img "home" [ref=e10]
+          - generic [ref=e11]:
+            - button "Notificações" [ref=e13] [cursor=pointer]:
+              - img [ref=e14]
+            - button "Entrar" [ref=e15] [cursor=pointer]
+        - generic [ref=e20]:
+          - generic [ref=e22]:
+            - paragraph [ref=e23]: Procure o jogo
+            - paragraph [ref=e24]: Por times, campeonatos, datas..
+          - img [ref=e28] [cursor=pointer]
+      - generic [ref=e33]:
+        - link "Partidas Partidas" [ref=e34] [cursor=pointer]:
+          - /url: /
+          - img "Partidas" [ref=e35]
+          - paragraph [ref=e36]: Partidas
+        - link "Melhores momentos Melhores momentos" [ref=e37] [cursor=pointer]:
+          - /url: /melhores-momentos
+          - img "Melhores momentos" [ref=e38]
+          - paragraph [ref=e39]: Melhores momentos
+    - main [ref=e41]:
+      - generic [ref=e42]:
+        - generic [ref=e43]:
+          - generic [ref=e46]:
+            - separator [ref=e50]
+            - separator [ref=e55]
+            - separator [ref=e60]
+            - separator [ref=e65]
+            - separator [ref=e70]
+            - separator [ref=e75]
+            - separator [ref=e80]
+            - separator [ref=e85]
+            - separator [ref=e90]
+            - separator [ref=e95]
+            - separator [ref=e100]
+            - separator [ref=e105]
+            - separator [ref=e110]
+            - separator [ref=e115]
+            - separator [ref=e120]
+            - separator [ref=e125]
+            - separator [ref=e130]
+            - separator [ref=e135]
+            - separator [ref=e140]
+            - separator [ref=e145]
+            - separator [ref=e150]
+            - separator [ref=e155]
+            - separator [ref=e160]
+            - separator [ref=e165]
+            - separator [ref=e170]
+            - separator [ref=e175]
+            - separator [ref=e180]
+            - separator [ref=e185]
+            - separator [ref=e190]
+            - separator [ref=e195]
+          - paragraph [ref=e198]: ...
+        - generic [ref=e199]:
+          - generic [ref=e202]:
+            - separator [ref=e206]
+            - separator [ref=e211]
+            - separator [ref=e216]
+            - separator [ref=e221]
+            - separator [ref=e226]
+            - separator [ref=e231]
+            - separator [ref=e236]
+            - separator [ref=e241]
+            - separator [ref=e246]
+            - separator [ref=e251]
+            - separator [ref=e256]
+            - separator [ref=e261]
+            - separator [ref=e266]
+            - separator [ref=e271]
+            - separator [ref=e276]
+            - separator [ref=e281]
+            - separator [ref=e286]
+            - separator [ref=e291]
+            - separator [ref=e296]
+            - separator [ref=e301]
+            - separator [ref=e306]
+            - separator [ref=e311]
+            - separator [ref=e316]
+            - separator [ref=e321]
+            - separator [ref=e326]
+            - separator [ref=e331]
+            - separator [ref=e336]
+            - separator [ref=e341]
+            - separator [ref=e346]
+            - separator [ref=e351]
+          - paragraph [ref=e354]: ...
+        - generic [ref=e355]:
+          - generic [ref=e358]:
+            - separator [ref=e362]
+            - separator [ref=e367]
+            - separator [ref=e372]
+            - separator [ref=e377]
+            - separator [ref=e382]
+            - separator [ref=e387]
+            - separator [ref=e392]
+            - separator [ref=e397]
+            - separator [ref=e402]
+            - separator [ref=e407]
+            - separator [ref=e412]
+            - separator [ref=e417]
+            - separator [ref=e422]
+            - separator [ref=e427]
+            - separator [ref=e432]
+            - separator [ref=e437]
+            - separator [ref=e442]
+            - separator [ref=e447]
+            - separator [ref=e452]
+            - separator [ref=e457]
+            - separator [ref=e462]
+            - separator [ref=e467]
+            - separator [ref=e472]
+            - separator [ref=e477]
+            - separator [ref=e482]
+            - separator [ref=e487]
+            - separator [ref=e492]
+            - separator [ref=e497]
+            - separator [ref=e502]
+            - separator [ref=e507]
+          - paragraph [ref=e510]: ...
+        - generic [ref=e511]:
+          - generic [ref=e514]:
+            - separator [ref=e518]
+            - separator [ref=e523]
+            - separator [ref=e528]
+            - separator [ref=e533]
+            - separator [ref=e538]
+            - separator [ref=e543]
+            - separator [ref=e548]
+            - separator [ref=e553]
+            - separator [ref=e558]
+            - separator [ref=e563]
+            - separator [ref=e568]
+            - separator [ref=e573]
+            - separator [ref=e578]
+            - separator [ref=e583]
+            - separator [ref=e588]
+            - separator [ref=e593]
+            - separator [ref=e598]
+            - separator [ref=e603]
+            - separator [ref=e608]
+            - separator [ref=e613]
+            - separator [ref=e618]
+            - separator [ref=e623]
+            - separator [ref=e628]
+            - separator [ref=e633]
+            - separator [ref=e638]
+            - separator [ref=e643]
+            - separator [ref=e648]
+            - separator [ref=e653]
+            - separator [ref=e658]
+            - separator [ref=e663]
+          - paragraph [ref=e666]: ...
+    - contentinfo [ref=e667]:
+      - paragraph [ref=e669]: Porque Deus amou o mundo de tal maneira, que deu o seu Filho Unigênito (Jesus), para que todo aquele que nele crê não pereça, mas tenha a vida eterna - João 3:16
+      - generic [ref=e670]:
+        - img "playStore" [ref=e672] [cursor=pointer]
+        - img "appStore" [ref=e674] [cursor=pointer]
+      - generic [ref=e675]:
+        - link [ref=e676] [cursor=pointer]:
+          - /url: https://www.tiktok.com/@kasa.live/
+          - img [ref=e677]
+        - link [ref=e679] [cursor=pointer]:
+          - /url: https://www.instagram.com/kasa.live/
+          - img [ref=e680]
+      - generic [ref=e682]:
+        - paragraph [ref=e683]: © 2022 Kasa.live, LTDA.
+        - link "Termos de Uso e Política de Privacidade" [ref=e684] [cursor=pointer]:
+          - /url: /termos-de-uso
+      - paragraph [ref=e685]: v3.1-Web
+  - alert [ref=e686]
+  - generic:
+    - region
+    - region
+    - region
+    - region
+    - region
+    - region
+  - iframe [ref=e687]:
+    
+```
+
+# Test source
+
+```ts
+  1  | import { test, expect } from '@fixtures/index';
+  2  | import { SELECTORS } from '@support/selectors';
+  3  | 
+  4  | /**
+  5  |  * @core
+  6  |  * Responsividade básica:
+  7  |  * 1. Viewport mobile 375x667 — sem overflow horizontal, lista visível
+  8  |  * 2. Viewport tablet 768x1024 — nav tabs ainda visíveis e clicáveis
+  9  |  *
+  10 |  * Não usamos o project `mobile-chrome` aqui (rodaria em outra suite).
+  11 |  * Setamos viewport in-test pra cobrir o smoke responsivo no chromium default.
+  12 |  */
+  13 | test.describe('Responsividade — mobile e tablet viewports', () => {
+  14 |   test('@core mobile 375x667: home renderiza, sem overflow horizontal, lista visível', async ({
+  15 |     homePage,
+  16 |     page,
+  17 |   }) => {
+  18 |     await page.setViewportSize({ width: 375, height: 667 });
+  19 |     await homePage.open();
+  20 | 
+  21 |     // Aguarda lista carregar (network call /match/?status=ENDED pode demorar em DEV)
+  22 |     const firstCard = page.locator(SELECTORS.matchCard).first();
+  23 |     await firstCard.waitFor({ state: 'visible', timeout: 30_000 });
+  24 | 
+  25 |     // sem overflow horizontal: documentElement.scrollWidth ≈ window.innerWidth
+  26 |     const overflow = await page.evaluate(() => {
+  27 |       return {
+  28 |         scrollWidth: document.documentElement.scrollWidth,
+  29 |         innerWidth: window.innerWidth,
+  30 |       };
+  31 |     });
+  32 |     expect(
+  33 |       overflow.scrollWidth,
+  34 |       `overflow horizontal detectado: scrollWidth=${overflow.scrollWidth} > innerWidth=${overflow.innerWidth}`,
+  35 |     ).toBeLessThanOrEqual(overflow.innerWidth + 1);
+  36 | 
+  37 |     await expect(firstCard, 'primeiro card visível em mobile').toBeVisible();
+  38 |   });
+  39 | 
+  40 |   test('@core tablet 768x1024: nav tabs visíveis e clicáveis', async ({ homePage, page }) => {
+  41 |     await page.setViewportSize({ width: 768, height: 1024 });
+  42 |     await homePage.open();
+  43 | 
+  44 |     await expect(homePage.tabPartidas.first(), 'tab Partidas visível em tablet').toBeVisible();
+  45 |     await expect(
+  46 |       homePage.tabMelhoresMomentos.first(),
+  47 |       'tab Melhores momentos visível em tablet',
+  48 |     ).toBeVisible();
+  49 | 
+  50 |     // tabs devem ser clicáveis — naveguemos pra Melhores momentos
+> 51 |     await homePage.tabMelhoresMomentos.first().click();
+     |                                                ^ TimeoutError: locator.click: Timeout 10000ms exceeded.
+  52 |     await page.waitForURL(/\/melhores-momentos/i, { timeout: 10_000 });
+  53 |     expect(page.url()).toMatch(/\/melhores-momentos/);
+  54 |   });
+  55 | });
+  56 | 
+```

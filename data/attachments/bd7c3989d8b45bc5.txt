@@ -1,0 +1,285 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: security/xss-filtros.spec.ts >> XSS reflected — filtros da home >> @security XSS payload no filtro "Qual time?" não executa
+- Location: automation/tests/security/xss-filtros.spec.ts:14:7
+
+# Error details
+
+```
+TimeoutError: locator.waitFor: Timeout 10000ms exceeded.
+Call log:
+  - waiting for getByPlaceholder(/qual time/i) to be visible
+
+```
+
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - generic [ref=e4]:
+    - banner [ref=e5]:
+      - generic [ref=e7]:
+        - generic [ref=e8]:
+          - link "home" [ref=e9] [cursor=pointer]:
+            - /url: /
+            - img "home" [ref=e10]
+          - generic [ref=e11]:
+            - button "Notificações" [ref=e13] [cursor=pointer]:
+              - img [ref=e14]
+            - button "Entrar" [ref=e15] [cursor=pointer]
+        - generic [ref=e20]:
+          - generic [ref=e22]:
+            - paragraph [ref=e23]: Procure o jogo
+            - paragraph [ref=e24]: Por times, campeonatos, datas..
+          - img [ref=e28] [cursor=pointer]
+      - generic [ref=e33]:
+        - link "Partidas Partidas" [ref=e34] [cursor=pointer]:
+          - /url: /
+          - img "Partidas" [ref=e35]
+          - paragraph [ref=e36]: Partidas
+        - link "Melhores momentos Melhores momentos" [ref=e37] [cursor=pointer]:
+          - /url: /melhores-momentos
+          - img "Melhores momentos" [ref=e38]
+          - paragraph [ref=e39]: Melhores momentos
+    - main [ref=e41]:
+      - generic [ref=e42]:
+        - generic [ref=e43]:
+          - generic [ref=e46]:
+            - separator [ref=e50]
+            - separator [ref=e55]
+            - separator [ref=e60]
+            - separator [ref=e65]
+            - separator [ref=e70]
+            - separator [ref=e75]
+            - separator [ref=e80]
+            - separator [ref=e85]
+            - separator [ref=e90]
+            - separator [ref=e95]
+            - separator [ref=e100]
+            - separator [ref=e105]
+            - separator [ref=e110]
+            - separator [ref=e115]
+            - separator [ref=e120]
+            - separator [ref=e125]
+            - separator [ref=e130]
+            - separator [ref=e135]
+            - separator [ref=e140]
+            - separator [ref=e145]
+            - separator [ref=e150]
+            - separator [ref=e155]
+            - separator [ref=e160]
+            - separator [ref=e165]
+            - separator [ref=e170]
+            - separator [ref=e175]
+            - separator [ref=e180]
+            - separator [ref=e185]
+            - separator [ref=e190]
+            - separator [ref=e195]
+          - paragraph [ref=e198]: ...
+        - generic [ref=e199]:
+          - generic [ref=e202]:
+            - separator [ref=e206]
+            - separator [ref=e211]
+            - separator [ref=e216]
+            - separator [ref=e221]
+            - separator [ref=e226]
+            - separator [ref=e231]
+            - separator [ref=e236]
+            - separator [ref=e241]
+            - separator [ref=e246]
+            - separator [ref=e251]
+            - separator [ref=e256]
+            - separator [ref=e261]
+            - separator [ref=e266]
+            - separator [ref=e271]
+            - separator [ref=e276]
+            - separator [ref=e281]
+            - separator [ref=e286]
+            - separator [ref=e291]
+            - separator [ref=e296]
+            - separator [ref=e301]
+            - separator [ref=e306]
+            - separator [ref=e311]
+            - separator [ref=e316]
+            - separator [ref=e321]
+            - separator [ref=e326]
+            - separator [ref=e331]
+            - separator [ref=e336]
+            - separator [ref=e341]
+            - separator [ref=e346]
+            - separator [ref=e351]
+          - paragraph [ref=e354]: ...
+        - generic [ref=e355]:
+          - generic [ref=e358]:
+            - separator [ref=e362]
+            - separator [ref=e367]
+            - separator [ref=e372]
+            - separator [ref=e377]
+            - separator [ref=e382]
+            - separator [ref=e387]
+            - separator [ref=e392]
+            - separator [ref=e397]
+            - separator [ref=e402]
+            - separator [ref=e407]
+            - separator [ref=e412]
+            - separator [ref=e417]
+            - separator [ref=e422]
+            - separator [ref=e427]
+            - separator [ref=e432]
+            - separator [ref=e437]
+            - separator [ref=e442]
+            - separator [ref=e447]
+            - separator [ref=e452]
+            - separator [ref=e457]
+            - separator [ref=e462]
+            - separator [ref=e467]
+            - separator [ref=e472]
+            - separator [ref=e477]
+            - separator [ref=e482]
+            - separator [ref=e487]
+            - separator [ref=e492]
+            - separator [ref=e497]
+            - separator [ref=e502]
+            - separator [ref=e507]
+          - paragraph [ref=e510]: ...
+        - generic [ref=e511]:
+          - generic [ref=e514]:
+            - separator [ref=e518]
+            - separator [ref=e523]
+            - separator [ref=e528]
+            - separator [ref=e533]
+            - separator [ref=e538]
+            - separator [ref=e543]
+            - separator [ref=e548]
+            - separator [ref=e553]
+            - separator [ref=e558]
+            - separator [ref=e563]
+            - separator [ref=e568]
+            - separator [ref=e573]
+            - separator [ref=e578]
+            - separator [ref=e583]
+            - separator [ref=e588]
+            - separator [ref=e593]
+            - separator [ref=e598]
+            - separator [ref=e603]
+            - separator [ref=e608]
+            - separator [ref=e613]
+            - separator [ref=e618]
+            - separator [ref=e623]
+            - separator [ref=e628]
+            - separator [ref=e633]
+            - separator [ref=e638]
+            - separator [ref=e643]
+            - separator [ref=e648]
+            - separator [ref=e653]
+            - separator [ref=e658]
+            - separator [ref=e663]
+          - paragraph [ref=e666]: ...
+    - contentinfo [ref=e667]:
+      - paragraph [ref=e669]: Porque Deus amou o mundo de tal maneira, que deu o seu Filho Unigênito (Jesus), para que todo aquele que nele crê não pereça, mas tenha a vida eterna - João 3:16
+      - generic [ref=e670]:
+        - img "playStore" [ref=e672] [cursor=pointer]
+        - img "appStore" [ref=e674] [cursor=pointer]
+      - generic [ref=e675]:
+        - link [ref=e676] [cursor=pointer]:
+          - /url: https://www.tiktok.com/@kasa.live/
+          - img [ref=e677]
+        - link [ref=e679] [cursor=pointer]:
+          - /url: https://www.instagram.com/kasa.live/
+          - img [ref=e680]
+      - generic [ref=e682]:
+        - paragraph [ref=e683]: © 2022 Kasa.live, LTDA.
+        - link "Termos de Uso e Política de Privacidade" [ref=e684] [cursor=pointer]:
+          - /url: /termos-de-uso
+      - paragraph [ref=e685]: v3.1-Web
+  - alert [ref=e686]
+  - generic:
+    - region
+    - region
+    - region
+    - region
+    - region
+    - region
+  - iframe [ref=e687]:
+    
+```
+
+# Test source
+
+```ts
+  1  | import { test, expect } from '@playwright/test';
+  2  | 
+  3  | /**
+  4  |  * @security XSS reflected — filtros da home
+  5  |  *
+  6  |  * Estratégia: digitar um payload XSS clássico no input "Qual time?" e
+  7  |  * verificar que (a) nenhum dialog `alert()` é disparado e (b) o payload
+  8  |  * não aparece no DOM como HTML cru (apenas como text node escapado).
+  9  |  *
+  10 |  * Esperamos que React/Next escapem por padrão — este teste é uma trava de
+  11 |  * regressão caso alguém introduza `dangerouslySetInnerHTML` num futuro filtro.
+  12 |  */
+  13 | test.describe('XSS reflected — filtros da home', () => {
+  14 |   test('@security XSS payload no filtro "Qual time?" não executa', async ({ page }) => {
+  15 |     let alertFired = false;
+  16 |     page.on('dialog', async (dialog) => {
+  17 |       alertFired = true;
+  18 |       await dialog.dismiss().catch(() => undefined);
+  19 |     });
+  20 | 
+  21 |     await page.goto('https://www.kasa.live/', { waitUntil: 'domcontentloaded' });
+  22 |     await page.waitForLoadState('networkidle', { timeout: 10_000 }).catch(() => undefined);
+  23 | 
+  24 |     const xss = '<img src=x onerror=alert(1)>';
+  25 |     const input = page.getByPlaceholder(/qual time/i);
+> 26 |     await input.waitFor({ state: 'visible', timeout: 10_000 });
+     |                 ^ TimeoutError: locator.waitFor: Timeout 10000ms exceeded.
+  27 |     await input.fill(xss);
+  28 |     await page.keyboard.press('Enter');
+  29 | 
+  30 |     // janela de espera proposital — XSS via onerror dispara em ms,
+  31 |     // mas damos folga pra qualquer hidratação tardia
+  32 |     // eslint-disable-next-line playwright/no-wait-for-timeout
+  33 |     await page.waitForTimeout(2000);
+  34 | 
+  35 |     expect(alertFired, `XSS payload "${xss}" disparou alert() — vulnerável!`).toBe(false);
+  36 | 
+  37 |     // Bonus: confirma que o payload está como text-node, não como HTML cru no body
+  38 |     const rawHtmlOccurrences = await page
+  39 |       .locator('body')
+  40 |       .evaluate((el) => Array.from(el.querySelectorAll('img[src="x"]')).length);
+  41 |     expect(
+  42 |       rawHtmlOccurrences,
+  43 |       `payload XSS foi parseado como elemento DOM (encontrado img[src=x] injetado)`,
+  44 |     ).toBe(0);
+  45 |   });
+  46 | 
+  47 |   test('@security XSS payload em "Qual campeonato?" não executa', async ({ page }) => {
+  48 |     let alertFired = false;
+  49 |     page.on('dialog', async (dialog) => {
+  50 |       alertFired = true;
+  51 |       await dialog.dismiss().catch(() => undefined);
+  52 |     });
+  53 | 
+  54 |     await page.goto('https://www.kasa.live/', { waitUntil: 'domcontentloaded' });
+  55 |     await page.waitForLoadState('networkidle', { timeout: 10_000 }).catch(() => undefined);
+  56 | 
+  57 |     const payload = '"><svg/onload=alert(2)>';
+  58 |     const input = page.getByPlaceholder(/qual campeonato/i);
+  59 |     await input.waitFor({ state: 'visible', timeout: 10_000 });
+  60 |     await input.fill(payload);
+  61 |     await page.keyboard.press('Enter');
+  62 | 
+  63 |     // eslint-disable-next-line playwright/no-wait-for-timeout
+  64 |     await page.waitForTimeout(1500);
+  65 |     expect(alertFired, `payload "${payload}" no campeonato disparou alert()`).toBe(false);
+  66 |   });
+  67 | });
+  68 | 
+```
