@@ -10,8 +10,11 @@ Funcionalidade: Favoritar times
   Quero favoritar meus times preferidos no kasa.live
   Para acompanhar suas partidas e receber lembretes personalizados
 
+  Contexto:
+    Dado que estou em "https://kasa.live"
+
   Cenário: Favoritar um time popular pelo caminho feliz
-    Dado que estou logado em "https://kasa.live" com email e senha
+    Dado que estou logado com email e senha
     E que estou na aba "Partidas"
     Quando clico no card do time "Flamengo" (div.css-7mca6u)
     E no modal Chakra clico no ícone de favoritar
@@ -38,14 +41,14 @@ Funcionalidade: Favoritar times
     Então o time "São Paulo" deve continuar listado como favorito
 
   Cenário: Favoritar múltiplos times de campeonatos diferentes
-    Dado que estou logado em "https://kasa.live"
+    Dado que estou logado com email e senha
     Quando favorito os times "Flamengo", "Real Madrid" e "Manchester City"
     E acesso a aba "Favoritos"
     Então os três times devem aparecer na lista de favoritos
     E cada um deve manter o estado de favorito ativo
 
   Cenário: Tentar favoritar um time sem estar logado
-    Dado que estou em "https://kasa.live" sem autenticação
+    Dado que estou sem autenticação
     Quando abro o card do time "Vasco" e clico no ícone de favoritar
     Então devo ser redirecionado para a tela de login
     Ou uma mensagem solicitando autenticação deve ser exibida
@@ -59,7 +62,7 @@ Funcionalidade: Favoritar times
     E não deve haver opção de favoritar
 
   Cenário: Favoritar um time em viewport mobile
-    Dado que acesso "https://kasa.live" em um dispositivo mobile (375x667)
+    Dado que acesso o site em um dispositivo mobile (375x667)
     E que estou logado com email e senha
     Quando toco no card do time "Botafogo" e no ícone de favoritar dentro do modal
     Então o time "Botafogo" deve ser marcado como favorito

@@ -4,8 +4,10 @@ Funcionalidade: Melhores momentos das partidas finalizadas
   Quero acessar os melhores momentos das partidas já encerradas
   Para rever os lances e gols dos jogos que perdi ao vivo
 
+  Contexto:
+    Dado que estou em "https://kasa.live"
+
   Cenário: Navegar da home até a página de melhores momentos
-    Dado que estou em "https://kasa.live/"
     Quando acesso o menu de navegação e clico no link "Melhores momentos"
     Então devo ser redirecionado para a URL "/melhores-momentos"
     E a página deve apresentar o heading "Melhores momentos das Partidas Finalizadas"

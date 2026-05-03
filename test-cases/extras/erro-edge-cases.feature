@@ -4,8 +4,11 @@ Funcionalidade: Erros e edge cases do kasa.live
   Quero que o kasa.live se comporte de forma previsível em condições adversas
   Para não perder informações de partidas mesmo com falhas de rede, sessão ou ambiente
 
+  Contexto:
+    Dado que estou em "https://kasa.live"
+
   Cenário: Rede caindo durante carregamento da listagem de partidas
-    Dado que estou em "https://kasa.live" autenticado
+    Dado que estou autenticado
     E a conexão de rede é interrompida antes do fim do carregamento das partidas
     Quando a requisição da listagem de partidas falha por timeout
     Então o site deve exibir mensagem clara de erro de rede
@@ -21,7 +24,7 @@ Funcionalidade: Erros e edge cases do kasa.live
     E nenhuma ação do usuário (favoritar, abrir partida) deve disparar antes do fim do carregamento
 
   Cenário: Sessão expirada ao tentar favoritar uma partida
-    Dado que estou logado em "https://kasa.live"
+    Dado que estou logado com email e senha
     E meu token de sessão expirou em background
     Quando clico no ícone de favoritar de uma partida
     Então o site deve detectar a sessão expirada

@@ -9,6 +9,9 @@ Funcionalidade: Responsividade do kasa.live
   Quero acessar o kasa.live em diferentes dispositivos
   Para ter uma experiência consistente em desktop, tablet e mobile
 
+  Contexto:
+    Dado que estou em "https://kasa.live"
+
   Cenário: Mudança de viewport portrait → landscape preserva tab ativa
     Dado que estou na home em viewport mobile 375x667 (portrait)
     E selecionei a aba "Melhores momentos"

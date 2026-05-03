@@ -6,9 +6,12 @@ Funcionalidade: Integração com Google Calendar
   Quero conectar minha conta do kasa.live ao Google Calendar
   Para acompanhar minhas partidas favoritas direto na minha agenda pessoal
 
+  Contexto:
+    Dado que estou em "https://kasa.live"
+
   @manual-oauth
   Cenário: Conectar o Google Calendar via switch no popover do avatar
-    Dado que estou logado em "https://kasa.live" com email e senha
+    Dado que estou logado com email e senha
     Quando clico no avatar do header para abrir o popover do usuário
     E ativo o switch "Conectar com seu Google Calendar"
     Então devo ser redirecionado para o fluxo OAuth do Google

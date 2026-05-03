@@ -10,8 +10,11 @@ Funcionalidade: Favoritar partidas
   Quero favoritar partidas específicas no kasa.live
   Para acompanhar de perto os jogos que mais me interessam
 
+  Contexto:
+    Dado que estou em "https://kasa.live"
+
   Cenário: Favoritar uma partida futura pelo modal
-    Dado que estou logado em "https://kasa.live" e na aba "Partidas"
+    Dado que estou logado e na aba "Partidas"
     Quando clico no card de uma partida futura (div.css-7mca6u)
     E no modal Chakra clico no ícone de favoritar partida
     Então a partida deve ser marcada como favorita
@@ -43,7 +46,7 @@ Funcionalidade: Favoritar partidas
     Então a partida favoritada anteriormente deve continuar listada
 
   Cenário: Tentar favoritar uma partida sem estar logado
-    Dado que estou em "https://kasa.live" sem autenticação
+    Dado que estou sem autenticação
     Quando abro o card de uma partida e clico no ícone de favoritar
     Então devo ser redirecionado para a tela de login
     Ou uma mensagem solicitando autenticação deve ser exibida
@@ -56,7 +59,7 @@ Funcionalidade: Favoritar partidas
     Ou o ícone de favoritar não deve estar disponível para partidas encerradas
 
   Cenário: Favoritar uma partida em viewport mobile
-    Dado que acesso "https://kasa.live" em um dispositivo mobile (375x667)
+    Dado que acesso o site em um dispositivo mobile (375x667)
     E que estou logado com email e senha
     Quando toco no card de uma partida futura e no ícone de favoritar no modal
     Então a partida deve ser marcada como favorita
