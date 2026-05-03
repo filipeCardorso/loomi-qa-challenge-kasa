@@ -97,6 +97,21 @@ export async function runTestCase(rawInput: unknown) {
   });
   const result = parseResult(run.stdout);
 
+  // Se o bridge matou o processo por timeout, propaga isso ao LLM com
+  // status='timedOut' e mensagem explícita — caso contrário o LLM vê apenas
+  // 'failed' genérico (indistinguível de assertion failure) e perde a
+  // informação crítica de "teste hangou".
+  if (run.timedOut) {
+    result.status = 'timedOut';
+    result.errors = result.errors.length
+      ? result.errors
+      : [
+          {
+            message: `Playwright excedeu o timeout configurado e foi morto pelo MCP runner (SIGTERM→SIGKILL). stderr: ${run.stderr.slice(-500)}`,
+          },
+        ];
+  }
+
   if (result.status === 'failed' || result.status === 'timedOut') {
     const attachments = extractAttachments(run.stdout);
     for (const att of attachments) {
