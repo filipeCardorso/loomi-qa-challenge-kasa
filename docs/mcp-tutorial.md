@@ -41,7 +41,7 @@ npm run test:smoke -- --video=on
 Aqui, o cliente MCP (Claude Desktop, Cursor, ou qualquer cliente compatível) conecta no nosso servidor `loomi-qa` e ganha acesso a 7 tools:
 
 - 3 mandatórias do desafio: `run_test_case`, `get_element_status`, e Resources de erro
-- 4 extras: `navigate_to`, `list_test_cases`, `get_test_history`, `extract_dom_snapshot`, `analyze_failure`
+- 5 extras: `navigate_to`, `list_test_cases`, `get_test_history`, `extract_dom_snapshot`, `analyze_failure`
 
 Não precisa de Claude Desktop pra testar — o passo 3 abaixo mostra como validar via `echo`/stdio sem instalar nada.
 

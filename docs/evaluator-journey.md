@@ -32,10 +32,10 @@ O `README.md` raiz tem TL;DR, Quick Start, links principais e inventário de ent
 
 - **Trello (board público):** https://trello.com/b/jL2scQSj/loomi-qa-challenge-filipe-gabriel
   - Listas: Backlog · Sprint · Em andamento · Em revisão · Concluído · Bugs · Melhorias · Bloqueios
-  - 18 cards de bug + 10 de melhoria + cards de progresso por trilha
+  - 22 cards de bug + 10 de melhoria + cards de progresso por trilha
 
 - **Allure Report (GitHub Pages):** https://filipecardorso.github.io/loomi-qa-challenge-kasa/
-  - 45 testes verdes
+  - 68 testes verdes
   - Severidade, categorias (epic/feature/story), histórico de runs
   - Anexos navegáveis (screenshot, video, trace) por teste
 
@@ -73,28 +73,29 @@ Cada pasta de topo é um entregável do desafio:
 - Linguagem comportamental (Dado/Quando/Então) com lint Gherkin
 - Funcionalidades core ≥7 cenários cada
 
-### `bug-reports/` — 18 bugs + 10 melhorias (Tarefa 3)
+### `bug-reports/` — 22 bugs + 10 melhorias (Tarefa 3)
 
-- `bugs/BUG-001..BUG-018.md` — schema fixo (Severidade · Prioridade · Status · Reprodução · Evidência · Sugestão de fix · Impacto)
+- `bugs/BUG-001..BUG-022.md` — schema fixo (Severidade · Prioridade · Status · Reprodução · Evidência · Sugestão de fix · Impacto)
 - `improvements/IMP-001..IMP-010.md`
 - `charters/` — 7 session reports
 - `evidence/BUG-XXX/` — screenshots/HAR/console por bug
 - `README.md` — índice geral
-- Distribuição: **2 Critical · 3 High · 7 Medium · 6 Low**
+- Distribuição: **3 Critical · 5 High · 9 Medium · 5 Low**
 
-### `automation/` — 45 testes em camadas (Tarefa 2)
+### `automation/` — 68 testes em camadas (Tarefa 2)
 
 - `tests/e2e/` — 27 testes funcionais (smoke = subset de 10)
 - `tests/api/` — 5 testes contract (Zod schemas)
 - `tests/visual/` — 5 testes regression
 - `tests/a11y/` — 5 testes WCAG 2.1 AA
 - `tests/performance/` — 3 testes Lighthouse
+- `tests/security/` — 23 testes (XSS reflected/stored/DOM, headers, cookies, CORS, rate-limit)
 - `pages/` — POMs · `fixtures/` — custom · `support/` — helpers
 - Suite passa verde 2x consecutivas localmente; CI verde
 
 ### `mcp-server/` — 7 tools + tutorial (Tarefa 4)
 
-- `src/tools/` — 3 mandatórias (`run_test_case`, `get_element_status`, Resources de erro) + 4 extras (`list_test_cases`, `navigate_to`, `extract_dom_snapshot`, `analyze_failure`)
+- `src/tools/` — 3 mandatórias (`run_test_case`, `get_element_status`, Resources de erro) + 5 extras (`list_test_cases`, `navigate_to`, `get_test_history`, `extract_dom_snapshot`, `analyze_failure`)
 - `src/resources/` — registry com URIs `loomi://artifacts/{testId}/...`
 - `tests/` — 31 testes Vitest (≥80% coverage)
 - **Tutorial reproduzível:** [`docs/mcp-tutorial.md`](mcp-tutorial.md) — setup ≤5min com snippet pronto pro `claude_desktop_config.json` + 3 prompts de exemplo
@@ -129,13 +130,13 @@ Cada pasta de topo é um entregável do desafio:
 ## 7. Resumo do que validar (checklist do avaliador)
 
 - [ ] **Trello público acessível** em janela anônima
-- [ ] **Allure URL acessível** em janela anônima (45 testes verdes)
+- [ ] **Allure URL acessível** em janela anônima (68 testes verdes)
 - [ ] **`README.md` raiz** com TL;DR, Quick Start, links e inventário
 - [ ] **`docs/progress-report.md`** com 8 seções completas
 - [ ] **`test-cases/`** com 56 BDD organizados em core/extras
-- [ ] **`bug-reports/bugs/`** com 18 bugs (Critical → Low)
+- [ ] **`bug-reports/bugs/`** com 22 bugs (Critical → Low)
 - [ ] **`bug-reports/improvements/`** com 10 melhorias
-- [ ] **`automation/tests/`** com 5 camadas (e2e/api/visual/a11y/performance)
+- [ ] **`automation/tests/`** com 6 camadas (e2e/api/visual/a11y/performance/security)
 - [ ] **`mcp-server/`** com 7 tools + 31 testes Vitest + tutorial reproduzível
 - [ ] **CI verde** no último commit
 

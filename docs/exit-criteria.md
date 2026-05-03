@@ -24,9 +24,9 @@ Legenda: `[x]` entregue · `[ ]` não entregue · `[~]` parcial (com nota).
 
 ## Tarefa 2 — Automação
 
-- [x] **≥30 testes** (alvo 45) → **45 entregues** (+40%)
-- [x] **Manter ao menos 25 E2E + cobertura de 4 das 5 camadas** (E2E/API/Visual/A11y/Perf) — não comprometer a "forma de diamante"
-  - 27 E2E + 5 API + 5 Visual + 5 A11y + 3 Perf → todas as 5 camadas presentes
+- [x] **≥30 testes** (alvo 45) → **68 entregues** (+112%)
+- [x] **Manter ao menos 25 E2E + cobertura de 5 das 6 camadas** (E2E/API/Visual/A11y/Perf/Security) — não comprometer a "forma de diamante"
+  - 27 E2E + 5 API + 5 Visual + 5 A11y + 3 Perf + 23 Security → todas as 6 camadas presentes
 - [x] **Suite full passa verde 2x consecutivas localmente**
 - [x] **CI verde** em PRs consecutivos
 - [x] **Allure local sem erro** (e publicado em GH Pages — extra)
@@ -36,8 +36,8 @@ Legenda: `[x]` entregue · `[ ]` não entregue · `[~]` parcial (com nota).
 
 ## Tarefa 3 — Bugs / Melhorias
 
-- [x] **≥12 bugs** (alvo 18) com evidência commitada → **18 entregues** (+50%)
-  - Distribuição: 2 Critical · 3 High · 7 Medium · 6 Low
+- [x] **≥12 bugs** (alvo 22) com evidência commitada → **22 entregues** (+83%)
+  - Distribuição: 3 Critical · 5 High · 9 Medium · 5 Low
 - [x] **≥8 melhorias** (alvo 10) com evidência → **10 entregues** (+25%)
 - [x] **Todos no Trello + `.md` no repo** (schema 1:1 entre card e arquivo)
 - [x] **Severidade preenchida** em 100% dos bugs

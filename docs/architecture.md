@@ -21,9 +21,9 @@ Diagrama da suite + componentes principais. Para o detalhamento completo (decis�
    │ Functional QA │         │ Automation         │         │ Platform / MCP    │
    ├───────────────┤         ├────────────────────┤         ├───────────────────┤
    │ exploration   │         │ Playwright runner  │         │ MCP Server        │
-   │ 7 charters    │         │ 5 camadas          │         │ stdio transport   │
-   │ 56 BDD        │         │ 45 testes verdes   │         │ 7 tools           │
-   │ 18 bugs       │         │ POMs + fixtures    │         │ Resources         │
+   │ 7 charters    │         │ 6 camadas          │         │ stdio transport   │
+   │ 56 BDD        │         │ 68 testes verdes   │         │ 7 tools           │
+   │ 22 bugs       │         │ POMs + fixtures    │         │ Resources         │
    │ 10 melhorias  │         │ Allure publicado   │         │ 31 testes Vitest  │
    └───────────────┘         └────────────────────┘         └───────────────────┘
         │                              │                              │
@@ -82,21 +82,22 @@ loomi-qa-challenge-kasa/
 │       ├── erro-edge-cases.feature
 │       └── recursos-nao-core.feature
 │
-├── automation/                      # TAREFA 2 — 45 testes Playwright
+├── automation/                      # TAREFA 2 — 68 testes Playwright
 │   ├── tests/
 │   │   ├── e2e/                     # 27 testes (smoke subset = 10)
 │   │   ├── api/                     # 5 testes contract (Zod)
 │   │   ├── visual/                  # 5 testes regression
 │   │   ├── a11y/                    # 5 testes WCAG 2.1 AA
-│   │   └── performance/             # 3 testes Lighthouse
+│   │   ├── performance/             # 3 testes Lighthouse
+│   │   └── security/                # 23 testes (XSS/headers/cookies/CORS/rate-limit)
 │   ├── pages/                       # POMs (Home, Highlights, Calendar)
 │   ├── fixtures/                    # custom fixtures (loggedInPage, etc)
 │   ├── support/                     # apiClient, evidenceCollector, helpers
 │   └── reports/                     # gitignored
 │
-├── bug-reports/                     # TAREFA 3 — 18 bugs + 10 melhorias
+├── bug-reports/                     # TAREFA 3 — 22 bugs + 10 melhorias
 │   ├── README.md                    # índice geral
-│   ├── bugs/                        # BUG-001..BUG-018 (.md schema fixo)
+│   ├── bugs/                        # BUG-001..BUG-022 (.md schema fixo)
 │   ├── improvements/                # IMP-001..IMP-010 (.md)
 │   ├── charters/                    # 7 charter reports
 │   └── evidence/                    # screenshots/HAR/console por bug
@@ -104,7 +105,7 @@ loomi-qa-challenge-kasa/
 ├── mcp-server/                      # TAREFA 4 — MCP Server
 │   ├── src/
 │   │   ├── index.ts                 # bootstrap stdio
-│   │   ├── tools/                   # 7 tools (3 mandatórias + 4 extras)
+│   │   ├── tools/                   # 7 tools (3 mandatórias + 5 extras: list_test_cases, navigate_to, get_test_history, extract_dom_snapshot, analyze_failure)
 │   │   ├── resources/               # registry + URIs loomi://...
 │   │   ├── runner/                  # Playwright spawn (single-flight)
 │   │   └── types/                   # contracts tipados
@@ -157,7 +158,7 @@ LiveBrowser e TestRunner são separados — testes precisam de contexto limpo, e
 **Tools (7):**
 
 - Mandatórias (3): `run_test_case`, `get_element_status`, (Resources de erro implícito)
-- Extras (4): `list_test_cases`, `navigate_to`, `extract_dom_snapshot`, `analyze_failure`
+- Extras (5): `list_test_cases`, `navigate_to`, `get_test_history`, `extract_dom_snapshot`, `analyze_failure`
 
 **Resources URI pattern:** `loomi://artifacts/{testId}/{type}` (error.log, screenshot.png, trace.zip, dom.html, network.har, console.log)
 
@@ -241,22 +242,22 @@ Bug encontrado durante charter
 
 ## 5. Stack consolidada
 
-| Camada                          | Escolha                                          |
-| ------------------------------- | ------------------------------------------------ |
-| Linguagem                       | TypeScript 5.4 (strict)                          |
-| Runtime                         | Node 20 LTS (`.nvmrc`)                           |
-| Runner E2E/API/Visual/A11y/Perf | Playwright 1.50                                  |
-| BDD                             | Gherkin como documentação (sem Cucumber runtime) |
-| API testing                     | Playwright `request` + Zod                       |
-| Visual                          | Playwright `toHaveScreenshot()`                  |
-| A11y                            | `@axe-core/playwright`                           |
-| Performance                     | `playwright-lighthouse`                          |
-| Reports                         | Allure 2 (+ Playwright HTML fallback)            |
-| MCP                             | `@modelcontextprotocol/sdk`                      |
-| Test data                       | factories próprias + `@faker-js/faker`           |
-| Lint/format                     | ESLint + Prettier + simple-git-hooks             |
-| CI/CD                           | GitHub Actions                                   |
-| Container                       | Docker (Playwright official image)               |
-| Gestão                          | Trello (board público)                           |
-| Versionamento                   | Git + Conventional Commits                       |
-| MCP testing                     | Vitest                                           |
+| Camada                                   | Escolha                                          |
+| ---------------------------------------- | ------------------------------------------------ |
+| Linguagem                                | TypeScript 5.4 (strict)                          |
+| Runtime                                  | Node 20 LTS (`.nvmrc`)                           |
+| Runner E2E/API/Visual/A11y/Perf/Security | Playwright 1.50                                  |
+| BDD                                      | Gherkin como documentação (sem Cucumber runtime) |
+| API testing                              | Playwright `request` + Zod                       |
+| Visual                                   | Playwright `toHaveScreenshot()`                  |
+| A11y                                     | `@axe-core/playwright`                           |
+| Performance                              | `playwright-lighthouse`                          |
+| Reports                                  | Allure 2 (+ Playwright HTML fallback)            |
+| MCP                                      | `@modelcontextprotocol/sdk`                      |
+| Test data                                | factories próprias + `@faker-js/faker`           |
+| Lint/format                              | ESLint + Prettier + simple-git-hooks             |
+| CI/CD                                    | GitHub Actions                                   |
+| Container                                | Docker (Playwright official image)               |
+| Gestão                                   | Trello (board público)                           |
+| Versionamento                            | Git + Conventional Commits                       |
+| MCP testing                              | Vitest                                           |

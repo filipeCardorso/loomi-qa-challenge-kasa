@@ -42,6 +42,7 @@ Legenda: `[x]` ok · `[ ]` pendente.
 - [x] `docs/exit-criteria.md` (este checklist + critérios atendidos)
 - [x] `docs/submission-checklist.md` (este arquivo)
 - [x] `docs/mcp-tutorial.md` (reproduzível ≤5min)
+- [x] `docs/risks-and-mitigations.md` (registro R1-R11)
 - [x] `CHANGELOG.md` com entrada `1.0.0`
 
 ---
@@ -58,8 +59,8 @@ Legenda: `[x]` ok · `[ ]` pendente.
 ## 5. Entregáveis por tarefa (rápido)
 
 - [x] **Tarefa 1:** 56 BDD em `test-cases/` (core + extras)
-- [x] **Tarefa 2:** 45 testes em `automation/tests/` (5 camadas)
-- [x] **Tarefa 3:** 18 bugs + 10 melhorias em `bug-reports/`
+- [x] **Tarefa 2:** 68 testes em `automation/tests/` (6 camadas: E2E + API + Visual + A11y + Perf + Security)
+- [x] **Tarefa 3:** 22 bugs + 10 melhorias em `bug-reports/`
 - [x] **Tarefa 4:** 7 tools + Resources + 31 testes Vitest + tutorial em `mcp-server/` e `docs/mcp-tutorial.md`
 
 ---
