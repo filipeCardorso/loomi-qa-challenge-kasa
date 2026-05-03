@@ -3,10 +3,16 @@ on:
   pull_request:
   push:
     branches: [main]
+
+# Cancela runs anteriores do mesmo branch/PR — evita race em rebases rápidos
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   smoke:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 15
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -22,6 +28,18 @@ jobs:
       - run: npm run typecheck
       - run: npm run test:smoke
         env: { CI: 'true' }
+      # Bug-regression suite: 22 specs 1:1 com bug-reports/bugs/. Falha esperada
+      # enquanto bugs estão Open — gate é "não regredir" (não "todos verdes").
+      - name: Bug regression (informativo — falhas indicam bugs Open ainda presentes)
+        run: npm run test:bugs
+        env: { CI: 'true' }
+        continue-on-error: true
       - uses: actions/upload-artifact@v4
         if: failure()
         with: { name: traces, path: test-results/ }
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: bug-evidence-auto-runs
+          path: bug-reports/evidence/*/auto-runs/
+          if-no-files-found: ignore

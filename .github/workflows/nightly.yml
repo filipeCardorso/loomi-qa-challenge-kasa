@@ -2,6 +2,14 @@ name: Nightly Full Suite + Allure Publish
 on:
   schedule: [{ cron: '0 3 * * *' }]
   workflow_dispatch:
+
+concurrency:
+  # Cron + manual dispatch — NÃO cancelamos runs em andamento. Se cron das 3h
+  # estiver gerando Allure e dispatch manual disparar simultâneo, deixar ambos
+  # rodarem (matrix multi-browser) garante que histórico de Allure não é perdido.
+  group: nightly-${{ github.workflow }}-${{ github.event_name }}
+  cancel-in-progress: false
+
 permissions:
   contents: write
 jobs:
@@ -21,10 +29,22 @@ jobs:
       - run: npx playwright test --project=${{ matrix.project }}
         env: { CI: 'true' }
         continue-on-error: true
+      # Bug-regression suite: 22 specs 1:1 com bugs Open. Falhas esperadas
+      # enquanto não corrigidos — gate detecta REGRESSÃO de bug Closed.
+      - name: Bug regression (informativo)
+        run: npm run test:bugs
+        env: { CI: 'true' }
+        continue-on-error: true
       - uses: actions/upload-artifact@v4
         with:
           name: allure-results-${{ matrix.project }}
           path: allure-results/
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: bug-evidence-${{ matrix.project }}
+          path: bug-reports/evidence/*/auto-runs/
+          if-no-files-found: ignore
   publish:
     needs: full
     runs-on: ubuntu-latest
