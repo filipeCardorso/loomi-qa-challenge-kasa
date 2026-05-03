@@ -1,0 +1,25 @@
+# BUG-002 — Console output: contagem real de botões com aria-label duplicado
+URL: https://www.kasa.live/
+Title: Kasa.Live - Encontre o Jogo
+Data captura: 2026-05-03T02:10:58.110Z
+Date picker aberto antes da contagem: true
+
+> document.querySelectorAll('[aria-label="Go to previous month"]').length
+1
+
+# Variantes do mesmo padrão:
+  aria-label="Go to previous month": 1
+  aria-label="Go to next month": 1
+  classe rdp-nav_button_previous: 1
+  aria-label*="mês": 0
+
+# Amostra dos 3 primeiros elementos:
+[0] <button aria-label="Go to previous month" class="rdp-button_reset rdp-button rdp-nav_button rdp-nav_button_previous" type="button"><svg width="16px" height="16px" viewBox="0 0 120 120" class="rdp-nav_icon"><path d="M69.490332,3.34314575 C72
+
+# Observação:
+A exploração inicial (commit efccf5c, 2026-05-02) registrou 35 ocorrências em
+docs/site-snapshots/exploration/__exploration-raw.json — provavelmente porque
+naquele momento o date-picker estava aberto OU múltiplos cards renderizavam o
+mini-calendário inline. O padrão de aria-label genérico em inglês num site
+pt-BR continua sendo o problema central; o número exato varia conforme o
+estado da UI no momento da inspeção.

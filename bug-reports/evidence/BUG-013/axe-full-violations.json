@@ -1,0 +1,27 @@
+{
+  "capturedAt": "2026-05-03T02:10:59.145Z",
+  "url": "https://www.kasa.live/",
+  "totalViolations": 4,
+  "violationIds": [
+    {
+      "id": "aria-allowed-attr",
+      "impact": "critical",
+      "nodes": 3
+    },
+    {
+      "id": "button-name",
+      "impact": "critical",
+      "nodes": 30
+    },
+    {
+      "id": "link-name",
+      "impact": "serious",
+      "nodes": 2
+    },
+    {
+      "id": "meta-viewport",
+      "impact": "moderate",
+      "nodes": 1
+    }
+  ]
+}

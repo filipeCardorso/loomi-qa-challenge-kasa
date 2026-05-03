@@ -1,0 +1,473 @@
+{
+  "capturedAt": "2026-05-03T02:10:58.114Z",
+  "url": "https://www.kasa.live/",
+  "totalOrdinals": 31,
+  "duplicates": 11,
+  "findings": [
+    {
+      "text": "11º maio (sexta-feira)",
+      "aria": "",
+      "isDuplicate": true,
+      "rect": {
+        "x": 913,
+        "y": 164,
+        "width": 40,
+        "height": 40,
+        "top": 164,
+        "right": 953,
+        "bottom": 204,
+        "left": 913
+      }
+    },
+    {
+      "text": "22º maio (sábado)",
+      "aria": "",
+      "isDuplicate": true,
+      "rect": {
+        "x": 953,
+        "y": 164,
+        "width": 40,
+        "height": 40,
+        "top": 164,
+        "right": 993,
+        "bottom": 204,
+        "left": 953
+      }
+    },
+    {
+      "text": "33º maio (domingo)",
+      "aria": "",
+      "isDuplicate": true,
+      "rect": {
+        "x": 713,
+        "y": 204,
+        "width": 40,
+        "height": 40,
+        "top": 204,
+        "right": 753,
+        "bottom": 244,
+        "left": 713
+      }
+    },
+    {
+      "text": "44º maio (segunda-feira)",
+      "aria": "",
+      "isDuplicate": true,
+      "rect": {
+        "x": 753,
+        "y": 204,
+        "width": 40,
+        "height": 40,
+        "top": 204,
+        "right": 793,
+        "bottom": 244,
+        "left": 753
+      }
+    },
+    {
+      "text": "55º maio (terça-feira)",
+      "aria": "",
+      "isDuplicate": true,
+      "rect": {
+        "x": 793,
+        "y": 204,
+        "width": 40,
+        "height": 40,
+        "top": 204,
+        "right": 833,
+        "bottom": 244,
+        "left": 793
+      }
+    },
+    {
+      "text": "66º maio (quarta-feira)",
+      "aria": "",
+      "isDuplicate": true,
+      "rect": {
+        "x": 833,
+        "y": 204,
+        "width": 40,
+        "height": 40,
+        "top": 204,
+        "right": 873,
+        "bottom": 244,
+        "left": 833
+      }
+    },
+    {
+      "text": "77º maio (quinta-feira)",
+      "aria": "",
+      "isDuplicate": true,
+      "rect": {
+        "x": 873,
+        "y": 204,
+        "width": 40,
+        "height": 40,
+        "top": 204,
+        "right": 913,
+        "bottom": 244,
+        "left": 873
+      }
+    },
+    {
+      "text": "88º maio (sexta-feira)",
+      "aria": "",
+      "isDuplicate": true,
+      "rect": {
+        "x": 913,
+        "y": 204,
+        "width": 40,
+        "height": 40,
+        "top": 204,
+        "right": 953,
+        "bottom": 244,
+        "left": 913
+      }
+    },
+    {
+      "text": "99º maio (sábado)",
+      "aria": "",
+      "isDuplicate": true,
+      "rect": {
+        "x": 953,
+        "y": 204,
+        "width": 40,
+        "height": 40,
+        "top": 204,
+        "right": 993,
+        "bottom": 244,
+        "left": 953
+      }
+    },
+    {
+      "text": "1010º maio (domingo)",
+      "aria": "",
+      "isDuplicate": false,
+      "rect": {
+        "x": 713,
+        "y": 244,
+        "width": 40,
+        "height": 40,
+        "top": 244,
+        "right": 753,
+        "bottom": 284,
+        "left": 713
+      }
+    },
+    {
+      "text": "1111º maio (segunda-feira)",
+      "aria": "",
+      "isDuplicate": true,
+      "rect": {
+        "x": 753,
+        "y": 244,
+        "width": 40,
+        "height": 40,
+        "top": 244,
+        "right": 793,
+        "bottom": 284,
+        "left": 753
+      }
+    },
+    {
+      "text": "1212º maio (terça-feira)",
+      "aria": "",
+      "isDuplicate": false,
+      "rect": {
+        "x": 793,
+        "y": 244,
+        "width": 40,
+        "height": 40,
+        "top": 244,
+        "right": 833,
+        "bottom": 284,
+        "left": 793
+      }
+    },
+    {
+      "text": "1313º maio (quarta-feira)",
+      "aria": "",
+      "isDuplicate": false,
+      "rect": {
+        "x": 833,
+        "y": 244,
+        "width": 40,
+        "height": 40,
+        "top": 244,
+        "right": 873,
+        "bottom": 284,
+        "left": 833
+      }
+    },
+    {
+      "text": "1414º maio (quinta-feira)",
+      "aria": "",
+      "isDuplicate": false,
+      "rect": {
+        "x": 873,
+        "y": 244,
+        "width": 40,
+        "height": 40,
+        "top": 244,
+        "right": 913,
+        "bottom": 284,
+        "left": 873
+      }
+    },
+    {
+      "text": "1515º maio (sexta-feira)",
+      "aria": "",
+      "isDuplicate": false,
+      "rect": {
+        "x": 913,
+        "y": 244,
+        "width": 40,
+        "height": 40,
+        "top": 244,
+        "right": 953,
+        "bottom": 284,
+        "left": 913
+      }
+    },
+    {
+      "text": "1616º maio (sábado)",
+      "aria": "",
+      "isDuplicate": false,
+      "rect": {
+        "x": 953,
+        "y": 244,
+        "width": 40,
+        "height": 40,
+        "top": 244,
+        "right": 993,
+        "bottom": 284,
+        "left": 953
+      }
+    },
+    {
+      "text": "1717º maio (domingo)",
+      "aria": "",
+      "isDuplicate": false,
+      "rect": {
+        "x": 713,
+        "y": 284,
+        "width": 40,
+        "height": 40,
+        "top": 284,
+        "right": 753,
+        "bottom": 324,
+        "left": 713
+      }
+    },
+    {
+      "text": "1818º maio (segunda-feira)",
+      "aria": "",
+      "isDuplicate": false,
+      "rect": {
+        "x": 753,
+        "y": 284,
+        "width": 40,
+        "height": 40,
+        "top": 284,
+        "right": 793,
+        "bottom": 324,
+        "left": 753
+      }
+    },
+    {
+      "text": "1919º maio (terça-feira)",
+      "aria": "",
+      "isDuplicate": false,
+      "rect": {
+        "x": 793,
+        "y": 284,
+        "width": 40,
+        "height": 40,
+        "top": 284,
+        "right": 833,
+        "bottom": 324,
+        "left": 793
+      }
+    },
+    {
+      "text": "2020º maio (quarta-feira)",
+      "aria": "",
+      "isDuplicate": false,
+      "rect": {
+        "x": 833,
+        "y": 284,
+        "width": 40,
+        "height": 40,
+        "top": 284,
+        "right": 873,
+        "bottom": 324,
+        "left": 833
+      }
+    },
+    {
+      "text": "2121º maio (quinta-feira)",
+      "aria": "",
+      "isDuplicate": false,
+      "rect": {
+        "x": 873,
+        "y": 284,
+        "width": 40,
+        "height": 40,
+        "top": 284,
+        "right": 913,
+        "bottom": 324,
+        "left": 873
+      }
+    },
+    {
+      "text": "2222º maio (sexta-feira)",
+      "aria": "",
+      "isDuplicate": true,
+      "rect": {
+        "x": 913,
+        "y": 284,
+        "width": 40,
+        "height": 40,
+        "top": 284,
+        "right": 953,
+        "bottom": 324,
+        "left": 913
+      }
+    },
+    {
+      "text": "2323º maio (sábado)",
+      "aria": "",
+      "isDuplicate": false,
+      "rect": {
+        "x": 953,
+        "y": 284,
+        "width": 40,
+        "height": 40,
+        "top": 284,
+        "right": 993,
+        "bottom": 324,
+        "left": 953
+      }
+    },
+    {
+      "text": "2424º maio (domingo)",
+      "aria": "",
+      "isDuplicate": false,
+      "rect": {
+        "x": 713,
+        "y": 324,
+        "width": 40,
+        "height": 40,
+        "top": 324,
+        "right": 753,
+        "bottom": 364,
+        "left": 713
+      }
+    },
+    {
+      "text": "2525º maio (segunda-feira)",
+      "aria": "",
+      "isDuplicate": false,
+      "rect": {
+        "x": 753,
+        "y": 324,
+        "width": 40,
+        "height": 40,
+        "top": 324,
+        "right": 793,
+        "bottom": 364,
+        "left": 753
+      }
+    },
+    {
+      "text": "2626º maio (terça-feira)",
+      "aria": "",
+      "isDuplicate": false,
+      "rect": {
+        "x": 793,
+        "y": 324,
+        "width": 40,
+        "height": 40,
+        "top": 324,
+        "right": 833,
+        "bottom": 364,
+        "left": 793
+      }
+    },
+    {
+      "text": "2727º maio (quarta-feira)",
+      "aria": "",
+      "isDuplicate": false,
+      "rect": {
+        "x": 833,
+        "y": 324,
+        "width": 40,
+        "height": 40,
+        "top": 324,
+        "right": 873,
+        "bottom": 364,
+        "left": 833
+      }
+    },
+    {
+      "text": "2828º maio (quinta-feira)",
+      "aria": "",
+      "isDuplicate": false,
+      "rect": {
+        "x": 873,
+        "y": 324,
+        "width": 40,
+        "height": 40,
+        "top": 324,
+        "right": 913,
+        "bottom": 364,
+        "left": 873
+      }
+    },
+    {
+      "text": "2929º maio (sexta-feira)",
+      "aria": "",
+      "isDuplicate": false,
+      "rect": {
+        "x": 913,
+        "y": 324,
+        "width": 40,
+        "height": 40,
+        "top": 324,
+        "right": 953,
+        "bottom": 364,
+        "left": 913
+      }
+    },
+    {
+      "text": "3030º maio (sábado)",
+      "aria": "",
+      "isDuplicate": false,
+      "rect": {
+        "x": 953,
+        "y": 324,
+        "width": 40,
+        "height": 40,
+        "top": 324,
+        "right": 993,
+        "bottom": 364,
+        "left": 953
+      }
+    },
+    {
+      "text": "3131º maio (domingo)",
+      "aria": "",
+      "isDuplicate": false,
+      "rect": {
+        "x": 713,
+        "y": 364,
+        "width": 40,
+        "height": 40,
+        "top": 364,
+        "right": 753,
+        "bottom": 404,
+        "left": 713
+      }
+    }
+  ]
+}

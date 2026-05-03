@@ -1,0 +1,33 @@
+{
+  "capturedAt": "2026-05-03T02:10:59.144Z",
+  "url": "https://www.kasa.live/",
+  "axeRule": "aria-allowed-attr",
+  "impact": "critical",
+  "help": "Elements must only use supported ARIA attributes",
+  "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/aria-allowed-attr?application=playwright",
+  "nodeCount": 3,
+  "nodes": [
+    {
+      "target": [
+        ".css-1x8r6w2 > .css-0[aria-controls=\"popover-content-custom-popover\"][aria-haspopup=\"dialog\"]"
+      ],
+      "html": "<div id=\"popover-trigger-custom-popover\" aria-haspopup=\"dialog\" aria-expanded=\"false\" aria-controls=\"popover-content-custom-popover\" class=\"css-0\">",
+      "failureSummary": "Fix all of the following:\n  ARIA attribute is not allowed: aria-expanded=\"false\"",
+      "impact": "critical"
+    },
+    {
+      "target": [
+        ".css-8atqhb > .css-0[aria-controls=\"popover-content-custom-popover\"][aria-haspopup=\"dialog\"]"
+      ],
+      "html": "<div id=\"popover-trigger-custom-popover\" aria-haspopup=\"dialog\" aria-expanded=\"true\" aria-controls=\"popover-content-custom-popover\" class=\"css-0\">",
+      "failureSummary": "Fix all of the following:\n  ARIA attribute is not allowed: aria-expanded=\"true\"",
+      "impact": "critical"
+    },
+    {
+      "target": ["#popover-trigger-\\:r2\\:"],
+      "html": "<div id=\"popover-trigger-:r2:\" aria-haspopup=\"dialog\" aria-expanded=\"false\" aria-controls=\"popover-content-:r2:\" class=\"css-0\">",
+      "failureSummary": "Fix all of the following:\n  ARIA attribute is not allowed: aria-expanded=\"false\"",
+      "impact": "critical"
+    }
+  ]
+}

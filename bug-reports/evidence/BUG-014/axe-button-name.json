@@ -1,0 +1,91 @@
+{
+  "capturedAt": "2026-05-03T02:10:59.144Z",
+  "url": "https://www.kasa.live/",
+  "axeRule": "button-name",
+  "impact": "critical",
+  "help": "Buttons must have discernible text",
+  "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/button-name?application=playwright",
+  "nodeCount": 30,
+  "nodes": [
+    {
+      "target": [
+        ".css-7mca6u:nth-child(1) > .css-5prxxc > .css-14jp1cp > .css-me39x0.chakra-button"
+      ],
+      "html": "<button type=\"button\" class=\"chakra-button css-me39x0\">",
+      "failureSummary": "Fix any of the following:\n  Element does not have inner text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element does not have an implicit (wrapped) <label>\n  Element does not have an explicit <label>\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\"",
+      "impact": "critical"
+    },
+    {
+      "target": [
+        ".css-7mca6u:nth-child(2) > .css-5prxxc > .css-14jp1cp > .css-me39x0.chakra-button"
+      ],
+      "html": "<button type=\"button\" class=\"chakra-button css-me39x0\">",
+      "failureSummary": "Fix any of the following:\n  Element does not have inner text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element does not have an implicit (wrapped) <label>\n  Element does not have an explicit <label>\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\"",
+      "impact": "critical"
+    },
+    {
+      "target": [
+        ".css-7mca6u:nth-child(3) > .css-5prxxc > .css-14jp1cp > .css-me39x0.chakra-button"
+      ],
+      "html": "<button type=\"button\" class=\"chakra-button css-me39x0\">",
+      "failureSummary": "Fix any of the following:\n  Element does not have inner text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element does not have an implicit (wrapped) <label>\n  Element does not have an explicit <label>\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\"",
+      "impact": "critical"
+    },
+    {
+      "target": [
+        ".css-7mca6u:nth-child(4) > .css-5prxxc > .css-14jp1cp > .css-me39x0.chakra-button"
+      ],
+      "html": "<button type=\"button\" class=\"chakra-button css-me39x0\">",
+      "failureSummary": "Fix any of the following:\n  Element does not have inner text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element does not have an implicit (wrapped) <label>\n  Element does not have an explicit <label>\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\"",
+      "impact": "critical"
+    },
+    {
+      "target": [
+        ".css-7mca6u:nth-child(5) > .css-5prxxc > .css-14jp1cp > .css-me39x0.chakra-button"
+      ],
+      "html": "<button type=\"button\" class=\"chakra-button css-me39x0\">",
+      "failureSummary": "Fix any of the following:\n  Element does not have inner text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element does not have an implicit (wrapped) <label>\n  Element does not have an explicit <label>\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\"",
+      "impact": "critical"
+    },
+    {
+      "target": [
+        ".css-7mca6u:nth-child(6) > .css-5prxxc > .css-14jp1cp > .css-me39x0.chakra-button"
+      ],
+      "html": "<button type=\"button\" class=\"chakra-button css-me39x0\">",
+      "failureSummary": "Fix any of the following:\n  Element does not have inner text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element does not have an implicit (wrapped) <label>\n  Element does not have an explicit <label>\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\"",
+      "impact": "critical"
+    },
+    {
+      "target": [
+        ".css-7mca6u:nth-child(7) > .css-5prxxc > .css-14jp1cp > .css-me39x0.chakra-button"
+      ],
+      "html": "<button type=\"button\" class=\"chakra-button css-me39x0\">",
+      "failureSummary": "Fix any of the following:\n  Element does not have inner text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element does not have an implicit (wrapped) <label>\n  Element does not have an explicit <label>\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\"",
+      "impact": "critical"
+    },
+    {
+      "target": [
+        ".css-7mca6u:nth-child(8) > .css-5prxxc > .css-14jp1cp > .css-me39x0.chakra-button"
+      ],
+      "html": "<button type=\"button\" class=\"chakra-button css-me39x0\">",
+      "failureSummary": "Fix any of the following:\n  Element does not have inner text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element does not have an implicit (wrapped) <label>\n  Element does not have an explicit <label>\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\"",
+      "impact": "critical"
+    },
+    {
+      "target": [
+        ".css-7mca6u:nth-child(9) > .css-5prxxc > .css-14jp1cp > .css-me39x0.chakra-button"
+      ],
+      "html": "<button type=\"button\" class=\"chakra-button css-me39x0\">",
+      "failureSummary": "Fix any of the following:\n  Element does not have inner text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element does not have an implicit (wrapped) <label>\n  Element does not have an explicit <label>\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\"",
+      "impact": "critical"
+    },
+    {
+      "target": [
+        ".css-7mca6u:nth-child(10) > .css-5prxxc > .css-14jp1cp > .css-me39x0.chakra-button"
+      ],
+      "html": "<button type=\"button\" class=\"chakra-button css-me39x0\">",
+      "failureSummary": "Fix any of the following:\n  Element does not have inner text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element does not have an implicit (wrapped) <label>\n  Element does not have an explicit <label>\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\"",
+      "impact": "critical"
+    }
+  ]
+}

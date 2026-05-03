@@ -1,0 +1,23 @@
+{
+  "capturedAt": "2026-05-03T02:10:59.145Z",
+  "url": "https://www.kasa.live/",
+  "axeRule": "link-name",
+  "impact": "serious",
+  "help": "Links must have discernible text",
+  "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/link-name?application=playwright",
+  "nodeCount": 2,
+  "nodes": [
+    {
+      "target": [".css-spn4bz.chakra-link[target=\"_blank\"]:nth-child(1)"],
+      "html": "<a target=\"_blank\" class=\"chakra-link css-spn4bz\" href=\"https://www.tiktok.com/@kasa.live/\">",
+      "failureSummary": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute",
+      "impact": "serious"
+    },
+    {
+      "target": [".css-spn4bz.chakra-link[target=\"_blank\"]:nth-child(2)"],
+      "html": "<a target=\"_blank\" class=\"chakra-link css-spn4bz\" href=\"https://www.instagram.com/kasa.live/\">",
+      "failureSummary": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute",
+      "impact": "serious"
+    }
+  ]
+}
