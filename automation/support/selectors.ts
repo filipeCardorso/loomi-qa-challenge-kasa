@@ -18,18 +18,23 @@ export const SELECTORS = {
   matchModalDialog: '[role="dialog"][aria-labelledby^="chakra-modal--header"]',
 
   /**
-   * LoginModal — `dialog` com heading "Entrar" ou "Cadastrar".
-   * Discrimina do MatchModal (que usa o mesmo `role=dialog`).
+   * LoginModal — modal Chakra (`aria-labelledby^="chakra-modal--header"`) com
+   * heading "Entrar" ou "Cadastrar". Discriminator vs MatchModal — ambos
+   * usam o mesmo prefixo `chakra-modal--header`.
+   *
+   * Nota: `:has-text()` é Playwright-only (válido dentro de `:has()` CSS).
+   * `text=/regex/` é a engine `text=`, NÃO usar dentro de `:has()`.
    */
   loginModal:
-    '[role="dialog"]:has(h2:has-text("Entrar")), [role="dialog"]:has(h2:has-text("Cadastrar"))',
+    '[role="dialog"][aria-labelledby^="chakra-modal--header"]:has(h2:has-text("Entrar")), [role="dialog"][aria-labelledby^="chakra-modal--header"]:has(h2:has-text("Cadastrar"))',
 
   /**
-   * MatchModal — `dialog` cujo conteúdo descreve uma partida. O texto do
-   * header é "Partida Finalizada" / "Partida Não Iniciada" / "Partida Ao
-   * Vivo" (ou variantes).
+   * MatchModal — modal Chakra (`aria-labelledby^="chakra-modal--header"`)
+   * cujo conteúdo descreve uma partida. Usamos `:has-text("Partida")` em
+   * cima do filtro `chakra-modal--header` pra excluir popovers
+   * (`popover-header-...`) que podem conter "Partida" no body.
    */
-  matchModal: '[role="dialog"]:has(text=/Partida (Finalizada|N[aã]o Iniciada|Ao Vivo|Ao\\sVivo)/i)',
+  matchModal: '[role="dialog"][aria-labelledby^="chakra-modal--header"]:has-text("Partida")',
 
   /** Popover Chakra do avatar (perfil). */
   profilePopover: '[role="dialog"][aria-labelledby^="popover-header"]',

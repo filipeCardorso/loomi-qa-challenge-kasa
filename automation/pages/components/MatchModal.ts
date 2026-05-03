@@ -20,9 +20,10 @@ export class MatchModal extends BaseComponent {
   }
 
   get root(): Locator {
-    // Fallback resiliente: se o discriminator não casar (ex.: estado
-    // "Programada" sem palavra-chave), cai pro selector genérico.
-    return this.page.locator(`${SELECTORS.matchModal}, ${SELECTORS.matchModalDialog}`).first();
+    // `SELECTORS.matchModal` já filtra por `aria-labelledby^="chakra-modal--header"`
+    // E por `:has-text("Partida")` — sólido o suficiente sem fallback (que
+    // antes vazava pra popovers ocultos).
+    return this.page.locator(SELECTORS.matchModal).first();
   }
 
   /** Alias retrocompatível pra asserts externos como `expect(modal.locator)`. */
