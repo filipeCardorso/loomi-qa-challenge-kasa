@@ -21,21 +21,21 @@ npm run report:allure
 
 ## Inventário de entregáveis
 
-| #   | Tarefa             | Pasta                          | Métrica entregue                                 | Status |
-| --- | ------------------ | ------------------------------ | ------------------------------------------------ | ------ |
-| 1   | Casos de Teste BDD | [`test-cases/`](test-cases/)   | **55** cenários (PT-BR Gherkin)                  | ✅     |
-| 2   | Automação          | [`automation/`](automation/)   | **45** testes (E2E + API + Visual + A11y + Perf) | ✅     |
-| 3   | Bugs e Melhorias   | [`bug-reports/`](bug-reports/) | **18** bugs + **10** melhorias (Trello + repo)   | ✅     |
-| 4   | MCP Server         | [`mcp-server/`](mcp-server/)   | **7** tools + 31 testes Vitest + tutorial        | ✅     |
+| #   | Tarefa             | Pasta                          | Métrica entregue                                       | Status |
+| --- | ------------------ | ------------------------------ | ------------------------------------------------------ | ------ |
+| 1   | Casos de Teste BDD | [`test-cases/`](test-cases/)   | **55** cenários (PT-BR Gherkin)                        | ✅     |
+| 2   | Automação          | [`automation/`](automation/)   | **68** testes (E2E + API + Visual + A11y + Perf + Sec) | ✅     |
+| 3   | Bugs e Melhorias   | [`bug-reports/`](bug-reports/) | **22** bugs + **10** melhorias (Trello + repo)         | ✅     |
+| 4   | MCP Server         | [`mcp-server/`](mcp-server/)   | **7** tools + 31 testes Vitest + tutorial              | ✅     |
 
 ## Critérios atendidos vs Pleno S1
 
 | Critério                | Pleno S1 (PDF) | Entregue | Delta     |
 | ----------------------- | -------------- | -------- | --------- |
 | Casos BDD               | 40             | **55**   | **+37%**  |
-| Bugs                    | 12             | **18**   | **+50%**  |
+| Bugs                    | 12             | **22**   | **+83%**  |
 | Melhorias               | 8              | **10**   | **+25%**  |
-| Automação               | 30-32          | **45**   | **+40%**  |
+| Automação               | 30-32          | **68**   | **+112%** |
 | Tools MCP (mandatórias) | 3              | 3        | ✅        |
 | Tools MCP (totais)      | —              | **7**    | **+133%** |
 
@@ -43,7 +43,7 @@ npm run report:allure
 
 - 🌐 Allure Report **publicado em URL pública** (GitHub Pages)
 - 🤖 MCP Server com 4 tools extras + 31 testes Vitest + tutorial reproduzível
-- 📈 5 camadas de teste: E2E + API + Visual regression + A11y (WCAG AA) + Performance (Lighthouse)
+- 📈 6 camadas de teste: E2E + API + Visual regression + A11y (WCAG AA) + Performance (Lighthouse) + Security (XSS/headers/cookies/CORS/rate-limit)
 - 🐳 Docker pronto para uso (`docker/Dockerfile`)
 - 🔄 CI/CD GitHub Actions com smoke gate em PR + nightly multi-browser
 - 📚 Documentação ponta-a-ponta em [`docs/`](docs/) (8 documentos)
@@ -59,6 +59,7 @@ npm run report:allure
 | Visual regression          | `npm run test:visual`                    |
 | Acessibilidade             | `npm run test:a11y`                      |
 | Performance                | `npm run test:perf`                      |
+| Security                   | `npm run test:security`                  |
 | MCP Server (build + start) | `npm run mcp:build && npm run mcp:start` |
 | Allure local               | `npm run report:allure`                  |
 | Suite completa             | `npm test`                               |

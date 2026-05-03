@@ -2,24 +2,25 @@
 
 **Filipe Gabriel · 2026-05-04**
 
-Cruzamento funcionalidade × tipo de teste. Os números refletem o estado entregue (55 BDD + 45 automatizados).
+Cruzamento funcionalidade × tipo de teste. Os números refletem o estado entregue (55 BDD + 68 automatizados).
 
 ---
 
 ## 1. Funcionalidade × tipo de teste
 
-| Funcionalidade         |    BDD |    E2E |   API | Visual |  A11y |  Perf | Auto total |
-| ---------------------- | -----: | -----: | ----: | -----: | ----: | ----: | ---------: |
-| Favoritar times        |      8 |      5 |     1 |      1 |     1 |     – |      **8** |
-| Favoritar partidas     |      8 |      5 |     1 |      1 |     1 |     – |      **8** |
-| Buscar partidas        |     10 |      6 |     2 |      1 |     1 |     1 |     **11** |
-| Melhores momentos      |      7 |      4 |     1 |      1 |     1 |     1 |      **8** |
-| Google Calendar        |      5 |    2\* |     – |      – |     – |     – |      **2** |
-| Navegação / home       |      4 |      2 |     – |      1 |     1 |     1 |      **5** |
-| Responsividade         |      3 |      1 |     – |      – |     – |     – |      **1** |
-| Erro / edge cases      |      5 |      – |     – |      – |     – |     – |      **0** |
-| Não-core (descobertos) |      5 |      2 |     – |      – |     – |     – |      **2** |
-| **TOTAL**              | **55** | **27** | **5** |  **5** | **5** | **3** |     **45** |
+| Funcionalidade         |    BDD |    E2E |   API | Visual |  A11y |  Perf | Security | Auto total |
+| ---------------------- | -----: | -----: | ----: | -----: | ----: | ----: | -------: | ---------: |
+| Favoritar times        |      8 |      5 |     1 |      1 |     1 |     – |        – |      **8** |
+| Favoritar partidas     |      8 |      5 |     1 |      1 |     1 |     – |        – |      **8** |
+| Buscar partidas        |     10 |      6 |     2 |      1 |     1 |     1 |        9 |     **20** |
+| Melhores momentos      |      7 |      4 |     1 |      1 |     1 |     1 |        – |      **8** |
+| Google Calendar        |      5 |    2\* |     – |      – |     – |     – |        – |      **2** |
+| Navegação / home       |      4 |      2 |     – |      1 |     1 |     1 |        4 |      **9** |
+| Responsividade         |      3 |      1 |     – |      – |     – |     – |        – |      **1** |
+| Erro / edge cases      |      5 |      – |     – |      – |     – |     – |        – |      **0** |
+| Não-core (descobertos) |      5 |      2 |     – |      – |     – |     – |        – |      **2** |
+| Auth / cookies         |      – |      – |     – |      – |     – |     – |       10 |     **10** |
+| **TOTAL**              | **55** | **27** | **5** |  **5** | **5** | **3** |   **23** |     **68** |
 
 \* OAuth real é manual (decisão deliberada — risco R3 da spec). E2E cobre apenas iniciação do flow.
 
@@ -30,26 +31,27 @@ Cruzamento funcionalidade × tipo de teste. Os números refletem o estado entreg
 Site externo, sem acesso ao backend → estrutura em diamante:
 
 ```
-        Visual / A11y / Perf  (13 testes)
-       E2E funcional           (27 testes)
-      API contract             (5 testes)
-     Smoke (subset E2E)        (10 testes — não soma no total)
+        Visual / A11y / Perf / Security  (36 testes)
+       E2E funcional                     (27 testes)
+      API contract                       (5 testes)
+     Smoke (subset E2E)                  (10 testes — não soma no total)
 ```
 
-**Total: 45 testes automatizados** (vs 30-32 do Pleno S1 → +40%). Smoke é subset do E2E e não é contado no total.
+**Total: 68 testes automatizados** (vs 30-32 do Pleno S1 → +112%). Smoke é subset do E2E e não é contado no total.
 
 ---
 
 ## 3. Tags utilizadas
 
-| Tag       | Significado                                | Onde aparece                    |
-| --------- | ------------------------------------------ | ------------------------------- |
-| `@smoke`  | Subset crítico que roda em todo PR (≤5min) | E2E core                        |
-| `@core`   | Funcionalidade de negócio principal        | E2E                             |
-| `@visual` | Asserção visual via `toHaveScreenshot()`   | `automation/tests/visual/`      |
-| `@a11y`   | Validação WCAG 2.1 AA via axe-core         | `automation/tests/a11y/`        |
-| `@perf`   | Lighthouse com thresholds                  | `automation/tests/performance/` |
-| `@flaky`  | Quarantine — não bloqueia CI               | (vazio na entrega final)        |
+| Tag         | Significado                                 | Onde aparece                    |
+| ----------- | ------------------------------------------- | ------------------------------- |
+| `@smoke`    | Subset crítico que roda em todo PR (≤5min)  | E2E core                        |
+| `@core`     | Funcionalidade de negócio principal         | E2E                             |
+| `@visual`   | Asserção visual via `toHaveScreenshot()`    | `automation/tests/visual/`      |
+| `@a11y`     | Validação WCAG 2.1 AA via axe-core          | `automation/tests/a11y/`        |
+| `@perf`     | Lighthouse com thresholds                   | `automation/tests/performance/` |
+| `@security` | XSS / headers / cookies / CORS / rate-limit | `automation/tests/security/`    |
+| `@flaky`    | Quarantine — não bloqueia CI                | (vazio na entrega final)        |
 
 ---
 
@@ -96,11 +98,23 @@ Subset de E2E que roda no PR gate (`ci.yml`, ≤5min):
 - Schema validado via Zod
 - Response time p95 (warning)
 
+### Security (`automation/tests/security/`)
+
+- XSS reflected nos filtros (alert + raw HTML check)
+- SQL-injection-like na API (5xx + leak markers)
+- Headers HTTP de segurança (HSTS, XFO, XCTO, Referrer-Policy, CSP)
+- Auth bypass em rotas protegidas (`/calendario`, `/favoritos`, `/perfil`)
+- Fuzz unicode/emoji/large-payload no input de busca
+- Rate limiting (50 req paralelas → esperado >0 com 429)
+- Cookies de auth com flags Secure + HttpOnly + SameSite
+- CORS reflexivo + preflight com Authorization
+- Roda serial (`--workers=1`) para não auto-DoS a API DEV
+
 ---
 
 ## 6. Cruzamento bug → cobertura
 
-18 bugs documentados em `bug-reports/bugs/`; cruzando com a matriz acima, todos têm cobertura BDD e/ou automatizada equivalente:
+22 bugs documentados em `bug-reports/bugs/`; cruzando com a matriz acima, todos têm cobertura BDD e/ou automatizada equivalente:
 
 | Bug                                       | Funcionalidade impactada  | Cobertura na suite                   |
 | ----------------------------------------- | ------------------------- | ------------------------------------ |
@@ -118,3 +132,7 @@ Subset de E2E que roda no PR gate (`ci.yml`, ≤5min):
 | BUG-013/014/015/016 (a11y)                | Transversal               | A11y axe-core 5 testes               |
 | BUG-017 (sitemap.xml)                     | SEO                       | API                                  |
 | BUG-018 (Lighthouse Perf 41)              | Home                      | Perf Lighthouse                      |
+| BUG-019 (security headers home)           | Transversal/Home          | Security `security-headers.spec.ts`  |
+| BUG-020 (API DEV sem HSTS/CSP)            | API                       | Security `security-headers.spec.ts`  |
+| BUG-021 (API sem rate limiting)           | API                       | Security `rate-limiting.spec.ts`     |
+| BUG-022 (cookie auth sem Secure/HttpOnly) | Auth/Cookies              | Security `cookies-flags.spec.ts`     |

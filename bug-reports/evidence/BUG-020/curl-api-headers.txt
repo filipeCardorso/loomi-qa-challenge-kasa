@@ -1,0 +1,12 @@
+HTTP/2 200 
+date: Sat, 02 May 2026 23:55:21 GMT
+content-type: application/json
+content-length: 55576
+server: gunicorn
+vary: Accept, Origin
+allow: GET
+x-frame-options: SAMEORIGIN
+x-content-type-options: nosniff
+referrer-policy: same-origin
+cross-origin-opener-policy: same-origin
+

@@ -1,0 +1,212 @@
+
+Running 23 tests using 1 worker
+
+  ✓   1 [chromium] › automation/tests/security/auth-bypass.spec.ts:19:7 › @security /calendario sem auth não vaza dados pessoais (5.2s)
+  ✓   2 [chromium] › automation/tests/security/auth-bypass.spec.ts:19:7 › @security /favoritos sem auth não vaza dados pessoais (4.6s)
+  ✓   3 [chromium] › automation/tests/security/auth-bypass.spec.ts:19:7 › @security /perfil sem auth não vaza dados pessoais (1.9s)
+  ✓   4 [chromium] › automation/tests/security/cookies-flags.spec.ts:18:5 › @security cookies setados em visita anônima respeitam flags básicas (4.6s)
+  ✘   5 [chromium] › automation/tests/security/cookies-flags.spec.ts:56:5 › @security cookie de auth (logado) tem Secure + HttpOnly + SameSite (4.8s)
+  ✓   6 [chromium] › automation/tests/security/cors-policy.spec.ts:22:5 › @security CORS: API não reflete Origin arbitrário com credentials (1.9s)
+  ✓   7 [chromium] › automation/tests/security/cors-policy.spec.ts:56:5 › @security CORS preflight responde sem expor wildcard com credentials (156ms)
+  ✓   8 [chromium] › automation/tests/security/payload-fuzz.spec.ts:21:7 › @security payload "whitespace" não causa erro JS no input de busca (6.7s)
+  ✓   9 [chromium] › automation/tests/security/payload-fuzz.spec.ts:21:7 › @security payload "hieróglifos unicode" não causa erro JS no input de busca (6.3s)
+  ✓  10 [chromium] › automation/tests/security/payload-fuzz.spec.ts:21:7 › @security payload "emojis + zero-width" não causa erro JS no input de busca (5.9s)
+  ✓  11 [chromium] › automation/tests/security/payload-fuzz.spec.ts:21:7 › @security payload "10k chars" não causa erro JS no input de busca (6.2s)
+  ✓  12 [chromium] › automation/tests/security/payload-fuzz.spec.ts:21:7 › @security payload "null byte" não causa erro JS no input de busca (6.4s)
+  ✓  13 [chromium] › automation/tests/security/payload-fuzz.spec.ts:21:7 › @security payload "rtl + ltr override" não causa erro JS no input de busca (6.2s)
+  ✘  14 [chromium] › automation/tests/security/rate-limiting.spec.ts:20:5 › @security API responde >0 com 429 sob burst de 50 requests paralelas (56.8s)
+  ✘  15 [chromium] › automation/tests/security/security-headers.spec.ts:33:7 › @security headers de segurança presentes em home (frontend) (76ms)
+  ✘  16 [chromium] › automation/tests/security/security-headers.spec.ts:33:7 › @security headers de segurança presentes em API DEV /match/ (1.8s)
+  ✓  17 [chromium] › automation/tests/security/sql-injection-api.spec.ts:39:7 › @security payload "' OR '1'='1" em /team/?name= não causa 5xx ou leak (653ms)
+  ✓  18 [chromium] › automation/tests/security/sql-injection-api.spec.ts:39:7 › @security payload "1; DROP TABLE matches;--" em /team/?name= não causa 5xx ou leak (253ms)
+  ✓  19 [chromium] › automation/tests/security/sql-injection-api.spec.ts:39:7 › @security payload "' UNION SELECT NULL--" em /team/?name= não causa 5xx ou leak (238ms)
+  ✓  20 [chromium] › automation/tests/security/sql-injection-api.spec.ts:39:7 › @security payload ""><script>alert(1)</scri" em /team/?name= não causa 5xx ou leak (604ms)
+  ✓  21 [chromium] › automation/tests/security/sql-injection-api.spec.ts:59:5 › @security payload em /match/?status= não causa 5xx (273ms)
+  ✓  22 [chromium] › automation/tests/security/xss-filtros.spec.ts:14:7 › XSS reflected — filtros da home › @security XSS payload no filtro "Qual time?" não executa (6.8s)
+  ✓  23 [chromium] › automation/tests/security/xss-filtros.spec.ts:47:7 › XSS reflected — filtros da home › @security XSS payload em "Qual campeonato?" não executa (6.2s)
+
+
+  1) [chromium] › automation/tests/security/cookies-flags.spec.ts:56:5 › @security cookie de auth (logado) tem Secure + HttpOnly + SameSite 
+
+    Error: next-leap_access sem Secure
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+    Expected: [32mtrue[39m
+    Received: [31mfalse[39m
+
+      84 |   );
+      85 |
+    > 86 |   expect.soft(authCookie!.secure, `${authCookie!.name} sem Secure`).toBe(true);
+         |                                                                     ^
+      87 |   expect
+      88 |     .soft(authCookie!.httpOnly, `${authCookie!.name} sem HttpOnly (vulnerável a XSS)`)
+      89 |     .toBe(true);
+        at /Users/filipegabriel/loomi-qa-challenge-kasa/automation/tests/security/cookies-flags.spec.ts:86:69
+
+    Error: next-leap_access sem HttpOnly (vulnerável a XSS)
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+    Expected: [32mtrue[39m
+    Received: [31mfalse[39m
+
+      87 |   expect
+      88 |     .soft(authCookie!.httpOnly, `${authCookie!.name} sem HttpOnly (vulnerável a XSS)`)
+    > 89 |     .toBe(true);
+         |      ^
+      90 |   expect.soft(authCookie!.sameSite, `${authCookie!.name} com SameSite=None`).not.toBe('None');
+      91 |
+      92 |   await context.close();
+        at /Users/filipegabriel/loomi-qa-challenge-kasa/automation/tests/security/cookies-flags.spec.ts:89:6
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/security-cookies-flags--se-5f771-em-Secure-HttpOnly-SameSite-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/security-cookies-flags--se-5f771-em-Secure-HttpOnly-SameSite-chromium/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/security-cookies-flags--se-5f771-em-Secure-HttpOnly-SameSite-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/security-cookies-flags--se-5f771-em-Secure-HttpOnly-SameSite-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  2) [chromium] › automation/tests/security/rate-limiting.spec.ts:20:5 › @security API responde >0 com 429 sob burst de 50 requests paralelas 
+
+    Error: 0/50 requests retornaram 429. API parece NÃO ter rate limiting visível (status counts: {"200":50})
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mtoBeGreaterThan[2m([22m[32mexpected[39m[2m)[22m
+
+    Expected: > [32m0[39m
+    Received:   [31m0[39m
+
+      43 |       rate429,
+      44 |       `0/${BURST} requests retornaram 429. API parece NÃO ter rate limiting visível (status counts: ${JSON.stringify(counts)})`,
+    > 45 |     ).toBeGreaterThan(0);
+         |       ^
+      46 |
+      47 |     // Asserções soft pra registrar contexto sem mascarar
+      48 |     expect
+        at /Users/filipegabriel/loomi-qa-challenge-kasa/automation/tests/security/rate-limiting.spec.ts:45:7
+
+    Error Context: test-results/security-rate-limiting--se-e73bd-st-de-50-requests-paralelas-chromium/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/security-rate-limiting--se-e73bd-st-de-50-requests-paralelas-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/security-rate-limiting--se-e73bd-st-de-50-requests-paralelas-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  3) [chromium] › automation/tests/security/security-headers.spec.ts:33:7 › @security headers de segurança presentes em home (frontend) 
+
+    Error: home (frontend): falta Content-Security-Policy (defense-in-depth)
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mtoBeTruthy[2m()[22m
+
+    Received: [31mundefined[39m
+
+      61 |         expect
+      62 |           .soft(csp, `${t.label}: falta Content-Security-Policy (defense-in-depth)`)
+    > 63 |           .toBeTruthy();
+         |            ^
+      64 |       }
+      65 |
+      66 |       expect(
+        at /Users/filipegabriel/loomi-qa-challenge-kasa/automation/tests/security/security-headers.spec.ts:63:12
+
+    Error: home (frontend): headers de segurança ausentes:
+      - falta X-Content-Type-Options: nosniff
+      - vulnerável a clickjacking (sem X-Frame-Options nem CSP frame-ancestors)
+      - falta Referrer-Policy
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mtoEqual[2m([22m[32mexpected[39m[2m) // deep equality[22m
+
+    [32m- Expected  - 1[39m
+    [31m+ Received  + 5[39m
+
+    [32m- Array [][39m
+    [31m+ Array [[39m
+    [31m+   "falta X-Content-Type-Options: nosniff",[39m
+    [31m+   "vulnerável a clickjacking (sem X-Frame-Options nem CSP frame-ancestors)",[39m
+    [31m+   "falta Referrer-Policy",[39m
+    [31m+ ][39m
+
+      67 |         findings,
+      68 |         `${t.label}: headers de segurança ausentes:\n  - ${findings.join('\n  - ')}`,
+    > 69 |       ).toEqual([]);
+         |         ^
+      70 |     } finally {
+      71 |       await ctx.dispose();
+      72 |     }
+        at /Users/filipegabriel/loomi-qa-challenge-kasa/automation/tests/security/security-headers.spec.ts:69:9
+
+    Error Context: test-results/security-security-headers--91be4-presentes-em-home-frontend--chromium/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/security-security-headers--91be4-presentes-em-home-frontend--chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/security-security-headers--91be4-presentes-em-home-frontend--chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  4) [chromium] › automation/tests/security/security-headers.spec.ts:33:7 › @security headers de segurança presentes em API DEV /match/ 
+
+    Error: API DEV /match/: falta Content-Security-Policy (defense-in-depth)
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mtoBeTruthy[2m()[22m
+
+    Received: [31mundefined[39m
+
+      61 |         expect
+      62 |           .soft(csp, `${t.label}: falta Content-Security-Policy (defense-in-depth)`)
+    > 63 |           .toBeTruthy();
+         |            ^
+      64 |       }
+      65 |
+      66 |       expect(
+        at /Users/filipegabriel/loomi-qa-challenge-kasa/automation/tests/security/security-headers.spec.ts:63:12
+
+    Error: API DEV /match/: headers de segurança ausentes:
+      - falta HSTS (Strict-Transport-Security)
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mtoEqual[2m([22m[32mexpected[39m[2m) // deep equality[22m
+
+    [32m- Expected  - 1[39m
+    [31m+ Received  + 3[39m
+
+    [32m- Array [][39m
+    [31m+ Array [[39m
+    [31m+   "falta HSTS (Strict-Transport-Security)",[39m
+    [31m+ ][39m
+
+      67 |         findings,
+      68 |         `${t.label}: headers de segurança ausentes:\n  - ${findings.join('\n  - ')}`,
+    > 69 |       ).toEqual([]);
+         |         ^
+      70 |     } finally {
+      71 |       await ctx.dispose();
+      72 |     }
+        at /Users/filipegabriel/loomi-qa-challenge-kasa/automation/tests/security/security-headers.spec.ts:69:9
+
+    Error Context: test-results/security-security-headers--67e8d-presentes-em-API-DEV-match--chromium/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/security-security-headers--67e8d-presentes-em-API-DEV-match--chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/security-security-headers--67e8d-presentes-em-API-DEV-match--chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  4 failed
+    [chromium] › automation/tests/security/cookies-flags.spec.ts:56:5 › @security cookie de auth (logado) tem Secure + HttpOnly + SameSite 
+    [chromium] › automation/tests/security/rate-limiting.spec.ts:20:5 › @security API responde >0 com 429 sob burst de 50 requests paralelas 
+    [chromium] › automation/tests/security/security-headers.spec.ts:33:7 › @security headers de segurança presentes em home (frontend) 
+    [chromium] › automation/tests/security/security-headers.spec.ts:33:7 › @security headers de segurança presentes em API DEV /match/ 
+  19 passed (2.3m)
