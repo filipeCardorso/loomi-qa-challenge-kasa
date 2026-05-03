@@ -17,8 +17,18 @@ if (!KEY || !TOKEN) {
   process.exit(1);
 }
 
+// NOTA: Trello API exige autenticação via query params `key=&token=` (não
+// suporta `Authorization: Bearer`). Mitigação: nunca logar a URL completa —
+// só o método + endpoint. Função `redactAuth()` strip key/token de qualquer
+// string antes de logar/lançar erro.
 const AUTH = `key=${KEY}&token=${TOKEN}`;
 const API = 'https://api.trello.com/1';
+
+function redactAuth(s) {
+  return String(s)
+    .replace(/key=[^&\s]+/g, 'key=REDACTED')
+    .replace(/token=[^&\s]+/g, 'token=REDACTED');
+}
 
 async function trello(method, endpoint, body) {
   const sep = endpoint.includes('?') ? '&' : '?';
@@ -28,7 +38,10 @@ async function trello(method, endpoint, body) {
   const r = await fetch(url, opts);
   if (!r.ok) {
     const text = await r.text();
-    throw new Error(`${method} ${endpoint} → ${r.status}: ${text.slice(0, 200)}`);
+    // Endpoint (sem auth) + status — nunca a URL completa
+    throw new Error(
+      `${method} ${redactAuth(endpoint)} → ${r.status}: ${redactAuth(text).slice(0, 200)}`,
+    );
   }
   return r.json();
 }

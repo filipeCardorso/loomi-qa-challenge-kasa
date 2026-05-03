@@ -11,6 +11,10 @@ rm -rf reports/ allure-results/ allure-report/ allure-history/
 rm -rf playwright-report/ test-results/
 rm -rf mcp-server/dist mcp-server/data
 rm -rf */dist */build .nyc_output
+# Remove ZIP anterior pra evitar circularidade (ZIP dentro do ZIP)
+rm -f "$OUTPUT"
+# Remove auto-runs de bug-regression (gerados em CI; não devem ir no ZIP)
+find bug-reports/evidence -type d -name "auto-runs" -exec rm -rf {} + 2>/dev/null || true
 
 echo "🔒 2. Verificando que credenciais NÃO vão no ZIP..."
 if [ -f .env ]; then
@@ -48,7 +52,8 @@ zip -rq "$OUTPUT" . \
   -x "mcp-server/data/*" \
   -x ".DS_Store" \
   -x "*/.DS_Store" \
-  -x "docs/superpowers/*"  # spec/plans internos, não entregáveis
+  -x "docs/superpowers/*" \
+  -x "AGENTS.md"  # guia interno de subagentes Claude Code, não relevante pro avaliador
 
 echo "🔍 5. Sanity check do conteúdo..."
 FORBIDDEN=$(unzip -l "$OUTPUT" | grep -E "(^|\s)\.env(\s|$)|\.env\.local|\.auth-state\.json|node_modules" || true)
