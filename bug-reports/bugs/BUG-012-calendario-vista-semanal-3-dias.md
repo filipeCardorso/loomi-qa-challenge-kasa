@@ -42,7 +42,8 @@
 
 - `docs/exploration-notes.md` §12 (cheiro S12 — vista semanal cortada)
 - `docs/site-snapshots/exploration/` (screenshot de /calendario mostrando apenas 3 colunas + DOM dump)
-- Screenshot: bug-reports/evidence/BUG-012/
+- Screenshot real (2026-05-03): `bug-reports/evidence/BUG-012/screenshot-calendar-3-dias.png` — confirma que a grade principal mostra apenas Sex 01, Sáb 02 e Dom 03 ao invés de 7 dias da semana
+- Dump JSON dos labels de dia visíveis: `bug-reports/evidence/BUG-012/visible-day-labels.json` (a sidebar mini-calendário renderiza os 7 dias da semana corretamente; a grade principal não)
 
 ## Workaround conhecido
 

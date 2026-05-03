@@ -42,7 +42,8 @@
 
 - `docs/exploration-notes.md` Phase 9 — A11y axe-core findings
 - `docs/site-snapshots/a11y/` (output JSON de axe.run() por rota)
-- Screenshot: bug-reports/evidence/BUG-013/
+- Output axe-core (re-executado em 2026-05-03 contra home anônima): `bug-reports/evidence/BUG-013/axe-aria-allowed-attr.json` — 3 nós com violation `aria-allowed-attr` (impact=critical), causa: `aria-expanded` em `<div>` sem role="button"
+- Snapshot completo das violations: `bug-reports/evidence/BUG-013/axe-full-violations.json`
 
 ## Workaround conhecido
 

@@ -45,7 +45,7 @@
 
 - `docs/exploration-notes.md` Phase 9 — A11y axe-core findings
 - `docs/site-snapshots/a11y/` (output JSON axe.run() com pares de cores e razões)
-- Screenshot: bug-reports/evidence/BUG-015/
+- Output axe-core (re-executado em 2026-05-03 contra home anônima): `bug-reports/evidence/BUG-015/axe-color-contrast.json` — contagem de nós varia por execução (a regra detecta cores dinâmicas)
 
 ## Workaround conhecido
 

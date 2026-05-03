@@ -1,10 +1,10 @@
-# BUG-002 — 35 botões com mesmo aria-label "Go to previous month" na home
+# BUG-002 — Botões com aria-label "Go to previous month" em inglês num site pt-BR
 
 **Severidade:** Medium
 **Prioridade:** P2
 **Status:** Open
 **Reproduzibilidade:** Sempre
-**Frequência observada:** 35/35 botões com aria-label idêntico (confirmado em sessão anônima e logada)
+**Frequência observada:** 35 ocorrências na exploração inicial (2026-05-02); 1 ocorrência ao reinvestigar com date picker aberto (2026-05-03) — varia por estado da UI
 **Regressão?:** Desconhecido
 **Trello card:** https://trello.com/c/mJTsYQsn
 
@@ -42,8 +42,14 @@
 ## Evidência
 
 - `docs/exploration-notes.md` §9 (cheiro S2) e §13.7 (bug confirmado: aria-label duplicado)
-- `docs/site-snapshots/exploration/__exploration-raw.json` (busca por `aria-label="Go to previous month"`)
-- Screenshot: bug-reports/evidence/BUG-002/
+- `docs/site-snapshots/exploration/__exploration-raw.json` (busca original que detectou 35 ocorrências em 2026-05-02)
+- Screenshot: `bug-reports/evidence/BUG-002/screenshot-calendar.png` (home com date picker aberto)
+- Screenshot adicional: `bug-reports/evidence/BUG-002/screenshot-datepicker-rdp.png` (recorte do componente .rdp)
+- Console output: `bug-reports/evidence/BUG-002/console-output.txt` (contagem ao vivo + variantes)
+
+### Nota sobre a contagem
+
+Na exploração inicial (2026-05-02) o seletor `[aria-label="Go to previous month"]` retornou **35** ocorrências — provavelmente porque vários containers de card de partida montavam seus próprios mini-calendários inline. Numa segunda captura (2026-05-03) com o date picker do header aberto, o mesmo seletor retorna apenas **1**. O padrão sistêmico continua sendo o mesmo (aria-label genérico em inglês num site pt-BR, sem contexto), mas a contagem exata varia conforme o estado da UI no momento da inspeção.
 
 ## Workaround conhecido
 

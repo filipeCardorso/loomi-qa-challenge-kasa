@@ -1,10 +1,10 @@
-# BUG-009 — Calendário com número de dia duplicado: "11º maio" / "1111º maio"
+# BUG-009 — Botões do calendário expõem texto duplicado em `textContent` ("11º maio")
 
-**Severidade:** Medium
-**Prioridade:** P2
-**Status:** Open
-**Reproduzibilidade:** Sempre
-**Frequência observada:** Reproduzível em múltiplos dias renderizados na faixa de calendário inline (em particular dia 1 vira "11º")
+**Severidade:** Low
+**Prioridade:** P3
+**Status:** Open (re-investigado em 2026-05-03)
+**Reproduzibilidade:** Sempre (no DOM); nunca (visualmente)
+**Frequência observada:** 11/31 botões `.rdp-day` no date picker da home expõem `textContent` duplicado
 **Regressão?:** Desconhecido
 **Trello card:** https://trello.com/c/SMQpbiPQ
 
@@ -26,8 +26,18 @@
 
 ## Resultado obtido
 
-- O número aparece duplicado: `"11º maio"` em vez de `"1º maio"`, e em variações layout-dependentes `"1111º maio"`.
-- Provável concatenação dupla do número do dia: uma vez como label numérico e outra como parte do "ordinal" (ex.: template `"${day}${day}º ${month}"` ou render duplicado por chave instável).
+- Visualmente o calendário renderiza **corretamente**: dias 1, 2, 3 ... 31 sem duplicação (ver `screenshot-calendar.png`).
+- Porém, o `textContent` dos botões `.rdp-day` aparece duplicado: `"11º maio (sexta-feira)"` em vez de `"1º maio"`.
+- Causa raiz: o `react-day-picker` empilha dois spans no botão:
+  - `<span aria-hidden="true">1</span>` — número visível
+  - `<span class="rdp-vhidden">1º maio (sexta-feira)</span>` — label acessível (oculto por CSS)
+
+  Quando código JS lê `el.textContent`, ele concatena os dois spans, gerando `"11º maio..."`. Isso afeta:
+  - Ferramentas de QA/automação que dependem de `textContent` para asserts ou seletores
+  - Crawlers/indexadores que extraem texto do DOM bruto
+  - Alguns leitores de tela mais antigos podem anunciar "1, 1º maio (sexta-feira)" ao invés de só "1º maio (sexta-feira)"
+
+- Em buttons com 2 dígitos (ex. dia 11) o textContent vira `"1111º maio (segunda-feira)"`. Em 1 dígito (ex. dia 1) vira `"11º maio (sexta-feira)"`.
 
 ## Ambiente
 
@@ -41,7 +51,8 @@
 
 - `docs/exploration-notes.md` §9 (cheiro S9) e §15.7 (S12 — vista semanal cortada em /calendario)
 - `docs/site-snapshots/exploration/` (screenshots e dump de DOM da home + /calendario)
-- Screenshot: bug-reports/evidence/BUG-009/
+- Screenshot recortado do componente: `bug-reports/evidence/BUG-009/screenshot-calendar-duplicate.png` (mostra que visualmente os dias estão CORRETOS — bug é só no DOM/textContent)
+- Dump JSON com 31 ocorrências e 11 com pattern duplicado: `bug-reports/evidence/BUG-009/duplicate-text-findings.json`
 
 ## Workaround conhecido
 
@@ -49,15 +60,16 @@
 
 ## Sugestão de fix / hipótese de causa raiz
 
-- Hipótese: template do botão de dia faz `${day}${ordinalSuffix(day)}` mas `ordinalSuffix` está retornando `${day}º` em vez de só `º` — então o número aparece duas vezes. Em layouts maiores, o componente é renderizado repetido (ex.: `${day}${day}${ordinalSuffix(day)}`) somando "1111º".
-- Fix sugerido:
-  1. Inspecionar a função de formatação de dia (`formatDayLabel(day)`) e garantir que o sufixo ordinal retorne só `"º"`, não `"${day}º"`.
-  2. Usar `Intl.DateTimeFormat` ou biblioteca consolidada (date-fns/dayjs) com locale `pt-BR`.
-  3. Adicionar snapshot test do componente de calendário cobrindo dias 1, 2, 10, 21 e 31.
-  4. Cobrir com teste E2E que valide o regex do label (`/^(\d{1,2})(º)?\s/`).
+- Causa raiz confirmada: padrão padrão do `react-day-picker` que mantém um span visível com o número (`aria-hidden="true"`) e um span oculto via CSS (`.rdp-vhidden`) com o label completo para leitores de tela. Quando JS lê `textContent` os dois são concatenados.
+- Fix sugerido (defensivo, opcional):
+  1. Sobrescrever `formatDay` no react-day-picker para que o aria-label não comece com o mesmo dígito (ex.: `"Dia 1, 1º de maio (sexta-feira)"`) — assim mesmo concatenado, fica humanamente legível.
+  2. Documentar internamente que asserts/automação devem usar o span visível (`.rdp-day > span[aria-hidden="true"]`), não `textContent` do botão inteiro.
+  3. Considerar suprimir o span vhidden e usar `aria-label` direto no `<button>` — mais simples, sem duplicação de DOM.
 
 ## Impacto no usuário
 
-- UX: confusão visual ("11º maio" sugere dia 11, não dia 1).
-- A11y: leitor de tela anuncia o dia errado.
-- Confiabilidade percebida: bug visível na primeira tela do site reduz confiança na qualidade do produto inteiro.
+- UX visual: nenhum (renderização correta).
+- Automação/QA: testes que usam `textContent` do botão recebem string confusa ("11º maio") em vez de "1".
+- Confiabilidade percebida: tooling externo (analytics, crawlers) pode reportar duplicação que não existe visualmente.
+
+> **Reclassificação 2026-05-03:** o bug foi originalmente reportado como Medium/visível. Após reinvestigação, é Low/só-DOM. Mantido na lista por relevância pra automação e como dívida técnica de a11y.

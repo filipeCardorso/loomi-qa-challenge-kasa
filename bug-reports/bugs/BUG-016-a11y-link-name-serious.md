@@ -46,7 +46,7 @@
 
 - `docs/exploration-notes.md` Phase 9 — A11y axe-core findings
 - `docs/site-snapshots/a11y/` (output JSON axe.run() listando seletores afetados)
-- Screenshot: bug-reports/evidence/BUG-016/
+- Output axe-core (re-executado em 2026-05-03 contra home anônima): `bug-reports/evidence/BUG-016/axe-link-name.json` — 2 links sem accessible-name (impact=serious)
 
 ## Workaround conhecido
 
