@@ -38,7 +38,13 @@ function extractAttachments(stdout: string): PlaywrightAttachment[] {
   try {
     const report = JSON.parse(stdout);
     return report?.suites?.[0]?.specs?.[0]?.tests?.[0]?.results?.[0]?.attachments ?? [];
-  } catch {
+  } catch (err) {
+    // Stdout pode não ser JSON válido (ex.: erro precoce do playwright). Loga
+    // pra diagnóstico mas não interrompe — retorna lista vazia.
+    console.error(
+      '[mcp:runTestCase] extractAttachments: falha ao parsear stdout JSON do reporter:',
+      err,
+    );
     return [];
   }
 }
@@ -53,8 +59,10 @@ async function appendHistory(entry: {
   try {
     await mkdir(DATA_DIR, { recursive: true });
     await appendFile(HISTORY_FILE, JSON.stringify(entry) + '\n', 'utf-8');
-  } catch {
-    // Histórico é best-effort; falha silenciosa não bloqueia execução
+  } catch (err) {
+    // Histórico é best-effort; falha silenciosa não bloqueia execução, mas
+    // logamos pra observabilidade (filesystem cheio, permissão, etc).
+    console.error('[mcp:runTestCase] appendHistory: falha ao gravar history.jsonl:', err);
   }
 }
 
@@ -71,8 +79,10 @@ async function persistFailure(
       JSON.stringify({ testId, name, errors, timestamp: new Date().toISOString() }, null, 2),
       'utf-8',
     );
-  } catch {
-    // best-effort
+  } catch (err) {
+    // best-effort — analyzeFailure ainda funciona via history.jsonl mesmo
+    // sem o snapshot. Loga pra trilha.
+    console.error(`[mcp:runTestCase] persistFailure: falha ao gravar ${testId}.json:`, err);
   }
 }
 
@@ -82,6 +92,8 @@ export async function runTestCase(rawInput: unknown) {
     grep: input.name,
     browser: input.browser,
     headed: input.headed,
+    // Respeita o CI=true real do shell em vez de forçar (refactor 8)
+    ciMode: process.env.CI === 'true',
   });
   const result = parseResult(run.stdout);
 

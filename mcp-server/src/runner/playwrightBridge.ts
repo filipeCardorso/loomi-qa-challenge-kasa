@@ -10,6 +10,13 @@ export interface RunOptions {
   grep: string;
   browser?: string;
   headed?: boolean;
+  /**
+   * Quando `true`, propaga `CI=true` ao processo `npx playwright test`
+   * (forca retries=2 e workers=4 conforme `playwright.config.ts`). Default
+   * `false` — respeita o env real do shell em vez de hardcodar (anteriormente
+   * sempre era `true`, mascarando flake local).
+   */
+  ciMode?: boolean;
 }
 
 export interface RunResult {
@@ -23,8 +30,10 @@ export async function runPlaywright(opts: RunOptions): Promise<RunResult> {
   if (opts.browser) args.push(`--project=${opts.browser}`);
   if (opts.headed) args.push('--headed');
 
+  const env = opts.ciMode ? { ...process.env, CI: 'true' } : process.env;
+
   return new Promise((resolve) => {
-    const proc = spawn('npx', args, { cwd: REPO_ROOT, env: { ...process.env, CI: 'true' } });
+    const proc = spawn('npx', args, { cwd: REPO_ROOT, env });
     let stdout = '',
       stderr = '';
     proc.stdout.on('data', (d) => (stdout += d.toString()));
