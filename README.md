@@ -68,9 +68,9 @@ npm run report:allure
 
 ```
 .
-├── automation/          # Trilha B — POMs + 45 testes Playwright (E2E/API/visual/a11y/perf)
+├── automation/          # Trilha B — POMs + 68 testes Playwright (E2E/API/visual/a11y/perf/security)
 ├── test-cases/          # Trilha A — 55 cenários BDD em PT-BR Gherkin
-├── bug-reports/         # Trilha A — 18 bugs + 10 melhorias estruturados
+├── bug-reports/         # Trilha A — 22 bugs + 10 melhorias estruturados
 ├── mcp-server/          # Trilha C — MCP server Node/TS com 7 tools + Vitest
 ├── docs/                # 8 documentos: arquitetura, relatório, matriz, journey, etc
 ├── docker/              # Dockerfile baseado em Playwright official image
