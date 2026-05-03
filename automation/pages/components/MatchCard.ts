@@ -58,16 +58,20 @@ export class MatchCard {
   }
 
   /**
-   * Retorna ambos os placares de uma vez. Tolera card sem placar (devolve 0).
+   * Retorna ambos os placares de uma vez. Cards de partidas NÃO iniciadas
+   * podem não trazer placar — nesses casos devolve `null` (em vez de 0,
+   * que conflita com placar real "0 a 0" de partida finalizada).
    */
-  async getScores(): Promise<{ home: number; away: number }> {
+  async getScores(): Promise<{ home: number | null; away: number | null }> {
     const lines = await this.readLines();
-    const home = Number.parseInt(lines[2] ?? '0', 10);
-    const away = Number.parseInt(lines[4] ?? '0', 10);
-    return {
-      home: Number.isFinite(home) ? home : 0,
-      away: Number.isFinite(away) ? away : 0,
+    const homeRaw = lines[2];
+    const awayRaw = lines[4];
+    const parse = (raw: string | undefined): number | null => {
+      if (raw === undefined || !/^\d+$/.test(raw)) return null;
+      const n = Number.parseInt(raw, 10);
+      return Number.isFinite(n) ? n : null;
     };
+    return { home: parse(homeRaw), away: parse(awayRaw) };
   }
 
   /**
