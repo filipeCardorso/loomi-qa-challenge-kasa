@@ -8,9 +8,9 @@
 **Regressão?:** Desconhecido
 **Trello card:** https://trello.com/c/kNexAnW2
 
-## Contexto e nuance vs BUG-003 / BUG-004
+## Contexto e nuance vs IMP-011 / BUG-004
 
-- `/buscar`, `/login`, `/calendar`, `/perfil` → retornam **404 explícito** com title `"Kasa.Live - Página não encontrada"` (coberto em **BUG-003**, severidade Low).
+- `/buscar`, `/login`, `/calendar`, `/perfil` → retornam **404 explícito** com title `"Kasa.Live - Página não encontrada"` (tratado em **IMP-011** como sugestão de redirects, não como defeito).
 - `/favoritos` e `/calendario` (sessão anônima) → retornam **HTTP 200 com conteúdo da home** (coberto em **BUG-004** quanto ao fallback silencioso).
 
 Este bug (BUG-010) trata especificamente do **terceiro sintoma** dessa segunda categoria: além do conteúdo errado, o `<title>` também não muda — fica o título genérico da home, escondendo do usuário, do leitor de tela e dos crawlers que a rota solicitada não existe / exige login.
@@ -70,11 +70,11 @@ Toda rota que **não corresponde a uma página efetivamente renderizada para o u
 
 ## Relação com outros bugs
 
-- **BUG-003** — rotas `/buscar /login /calendar /perfil` retornam 404 (sintoma diferente: 404 explícito).
+- **IMP-011** — sugere redirects para `/buscar /login /calendar /perfil` (originalmente reportado como BUG-003, reclassificado como melhoria).
 - **BUG-004** — `/favoritos` e `/calendario` retornam home silenciosamente (sintoma de conteúdo).
 - **BUG-010 (este)** — mesma classe de rotas de BUG-004, mas sintoma específico de `<title>` inconsistente.
 
-Os três bugs têm causa raiz parcial em comum (roteamento sem fallback adequado para rotas autenticadas), mas tratam sintomas distintos com fixes complementares.
+Os bugs têm causa raiz parcial em comum (roteamento sem fallback adequado para rotas autenticadas), mas tratam sintomas distintos com fixes complementares.
 
 ## Impacto no usuário
 

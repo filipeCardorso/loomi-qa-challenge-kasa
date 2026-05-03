@@ -14,7 +14,7 @@ Diversas áreas da app podem apresentar estado vazio: nenhuma partida no dia, ne
 - Modal de partida finalizada abre **sempre vazio** (BUG-011).
 - Calendário em datas sem jogos não mostra mensagem.
 - `/favoritos` faz fallback silencioso (BUG-004) — não há "você não tem favoritos".
-- Busca (rota `/buscar` retorna 404 — BUG-003), mas mesmo nas buscas internas existentes, sem resultado fica em branco.
+- Busca (rota `/buscar` retorna 404 — ver IMP-011), mas mesmo nas buscas internas existentes, sem resultado fica em branco.
 - Não há diferenciação entre **erro** (falha de API) e **vazio** (sem dados).
 
 ## Sugestão
@@ -38,7 +38,7 @@ Aplicar em:
 
 - **Reduz a sensação de quebra** — o usuário entende o que aconteceu.
 - **Conduz à próxima ação** (princípio do _next best action_).
-- **Cobre vários bugs com uma só implementação** (BUG-011, BUG-004, parcialmente BUG-003).
+- **Cobre vários bugs com uma só implementação** (BUG-011, BUG-004, parcialmente IMP-011).
 - **Melhora métricas:** menos bounces e tickets "está quebrado".
 
 ## Evidência

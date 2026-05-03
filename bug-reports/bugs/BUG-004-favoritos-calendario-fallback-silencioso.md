@@ -30,7 +30,7 @@
 ## Resultado obtido
 
 - A URL **permanece** em `/favoritos` ou `/calendario`, mas o **conteúdo renderizado é exatamente a home** (mesmos cards, mesmo header, sem indicação alguma).
-- O `<title>` continua sendo o título genérico da home (não há "Kasa.Live - Página não encontrada" como nas outras rotas inválidas — vide BUG-003 e cheiro S10).
+- O `<title>` continua sendo o título genérico da home (não há "Kasa.Live - Página não encontrada" como nas outras rotas inválidas — vide IMP-011 e cheiro S10).
 - Usuário pensa que clicou no link errado, ou que "favoritos está vazio" quando na verdade está deslogado.
 
 ## Ambiente
