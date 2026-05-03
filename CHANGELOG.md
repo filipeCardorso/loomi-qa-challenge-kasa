@@ -6,22 +6,23 @@ Formato: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/)
 
 ### Added
 
-#### Tarefa 1 — Casos de Teste BDD (61 cenários, +52% sobre Pleno S1)
+#### Tarefa 1 — Casos de Teste BDD (64 cenários, +60% sobre Pleno S1)
 
-- 5 features core em `test-cases/core/`: favoritar times (8), favoritar partidas (8), buscar partidas (10), melhores momentos (7), google calendar (7)
-- 4 features extras em `test-cases/extras/`: navegação (4), responsividade (3), erro/edge cases (6), recursos não-core (5)
-- README com índice geral dos 61 cenários
+- 5 features core em `test-cases/core/`: favoritar times (8), favoritar partidas (8), buscar partidas (12), melhores momentos (7), google calendar (7)
+- 4 features extras em `test-cases/extras/`: navegação (3), responsividade (6), erro/edge cases (6), recursos não-core (7)
+- Cada feature usa `Contexto:` (Background) com URL base
+- README com índice geral dos 64 cenários
 
-#### Tarefa 2 — Automação (77 testes = 55 contract + 22 bug-regression, +140% sobre Pleno S1)
+#### Tarefa 2 — Automação (106 testes em 7 camadas, +212% sobre Pleno S1)
 
-> **Breakdown da contagem 77** (test cases, não specs): e2e=31 · api=5 · visual=5 · a11y=1 · performance=1 · security=12 → **55 contract** + bugs=22 (21 specs com BUG-015 expandido em 5 rotas + 1 fixme) = **77 total**.
+> **Breakdown** (test cases, não specs): e2e=26 · api=11 · visual=5 · a11y=1 · performance=1 · security=29 · bugs=23 → 106 total.
 
-- 31 testes E2E em `automation/tests/e2e/` (subset smoke = 10)
-- 5 testes API contract em `automation/tests/api/` com schemas Zod
+- 26 testes E2E em `automation/tests/e2e/` (subset smoke = 10) — inclui `favoritar-partida.spec.ts` isolado
+- 11 testes API contract em `automation/tests/api/` com schemas Zod + 7 negativos (404, 401, BUG-008, headers, payload malformado)
 - 5 testes de visual regression em `automation/tests/visual/` (baselines + masking dinâmico)
 - 5 testes A11y WCAG 2.1 AA em `automation/tests/a11y/` via axe-core
 - 3 testes Performance em `automation/tests/performance/` via Lighthouse
-- 23 testes Security em `automation/tests/security/` (XSS reflected/stored/DOM, headers, cookies, CORS, rate-limit)
+- 29 testes Security em `automation/tests/security/` (XSS reflected/stored/DOM, headers, cookies, CORS multi-method, rate-limit, time-blind SQLi, JWT tampering alg=none, session fixation)
 - **23 testes bug-regression em `automation/tests/bugs/` (NOVA CAMADA, mapping 1:1 com bug-reports/bugs/):**
   - 21 specs `BUG-XXX-*.spec.ts` (BUG-015 expandido em 5 testes, um por rota = 23 test cases)
   - 19 ativos asserindo comportamento esperado · 2 com `test.fixme` (BUG-012 needs revalidation, BUG-018 cobertura via project=perf)

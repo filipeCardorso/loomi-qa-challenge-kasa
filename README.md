@@ -72,9 +72,9 @@ npm run report:allure
 
 ```
 .
-├── automation/          # Trilha B — POMs + 77 testes Playwright (6 camadas de contrato + 1 de bug-regression)
+├── automation/          # Trilha B — POMs + 106 testes Playwright (6 camadas de contrato + 1 de bug-regression)
 │   └── tests/bugs/      # 21 specs 1:1 com bug-reports/bugs/ (reporter custom auto-evidence)
-├── test-cases/          # Trilha A — 60 cenários BDD em PT-BR Gherkin
+├── test-cases/          # Trilha A — 64 cenários BDD em PT-BR Gherkin
 ├── bug-reports/         # Trilha A — 21 bugs + 11 melhorias estruturados
 ├── mcp-server/          # Trilha C — MCP server Node/TS com 7 tools + Vitest
 ├── docs/                # 8 documentos: arquitetura, relatório, matriz, journey, etc

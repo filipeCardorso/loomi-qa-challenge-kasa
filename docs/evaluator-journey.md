@@ -35,7 +35,7 @@ O `README.md` raiz tem TL;DR, Quick Start, links principais e inventário de ent
   - 22 cards de bug + 10 de melhoria + cards de progresso por trilha
 
 - **Allure Report (GitHub Pages):** https://filipecardorso.github.io/loomi-qa-challenge-kasa/
-  - 77 testes verdes
+  - 106 testes (rodando)
   - Severidade, categorias (epic/feature/story), histórico de runs
   - Anexos navegáveis (screenshot, video, trace) por teste
 
@@ -48,7 +48,7 @@ Para quem quiser rodar local. Pré-requisitos: Node 20 LTS (`nvm use` lê `.nvmr
 ```bash
 nvm use && npm install
 npx playwright install --with-deps
-npm run test:smoke              # 10 testes ≤5min
+npm run test:smoke              # 7 testes verdes em ~17s
 npm run report:allure           # gera HTML local
 ```
 
@@ -65,11 +65,12 @@ docker run --rm -v $(pwd)/reports:/app/reports loomi-qa npm run test:smoke
 
 Cada pasta de topo é um entregável do desafio:
 
-### `test-cases/` — 61 BDD em PT-BR (Tarefa 1)
+### `test-cases/` — 64 BDD em PT-BR (Tarefa 1)
 
 - `core/` (5 features): favoritar times, favoritar partidas, buscar partidas, melhores momentos, google calendar
 - `extras/` (4 features): navegação, responsividade, erro/edge, recursos não-core
-- `README.md` indexa todos os 61 cenários
+- `README.md` indexa todos os 64 cenários
+- Cada feature usa `Contexto:` (Background) com URL base
 - Linguagem comportamental (Dado/Quando/Então) com lint Gherkin
 - Funcionalidades core ≥7 cenários cada
 
@@ -83,14 +84,14 @@ Cada pasta de topo é um entregável do desafio:
 - `README.md` — índice geral com nota de recalibragem 2026-05-03
 - Distribuição (atualizada 2026-05-03): **2 Critical · 5 High · 7 Medium · 7 Low** (BUG-008/009/012 rebaixados Medium→Low; BUG-021 rebaixado High→Medium; BUG-014 rebaixado Critical→High e marcado Likely Fixed; BUG-012 marcado Needs revalidation — detalhes nos `.md`)
 
-### `automation/` — 77 testes em 7 camadas (Tarefa 2)
+### `automation/` — 106 testes em 7 camadas (Tarefa 2)
 
-- `tests/e2e/` — 27 testes funcionais (smoke = subset de 10)
-- `tests/api/` — 5 testes contract (Zod schemas)
+- `tests/e2e/` — 26 testes funcionais (smoke = subset de 7) — inclui `favoritar-partida.spec.ts` isolado
+- `tests/api/` — 11 testes contract (Zod schemas) + negativos (404, 401, BUG-008, headers, payload malformado)
 - `tests/visual/` — 5 testes regression
 - `tests/a11y/` — 5 testes WCAG 2.1 AA
 - `tests/performance/` — 3 testes Lighthouse
-- `tests/security/` — 23 testes (XSS reflected/stored/DOM, headers, cookies, CORS, rate-limit)
+- `tests/security/` — 29 testes (XSS reflected/stored/DOM, headers, cookies, CORS multi-method, rate-limit, time-blind SQLi, JWT tampering alg=none, session fixation)
 - **`tests/bugs/` — 22 testes bug-regression em 21 specs (NOVA CAMADA), 1:1 com `bug-reports/bugs/`. Reporter custom dump trace/screenshot/findings em `bug-reports/evidence/BUG-XXX/auto-runs/<timestamp>/` em cada falha. Polaridade: spec falha enquanto bug existir, fica verde quando dev fixar. Lifecycle e padrão em `automation/tests/bugs/README.md`. Comandos: `npm run test:bugs`, `npm run test:bug -- @bug-002`.**
 - `pages/` — POMs · `fixtures/` — custom (incluindo `bugFindings`) · `support/` — helpers
 - Suite passa verde 2x consecutivas localmente; CI verde
@@ -132,10 +133,10 @@ Cada pasta de topo é um entregável do desafio:
 ## 7. Resumo do que validar (checklist do avaliador)
 
 - [ ] **Trello público acessível** em janela anônima
-- [ ] **Allure URL acessível** em janela anônima (77 testes verdes)
+- [ ] **Allure URL acessível** em janela anônima (106 testes em 7 camadas)
 - [ ] **`README.md` raiz** com TL;DR, Quick Start, links e inventário
 - [ ] **`docs/progress-report.md`** com 8 seções completas
-- [ ] **`test-cases/`** com 61 BDD organizados em core/extras
+- [ ] **`test-cases/`** com 64 BDD organizados em core/extras
 - [ ] **`bug-reports/bugs/`** com 21 bugs (Critical → Low)
 - [ ] **`bug-reports/improvements/`** com 11 melhorias
 - [ ] **`automation/tests/`** com 6 camadas (e2e/api/visual/a11y/performance/security)
