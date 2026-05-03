@@ -1,4 +1,5 @@
 import { test, expect } from '@fixtures/index';
+import { SELECTORS } from '@support/selectors';
 
 /**
  * @core
@@ -65,7 +66,7 @@ test.describe('Busca avançada — typeahead, combos e reset', () => {
     await page.waitForLoadState('networkidle', { timeout: 15_000 }).catch(() => undefined);
 
     // baseline: pega contagem de cards
-    const cardLocator = page.locator('div.css-7mca6u');
+    const cardLocator = page.locator(SELECTORS.matchCard);
     await cardLocator.first().waitFor({ state: 'visible', timeout: 30_000 });
     const initialCount = await cardLocator.count();
     expect(initialCount, 'baseline: deve haver cards na home').toBeGreaterThan(0);

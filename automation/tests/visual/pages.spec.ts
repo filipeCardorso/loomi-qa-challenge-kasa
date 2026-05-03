@@ -1,5 +1,6 @@
 import { test, expect } from '@fixtures/index';
 import { maskDynamic } from '@support/visualHelper';
+import { SELECTORS } from '@support/selectors';
 
 /**
  * Visual regression — 5 baselines cobrindo páginas-chave anônimas + logada + modal.
@@ -19,7 +20,7 @@ test.describe('Visual regression', () => {
     await page.goto('/', { waitUntil: 'domcontentloaded' });
     // Espera UI principal — primeiro card finalizado ou heading qualquer (proxy de readiness)
     await page
-      .locator('div.css-7mca6u, h1, h2')
+      .locator(`${SELECTORS.matchCard}, h1, h2`)
       .first()
       .waitFor({ state: 'visible', timeout: 30_000 })
       .catch(() => undefined);
@@ -56,11 +57,11 @@ test.describe('Visual regression', () => {
 
   test('@visual modal de partida finalizada', async ({ page }) => {
     await page.goto('/', { waitUntil: 'domcontentloaded' });
-    const firstCard = page.locator('div.css-7mca6u').first();
+    const firstCard = page.locator(SELECTORS.matchCard).first();
     await firstCard.waitFor({ state: 'visible', timeout: 30_000 });
     await firstCard.click();
 
-    const modal = page.locator('[role="dialog"][aria-labelledby^="chakra-modal--header"]').first();
+    const modal = page.locator(SELECTORS.matchModalDialog).first();
     await modal.waitFor({ state: 'visible', timeout: 10_000 });
     // toHaveScreenshot já tem retry interno até o frame estabilizar — não precisa sleep extra
 

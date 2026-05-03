@@ -1,6 +1,7 @@
 import type { Locator } from '@playwright/test';
 import { BasePage } from './BasePage';
 import { MatchCard } from './components/MatchCard';
+import { SELECTORS } from '@support/selectors';
 
 /**
  * HomePage — modela `/` (página principal de busca + listagem de partidas).
@@ -112,7 +113,7 @@ export class HomePage extends BasePage {
 
   /** Retorna array de MatchCard a partir dos `div.css-7mca6u` visíveis. */
   async getMatchCards(): Promise<MatchCard[]> {
-    const root = this.page.locator('div.css-7mca6u');
+    const root = this.page.locator(SELECTORS.matchCard);
     const count = await root.count();
     const cards: MatchCard[] = [];
     for (let i = 0; i < count; i++) {
@@ -123,7 +124,7 @@ export class HomePage extends BasePage {
 
   /** Atalho: pega o primeiro MatchCard que matcha um nome de time. */
   matchCardForTeam(teamName: string): MatchCard {
-    const root = this.page.locator('div.css-7mca6u').filter({ hasText: teamName }).first();
+    const root = this.page.locator(SELECTORS.matchCard).filter({ hasText: teamName }).first();
     return new MatchCard(root);
   }
 

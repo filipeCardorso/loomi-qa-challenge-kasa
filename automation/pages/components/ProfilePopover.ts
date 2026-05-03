@@ -1,4 +1,5 @@
 import type { Locator, Page } from '@playwright/test';
+import { SELECTORS } from '@support/selectors';
 
 /**
  * ProfilePopover — popover que abre ao clicar no avatar do usuário logado (header).
@@ -29,7 +30,7 @@ export class ProfilePopover {
   }
 
   get root(): Locator {
-    return this.page.locator('[role="dialog"][aria-labelledby^="popover-header"]').first();
+    return this.page.locator(SELECTORS.profilePopover).first();
   }
 
   /** Abre o popover clicando no avatar. */

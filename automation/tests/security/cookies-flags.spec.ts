@@ -1,4 +1,4 @@
-import { test, expect } from '@playwright/test';
+import { test, expect } from '@fixtures/index';
 
 test.describe.configure({ timeout: 60_000 });
 
@@ -53,41 +53,29 @@ test('@security cookies setados em visita anônima respeitam flags básicas', as
   ).toEqual([]);
 });
 
-test('@security cookie de auth (logado) tem Secure + HttpOnly + SameSite', async ({ browser }) => {
-  const email = process.env.KASA_USER_EMAIL;
-  const password = process.env.KASA_USER_PASSWORD;
-  test.skip(
-    !email || !password,
-    'KASA_USER_EMAIL/PASSWORD não definidos em .env.local — teste de cookie de auth requer credenciais',
-  );
+test('@security cookie de auth tem flags Secure + HttpOnly + SameSite (logado)', async ({
+  loggedInPage,
+}) => {
+  const cookies = await loggedInPage.context().cookies('https://www.kasa.live');
+  const authCookie = cookies.find((c) => /auth|session|token|next-leap|next|jwt/i.test(c.name));
 
-  const context = await browser.newContext();
-  const page = await context.newPage();
-  await page.goto('https://www.kasa.live/', { waitUntil: 'domcontentloaded' });
+  if (!authCookie) {
+    test.skip(
+      true,
+      `Cookie de auth não detectado — login pode ter falhado ou usar outro mecanismo (vistos: ${cookies
+        .map((c) => c.name)
+        .join(', ')})`,
+    );
+    return;
+  }
 
-  // login via header
-  const headerEntrar = page.getByRole('button', { name: /^entrar$/i }).first();
-  await headerEntrar.click();
-  await page.getByPlaceholder(/digite seu e-?mail/i).fill(email!);
-  await page.getByPlaceholder(/digite sua senha/i).fill(password!);
-  await page
-    .getByRole('button', { name: /^entrar$/i })
-    .last()
-    .click();
-  await page.waitForLoadState('networkidle', { timeout: 15_000 }).catch(() => undefined);
-
-  const cookies = await context.cookies('https://www.kasa.live');
-  const authCookie = cookies.find((c) => /auth|session|token|next|jwt/i.test(c.name));
-  test.skip(
-    !authCookie,
-    `nenhum cookie de auth detectado (vistos: ${cookies.map((c) => c.name).join(', ')})`,
-  );
-
-  expect.soft(authCookie!.secure, `${authCookie!.name} sem Secure`).toBe(true);
   expect
-    .soft(authCookie!.httpOnly, `${authCookie!.name} sem HttpOnly (vulnerável a XSS)`)
+    .soft(authCookie.secure, `Cookie ${authCookie.name} sem flag Secure (vulnerável a MITM)`)
     .toBe(true);
-  expect.soft(authCookie!.sameSite, `${authCookie!.name} com SameSite=None`).not.toBe('None');
-
-  await context.close();
+  expect
+    .soft(authCookie.httpOnly, `Cookie ${authCookie.name} sem flag HttpOnly (vulnerável a XSS)`)
+    .toBe(true);
+  expect
+    .soft(authCookie.sameSite, `Cookie ${authCookie.name} sem SameSite (vulnerável a CSRF)`)
+    .not.toBe('None');
 });

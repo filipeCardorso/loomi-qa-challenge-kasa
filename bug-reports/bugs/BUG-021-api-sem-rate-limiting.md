@@ -6,7 +6,7 @@
 **Reproduzibilidade:** Sempre
 **Frequência observada:** 50/50 requests paralelas a `/api/1.0/match/?status=ENDED&page=1` retornaram 200 OK
 **Regressão?:** Desconhecido
-**Trello card:** TBD
+**Trello card:** https://trello.com/c/DFaX3goR
 
 ## Pré-condição
 

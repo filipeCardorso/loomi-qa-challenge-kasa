@@ -1,6 +1,8 @@
+import type { Server } from '@modelcontextprotocol/sdk/server/index.js';
 import {
   ListResourcesRequestSchema,
   ReadResourceRequestSchema,
+  type ReadResourceRequest,
 } from '@modelcontextprotocol/sdk/types.js';
 import { readFile } from 'node:fs/promises';
 
@@ -40,7 +42,7 @@ export function registerArtifact(
   return uri;
 }
 
-export function attachResourceHandlers(server: any) {
+export function attachResourceHandlers(server: Server) {
   server.setRequestHandler(ListResourcesRequestSchema, async () => ({
     resources: Array.from(registry.values()).map(({ uri, name, mimeType }) => ({
       uri,
@@ -48,7 +50,7 @@ export function attachResourceHandlers(server: any) {
       mimeType,
     })),
   }));
-  server.setRequestHandler(ReadResourceRequestSchema, async (req: any) => {
+  server.setRequestHandler(ReadResourceRequestSchema, async (req: ReadResourceRequest) => {
     const entry = registry.get(req.params.uri);
     if (!entry) throw new Error(`Resource não encontrado: ${req.params.uri}`);
     const content = await readFile(entry.localPath);

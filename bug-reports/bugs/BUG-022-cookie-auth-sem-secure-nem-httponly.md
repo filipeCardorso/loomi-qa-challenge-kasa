@@ -6,7 +6,7 @@
 **Reproduzibilidade:** Sempre
 **Frequência observada:** 1/1 sessão autenticada inspecionada
 **Regressão?:** Desconhecido
-**Trello card:** TBD
+**Trello card:** https://trello.com/c/TQ1Bwbv6
 
 ## Pré-condição
 

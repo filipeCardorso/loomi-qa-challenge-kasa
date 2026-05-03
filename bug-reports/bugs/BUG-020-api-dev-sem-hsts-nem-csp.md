@@ -6,7 +6,7 @@
 **Reproduzibilidade:** Sempre
 **Frequência observada:** N/N (toda resposta de https://kasa-live.api.dev.loomi.com.br/ observada)
 **Regressão?:** Desconhecido
-**Trello card:** TBD
+**Trello card:** https://trello.com/c/5Ff1yKKB
 
 ## Pré-condição
 

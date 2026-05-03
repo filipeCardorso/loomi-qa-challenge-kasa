@@ -1,4 +1,5 @@
 import type { Locator, Page } from '@playwright/test';
+import { SELECTORS } from '@support/selectors';
 
 /**
  * MatchModal — modal Chakra que abre ao clicar em card de partida.
@@ -13,7 +14,7 @@ export class MatchModal {
   private readonly root: Locator;
 
   constructor(page: Page) {
-    this.root = page.locator('[role="dialog"][aria-labelledby^="chakra-modal--header"]').first();
+    this.root = page.locator(SELECTORS.matchModalDialog).first();
   }
 
   get locator(): Locator {

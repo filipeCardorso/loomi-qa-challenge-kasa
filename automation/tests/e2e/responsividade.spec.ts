@@ -1,4 +1,5 @@
 import { test, expect } from '@fixtures/index';
+import { SELECTORS } from '@support/selectors';
 
 /**
  * @core
@@ -18,7 +19,7 @@ test.describe('Responsividade — mobile e tablet viewports', () => {
     await homePage.open();
 
     // Aguarda lista carregar (network call /match/?status=ENDED pode demorar em DEV)
-    const firstCard = page.locator('div.css-7mca6u').first();
+    const firstCard = page.locator(SELECTORS.matchCard).first();
     await firstCard.waitFor({ state: 'visible', timeout: 30_000 });
 
     // sem overflow horizontal: documentElement.scrollWidth ≈ window.innerWidth

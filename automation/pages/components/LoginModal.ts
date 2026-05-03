@@ -1,4 +1,5 @@
 import type { Locator, Page } from '@playwright/test';
+import { SELECTORS } from '@support/selectors';
 
 /**
  * LoginModal — modal "Entrar" que abre ao clicar no botão "Entrar" do header.
@@ -12,7 +13,7 @@ export class LoginModal {
   constructor(private readonly page: Page) {}
 
   get root(): Locator {
-    return this.page.locator('[role="dialog"][aria-labelledby^="chakra-modal--header"]').first();
+    return this.page.locator(SELECTORS.matchModalDialog).first();
   }
 
   get emailInput(): Locator {

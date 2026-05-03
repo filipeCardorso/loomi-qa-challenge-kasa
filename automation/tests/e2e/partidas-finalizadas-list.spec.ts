@@ -1,4 +1,5 @@
 import { test, expect } from '@fixtures/index';
+import { SELECTORS } from '@support/selectors';
 
 /**
  * @smoke @core
@@ -10,7 +11,7 @@ test.describe('Lista de partidas finalizadas', () => {
 
     // espera primeiro card aparecer (network call /match/?status=ENDED).
     // API DEV pode ser lenta — damos 30s.
-    const cardLocator = page.locator('div.css-7mca6u').first();
+    const cardLocator = page.locator(SELECTORS.matchCard).first();
     await cardLocator.waitFor({ state: 'visible', timeout: 30_000 });
 
     const cards = await homePage.getMatchCards();

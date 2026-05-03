@@ -16,30 +16,24 @@ const server = new Server(
   { capabilities: { tools: {}, resources: {} } },
 );
 
-const tools = {
-  run_test_case: runTestCase,
-  get_element_status: getElementStatus,
-  navigate_to: navigateTo,
-  list_test_cases: listTestCases,
-  get_test_history: getTestHistory,
-  extract_dom_snapshot: extractDomSnapshot,
-  analyze_failure: analyzeFailure,
-};
-const toolDefs = [
-  runTestCaseTool,
-  getElementStatusTool,
-  navigateToTool,
-  listTestCasesTool,
-  getTestHistoryTool,
-  extractDomSnapshotTool,
-  analyzeFailureTool,
-];
+const REGISTRY = [
+  { def: runTestCaseTool, handler: runTestCase },
+  { def: getElementStatusTool, handler: getElementStatus },
+  { def: navigateToTool, handler: navigateTo },
+  { def: listTestCasesTool, handler: listTestCases },
+  { def: getTestHistoryTool, handler: getTestHistory },
+  { def: extractDomSnapshotTool, handler: extractDomSnapshot },
+  { def: analyzeFailureTool, handler: analyzeFailure },
+] as const;
 
-server.setRequestHandler(ListToolsRequestSchema, async () => ({ tools: toolDefs }));
+server.setRequestHandler(ListToolsRequestSchema, async () => ({
+  tools: REGISTRY.map((r) => r.def),
+}));
+
 server.setRequestHandler(CallToolRequestSchema, async (req) => {
-  const handler = tools[req.params.name as keyof typeof tools];
-  if (!handler) throw new Error(`Tool desconhecido: ${req.params.name}`);
-  return handler(req.params.arguments ?? {});
+  const entry = REGISTRY.find((r) => r.def.name === req.params.name);
+  if (!entry) throw new Error(`Tool desconhecido: ${req.params.name}`);
+  return entry.handler(req.params.arguments ?? {});
 });
 
 attachResourceHandlers(server);

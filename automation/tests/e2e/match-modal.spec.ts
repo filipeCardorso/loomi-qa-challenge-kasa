@@ -1,5 +1,6 @@
 import { test, expect } from '@fixtures/index';
 import { MatchModal } from '@pages/components/MatchModal';
+import { SELECTORS } from '@support/selectors';
 
 /**
  * @smoke @core
@@ -12,7 +13,7 @@ test.describe('Modal de partida finalizada', () => {
   }) => {
     await homePage.open();
 
-    const firstCard = page.locator('div.css-7mca6u').first();
+    const firstCard = page.locator(SELECTORS.matchCard).first();
     await firstCard.waitFor({ state: 'visible', timeout: 30_000 });
     await firstCard.click();
 
