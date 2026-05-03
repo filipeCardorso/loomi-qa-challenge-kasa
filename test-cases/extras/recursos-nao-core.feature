@@ -6,12 +6,12 @@ Funcionalidade: Recursos não-core do kasa.live
 
   Cenário: Cadastro de novo torcedor com email e senha
     Dado que estou em "https://kasa.live" sem autenticação
-    Quando clico em "Cadastrar"
-    E preencho o formulário com nome "Torcedor Teste", email "torcedor.teste+novo@example.com" e senha "Senha@123"
-    E aceito os "Termos" e confirmo o cadastro
+    Quando clico em "Criar conta"
+    E preencho o formulário com email "torcedor.teste+novo@example.com" e senha "Senha@123"
+    E aceito os "Termos de Uso e Política de Privacidade" e confirmo o cadastro
     Então a conta deve ser criada com sucesso
     E devo ser redirecionado para a home autenticado
-    E o avatar com iniciais "TT" deve aparecer no header
+    E o avatar do usuário deve estar visível no header
 
   Cenário: Login com email e senha já cadastrados
     Dado que tenho conta válida no kasa.live com email "torcedor.teste@example.com" e senha "Senha@123"
@@ -36,7 +36,7 @@ Funcionalidade: Recursos não-core do kasa.live
     E altero o nome de exibição para "Filipe Torcedor"
     E salvo as alterações
     Então o nome "Filipe Torcedor" deve ser persistido no perfil
-    E o avatar do header deve passar a exibir as iniciais "FT"
+    E o avatar do header deve continuar visível após a atualização
 
   Cenário: Acesso às redes sociais do kasa.live pelo footer
     Dado que estou em "https://kasa.live" em qualquer página

@@ -21,15 +21,13 @@ Funcionalidade: Melhores momentos das partidas finalizadas
   Cenário: Filtrar melhores momentos por campeonato
     Dado que estou em "https://kasa.live/melhores-momentos"
     Quando seleciono "Copa do Brasil" no filtro "Qual campeonato?"
-    E clico no botão de busca (lupa verde)
-    Então a listagem deve exibir apenas melhores momentos de partidas da "Copa do Brasil"
+    Então a listagem deve atualizar exibindo apenas melhores momentos de partidas da "Copa do Brasil"
     E nenhum vídeo de outros campeonatos deve aparecer
 
   Cenário: Filtrar melhores momentos por data específica
     Dado que estou em "https://kasa.live/melhores-momentos"
     Quando abro o filtro "Hoje" e seleciono uma data passada com partidas finalizadas
-    E clico no botão de busca (lupa verde)
-    Então a listagem deve exibir apenas melhores momentos de partidas finalizadas naquela data
+    Então a listagem deve atualizar exibindo apenas melhores momentos de partidas finalizadas naquela data
     E o filtro de data deve refletir o dia escolhido
 
   Cenário: Combinar três filtros (time, campeonato e pesquisa textual)
@@ -37,15 +35,15 @@ Funcionalidade: Melhores momentos das partidas finalizadas
     Quando seleciono "São Paulo" no filtro "Qual time?"
     E seleciono "Brasileirão Série A" no filtro "Qual campeonato?"
     E digito "gols" em um dos inputs "Pesquisar"
-    E clico no botão de busca (lupa verde)
-    Então a listagem deve exibir apenas vídeos do "São Paulo" no "Brasileirão Série A" cujo título contenha "gols"
+    Então a listagem deve atualizar exibindo apenas vídeos do "São Paulo" no "Brasileirão Série A" cujo título contenha "gols"
     Ou uma mensagem indicando ausência de resultados deve ser exibida quando não houver vídeos
 
-  Cenário: Reproduzir um vídeo de melhores momentos via embed do YouTube
+  @hipotese-youtube
+  Cenário: Reproduzir um vídeo de melhores momentos no player embedado
     Dado que estou em "https://kasa.live/melhores-momentos" com a listagem carregada
     Quando clico no botão "play" do primeiro card de melhores momentos
-    Então o player do YouTube deve carregar dentro do embed
-    E o vídeo dos melhores momentos deve iniciar a reprodução
+    Então o player de vídeo deve estar presente e iniciar reprodução
+    E o vídeo dos melhores momentos deve continuar reproduzindo até o usuário pausar
 
   Cenário: Buscar por termo sem resultados correspondentes
     Dado que estou em "https://kasa.live/melhores-momentos"

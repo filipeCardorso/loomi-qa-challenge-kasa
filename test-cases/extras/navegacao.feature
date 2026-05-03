@@ -27,5 +27,5 @@ Funcionalidade: Navegação principal do kasa.live
   Cenário: Footer exibe os links institucionais e sociais esperados
     Dado que estou em "https://kasa.live" em qualquer página
     Quando rolo a página até o footer
-    Então o footer deve exibir os links "Termos", "Play Store", "App Store", "TikTok" e "Instagram"
+    Então o footer deve exibir os links "Termos de Uso e Política de Privacidade", "Play Store", "App Store", "TikTok" e "Instagram"
     E cada link deve abrir o destino correto em uma nova aba quando aplicável
