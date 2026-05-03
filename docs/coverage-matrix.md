@@ -2,7 +2,7 @@
 
 **Filipe Gabriel · 2026-05-04**
 
-Cruzamento funcionalidade × tipo de teste. Os números refletem o estado entregue (55 BDD + 68 automatizados).
+Cruzamento funcionalidade × tipo de teste. Os números refletem o estado entregue (56 BDD + 68 automatizados).
 
 ---
 
@@ -17,10 +17,10 @@ Cruzamento funcionalidade × tipo de teste. Os números refletem o estado entreg
 | Google Calendar        |      5 |    2\* |     – |      – |     – |     – |        – |      **2** |
 | Navegação / home       |      4 |      2 |     – |      1 |     1 |     1 |        4 |      **9** |
 | Responsividade         |      3 |      1 |     – |      – |     – |     – |        – |      **1** |
-| Erro / edge cases      |      5 |      – |     – |      – |     – |     – |        – |      **0** |
+| Erro / edge cases      |      6 |      – |     – |      – |     – |     – |        – |      **0** |
 | Não-core (descobertos) |      5 |      2 |     – |      – |     – |     – |        – |      **2** |
 | Auth / cookies         |      – |      – |     – |      – |     – |     – |       10 |     **10** |
-| **TOTAL**              | **55** | **27** | **5** |  **5** | **5** | **3** |   **23** |     **68** |
+| **TOTAL**              | **56** | **27** | **5** |  **5** | **5** | **3** |   **23** |     **68** |
 
 \* OAuth real é manual (decisão deliberada — risco R3 da spec). E2E cobre apenas iniciação do flow.
 

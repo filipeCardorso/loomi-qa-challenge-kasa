@@ -1,4 +1,4 @@
-# Casos de Teste BDD (55 cenários)
+# Casos de Teste BDD (56 cenários)
 
 ## Por funcionalidade core
 
@@ -18,10 +18,10 @@
 | Navegação           | [extras/navegacao.feature](extras/navegacao.feature)                 | 4      |
 | Responsividade      | [extras/responsividade.feature](extras/responsividade.feature)       | 3      |
 | Recursos não-core   | [extras/recursos-nao-core.feature](extras/recursos-nao-core.feature) | 5      |
-| Erro/edge cases     | [extras/erro-edge-cases.feature](extras/erro-edge-cases.feature)     | 5      |
-| **Subtotal extras** |                                                                      | **17** |
+| Erro/edge cases     | [extras/erro-edge-cases.feature](extras/erro-edge-cases.feature)     | 6      |
+| **Subtotal extras** |                                                                      | **18** |
 
-**TOTAL: 55 cenários** (vs 40 do Pleno S1 → +37%)
+**TOTAL: 56 cenários** (vs 40 do Pleno S1 → +40%)
 
 ## Convenção
 

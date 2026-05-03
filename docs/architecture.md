@@ -22,7 +22,7 @@ Diagrama da suite + componentes principais. Para o detalhamento completo (decis�
    ├───────────────┤         ├────────────────────┤         ├───────────────────┤
    │ exploration   │         │ Playwright runner  │         │ MCP Server        │
    │ 7 charters    │         │ 5 camadas          │         │ stdio transport   │
-   │ 55 BDD        │         │ 45 testes verdes   │         │ 7 tools           │
+   │ 56 BDD        │         │ 45 testes verdes   │         │ 7 tools           │
    │ 18 bugs       │         │ POMs + fixtures    │         │ Resources         │
    │ 10 melhorias  │         │ Allure publicado   │         │ 31 testes Vitest  │
    └───────────────┘         └────────────────────┘         └───────────────────┘
@@ -68,7 +68,7 @@ loomi-qa-challenge-kasa/
 │   ├── site-snapshots/              # backup de exploração
 │   └── superpowers/specs/           # design document fonte
 │
-├── test-cases/                      # TAREFA 1 — 55 cenários BDD em PT-BR
+├── test-cases/                      # TAREFA 1 — 56 cenários BDD em PT-BR
 │   ├── README.md                    # índice
 │   ├── core/                        # 5 .feature (favoritar/buscar/highlights/calendar)
 │   │   ├── favoritar-times.feature

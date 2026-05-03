@@ -10,7 +10,7 @@ Legenda: `[x]` entregue · `[ ]` não entregue · `[~]` parcial (com nota).
 
 ## Tarefa 1 — Casos de Teste BDD
 
-- [x] **≥40 cenários** (alvo 55) → **55 entregues** (+37%)
+- [x] **≥40 cenários** (alvo 55) → **56 entregues** (+40%)
 - [x] **As 4 funcionalidades core** (favoritar times, favoritar partidas, buscar partidas, melhores momentos) cobertas em profundidade: ≥7 cenários cada
   - Favoritar times: 8 ✓
   - Favoritar partidas: 8 ✓
@@ -18,7 +18,7 @@ Legenda: `[x]` entregue · `[ ]` não entregue · `[~]` parcial (com nota).
   - Melhores momentos: 7 ✓
 - [x] **Google Calendar tratado separadamente** (5 cenários, OAuth real é manual conforme R3) — não conta como core para o critério ≥7
 - [x] **Linguagem comportamental** (Dado/Quando/Então; passa em lint Gherkin)
-- [x] **README do `test-cases/` indexa todos** os 55 cenários
+- [x] **README do `test-cases/` indexa todos** os 56 cenários
 
 ---
 

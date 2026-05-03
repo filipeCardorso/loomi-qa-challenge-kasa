@@ -12,7 +12,7 @@ Entrega completa do desafio QA Loomi (escopo Pleno S1) com todos os números do 
 
 | Eixo      | Pleno S1 (PDF) | Entregue             | Delta     |
 | --------- | -------------- | -------------------- | --------- |
-| Casos BDD | 40             | **55**               | **+37%**  |
+| Casos BDD | 40             | **56**               | **+40%**  |
 | Bugs      | 12             | **18**               | **+50%**  |
 | Melhorias | 8              | **10**               | **+25%**  |
 | Automação | 30-32          | **45**               | **+40%**  |
@@ -37,7 +37,7 @@ Listas: Backlog · Sprint atual (48h) · Em andamento (WIP=3) · Em revisão · 
 
 | Trilha                 | Foco                                          | Pasta primária                                             | Output mensurável                                       |
 | ---------------------- | --------------------------------------------- | ---------------------------------------------------------- | ------------------------------------------------------- |
-| **A — Functional QA**  | Exploração, charters, BDD, bugs, melhorias    | `test-cases/`, `bug-reports/`, `docs/exploration-notes.md` | 55 BDD + 18 bugs + 10 melhorias                         |
+| **A — Functional QA**  | Exploração, charters, BDD, bugs, melhorias    | `test-cases/`, `bug-reports/`, `docs/exploration-notes.md` | 56 BDD + 18 bugs + 10 melhorias                         |
 | **B — Automation**     | POMs, fixtures, suite Playwright em 5 camadas | `automation/`                                              | 45 testes (27 E2E + 5 API + 5 visual + 5 a11y + 3 perf) |
 | **C — Platform / MCP** | MCP server, Resources, tutorial reproduzível  | `mcp-server/`, `docs/mcp-tutorial.md`                      | 7 tools + 31 testes Vitest + tutorial                   |
 
@@ -85,14 +85,14 @@ Critério-mestre: **cobertura × impacto × tempo**. Em cada decisão de escopo,
 | 02/05 16:20–16:35 | POMs base + 5 componentes + fixtures + 8 E2E `@smoke @core`                                                                              | 384b9e6 → 1e7b0f1 | B      |
 | 02/05 16:24–17:00 | Fixes (storageState, isLoggedIn, smoke chromium, login-flow timeout) + E2E batch 2 (12 testes) + API tests (5)                           | b4f829e → 7825b84 | B      |
 | 02/05 17:20       | Visual regression (5) + A11y axe-core (5) + Perf Lighthouse (3)                                                                          | 026ac21 → 2302f51 | B      |
-| 02/05 17:28–17:35 | BDD 55 cenários (favoritar / busca / momentos / calendar / nav / responsividade / extras)                                                | 9da43d3 → f1ba9f5 | A      |
+| 02/05 17:28–17:35 | BDD 56 cenários (favoritar / busca / momentos / calendar / nav / responsividade / extras)                                                | 9da43d3 → f1ba9f5 | A      |
 | 02/05 17:40–17:51 | 18 bugs documentados (BUG-001 a BUG-018) + 10 melhorias + README índice geral                                                            | fd66d7a → a3213fb | A      |
 | 02/05 18:00–18:30 | E2E batch 3 (calendário, profile popover, notifications, modal close) + fix CI Allure CLI + link no README                               | 56b6a43 → 9d94b6d | B + ✱  |
 | 02/05 18:30+      | **Docs finais (este relatório, coverage-matrix, architecture, evaluator-journey, exit-criteria, submission-checklist, CHANGELOG 1.0.0)** | (em curso)        | ✱      |
 
 ### Planejado vs real
 
-O cronograma original previa 49h wall-clock distribuídas em 3 dias (~30h produtivas). Na prática a sessão concentrou-se em uma janela compacta com agentes paralelos cobrindo bug reports e BDDs em batch, o que acelerou as fases de documentação. Os checkpoints da spec (final dia 1: ≥6 bugs + 8 E2E + MCP esqueleto) foram atingidos dentro da janela; checkpoint final (55 BDD + 45 auto + 18 bugs + 10 melhorias + MCP funcional + Allure publicado) também.
+O cronograma original previa 49h wall-clock distribuídas em 3 dias (~30h produtivas). Na prática a sessão concentrou-se em uma janela compacta com agentes paralelos cobrindo bug reports e BDDs em batch, o que acelerou as fases de documentação. Os checkpoints da spec (final dia 1: ≥6 bugs + 8 E2E + MCP esqueleto) foram atingidos dentro da janela; checkpoint final (56 BDD + 45 auto + 18 bugs + 10 melhorias + MCP funcional + Allure publicado) também.
 
 ---
 
@@ -111,7 +111,7 @@ Top 5 honesto, sem polimento:
 ## 6. Decisões técnicas relevantes
 
 - **Playwright como runner único** (E2E + API + Visual + A11y + Perf) — uma stack, um report (Allure), uma curva. Evita fragmentação típica de "Cypress pra E2E + Postman pra API + Percy pra visual + Pa11y pra a11y".
-- **BDD como documentação, não como runtime** — Gherkin em `.feature` arquivos para os 55 cenários (atende Tarefa 1 do PDF), automação usa `test.step('Given...')`. Sem o overhead de tradução cara entre `.feature` e código que o Cucumber impõe.
+- **BDD como documentação, não como runtime** — Gherkin em `.feature` arquivos para os 56 cenários (atende Tarefa 1 do PDF), automação usa `test.step('Given...')`. Sem o overhead de tradução cara entre `.feature` e código que o Cucumber impõe.
 - **MCP server em Node/TS** — mesma stack do resto do projeto; SDK oficial `@modelcontextprotocol/sdk`; transport stdio (padrão Claude Desktop, sem porta/auth).
 - **Login email/senha local em vez de Google OAuth** — viabilidade em 48h. OAuth é coberto manualmente.
 - **Allure publicado em GH Pages** (não só local) — entregável tem URL pública navegável. Resolvi quebra do action `simple-elf/allure-report-action` substituindo pela CLI Allure direta (commit `6ef3392`).
@@ -134,7 +134,7 @@ Top 5 honesto, sem polimento:
 
 | Eixo      | Pleno S1 (PDF) | Entregue | Delta     |
 | --------- | -------------- | -------- | --------- |
-| Casos BDD | 40             | **55**   | **+37%**  |
+| Casos BDD | 40             | **56**   | **+40%**  |
 | Bugs      | 12             | **18**   | **+50%**  |
 | Melhorias | 8              | **10**   | **+25%**  |
 | Automação | 30-32          | **45**   | **+40%**  |

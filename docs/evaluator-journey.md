@@ -65,11 +65,11 @@ docker run --rm -v $(pwd)/reports:/app/reports loomi-qa npm run test:smoke
 
 Cada pasta de topo é um entregável do desafio:
 
-### `test-cases/` — 55 BDD em PT-BR (Tarefa 1)
+### `test-cases/` — 56 BDD em PT-BR (Tarefa 1)
 
 - `core/` (5 features): favoritar times, favoritar partidas, buscar partidas, melhores momentos, google calendar
 - `extras/` (4 features): navegação, responsividade, erro/edge, recursos não-core
-- `README.md` indexa todos os 55 cenários
+- `README.md` indexa todos os 56 cenários
 - Linguagem comportamental (Dado/Quando/Então) com lint Gherkin
 - Funcionalidades core ≥7 cenários cada
 
@@ -132,7 +132,7 @@ Cada pasta de topo é um entregável do desafio:
 - [ ] **Allure URL acessível** em janela anônima (45 testes verdes)
 - [ ] **`README.md` raiz** com TL;DR, Quick Start, links e inventário
 - [ ] **`docs/progress-report.md`** com 8 seções completas
-- [ ] **`test-cases/`** com 55 BDD organizados em core/extras
+- [ ] **`test-cases/`** com 56 BDD organizados em core/extras
 - [ ] **`bug-reports/bugs/`** com 18 bugs (Critical → Low)
 - [ ] **`bug-reports/improvements/`** com 10 melhorias
 - [ ] **`automation/tests/`** com 5 camadas (e2e/api/visual/a11y/performance)

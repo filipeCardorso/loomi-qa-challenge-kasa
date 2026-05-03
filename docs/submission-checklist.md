@@ -57,7 +57,7 @@ Legenda: `[x]` ok · `[ ]` pendente.
 
 ## 5. Entregáveis por tarefa (rápido)
 
-- [x] **Tarefa 1:** 55 BDD em `test-cases/` (core + extras)
+- [x] **Tarefa 1:** 56 BDD em `test-cases/` (core + extras)
 - [x] **Tarefa 2:** 45 testes em `automation/tests/` (5 camadas)
 - [x] **Tarefa 3:** 18 bugs + 10 melhorias em `bug-reports/`
 - [x] **Tarefa 4:** 7 tools + Resources + 31 testes Vitest + tutorial em `mcp-server/` e `docs/mcp-tutorial.md`

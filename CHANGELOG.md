@@ -6,11 +6,11 @@ Formato: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/)
 
 ### Added
 
-#### Tarefa 1 — Casos de Teste BDD (55 cenários, +37% sobre Pleno S1)
+#### Tarefa 1 — Casos de Teste BDD (56 cenários, +40% sobre Pleno S1)
 
 - 5 features core em `test-cases/core/`: favoritar times (8), favoritar partidas (8), buscar partidas (10), melhores momentos (7), google calendar (5)
-- 4 features extras em `test-cases/extras/`: navegação, responsividade, erro/edge cases, recursos não-core
-- README com índice geral dos 55 cenários
+- 4 features extras em `test-cases/extras/`: navegação (4), responsividade (3), erro/edge cases (6), recursos não-core (5)
+- README com índice geral dos 56 cenários
 
 #### Tarefa 2 — Automação (45 testes, +40% sobre Pleno S1)
 
