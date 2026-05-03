@@ -1,32 +1,33 @@
 import type { Locator, Page } from '@playwright/test';
 import { SELECTORS } from '@support/selectors';
+import { BaseComponent } from './BaseComponent';
 
 /**
  * MatchModal — modal Chakra que abre ao clicar em card de partida.
- * Selector raiz: `[role="dialog"][aria-labelledby^="chakra-modal--header"]`
+ *
+ * Discriminator vs LoginModal: usa `SELECTORS.matchModal`
+ * (`:has(text=/Partida (Finalizada|...)/)`) porque ambos compartilham o
+ * `role=dialog` Chakra com `aria-labelledby^="chakra-modal--header"`.
  *
  * Estrutura (ver exploration-notes §15.2):
  * - Header: "Partida Finalizada" + data DD/MM/YYYY
  * - Centro: campeonato + escudo+time + placar (X) + escudo+time
  * - Body (FINALIZADA): empty state "Nada por aqui..."
  */
-export class MatchModal {
-  private readonly root: Locator;
-
+export class MatchModal extends BaseComponent {
   constructor(page: Page) {
-    this.root = page.locator(SELECTORS.matchModalDialog).first();
+    super(page);
   }
 
+  get root(): Locator {
+    // Fallback resiliente: se o discriminator não casar (ex.: estado
+    // "Programada" sem palavra-chave), cai pro selector genérico.
+    return this.page.locator(`${SELECTORS.matchModal}, ${SELECTORS.matchModalDialog}`).first();
+  }
+
+  /** Alias retrocompatível pra asserts externos como `expect(modal.locator)`. */
   get locator(): Locator {
     return this.root;
-  }
-
-  async isOpen(timeout = 5_000): Promise<boolean> {
-    return this.root.isVisible({ timeout }).catch(() => false);
-  }
-
-  async waitForOpen(timeout = 10_000): Promise<void> {
-    await this.root.waitFor({ state: 'visible', timeout });
   }
 
   /** Retorna o título do header ("Partida Finalizada", "Ao vivo", etc). */
@@ -75,6 +76,6 @@ export class MatchModal {
   async close(): Promise<void> {
     const closeBtn = this.root.getByRole('button', { name: /close/i }).first();
     await closeBtn.click();
-    await this.root.waitFor({ state: 'hidden', timeout: 5_000 }).catch(() => undefined);
+    await this.waitForClose(5_000).catch(() => undefined);
   }
 }

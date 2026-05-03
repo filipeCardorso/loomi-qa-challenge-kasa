@@ -1,5 +1,6 @@
 import type { Locator, Page } from '@playwright/test';
 import { SELECTORS } from '@support/selectors';
+import { BaseComponent } from './BaseComponent';
 
 /**
  * ProfilePopover — popover que abre ao clicar no avatar do usuário logado (header).
@@ -11,8 +12,10 @@ import { SELECTORS } from '@support/selectors';
  * - Switch `#switch-google-calendar` "Conectar com seu Google Calendar"
  * - Botão "Sair"
  */
-export class ProfilePopover {
-  constructor(private readonly page: Page) {}
+export class ProfilePopover extends BaseComponent {
+  constructor(page: Page) {
+    super(page);
+  }
 
   /**
    * Avatar trigger no header (logado).
@@ -36,11 +39,7 @@ export class ProfilePopover {
   /** Abre o popover clicando no avatar. */
   async open(): Promise<void> {
     await this.avatarTrigger.click();
-    await this.root.waitFor({ state: 'visible', timeout: 5_000 });
-  }
-
-  async isOpen(timeout = 5_000): Promise<boolean> {
-    return this.root.isVisible({ timeout }).catch(() => false);
+    await this.waitForOpen(5_000);
   }
 
   /** Email exibido no popover (read-only). */
