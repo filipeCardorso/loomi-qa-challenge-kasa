@@ -53,6 +53,53 @@ test('@security CORS: API não reflete Origin arbitrário com credentials', asyn
   }
 });
 
+test('@security CORS preflight não permite DELETE/PUT vindos de origin malicioso', async () => {
+  const ctx = await playwrightRequest.newContext({ timeout: 45_000 });
+  try {
+    const evilOrigin = 'https://evil.example.com';
+    const dangerousMethods = ['DELETE', 'PUT'];
+    const accepted: { method: string; acam: string | undefined; acao: string | undefined }[] = [];
+
+    for (const method of dangerousMethods) {
+      const res = await ctx.fetch(API_URL, {
+        method: 'OPTIONS',
+        headers: {
+          Origin: evilOrigin,
+          'Access-Control-Request-Method': method,
+          'Access-Control-Request-Headers': 'authorization,content-type',
+        },
+      });
+      const headers = res.headers();
+      const acao = headers['access-control-allow-origin'];
+      const acamRaw = headers['access-control-allow-methods'] || '';
+      const acam = acamRaw.toUpperCase();
+      // Parse exato — `includes('DELETE')` aceita "DELETE-PROXY" como FP.
+      const allowedMethods = acam
+        .split(/[,\s]+/)
+        .map((m) => m.trim())
+        .filter(Boolean);
+
+      console.warn(
+        `[security] preflight ${method} from evil: status=${res.status()} ACAO=${acao} ACAM=${acam}`,
+      );
+
+      const reflectsEvil = acao === evilOrigin || acao === '*';
+      const allowsMethod = allowedMethods.includes(method);
+      if (reflectsEvil && allowsMethod) {
+        accepted.push({ method, acam, acao });
+      }
+    }
+
+    expect(
+      accepted,
+      `preflight permitiu métodos destrutivos (${JSON.stringify(accepted)}) de origin malicioso — ` +
+        `qualquer site pode disparar DELETE/PUT autenticados se o usuário estiver logado`,
+    ).toEqual([]);
+  } finally {
+    await ctx.dispose();
+  }
+});
+
 test('@security CORS preflight responde sem expor wildcard com credentials', async () => {
   const ctx = await playwrightRequest.newContext({ timeout: 45_000 });
   try {
