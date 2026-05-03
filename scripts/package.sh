@@ -47,7 +47,8 @@ zip -rq "$OUTPUT" . \
   -x "mcp-server/dist/*" \
   -x "mcp-server/data/*" \
   -x ".DS_Store" \
-  -x "*/.DS_Store"
+  -x "*/.DS_Store" \
+  -x "docs/superpowers/*"  # spec/plans internos, não entregáveis
 
 echo "🔍 5. Sanity check do conteúdo..."
 FORBIDDEN=$(unzip -l "$OUTPUT" | grep -E "(^|\s)\.env(\s|$)|\.env\.local|\.auth-state\.json|node_modules" || true)
