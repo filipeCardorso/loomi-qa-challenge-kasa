@@ -112,6 +112,8 @@ A spec previa **~30h produtivas em 2 dias** com checkpoints diários. Entreguei 
 
 Os checkpoints da spec original (final dia 1: ≥6 bugs + 8 E2E + MCP esqueleto) foram atingidos por volta de 17:51 do dia 02. Checkpoint final (64 BDD + 106 auto + 21 bugs + 11 melhorias + MCP funcional + Allure publicado) atingido por volta de 22:45 do dia 02 e endurecido em 2026-05-03 (Background DRY, security hardening, doc sync).
 
+**Nota sobre a janela 03/05 (hardening, não correção):** as expansões aplicadas em 2026-05-03 são hardening planejado de pré-submissão, não correção de defeitos. (i) **60 → 64 BDD** = refactor Background DRY + 4 cenários de edge case (busca case-insensitive, combo 4-way de filtros, revogação Google Calendar, validação cadastro), commit `178ab04`. (ii) **77 → 106 testes** = adição da camada Security (4 specs com rigor estatístico — p95+IQR para SQLi blind, JWT alg=none, session fixation, CORS multi-method) + hardening de specs existentes, commits `946f5cb` + `3e42dc7`. (iii) **BUG-014 Critical → High** = recalibragem baseada em recapture: axe-core retornou 0 nodes em 2026-05-03, status `Likely Fixed` — não é re-classificação de erro inicial, é evidência nova após nova execução. Cada item está rastreado em commit semântico (`test(...)` / `chore(bug)`), nenhum é `fix:` de contagem errada.
+
 ---
 
 ## 5. Principais dificuldades e como lidei
